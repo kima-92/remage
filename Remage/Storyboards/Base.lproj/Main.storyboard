@@ -6,10 +6,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Storyboard Reference-->
+        <!--Reminders-->
         <scene sceneID="npp-4K-zr2">
             <objects>
-                <viewControllerPlaceholder id="fRW-Ns-Q6A" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="Reminders" id="fRW-Ns-Q6A" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="cxS-vc-VeG"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pok-Hz-EUg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -36,30 +36,30 @@
             </objects>
             <point key="canvasLocation" x="-284" y="-27"/>
         </scene>
-        <!--Storyboard Reference-->
+        <!--Alerts-->
         <scene sceneID="MqU-3m-zJl">
             <objects>
-                <viewControllerPlaceholder id="J8u-QT-NtW" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="Alerts" id="J8u-QT-NtW" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="Qh8-xO-pFK"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fgt-q9-2Yw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-102" y="420"/>
         </scene>
-        <!--Storyboard Reference-->
+        <!--NewReminder-->
         <scene sceneID="Wb0-EB-sUj">
             <objects>
-                <viewControllerPlaceholder id="o2W-kg-bJd" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="NewReminder" id="o2W-kg-bJd" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="ZFJ-Mo-CSk"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fdw-9C-uDr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-912" y="420"/>
         </scene>
-        <!--Storyboard Reference-->
+        <!--Settings-->
         <scene sceneID="a6a-WP-OFh">
             <objects>
-                <viewControllerPlaceholder id="fcO-OT-Rl3" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="Settings" id="fcO-OT-Rl3" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="taC-0Q-659"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J72-aW-6V6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

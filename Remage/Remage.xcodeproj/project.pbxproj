@@ -12,6 +12,10 @@
 		FA1E65BE245205A200502D95 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA1E65BC245205A200502D95 /* Main.storyboard */; };
 		FA1E65C0245205A600502D95 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA1E65BF245205A600502D95 /* Assets.xcassets */; };
 		FA1E65C3245205A600502D95 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA1E65C1245205A600502D95 /* LaunchScreen.storyboard */; };
+		FA1E65D224520C0100502D95 /* NewReminder.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA1E65D124520C0100502D95 /* NewReminder.storyboard */; };
+		FA1E65D424520D3500502D95 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA1E65D324520D3500502D95 /* Settings.storyboard */; };
+		FA1E65D624520DCE00502D95 /* Reminders.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA1E65D524520DCE00502D95 /* Reminders.storyboard */; };
+		FA1E65D824520E1400502D95 /* Alerts.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA1E65D724520E1400502D95 /* Alerts.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +26,10 @@
 		FA1E65BF245205A600502D95 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FA1E65C2245205A600502D95 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FA1E65C4245205A600502D95 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FA1E65D124520C0100502D95 /* NewReminder.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewReminder.storyboard; sourceTree = "<group>"; };
+		FA1E65D324520D3500502D95 /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
+		FA1E65D524520DCE00502D95 /* Reminders.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Reminders.storyboard; sourceTree = "<group>"; };
+		FA1E65D724520E1400502D95 /* Alerts.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Alerts.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +82,10 @@
 			children = (
 				FA1E65BC245205A200502D95 /* Main.storyboard */,
 				FA1E65C1245205A600502D95 /* LaunchScreen.storyboard */,
+				FA1E65D124520C0100502D95 /* NewReminder.storyboard */,
+				FA1E65D324520D3500502D95 /* Settings.storyboard */,
+				FA1E65D524520DCE00502D95 /* Reminders.storyboard */,
+				FA1E65D724520E1400502D95 /* Alerts.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -179,8 +191,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA1E65C3245205A600502D95 /* LaunchScreen.storyboard in Resources */,
+				FA1E65D824520E1400502D95 /* Alerts.storyboard in Resources */,
+				FA1E65D224520C0100502D95 /* NewReminder.storyboard in Resources */,
+				FA1E65D624520DCE00502D95 /* Reminders.storyboard in Resources */,
 				FA1E65C0245205A600502D95 /* Assets.xcassets in Resources */,
 				FA1E65BE245205A200502D95 /* Main.storyboard in Resources */,
+				FA1E65D424520D3500502D95 /* Settings.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
