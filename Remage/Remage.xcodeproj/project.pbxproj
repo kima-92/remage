@@ -39,6 +39,12 @@
 			isa = PBXGroup;
 			children = (
 				FA1E65CA245205C700502D95 /* Storyboards */,
+				FA1E65CB245207E100502D95 /* View Controllers */,
+				FA1E65CE245207F900502D95 /* Views */,
+				FA1E65D0245208AA00502D95 /* Controllers */,
+				FA1E65CF2452089D00502D95 /* Model Controllers */,
+				FA1E65CC245207EE00502D95 /* Models */,
+				FA1E65CD245207F400502D95 /* Helpers */,
 				FA1E65B5245205A200502D95 /* Remage */,
 				FA1E65B4245205A200502D95 /* Products */,
 			);
@@ -70,6 +76,48 @@
 				FA1E65C1245205A600502D95 /* LaunchScreen.storyboard */,
 			);
 			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		FA1E65CB245207E100502D95 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		FA1E65CC245207EE00502D95 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		FA1E65CD245207F400502D95 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		FA1E65CE245207F900502D95 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		FA1E65CF2452089D00502D95 /* Model Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Model Controllers";
+			sourceTree = "<group>";
+		};
+		FA1E65D0245208AA00502D95 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
