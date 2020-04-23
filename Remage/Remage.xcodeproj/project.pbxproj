@@ -16,6 +16,7 @@
 		FA1E65D424520D3500502D95 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA1E65D324520D3500502D95 /* Settings.storyboard */; };
 		FA1E65D624520DCE00502D95 /* Reminders.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA1E65D524520DCE00502D95 /* Reminders.storyboard */; };
 		FA1E65D824520E1400502D95 /* Alerts.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA1E65D724520E1400502D95 /* Alerts.storyboard */; };
+		FA776B622452191600B897F6 /* Remage.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FA776B602452191600B897F6 /* Remage.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		FA1E65D324520D3500502D95 /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		FA1E65D524520DCE00502D95 /* Reminders.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Reminders.storyboard; sourceTree = "<group>"; };
 		FA1E65D724520E1400502D95 /* Alerts.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Alerts.storyboard; sourceTree = "<group>"; };
+		FA776B612452191600B897F6 /* Remage.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Remage.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 		FA1E65CC245207EE00502D95 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				FA776B602452191600B897F6 /* Remage.xcdatamodeld */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -207,6 +210,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA776B622452191600B897F6 /* Remage.xcdatamodeld in Sources */,
 				FA1E65B7245205A200502D95 /* AppDelegate.swift in Sources */,
 				FA1E65B9245205A200502D95 /* SceneDelegate.swift in Sources */,
 			);
@@ -406,6 +410,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		FA776B602452191600B897F6 /* Remage.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				FA776B612452191600B897F6 /* Remage.xcdatamodel */,
+			);
+			currentVersion = FA776B612452191600B897F6 /* Remage.xcdatamodel */;
+			path = Remage.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = FA1E65AB245205A200502D95 /* Project object */;
 }
