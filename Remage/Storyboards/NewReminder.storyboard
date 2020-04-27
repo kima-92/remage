@@ -25,12 +25,15 @@
                                 <rect key="frame" x="107" y="293" width="200" height="430"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E9n-Kz-4sl">
-                                        <rect key="frame" x="0.0" y="0.5" width="200" height="198"/>
+                                        <rect key="frame" x="0.0" y="1.5" width="200" height="198"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="200" id="1hg-8V-sf3"/>
                                             <constraint firstAttribute="width" secondItem="E9n-Kz-4sl" secondAttribute="height" multiplier="1:1" id="x1v-Dy-szP"/>
                                         </constraints>
                                         <state key="normal" backgroundImage="camera" catalog="system"/>
+                                        <connections>
+                                            <segue destination="c5m-7Q-zza" kind="show" id="Dmb-Ax-gRV"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M6K-X7-aCW">
                                         <rect key="frame" x="0.0" y="229.5" width="200" height="199"/>
@@ -38,6 +41,9 @@
                                             <constraint firstAttribute="width" secondItem="M6K-X7-aCW" secondAttribute="height" multiplier="1:1" id="fWg-ee-QKH"/>
                                         </constraints>
                                         <state key="normal" backgroundImage="square.and.pencil" catalog="system"/>
+                                        <connections>
+                                            <segue destination="XGt-24-KbC" kind="show" id="u2O-m3-BKJ"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -63,6 +69,34 @@
             </objects>
             <point key="canvasLocation" x="1068.1159420289855" y="139.95535714285714"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="sYU-ZR-gZV">
+            <objects>
+                <viewController id="c5m-7Q-zza" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ep1-h8-Aqv">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Camera" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c3p-KI-yci">
+                                <rect key="frame" x="123" y="418" width="168" height="60"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="c3p-KI-yci" firstAttribute="centerX" secondItem="ep1-h8-Aqv" secondAttribute="centerX" id="hYx-Q2-1oG"/>
+                            <constraint firstItem="c3p-KI-yci" firstAttribute="centerY" secondItem="ep1-h8-Aqv" secondAttribute="centerY" id="oPM-a7-lZO"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="YE2-xO-AOQ"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="5ic-av-7gQ"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vah-xS-Ugl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2182.608695652174" y="-237.05357142857142"/>
+        </scene>
         <!--Add New-->
         <scene sceneID="5Ud-5a-CfE">
             <objects>
@@ -82,6 +116,69 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nh6-w2-59X" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="157.97101449275362" y="139.95535714285714"/>
+        </scene>
+        <!--New Reminder-->
+        <scene sceneID="GrL-Jp-GN3">
+            <objects>
+                <viewController id="XGt-24-KbC" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Myz-zL-G0a">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vHe-Z8-EPF">
+                                <rect key="frame" x="30" y="118" width="354" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="w7l-OT-kGU">
+                                <rect key="frame" x="30" y="202" width="354" height="350"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Note" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0as-E7-UPx">
+                                        <rect key="frame" x="0.0" y="0.0" width="354" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="iPe-x7-kEz">
+                                        <rect key="frame" x="0.0" y="50" width="354" height="300"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="300" id="O9o-Sn-WWA"/>
+                                        </constraints>
+                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                        <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Te3-AU-nL5">
+                                <rect key="frame" x="40" y="713" width="334" height="30"/>
+                                <state key="normal" title="Add Images"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="w7l-OT-kGU" firstAttribute="leading" secondItem="bYm-WS-mbI" secondAttribute="leading" constant="30" id="1rM-5z-3a4"/>
+                            <constraint firstItem="bYm-WS-mbI" firstAttribute="trailing" secondItem="w7l-OT-kGU" secondAttribute="trailing" constant="30" id="6dM-BH-oFf"/>
+                            <constraint firstItem="Te3-AU-nL5" firstAttribute="top" relation="greaterThanOrEqual" secondItem="w7l-OT-kGU" secondAttribute="bottom" constant="120" id="7NS-T8-Ybz"/>
+                            <constraint firstItem="vHe-Z8-EPF" firstAttribute="leading" secondItem="bYm-WS-mbI" secondAttribute="leading" constant="30" id="8sm-dh-kvH"/>
+                            <constraint firstItem="bYm-WS-mbI" firstAttribute="trailing" secondItem="vHe-Z8-EPF" secondAttribute="trailing" constant="30" id="JO2-yH-UzR"/>
+                            <constraint firstItem="Te3-AU-nL5" firstAttribute="leading" secondItem="bYm-WS-mbI" secondAttribute="leading" constant="40" id="Riq-d3-h7D"/>
+                            <constraint firstItem="bYm-WS-mbI" firstAttribute="bottom" secondItem="Te3-AU-nL5" secondAttribute="bottom" constant="70" id="c3i-69-g31"/>
+                            <constraint firstItem="bYm-WS-mbI" firstAttribute="trailing" secondItem="Te3-AU-nL5" secondAttribute="trailing" constant="40" id="gIw-bz-vBP"/>
+                            <constraint firstItem="w7l-OT-kGU" firstAttribute="top" secondItem="vHe-Z8-EPF" secondAttribute="bottom" constant="50" id="sC6-rZ-GaP"/>
+                            <constraint firstItem="vHe-Z8-EPF" firstAttribute="top" secondItem="bYm-WS-mbI" secondAttribute="top" constant="30" id="xgE-Mx-9I1"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="bYm-WS-mbI"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="New Reminder" id="ZXO-BX-JGY">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="52f-rV-SA1"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IB3-aC-JcF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2183" y="466"/>
         </scene>
     </scenes>
     <resources>
