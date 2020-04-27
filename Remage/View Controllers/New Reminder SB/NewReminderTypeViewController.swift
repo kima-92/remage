@@ -29,13 +29,18 @@ class NewReminderTypeViewController: UIViewController {
     @IBAction func noteButtonPressed(_ sender: UIButton) {
     }
     
-    /*
+    
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        
+        if segue.identifier == "ShowCameraVCSegue" {
+            guard let cameraVC = segue.destination as? CameraViewController else { return }
+            
+            cameraVC.cdModelController = self.cdModelController
+        }
+        
+        
     }
-    */
+    
 }

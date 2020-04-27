@@ -33,7 +33,7 @@
                                         <state key="normal" backgroundImage="camera" catalog="system"/>
                                         <connections>
                                             <action selector="cameraButtonPressed:" destination="1qf-cw-xvb" eventType="touchUpInside" id="bD9-Qh-5ng"/>
-                                            <segue destination="c5m-7Q-zza" kind="show" id="Dmb-Ax-gRV"/>
+                                            <segue destination="c5m-7Q-zza" kind="show" identifier="ShowCameraVCSegue" id="Dmb-Ax-gRV"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M6K-X7-aCW">

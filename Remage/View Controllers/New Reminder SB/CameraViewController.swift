@@ -9,6 +9,8 @@
 import UIKit
 
 class CameraViewController: UIViewController {
+    
+    var cdModelController: CoreDataModelController?
 
     override func viewDidLoad() {
         super.viewDidLoad()
