@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CoreData
 
 extension Reminder {
     
@@ -17,8 +18,11 @@ extension Reminder {
         return ReminderRepresentation(id: id)
     }
     
-    @discardableResult convenience init(id: String) {
+    @discardableResult convenience init(id: String, context: NSManagedObjectContext) {
+        self.init(context: context)
+        
         self.id = id
     }
     
+    // TODO: - Make an init from the ReminderRepresentation
 }
