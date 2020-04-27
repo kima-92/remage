@@ -7,10 +7,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--New Reminder Type View Controller-->
         <scene sceneID="ACA-hh-CRo">
             <objects>
-                <viewController id="1qf-cw-xvb" sceneMemberID="viewController">
+                <viewController id="1qf-cw-xvb" customClass="NewReminderTypeViewController" customModule="Remage" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vkO-7K-XYw">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -25,7 +25,7 @@
                                 <rect key="frame" x="107" y="293" width="200" height="430"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E9n-Kz-4sl">
-                                        <rect key="frame" x="0.0" y="1.5" width="200" height="198"/>
+                                        <rect key="frame" x="0.0" y="0.5" width="200" height="198"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="200" id="1hg-8V-sf3"/>
                                             <constraint firstAttribute="width" secondItem="E9n-Kz-4sl" secondAttribute="height" multiplier="1:1" id="x1v-Dy-szP"/>
@@ -69,10 +69,10 @@
             </objects>
             <point key="canvasLocation" x="1068.1159420289855" y="139.95535714285714"/>
         </scene>
-        <!--View Controller-->
+        <!--Camera View Controller-->
         <scene sceneID="sYU-ZR-gZV">
             <objects>
-                <viewController id="c5m-7Q-zza" sceneMemberID="viewController">
+                <viewController id="c5m-7Q-zza" customClass="CameraViewController" customModule="Remage" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ep1-h8-Aqv">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -120,7 +120,7 @@
         <!--New Reminder-->
         <scene sceneID="By8-0Q-Ybp">
             <objects>
-                <viewController id="ftG-iM-aUh" sceneMemberID="viewController">
+                <viewController id="ftG-iM-aUh" customClass="NewReminderDetailViewController" customModule="Remage" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eg6-VP-91t">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="900"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
