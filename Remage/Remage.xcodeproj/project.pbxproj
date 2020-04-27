@@ -17,6 +17,8 @@
 		FA1E65D624520DCE00502D95 /* Reminders.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA1E65D524520DCE00502D95 /* Reminders.storyboard */; };
 		FA1E65D824520E1400502D95 /* Alerts.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA1E65D724520E1400502D95 /* Alerts.storyboard */; };
 		FA776B622452191600B897F6 /* Remage.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FA776B602452191600B897F6 /* Remage.xcdatamodeld */; };
+		FA776B6424521C3000B897F6 /* Reminder+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA776B6324521C3000B897F6 /* Reminder+Convenience.swift */; };
+		FA776B6624521C4E00B897F6 /* ReminderRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA776B6524521C4E00B897F6 /* ReminderRepresentation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		FA1E65D524520DCE00502D95 /* Reminders.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Reminders.storyboard; sourceTree = "<group>"; };
 		FA1E65D724520E1400502D95 /* Alerts.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Alerts.storyboard; sourceTree = "<group>"; };
 		FA776B612452191600B897F6 /* Remage.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Remage.xcdatamodel; sourceTree = "<group>"; };
+		FA776B6324521C3000B897F6 /* Reminder+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reminder+Convenience.swift"; sourceTree = "<group>"; };
+		FA776B6524521C4E00B897F6 /* ReminderRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderRepresentation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +107,8 @@
 			isa = PBXGroup;
 			children = (
 				FA776B602452191600B897F6 /* Remage.xcdatamodeld */,
+				FA776B6324521C3000B897F6 /* Reminder+Convenience.swift */,
+				FA776B6524521C4E00B897F6 /* ReminderRepresentation.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -211,8 +217,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA776B622452191600B897F6 /* Remage.xcdatamodeld in Sources */,
+				FA776B6624521C4E00B897F6 /* ReminderRepresentation.swift in Sources */,
 				FA1E65B7245205A200502D95 /* AppDelegate.swift in Sources */,
 				FA1E65B9245205A200502D95 /* SceneDelegate.swift in Sources */,
+				FA776B6424521C3000B897F6 /* Reminder+Convenience.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
