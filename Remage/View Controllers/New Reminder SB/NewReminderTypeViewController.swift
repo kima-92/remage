@@ -34,13 +34,18 @@ class NewReminderTypeViewController: UIViewController {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
+        // Segue to CameraVC
         if segue.identifier == "ShowCameraVCSegue" {
             guard let cameraVC = segue.destination as? CameraViewController else { return }
             
             cameraVC.cdModelController = self.cdModelController
         }
         
-        
+        // Segue to NewReminderDetailVC
+        else if segue.identifier == "ShowNewReminderDetailVCSegue" {
+            guard let newReminderDetailVC = segue.destination as? NewReminderDetailViewController else { return }
+            
+            newReminderDetailVC.cdModelController = self.cdModelController
+        }
     }
-    
 }

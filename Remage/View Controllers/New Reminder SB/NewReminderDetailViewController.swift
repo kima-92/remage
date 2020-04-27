@@ -9,11 +9,12 @@
 import UIKit
 
 class NewReminderDetailViewController: UIViewController {
+    
+    // MARK: - Properties
+    var cdModelController: CoreDataModelController?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
     
 
@@ -26,5 +27,4 @@ class NewReminderDetailViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
 }

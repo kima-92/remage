@@ -44,7 +44,7 @@
                                         <state key="normal" backgroundImage="square.and.pencil" catalog="system"/>
                                         <connections>
                                             <action selector="noteButtonPressed:" destination="1qf-cw-xvb" eventType="touchUpInside" id="QbB-mr-HRr"/>
-                                            <segue destination="ftG-iM-aUh" kind="show" id="F7Y-UV-5wD"/>
+                                            <segue destination="ftG-iM-aUh" kind="show" identifier="ShowNewReminderDetailVCSegue" id="F7Y-UV-5wD"/>
                                         </connections>
                                     </button>
                                 </subviews>

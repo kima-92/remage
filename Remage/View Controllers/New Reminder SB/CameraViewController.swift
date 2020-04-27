@@ -10,15 +10,13 @@ import UIKit
 
 class CameraViewController: UIViewController {
     
+    // MARK: - Properties
     var cdModelController: CoreDataModelController?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
     
-
     /*
     // MARK: - Navigation
 
@@ -28,5 +26,4 @@ class CameraViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
 }
