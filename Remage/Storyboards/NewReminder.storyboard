@@ -32,6 +32,7 @@
                                         </constraints>
                                         <state key="normal" backgroundImage="camera" catalog="system"/>
                                         <connections>
+                                            <action selector="cameraButtonPressed:" destination="1qf-cw-xvb" eventType="touchUpInside" id="bD9-Qh-5ng"/>
                                             <segue destination="c5m-7Q-zza" kind="show" id="Dmb-Ax-gRV"/>
                                         </connections>
                                     </button>
@@ -42,6 +43,7 @@
                                         </constraints>
                                         <state key="normal" backgroundImage="square.and.pencil" catalog="system"/>
                                         <connections>
+                                            <action selector="noteButtonPressed:" destination="1qf-cw-xvb" eventType="touchUpInside" id="QbB-mr-HRr"/>
                                             <segue destination="ftG-iM-aUh" kind="show" id="F7Y-UV-5wD"/>
                                         </connections>
                                     </button>
@@ -64,6 +66,10 @@
                         <viewLayoutGuide key="safeArea" id="8iG-md-wOO"/>
                     </view>
                     <navigationItem key="navigationItem" id="pYe-rz-CUg"/>
+                    <connections>
+                        <outlet property="cameraButton" destination="E9n-Kz-4sl" id="USf-v0-GCo"/>
+                        <outlet property="noteButton" destination="M6K-X7-aCW" id="JKn-Zx-QU7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g7J-bt-HRx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

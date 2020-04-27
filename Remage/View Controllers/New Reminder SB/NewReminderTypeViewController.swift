@@ -9,14 +9,26 @@
 import UIKit
 
 class NewReminderTypeViewController: UIViewController {
-
+    
+    // MARK: - Properties
+    let cdModelController = CoreDataModelController()
+    
+    // MARK: - Outlets
+    @IBOutlet weak var cameraButton: UIButton!
+    @IBOutlet weak var noteButton: UIButton!
+    
+    // MARK: - ViewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
     
-
+    // MARK: - Actions
+    @IBAction func cameraButtonPressed(_ sender: UIButton) {
+    }
+    
+    @IBAction func noteButtonPressed(_ sender: UIButton) {
+    }
+    
     /*
     // MARK: - Navigation
 
@@ -26,5 +38,4 @@ class NewReminderTypeViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
 }

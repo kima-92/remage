@@ -23,6 +23,7 @@
 		FA776B6B2457465E00B897F6 /* NewReminderTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA776B6A2457465E00B897F6 /* NewReminderTypeViewController.swift */; };
 		FA776B6D2457467900B897F6 /* NewReminderDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA776B6C2457467900B897F6 /* NewReminderDetailViewController.swift */; };
 		FA776B6F2457468800B897F6 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA776B6E2457468800B897F6 /* CameraViewController.swift */; };
+		FA776B712457489D00B897F6 /* CoreDataModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA776B702457489D00B897F6 /* CoreDataModelController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		FA776B6A2457465E00B897F6 /* NewReminderTypeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewReminderTypeViewController.swift; sourceTree = "<group>"; };
 		FA776B6C2457467900B897F6 /* NewReminderDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewReminderDetailViewController.swift; sourceTree = "<group>"; };
 		FA776B6E2457468800B897F6 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		FA776B702457489D00B897F6 /* CoreDataModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataModelController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +142,7 @@
 		FA1E65CF2452089D00502D95 /* Model Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				FA776B702457489D00B897F6 /* CoreDataModelController.swift */,
 			);
 			path = "Model Controllers";
 			sourceTree = "<group>";
@@ -236,6 +239,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA776B712457489D00B897F6 /* CoreDataModelController.swift in Sources */,
 				FA776B622452191600B897F6 /* Remage.xcdatamodeld in Sources */,
 				FA776B6624521C4E00B897F6 /* ReminderRepresentation.swift in Sources */,
 				FA776B6D2457467900B897F6 /* NewReminderDetailViewController.swift in Sources */,
