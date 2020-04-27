@@ -15,17 +15,45 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New Reminder" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8uO-tw-cEb">
-                                <rect key="frame" x="51" y="418" width="312" height="60"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" text="Create a New Reminder" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PxR-xJ-1Gh">
+                                <rect key="frame" x="20" y="118" width="374" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="XAk-v5-xF4">
+                                <rect key="frame" x="107" y="293" width="200" height="430"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E9n-Kz-4sl">
+                                        <rect key="frame" x="0.0" y="0.5" width="200" height="198"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="200" id="1hg-8V-sf3"/>
+                                            <constraint firstAttribute="width" secondItem="E9n-Kz-4sl" secondAttribute="height" multiplier="1:1" id="x1v-Dy-szP"/>
+                                        </constraints>
+                                        <state key="normal" backgroundImage="camera" catalog="system"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M6K-X7-aCW">
+                                        <rect key="frame" x="0.0" y="229.5" width="200" height="199"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="M6K-X7-aCW" secondAttribute="height" multiplier="1:1" id="fWg-ee-QKH"/>
+                                        </constraints>
+                                        <state key="normal" backgroundImage="square.and.pencil" catalog="system"/>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="M6K-X7-aCW" firstAttribute="width" secondItem="M6K-X7-aCW" secondAttribute="height" multiplier="1:1" id="PYU-vu-kRR"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="8uO-tw-cEb" firstAttribute="centerY" secondItem="vkO-7K-XYw" secondAttribute="centerY" id="OgU-yn-Nuf"/>
-                            <constraint firstItem="8uO-tw-cEb" firstAttribute="centerX" secondItem="vkO-7K-XYw" secondAttribute="centerX" id="fRJ-Z8-dG6"/>
+                            <constraint firstItem="PxR-xJ-1Gh" firstAttribute="leading" secondItem="8iG-md-wOO" secondAttribute="leading" constant="20" id="4Yr-u9-rTS"/>
+                            <constraint firstItem="PxR-xJ-1Gh" firstAttribute="top" secondItem="8iG-md-wOO" secondAttribute="top" constant="30" id="CRE-ch-Wfe"/>
+                            <constraint firstItem="8iG-md-wOO" firstAttribute="bottom" secondItem="XAk-v5-xF4" secondAttribute="bottom" constant="90" id="R5N-wP-W0K"/>
+                            <constraint firstItem="8iG-md-wOO" firstAttribute="trailing" secondItem="PxR-xJ-1Gh" secondAttribute="trailing" constant="20" id="Uqb-UH-S6O"/>
+                            <constraint firstItem="XAk-v5-xF4" firstAttribute="top" relation="greaterThanOrEqual" secondItem="PxR-xJ-1Gh" secondAttribute="bottom" constant="100" id="ZKu-yY-kGd"/>
+                            <constraint firstItem="XAk-v5-xF4" firstAttribute="leading" secondItem="8iG-md-wOO" secondAttribute="leading" constant="107" id="grV-dc-5iv"/>
+                            <constraint firstItem="8iG-md-wOO" firstAttribute="trailing" secondItem="XAk-v5-xF4" secondAttribute="trailing" constant="107" id="msP-Kf-qLZ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="8iG-md-wOO"/>
                     </view>
@@ -57,6 +85,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="camera" catalog="system" width="128" height="96"/>
         <image name="plus" catalog="system" width="128" height="113"/>
+        <image name="square.and.pencil" catalog="system" width="128" height="118"/>
     </resources>
 </document>

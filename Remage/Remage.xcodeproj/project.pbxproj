@@ -101,6 +101,7 @@
 		FA1E65CB245207E100502D95 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				FA776B692457332500B897F6 /* New Reminder SB */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -142,6 +143,13 @@
 			children = (
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		FA776B692457332500B897F6 /* New Reminder SB */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Reminder SB";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
