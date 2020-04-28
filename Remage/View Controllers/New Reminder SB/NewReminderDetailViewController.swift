@@ -41,6 +41,8 @@ class NewReminderDetailViewController: UIViewController {
         saveNewReminder()
     }
     
+    // MARK: - Methods
+    
     // Capture details to save a new Reminder
     func saveNewReminder() {
         // TODO: - The reminder should be able to save if it has either a titile, a note or a default image
@@ -61,11 +63,24 @@ class NewReminderDetailViewController: UIViewController {
             // Save reminder in Core Data
             CoreDataStack.shared.save(context: CoreDataStack.shared.mainContext)
             
+            // Alert user the reminder is saved and pop back to root VC
+            showReminderCreatedSuccessfullyAlert()
         }
         else {
             // Alert user that the Reminder is empty
             showMissingAlertDetails()
         }
+    }
+    
+    // Alert the user the new Reminder has been saved
+    func showReminderCreatedSuccessfullyAlert() {
+        let alert = UIAlertController(title: "Done!", message: "Reminder saved Successfully", preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "Go Back", style: .default, handler: { action in
+            self.navigationController?.popToRootViewController(animated: true)
+        }))
+        
+        self.present(alert, animated: true)
     }
     
     // Alert for empty Reminder before saving
