@@ -7,10 +7,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--New Reminder Type View Controller-->
         <scene sceneID="ACA-hh-CRo">
             <objects>
-                <viewController id="1qf-cw-xvb" sceneMemberID="viewController">
+                <viewController id="1qf-cw-xvb" customClass="NewReminderTypeViewController" customModule="Remage" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vkO-7K-XYw">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -25,14 +25,15 @@
                                 <rect key="frame" x="107" y="293" width="200" height="430"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E9n-Kz-4sl">
-                                        <rect key="frame" x="0.0" y="1.5" width="200" height="198"/>
+                                        <rect key="frame" x="0.0" y="0.5" width="200" height="198"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="200" id="1hg-8V-sf3"/>
                                             <constraint firstAttribute="width" secondItem="E9n-Kz-4sl" secondAttribute="height" multiplier="1:1" id="x1v-Dy-szP"/>
                                         </constraints>
                                         <state key="normal" backgroundImage="camera" catalog="system"/>
                                         <connections>
-                                            <segue destination="c5m-7Q-zza" kind="show" id="Dmb-Ax-gRV"/>
+                                            <action selector="cameraButtonPressed:" destination="1qf-cw-xvb" eventType="touchUpInside" id="bD9-Qh-5ng"/>
+                                            <segue destination="c5m-7Q-zza" kind="show" identifier="ShowCameraVCSegue" id="Dmb-Ax-gRV"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M6K-X7-aCW">
@@ -42,7 +43,8 @@
                                         </constraints>
                                         <state key="normal" backgroundImage="square.and.pencil" catalog="system"/>
                                         <connections>
-                                            <segue destination="ftG-iM-aUh" kind="show" id="F7Y-UV-5wD"/>
+                                            <action selector="noteButtonPressed:" destination="1qf-cw-xvb" eventType="touchUpInside" id="QbB-mr-HRr"/>
+                                            <segue destination="ftG-iM-aUh" kind="show" identifier="ShowNewReminderDetailVCSegue" id="F7Y-UV-5wD"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -64,15 +66,19 @@
                         <viewLayoutGuide key="safeArea" id="8iG-md-wOO"/>
                     </view>
                     <navigationItem key="navigationItem" id="pYe-rz-CUg"/>
+                    <connections>
+                        <outlet property="cameraButton" destination="E9n-Kz-4sl" id="USf-v0-GCo"/>
+                        <outlet property="noteButton" destination="M6K-X7-aCW" id="JKn-Zx-QU7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g7J-bt-HRx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1068.1159420289855" y="139.95535714285714"/>
         </scene>
-        <!--View Controller-->
+        <!--Camera View Controller-->
         <scene sceneID="sYU-ZR-gZV">
             <objects>
-                <viewController id="c5m-7Q-zza" sceneMemberID="viewController">
+                <viewController id="c5m-7Q-zza" customClass="CameraViewController" customModule="Remage" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ep1-h8-Aqv">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -120,16 +126,16 @@
         <!--New Reminder-->
         <scene sceneID="By8-0Q-Ybp">
             <objects>
-                <viewController id="ftG-iM-aUh" sceneMemberID="viewController">
+                <viewController id="ftG-iM-aUh" customClass="NewReminderDetailViewController" customModule="Remage" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eg6-VP-91t">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="900"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="emK-Sz-ufc">
-                                <rect key="frame" x="0.0" y="88" width="414" height="729"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pLg-Pb-e4u">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="729"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vHe-Z8-EPF">
                                                 <rect key="frame" x="30" y="30" width="354" height="34"/>
@@ -159,22 +165,31 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="bGd-gf-wrz">
-                                                <rect key="frame" x="40" y="579" width="334" height="110"/>
+                                                <rect key="frame" x="40" y="575" width="334" height="110"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Te3-AU-nL5">
                                                         <rect key="frame" x="0.0" y="0.0" width="334" height="30"/>
                                                         <color key="backgroundColor" red="1" green="0.3411764706" blue="0.3411764706" alpha="1" colorSpace="calibratedRGB"/>
                                                         <state key="normal" title="Add Images"/>
+                                                        <connections>
+                                                            <action selector="addImagesButtonTapped:" destination="ftG-iM-aUh" eventType="touchUpInside" id="2qq-rf-8ZW"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UP9-Io-cHQ">
                                                         <rect key="frame" x="0.0" y="40" width="334" height="30"/>
                                                         <color key="backgroundColor" red="1" green="0.3411764706" blue="0.3411764706" alpha="1" colorSpace="calibratedRGB"/>
                                                         <state key="normal" title="Set Alert"/>
+                                                        <connections>
+                                                            <action selector="setAlertButtonTapped:" destination="ftG-iM-aUh" eventType="touchUpInside" id="tlH-wo-zjw"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vaM-HF-RkP">
                                                         <rect key="frame" x="0.0" y="80" width="334" height="30"/>
                                                         <color key="backgroundColor" red="1" green="0.3411764706" blue="0.3411764706" alpha="1" colorSpace="calibratedRGB"/>
                                                         <state key="normal" title="Set Due Date"/>
+                                                        <connections>
+                                                            <action selector="setDueDateButtonTapped:" destination="ftG-iM-aUh" eventType="touchUpInside" id="X2p-UJ-XPi"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
@@ -214,9 +229,20 @@
                         <viewLayoutGuide key="safeArea" id="PD4-m2-m3g"/>
                     </view>
                     <navigationItem key="navigationItem" title="New Reminder" id="ZcD-fV-EqL">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="ngK-7k-4Ki"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="ngK-7k-4Ki">
+                            <connections>
+                                <action selector="saveButtonTapped:" destination="ftG-iM-aUh" id="d1I-ZZ-To3"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
-                    <size key="freeformSize" width="414" height="900"/>
+                    <size key="freeformSize" width="414" height="896"/>
+                    <connections>
+                        <outlet property="addImagesButton" destination="Te3-AU-nL5" id="L3K-MO-9Pj"/>
+                        <outlet property="noteTextView" destination="iPe-x7-kEz" id="9lH-hd-8Ue"/>
+                        <outlet property="setAlertButton" destination="UP9-Io-cHQ" id="AqR-XL-bn6"/>
+                        <outlet property="setDueDateButton" destination="vaM-HF-RkP" id="7Hn-K7-aBG"/>
+                        <outlet property="titleTextField" destination="vHe-Z8-EPF" id="szP-xC-Mf2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eSH-0c-vT1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
