@@ -36,6 +36,43 @@ class NewReminderDetailViewController: UIViewController {
     }
     
     @IBAction func saveButtonTapped(_ sender: UIBarButtonItem) {
+        saveNewReminder()
+    }
+    
+    // Capture details to save a new Reminder
+    func saveNewReminder() {
+        // TODO: - The reminder should be able to save if it has either a titile, a note or a default image
+        
+        guard let title = titleTextField.text,
+            let note = noteTextView.text else { return }
+        
+        // If either the Title or the Note are not empty,
+        // save the reminder
+        if !title.isEmpty || !note.isEmpty {
+            
+            // Create new Reminder
+            let reminder = Reminder(id: UUID().uuidString, context: CoreDataStack.shared.mainContext)
+            reminder.title = title
+            reminder.note = note
+            // TODO: - Save the default image to the reminder
+            
+            // Save reminder in Core Data
+            CoreDataStack.shared.save(context: CoreDataStack.shared.mainContext)
+            
+        }
+        else {
+            // Alert user that the Reminder is empty
+            showMissingAlertDetails()
+        }
+    }
+    
+    // Alert for empty Reminder before saving
+    func showMissingAlertDetails() {
+        let alert = UIAlertController(title: "Empty Reminder", message: "Your reminder can't be saved until you enter either a Title or a Note", preferredStyle: .alert)
+        
+        // TODO: - The reminder should be able to save if it has either a titile, a note or a default image
+        
+        self.present(alert, animated: true)
     }
     
     /*
