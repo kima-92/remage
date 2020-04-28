@@ -23,6 +23,8 @@ class NewReminderDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        updateViews()
     }
     
     // MARK: - Actions
@@ -68,11 +70,19 @@ class NewReminderDetailViewController: UIViewController {
     
     // Alert for empty Reminder before saving
     func showMissingAlertDetails() {
-        let alert = UIAlertController(title: "Empty Reminder", message: "Your reminder can't be saved until you enter either a Title or a Note", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Nothing to Save", message: "Your reminder can't be saved until you enter at least a Title or a Note", preferredStyle: .alert)
         
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         // TODO: - The reminder should be able to save if it has either a titile, a note or a default image
         
         self.present(alert, animated: true)
+    }
+    
+    // MARK: - Update Views
+    func updateViews() {
+        
+        // Make sure the noteTextView is empty
+        noteTextView.text = ""
     }
     
     /*
