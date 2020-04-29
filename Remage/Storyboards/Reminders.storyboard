@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="2z4-8i-uoD">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Dca-KL-Xcf">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -42,6 +43,63 @@
             </objects>
             <point key="canvasLocation" x="2018.840579710145" y="91.741071428571431"/>
         </scene>
+        <!--Reminders View Controller-->
+        <scene sceneID="RwV-gO-RAK">
+            <objects>
+                <viewController id="9zV-6a-2vw" customClass="RemindersViewController" customModule="Remage" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="IG7-U3-wms">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="JSR-jW-s61">
+                                <rect key="frame" x="10" y="316" width="394" height="457"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="m8k-QE-PcC">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="testCell" id="e5s-5r-Km8">
+                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="jAV-s3-pos">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Aob-wm-ie0">
+                                <rect key="frame" x="20" y="118" width="374" height="128"/>
+                                <color key="backgroundColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="5yH-jn-kWQ"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Aob-wm-ie0" firstAttribute="top" secondItem="Ieo-VA-LsC" secondAttribute="top" constant="30" id="1Bk-1L-Fqj"/>
+                            <constraint firstItem="Aob-wm-ie0" firstAttribute="leading" secondItem="Ieo-VA-LsC" secondAttribute="leading" constant="20" id="1EZ-d2-4yK"/>
+                            <constraint firstItem="Ieo-VA-LsC" firstAttribute="bottom" secondItem="JSR-jW-s61" secondAttribute="bottom" constant="40" id="Eps-Md-dHp"/>
+                            <constraint firstItem="Ieo-VA-LsC" firstAttribute="trailing" secondItem="Aob-wm-ie0" secondAttribute="trailing" constant="20" id="Gzr-Qg-Zxn"/>
+                            <constraint firstItem="JSR-jW-s61" firstAttribute="top" secondItem="Aob-wm-ie0" secondAttribute="bottom" constant="70" id="H0x-Y9-ThO"/>
+                            <constraint firstItem="JSR-jW-s61" firstAttribute="leading" secondItem="Ieo-VA-LsC" secondAttribute="leading" constant="10" id="IdC-w1-jHZ"/>
+                            <constraint firstItem="Ieo-VA-LsC" firstAttribute="trailing" secondItem="JSR-jW-s61" secondAttribute="trailing" constant="10" id="hhx-tj-RAy"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Ieo-VA-LsC"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="PGb-95-RQp"/>
+                    <connections>
+                        <outlet property="remindersCollectionView" destination="JSR-jW-s61" id="SVv-YL-MEZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gPw-j4-bK3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4050.7246376811599" y="91.741071428571431"/>
+        </scene>
         <!--Reminders-->
         <scene sceneID="ekb-at-ke8">
             <objects>
@@ -61,6 +119,26 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0pZ-Xz-mzh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1108.6956521739132" y="91.741071428571431"/>
+        </scene>
+        <!--Reminders-->
+        <scene sceneID="SDs-FA-hmQ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Dca-KL-Xcf" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Reminders" image="rectangle.3.offgrid" catalog="system" id="0NP-6P-M0N"/>
+                    <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="00W-Dg-xJq">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="9zV-6a-2vw" kind="relationship" relationship="rootViewController" id="j8P-V3-wG0"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DFp-ay-pur" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3140.579710144928" y="91.741071428571431"/>
         </scene>
     </scenes>
     <resources>
