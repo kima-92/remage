@@ -8,41 +8,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Collection View Controller-->
-        <scene sceneID="21T-gG-BiC">
-            <objects>
-                <collectionViewController id="Vpt-XF-KGq" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="XpS-o0-dK7">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="8dW-YD-sSJ">
-                            <size key="itemSize" width="128" height="128"/>
-                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                        </collectionViewFlowLayout>
-                        <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="5k6-GG-8ex">
-                                <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="xXn-1e-xVq">
-                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </collectionViewCellContentView>
-                            </collectionViewCell>
-                        </cells>
-                        <connections>
-                            <outlet property="dataSource" destination="Vpt-XF-KGq" id="WzT-Wb-5b0"/>
-                            <outlet property="delegate" destination="Vpt-XF-KGq" id="bT8-xJ-9Qm"/>
-                        </connections>
-                    </collectionView>
-                    <navigationItem key="navigationItem" id="nRG-Zg-tGi"/>
-                </collectionViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="OQU-Li-Ybn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2018.840579710145" y="91.741071428571431"/>
-        </scene>
         <!--Reminders View Controller-->
         <scene sceneID="RwV-gO-RAK">
             <objects>
@@ -99,26 +64,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gPw-j4-bK3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4050.7246376811599" y="91.741071428571431"/>
-        </scene>
-        <!--Reminders-->
-        <scene sceneID="ekb-at-ke8">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2z4-8i-uoD" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Reminders" image="rectangle.3.offgrid" catalog="system" id="0Fq-Zm-Idr"/>
-                    <toolbarItems/>
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="TNE-DQ-Qe6">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="Vpt-XF-KGq" kind="relationship" relationship="rootViewController" id="kpJ-Rx-uiy"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="0pZ-Xz-mzh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1108.6956521739132" y="91.741071428571431"/>
         </scene>
         <!--Reminders-->
         <scene sceneID="SDs-FA-hmQ">
