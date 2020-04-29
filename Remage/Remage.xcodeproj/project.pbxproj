@@ -18,6 +18,7 @@
 		FA1E65D824520E1400502D95 /* Alerts.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA1E65D724520E1400502D95 /* Alerts.storyboard */; };
 		FA6E1F032459F6CE008AF502 /* TestCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6E1F022459F6CE008AF502 /* TestCollectionViewController.swift */; };
 		FA6E1F052459F9EE008AF502 /* RemindersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6E1F042459F9EE008AF502 /* RemindersViewController.swift */; };
+		FA6E1F072459FCC3008AF502 /* ReminderCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6E1F062459FCC3008AF502 /* ReminderCollectionViewCell.swift */; };
 		FA776B622452191600B897F6 /* Remage.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FA776B602452191600B897F6 /* Remage.xcdatamodeld */; };
 		FA776B6424521C3000B897F6 /* Reminder+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA776B6324521C3000B897F6 /* Reminder+Convenience.swift */; };
 		FA776B6624521C4E00B897F6 /* ReminderRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA776B6524521C4E00B897F6 /* ReminderRepresentation.swift */; };
@@ -42,6 +43,7 @@
 		FA1E65D724520E1400502D95 /* Alerts.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Alerts.storyboard; sourceTree = "<group>"; };
 		FA6E1F022459F6CE008AF502 /* TestCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCollectionViewController.swift; sourceTree = "<group>"; };
 		FA6E1F042459F9EE008AF502 /* RemindersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemindersViewController.swift; sourceTree = "<group>"; };
+		FA6E1F062459FCC3008AF502 /* ReminderCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderCollectionViewCell.swift; sourceTree = "<group>"; };
 		FA776B612452191600B897F6 /* Remage.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Remage.xcdatamodel; sourceTree = "<group>"; };
 		FA776B6324521C3000B897F6 /* Reminder+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reminder+Convenience.swift"; sourceTree = "<group>"; };
 		FA776B6524521C4E00B897F6 /* ReminderRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderRepresentation.swift; sourceTree = "<group>"; };
@@ -140,6 +142,7 @@
 		FA1E65CE245207F900502D95 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				FA6E1F062459FCC3008AF502 /* ReminderCollectionViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -254,6 +257,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA776B712457489D00B897F6 /* CoreDataModelController.swift in Sources */,
+				FA6E1F072459FCC3008AF502 /* ReminderCollectionViewCell.swift in Sources */,
 				FA776B622452191600B897F6 /* Remage.xcdatamodeld in Sources */,
 				FA776B6624521C4E00B897F6 /* ReminderRepresentation.swift in Sources */,
 				FA6E1F032459F6CE008AF502 /* TestCollectionViewController.swift in Sources */,
