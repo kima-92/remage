@@ -91,6 +91,8 @@
                                                         </collectionViewCellContentView>
                                                         <connections>
                                                             <outlet property="insideCellView" destination="BCR-0w-R9C" id="55k-93-NQV"/>
+                                                            <outlet property="thumbnailImageView" destination="vn6-Gw-s3g" id="yZF-2K-tQu"/>
+                                                            <outlet property="titleTextField" destination="xuD-lP-pNR" id="2du-lw-39I"/>
                                                         </connections>
                                                     </collectionViewCell>
                                                 </cells>

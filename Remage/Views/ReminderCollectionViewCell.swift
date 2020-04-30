@@ -10,15 +10,31 @@ import UIKit
 
 class ReminderCollectionViewCell: UICollectionViewCell {
     
+    // MARK: - Properties
     var reminder: Reminder? {
         didSet {
             updateViews()
         }
     }
     
+    // MARK: - Outlets
     @IBOutlet weak var insideCellView: UIView!
+    @IBOutlet weak var thumbnailImageView: UIImageView!
+    @IBOutlet weak var titleTextField: UILabel!
     
+    // MARK: - Methods
     func updateViews() {
+        
+        guard let reminder = reminder else { return }
+        
+        if reminder.title != "" {
+            titleTextField.text = reminder.title
+            
+        } else {
+            titleTextField.text = reminder.description
+        }
+        
+        // Setting the Cell's shawdow
         self.contentView.layer.cornerRadius = 2.0
         self.contentView.layer.borderWidth = 1.0
         self.contentView.layer.borderColor = UIColor.clear.cgColor
@@ -32,5 +48,4 @@ class ReminderCollectionViewCell: UICollectionViewCell {
         
         self.layer.shadowPath = UIBezierPath(roundedRect: self.bounds, cornerRadius: self.contentView.layer.cornerRadius).cgPath
     }
-    
 }
