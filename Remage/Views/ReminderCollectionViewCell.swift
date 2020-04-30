@@ -20,8 +20,7 @@ class ReminderCollectionViewCell: UICollectionViewCell {
     // MARK: - Outlets
     @IBOutlet weak var insideCellView: UIView!
     @IBOutlet weak var thumbnailImageView: UIImageView!
-    @IBOutlet weak var titleTextField: UILabel!
-    
+    @IBOutlet weak var titleLabel: UILabel!
     // MARK: - Methods
     func updateViews() {
         
@@ -29,9 +28,9 @@ class ReminderCollectionViewCell: UICollectionViewCell {
         
         // Display the title or the description of the Reminder
         if reminder.title != "" {
-            titleTextField.text = reminder.title
+            titleLabel.text = reminder.title
         } else {
-            titleTextField.text = reminder.note
+            titleLabel.text = reminder.note
         }
         
         // TODO: - If the reminder has a default image, it
