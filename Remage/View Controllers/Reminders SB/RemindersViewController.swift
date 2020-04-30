@@ -7,12 +7,33 @@
 //
 
 import UIKit
+import CoreData
 
-class RemindersViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+class RemindersViewController: UIViewController {
     
     // MARK: - Properties
     var testReminders = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
-    var cellHeight: CGFloat?
+    
+    var fetchResultsController: NSFetchedResultsController<Reminder> {
+        
+        let fetchRequest: NSFetchRequest<Reminder> = Reminder.fetchRequest()
+        
+        // Sort Reminders by Title
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "title", ascending: true)]
+        
+        let moc = CoreDataStack.shared.mainContext
+        let fetchResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: moc, sectionNameKeyPath: nil, cacheName: nil)
+        
+        fetchResultsController.delegate = self
+        
+        // Try to perform Fetch
+        do {
+            try fetchResultsController.performFetch()
+        } catch {
+            fatalError("Failed to fetch reminder entities: \(error)")
+        }
+        return fetchResultsController
+    }
     
     // MARK: - Outlets
     @IBOutlet weak var remindersCollectionView: UICollectionView!
@@ -25,33 +46,17 @@ class RemindersViewController: UIViewController, UICollectionViewDataSource, UIC
         updateViews()
     }
     
-    // MARK: - CollectionView Methods
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return testReminders.count
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-        guard let testCell = collectionView.dequeueReusableCell(withReuseIdentifier: "reminderCell", for: indexPath) as? ReminderCollectionViewCell else { return UICollectionViewCell() }
-        
-        testCell.backgroundColor = .cyan
-        
-        // Set the height of the collectionView
-        setCollectionViewHeight(cell: testCell )
-
-        return testCell
-    }
     
     // MARK: - Methods
-
+    
     // Setting the height of the remindersCollectionView
     func setCollectionViewHeight(cell: ReminderCollectionViewCell) {
         
         let cellHeight = cell.insideCellView.layer.bounds.height
+        let remindersCount = fetchResultsController.fetchedObjects?.count ?? 0
         
-        let heightCGFloat = CGFloat(testReminders.count / 3)
-        let heightDouble = Double(testReminders.count) / 3
+        let heightCGFloat = CGFloat(remindersCount / 3)
+        let heightDouble = Double(remindersCount) / 3
         
         var roundedCellHeight: CGFloat = 0
         
@@ -74,14 +79,36 @@ class RemindersViewController: UIViewController, UICollectionViewDataSource, UIC
         remindersCollectionView.dataSource = self
         
     }
-
+    
     /*
-    // MARK: - Navigation
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
+}
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+// MARK: - Extension for CollectionView
+extension RemindersViewController: UICollectionViewDataSource, UICollectionViewDelegate, NSFetchedResultsControllerDelegate {
+    
+    // CollectionView Methods
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return fetchResultsController.fetchedObjects?.count ?? 0
     }
-    */
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        guard let reminderCell = collectionView.dequeueReusableCell(withReuseIdentifier: "reminderCell", for: indexPath) as? ReminderCollectionViewCell else { return UICollectionViewCell() }
+        
+        reminderCell.backgroundColor = .cyan
+        
+        // Set the height of the collectionView
+        setCollectionViewHeight(cell: reminderCell )
+        
+        return reminderCell
+    }
 }
