@@ -12,8 +12,6 @@ import CoreData
 class RemindersViewController: UIViewController {
     
     // MARK: - Properties
-    var testReminders = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
-    
     var fetchResultsController: NSFetchedResultsController<Reminder> {
         
         let fetchRequest: NSFetchRequest<Reminder> = Reminder.fetchRequest()
@@ -103,6 +101,8 @@ extension RemindersViewController: UICollectionViewDataSource, UICollectionViewD
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         guard let reminderCell = collectionView.dequeueReusableCell(withReuseIdentifier: "reminderCell", for: indexPath) as? ReminderCollectionViewCell else { return UICollectionViewCell() }
+        
+        reminderCell.reminder = fetchResultsController.object(at: indexPath)
         
         reminderCell.backgroundColor = .cyan
         

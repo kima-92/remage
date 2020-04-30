@@ -10,17 +10,13 @@ import UIKit
 
 class ReminderCollectionViewCell: UICollectionViewCell {
     
-//    var reminder: Reminder? {
-//        didSet {
-//            updateViews()
-//        }
-//    }
+    var reminder: Reminder? {
+        didSet {
+            updateViews()
+        }
+    }
     
     @IBOutlet weak var insideCellView: UIView!
-    
-    override func awakeFromNib() {
-        updateViews()
-    }
     
     func updateViews() {
         self.contentView.layer.cornerRadius = 2.0
