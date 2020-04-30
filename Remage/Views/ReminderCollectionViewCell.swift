@@ -31,7 +31,7 @@ class ReminderCollectionViewCell: UICollectionViewCell {
         if reminder.title != "" {
             titleTextField.text = reminder.title
         } else {
-            titleTextField.text = reminder.description
+            titleTextField.text = reminder.note
         }
         
         // TODO: - If the reminder has a default image, it
