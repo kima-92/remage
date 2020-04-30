@@ -104,8 +104,6 @@ extension RemindersViewController: UICollectionViewDataSource, UICollectionViewD
         
         reminderCell.reminder = fetchResultsController.object(at: indexPath)
         
-        reminderCell.backgroundColor = .cyan
-        
         // Set the height of the collectionView
         setCollectionViewHeight(cell: reminderCell )
         
