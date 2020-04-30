@@ -16,6 +16,8 @@ class ReminderCollectionViewCell: UICollectionViewCell {
 //        }
 //    }
     
+    @IBOutlet weak var insideCellView: UIView!
+    
     override func awakeFromNib() {
         updateViews()
     }

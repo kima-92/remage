@@ -32,6 +32,9 @@
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="JSR-jW-s61">
                                                 <rect key="frame" x="10" y="198" width="394" height="507"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="507" id="DwL-5d-hAP"/>
+                                                </constraints>
                                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="m8k-QE-PcC">
                                                     <size key="itemSize" width="128" height="128"/>
                                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -86,6 +89,9 @@
                                                                 <constraint firstItem="BCR-0w-R9C" firstAttribute="leading" secondItem="jAV-s3-pos" secondAttribute="leading" id="mIW-Rm-0iv"/>
                                                             </constraints>
                                                         </collectionViewCellContentView>
+                                                        <connections>
+                                                            <outlet property="insideCellView" destination="BCR-0w-R9C" id="55k-93-NQV"/>
+                                                        </connections>
                                                     </collectionViewCell>
                                                 </cells>
                                             </collectionView>
@@ -124,6 +130,7 @@
                     <navigationItem key="navigationItem" id="PGb-95-RQp"/>
                     <connections>
                         <outlet property="remindersCollectionView" destination="JSR-jW-s61" id="SVv-YL-MEZ"/>
+                        <outlet property="remindersCollectionViewHeight" destination="DwL-5d-hAP" id="W6n-wb-jBp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gPw-j4-bK3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

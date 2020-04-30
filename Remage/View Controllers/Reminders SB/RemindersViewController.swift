@@ -10,8 +10,13 @@ import UIKit
 
 class RemindersViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
+    // MARK: - Properties
+    var testReminders = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+    var cellHeight: CGFloat?
+    
     // MARK: - Outlets
     @IBOutlet weak var remindersCollectionView: UICollectionView!
+    @IBOutlet weak var remindersCollectionViewHeight: NSLayoutConstraint!
     
     // MARK: - ViewDidload
     override func viewDidLoad() {
@@ -20,16 +25,45 @@ class RemindersViewController: UIViewController, UICollectionViewDataSource, UIC
         updateViews()
     }
     
-    // MARK: - Methods
+    // MARK: - CollectionView Methods
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return testReminders.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let testCell = collectionView.dequeueReusableCell(withReuseIdentifier: "reminderCell", for: indexPath)
+        
+        guard let testCell = collectionView.dequeueReusableCell(withReuseIdentifier: "reminderCell", for: indexPath) as? ReminderCollectionViewCell else { return UICollectionViewCell() }
+        
         testCell.backgroundColor = .cyan
         
+        // Set the height of the collectionView
+        setCollectionViewHeight(cell: testCell )
+
         return testCell
+    }
+    
+    // MARK: - Methods
+
+    // Setting the height of the remindersCollectionView
+    func setCollectionViewHeight(cell: ReminderCollectionViewCell) {
+        
+        let cellHeight = cell.insideCellView.layer.bounds.height
+        
+        let heightCGFloat = CGFloat(testReminders.count / 3)
+        let heightDouble = Double(testReminders.count) / 3
+        
+        var roundedCellHeight: CGFloat = 0
+        
+        // Check if it has a remeinder
+        if heightDouble.truncatingRemainder(dividingBy: 1) == 0 {
+            roundedCellHeight = heightCGFloat
+        } else {
+            roundedCellHeight = (heightCGFloat + 1)
+        }
+        
+        let height = roundedCellHeight * (cellHeight + 10)
+        remindersCollectionViewHeight.constant = height
     }
     
     // Update Views when ViewDidLoad is called
@@ -38,6 +72,7 @@ class RemindersViewController: UIViewController, UICollectionViewDataSource, UIC
         // Set up the remindersCollectionView's delegate and data source
         remindersCollectionView.delegate = self
         remindersCollectionView.dataSource = self
+        
     }
 
     /*
