@@ -12,9 +12,25 @@ class CameraViewController: UIViewController {
     
     // MARK: - Properties
     var cdModelController: CoreDataModelController?
+    
+    // MARK: - Outlets
+    @IBOutlet weak var cameraView: UIView!
+    
+    @IBOutlet weak var captureImageButton: UIButton!
+    @IBOutlet weak var rotateCameraButton: UIButton!
+    @IBOutlet weak var flashButton: UIButton!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    // MARK: - Actions
+    @IBAction func captureImageButtonTapped(_ sender: UIButton) {
+    }
+    @IBAction func rotateCameraButtonTapped(_ sender: UIButton) {
+    }
+    @IBAction func flashButtonTapped(_ sender: UIButton) {
     }
     
     /*

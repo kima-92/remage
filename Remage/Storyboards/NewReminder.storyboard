@@ -90,6 +90,9 @@
                                     <constraint firstAttribute="width" constant="45" id="jqH-sW-HQI"/>
                                 </constraints>
                                 <state key="normal" image="circle" catalog="system"/>
+                                <connections>
+                                    <action selector="captureImageButtonTapped:" destination="c5m-7Q-zza" eventType="touchUpInside" id="rLy-sc-Nmp"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="55b-1n-fF6">
                                 <rect key="frame" x="15" y="98" width="384" height="30"/>
@@ -101,6 +104,9 @@
                                             <constraint firstAttribute="width" secondItem="dzT-zC-ddU" secondAttribute="height" multiplier="1:1" id="bdv-qo-hVH"/>
                                         </constraints>
                                         <state key="normal" image="camera.rotate" catalog="system"/>
+                                        <connections>
+                                            <action selector="rotateCameraButtonTapped:" destination="c5m-7Q-zza" eventType="touchUpInside" id="NKL-nj-n7f"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7F3-pk-Fvz">
                                         <rect key="frame" x="354" y="0.0" width="30" height="30"/>
@@ -109,6 +115,9 @@
                                             <constraint firstAttribute="width" constant="30" id="XX5-pc-BxU"/>
                                         </constraints>
                                         <state key="normal" image="bolt" catalog="system"/>
+                                        <connections>
+                                            <action selector="flashButtonTapped:" destination="c5m-7Q-zza" eventType="touchUpInside" id="uH6-Gz-bbt"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -137,6 +146,12 @@
                         <viewLayoutGuide key="safeArea" id="YE2-xO-AOQ"/>
                     </view>
                     <navigationItem key="navigationItem" id="5ic-av-7gQ"/>
+                    <connections>
+                        <outlet property="cameraView" destination="mjf-Qc-6c6" id="7NT-Xu-Zq3"/>
+                        <outlet property="captureImageButton" destination="Liu-EO-Amv" id="bVA-3u-ybD"/>
+                        <outlet property="flashButton" destination="7F3-pk-Fvz" id="cvT-Yk-a4W"/>
+                        <outlet property="rotateCameraButton" destination="dzT-zC-ddU" id="XJa-92-SKm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vah-xS-Ugl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
