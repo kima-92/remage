@@ -44,6 +44,12 @@ class RemindersViewController: UIViewController {
         updateViews()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        remindersCollectionView.reloadData()
+    }
+    
     
     // MARK: - Methods
     
