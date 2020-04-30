@@ -7,11 +7,17 @@
 //
 
 import UIKit
+import AVFoundation
 
 class CameraViewController: UIViewController {
     
     // MARK: - Properties
     var cdModelController: CoreDataModelController?
+    
+    var captureSession: AVCaptureSession?
+    var videoPreviewLayer: AVCaptureVideoPreviewLayer?
+    var frontCamera = AVCaptureDevice.default(.builtInWideAngleCamera, for: .video, position: .front)
+    var backCamera = AVCaptureDevice.default(.builtInWideAngleCamera, for: .video, position: .back)
     
     // MARK: - Outlets
     @IBOutlet weak var cameraView: UIView!
@@ -23,6 +29,8 @@ class CameraViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        checkIOSVersion()
     }
     
     // MARK: - Actions
@@ -31,6 +39,24 @@ class CameraViewController: UIViewController {
     @IBAction func rotateCameraButtonTapped(_ sender: UIButton) {
     }
     @IBAction func flashButtonTapped(_ sender: UIButton) {
+    }
+    
+    // MARK: - Methods
+    func checkIOSVersion() {
+        if #available(iOS 10.2, *) {
+            let captureDevice = AVCaptureDevice.default(.builtInWideAngleCamera, for: .video, position: .back)
+            
+            do {
+                let input = try AVCaptureDeviceInput(device: captureDevice!)
+                captureSession = AVCaptureSession()
+                captureSession?.addInput(input)
+                videoPreviewLayer = AVCaptureVideoPreviewLayer(session: captureSession!)
+                videoPreviewLayer?.frame = view.layer.bounds
+                captureSession?.startRunning()
+            } catch {
+                NSLog("Could not access Camera due to the iOS Version of the device")
+            }
+        }
     }
     
     /*
