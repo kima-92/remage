@@ -33,7 +33,6 @@ class CameraController {
     func setupCameraPreviewView() {
         
         guard let cameraPreviewView = cameraPreviewView else { return }
-        print("Did setup resolution: 36")
         
         // Full screen camera interface
         cameraPreviewView.videoPlayerView.videoGravity = .resizeAspectFill
@@ -53,7 +52,6 @@ class CameraController {
         // Choose the Resolution
         if captureSession.canSetSessionPreset(.hd1920x1080) {
             captureSession.sessionPreset = .hd1920x1080
-            print("Gave you hd1920x1080")
         }
         
         // BackCamera choosen for Picture

@@ -49,6 +49,7 @@ class CameraViewController: UIViewController {
     // MARK: - Actions
     
     @IBAction func captureImageButtonTapped(_ sender: UIButton) {
+        takePicture()
     }
     @IBAction func rotateCameraButtonTapped(_ sender: UIButton) {
     }
@@ -72,6 +73,25 @@ class CameraViewController: UIViewController {
     private func stopSession() {
         guard let cameraController = cameraController else { return }
         cameraController.stopRunningSession()
+    }
+    
+    private func takePicture() {
+        guard let cameraController = cameraController else { return }
+        
+        let photoSettings = AVCapturePhotoSettings()
+        cameraController.photoOutput.capturePhoto(with: photoSettings, delegate: self)
+    }
+    
+    // MARK: - Navigation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        // Send image to PhotoPreviewVC
+        if segue.identifier == "ShowPhotoPreviewSegue" {
+            
+            guard let photoPreviewVC = segue.destination as? PhotoPreviewViewController else { return }
+            photoPreviewVC.image = image
+        }
     }
 }
 
