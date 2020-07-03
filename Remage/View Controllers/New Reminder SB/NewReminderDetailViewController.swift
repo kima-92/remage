@@ -12,6 +12,7 @@ class NewReminderDetailViewController: UIViewController {
     
     // MARK: - Properties
     var cdModelController: CoreDataModelController?
+    var image: UIImage?
     
     // MARK: - Outlets
     @IBOutlet weak var titleTextField: UITextField!
@@ -20,6 +21,8 @@ class NewReminderDetailViewController: UIViewController {
     @IBOutlet weak var addImagesButton: UIButton!
     @IBOutlet weak var setAlertButton: UIButton!
     @IBOutlet weak var setDueDateButton: UIButton!
+    
+    @IBOutlet weak var imageView: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,14 +53,17 @@ class NewReminderDetailViewController: UIViewController {
         guard let title = titleTextField.text,
             let note = noteTextView.text else { return }
         
+        let newImage = imageView.image
+        
         // If either the Title or the Note are not empty,
         // save the reminder
-        if !title.isEmpty || !note.isEmpty {
+        if !title.isEmpty || !note.isEmpty || newImage != nil {
             
             // Create new Reminder
             let reminder = Reminder(id: UUID().uuidString, context: CoreDataStack.shared.mainContext)
             reminder.title = title
             reminder.note = note
+            reminder.defaultImage = newImage?.pngData()
             // TODO: - Save the default image to the reminder
             
             // Save reminder in Core Data
@@ -85,7 +91,7 @@ class NewReminderDetailViewController: UIViewController {
     
     // Alert for empty Reminder before saving
     func showMissingAlertDetails() {
-        let alert = UIAlertController(title: "Nothing to Save", message: "Your reminder can't be saved until you enter at least a Title or a Note", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Nothing to Save", message: "Your reminder can't be saved until you enter an Image, a Title or a Note", preferredStyle: .alert)
         
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         // TODO: - The reminder should be able to save if it has either a titile, a note or a default image
@@ -98,6 +104,10 @@ class NewReminderDetailViewController: UIViewController {
         
         // Make sure the noteTextView is empty
         noteTextView.text = ""
+        
+        if let image = image {
+            imageView.image = image
+        }
     }
     
     /*
