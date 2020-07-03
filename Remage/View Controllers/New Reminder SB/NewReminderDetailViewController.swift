@@ -50,13 +50,14 @@ class NewReminderDetailViewController: UIViewController {
     func saveNewReminder() {
         // TODO: - The reminder should be able to save if it has either a titile, a note or a default image
         
-        let title = titleTextField.text
-        let note = noteTextView.text
+        guard let title = titleTextField.text,
+            let note = noteTextView.text else { return }
+        
         let newImage = imageView.image
         
         // If either the Title or the Note are not empty,
         // save the reminder
-        if title != nil || note != nil || newImage != nil {
+        if !title.isEmpty || !note.isEmpty || newImage != nil {
             
             // Create new Reminder
             let reminder = Reminder(id: UUID().uuidString, context: CoreDataStack.shared.mainContext)
@@ -90,7 +91,7 @@ class NewReminderDetailViewController: UIViewController {
     
     // Alert for empty Reminder before saving
     func showMissingAlertDetails() {
-        let alert = UIAlertController(title: "Nothing to Save", message: "Your reminder can't be saved until you enter at least a Title or a Note", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Nothing to Save", message: "Your reminder can't be saved until you enter an Image, a Title or a Note", preferredStyle: .alert)
         
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         // TODO: - The reminder should be able to save if it has either a titile, a note or a default image

@@ -49,4 +49,20 @@ class CoreDataModelController {
         }
         return reminder
     }
+    
+    func fetchRemindersFromCoreData() -> [Reminder]? {
+        let moc = CoreDataStack.shared.mainContext
+        
+        // Create a fetch request for fetching reminders
+        let fetchRequest: NSFetchRequest<Reminder> = Reminder.fetchRequest()
+        
+        // Try to fetch
+        do {
+            let reminders = try moc.fetch(fetchRequest)
+            return reminders
+        } catch {
+            NSLog("Couldn't perform fetch for reminders")
+            return nil
+        }
+    }
 }
