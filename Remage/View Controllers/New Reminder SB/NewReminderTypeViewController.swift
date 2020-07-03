@@ -12,6 +12,7 @@ class NewReminderTypeViewController: UIViewController {
     
     // MARK: - Properties
     let cdModelController = CoreDataModelController()
+    let cameraController = CameraController()  // TODO: - Should initiate at initial screen, and pass to this VC
     
     // MARK: - Outlets
     @IBOutlet weak var cameraButton: UIButton!
@@ -38,7 +39,8 @@ class NewReminderTypeViewController: UIViewController {
         if segue.identifier == "ShowCameraVCSegue" {
             guard let cameraVC = segue.destination as? CameraViewController else { return }
             
-            cameraVC.cdModelController = self.cdModelController
+            cameraVC.cdModelController = cdModelController
+            cameraVC.cameraController = cameraController
         }
         
         // Segue to NewReminderDetailVC
