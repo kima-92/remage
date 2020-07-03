@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="TZ0-Je-AfU">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="TZ0-Je-AfU">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -126,7 +126,7 @@
                                     <constraint firstItem="7F3-pk-Fvz" firstAttribute="width" secondItem="7F3-pk-Fvz" secondAttribute="height" multiplier="1:1" id="WV5-ZZ-UjT"/>
                                 </constraints>
                             </stackView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mjf-Qc-6c6">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mjf-Qc-6c6" customClass="CameraPreviewView" customModule="Remage" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </view>
@@ -147,7 +147,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="5ic-av-7gQ"/>
                     <connections>
-                        <outlet property="cameraView" destination="mjf-Qc-6c6" id="7NT-Xu-Zq3"/>
+                        <outlet property="cameraView" destination="mjf-Qc-6c6" id="ZuE-Fc-NsP"/>
                         <outlet property="captureImageButton" destination="Liu-EO-Amv" id="bVA-3u-ybD"/>
                         <outlet property="flashButton" destination="7F3-pk-Fvz" id="cvT-Yk-a4W"/>
                         <outlet property="rotateCameraButton" destination="dzT-zC-ddU" id="XJa-92-SKm"/>
