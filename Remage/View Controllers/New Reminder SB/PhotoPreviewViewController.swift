@@ -25,7 +25,21 @@ class PhotoPreviewViewController: UIViewController {
         updateViews()
     }
     
+    // MARK: - Actions
+    
+    @IBAction func saveButtonTapped(_ sender: UIBarButtonItem) {
+        savePhoto()
+    }
+    
     // MARK: - Methods
+    
+    // Save image in Photo Album
+    private func savePhoto() {
+        guard let image = image else { return }
+        
+        UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
+        navigationController?.popToRootViewController(animated: true)
+    }
     
     private func updateViews() {
         guard let image = image else { return }
