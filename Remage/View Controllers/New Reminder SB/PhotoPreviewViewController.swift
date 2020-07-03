@@ -38,11 +38,24 @@ class PhotoPreviewViewController: UIViewController {
         guard let image = image else { return }
         
         UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
-        navigationController?.popToRootViewController(animated: true)
+        //navigationController?.popToRootViewController(animated: true)
+        performSegue(withIdentifier: "PhotoPreviewToNewReminderDetailSegue", sender: self)
     }
     
     private func updateViews() {
         guard let image = image else { return }
         imageView.image = image
+    }
+    
+    // MARK: - Navigation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        // Send image to PhotoPreviewVC
+        if segue.identifier == "PhotoPreviewToNewReminderDetailSegue" {
+            
+            guard let newReminderDetailVC = segue.destination as? NewReminderDetailViewController else { return }
+            newReminderDetailVC.image = image
+        }
     }
 }
