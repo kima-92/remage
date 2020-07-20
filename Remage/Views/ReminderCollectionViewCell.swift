@@ -33,6 +33,12 @@ class ReminderCollectionViewCell: UICollectionViewCell {
             titleLabel.text = reminder.note
         }
         
+        if let image = reminder.defaultImage {
+            thumbnailImageView.image = UIImage(data: image)
+            thumbnailImageView.contentMode = .scaleAspectFill
+//            thumbnailImageView.image?.imageOrientation = 
+        }
+        
         // TODO: - If the reminder has a default image, it
         // should display that in the thumbnailImageView
         

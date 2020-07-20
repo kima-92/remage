@@ -84,15 +84,20 @@ class RemindersViewController: UIViewController {
         
     }
     
-    /*
      // MARK: - Navigation
      
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
+        
+        // TODO: - Tapping on the cell does not hit prepareFroSegue
+        
+        if segue.identifier == "ShowReminderImageSegue" {
+            guard let reminderPhotoVC = segue.destination as? ReminderPhotoViewController else { return }
+            
+            guard let indexPath = remindersCollectionView.indexPathsForSelectedItems?.first else { return }
+            let reminder = fetchResultsController.object(at: indexPath)
+            reminderPhotoVC.reminder = reminder
+        }
      }
-     */
 }
 
 // MARK: - Extension for CollectionView
