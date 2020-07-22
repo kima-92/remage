@@ -21,8 +21,10 @@ class ReminderCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var insideCellView: UIView!
     @IBOutlet weak var thumbnailImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
+    
     // MARK: - Methods
-    func updateViews() {
+    
+    private func updateViews() {
         
         guard let reminder = reminder else { return }
         
@@ -31,6 +33,12 @@ class ReminderCollectionViewCell: UICollectionViewCell {
             titleLabel.text = reminder.title
         } else {
             titleLabel.text = reminder.note
+        }
+        
+        if let image = reminder.defaultImage {
+            thumbnailImageView.image = UIImage(data: image)
+            thumbnailImageView.contentMode = .scaleAspectFill
+//            thumbnailImageView.image?.imageOrientation = 
         }
         
         // TODO: - If the reminder has a default image, it
@@ -51,5 +59,11 @@ class ReminderCollectionViewCell: UICollectionViewCell {
         self.layer.masksToBounds = false
         
         self.layer.shadowPath = UIBezierPath(roundedRect: thumbnailImageView.bounds, cornerRadius: thumbnailImageView.layer.cornerRadius).cgPath
+    }
+    
+    // Testing that the cell is being tapped
+    override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
+        print(point, event!)
+        return self
     }
 }

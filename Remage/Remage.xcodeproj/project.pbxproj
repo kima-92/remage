@@ -12,6 +12,7 @@
 		FA1C87E524AE44BA00E3A1BA /* CaptureType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1C87E424AE44BA00E3A1BA /* CaptureType.swift */; };
 		FA1C87E724AE454000E3A1BA /* SelectedCamera.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1C87E624AE454000E3A1BA /* SelectedCamera.swift */; };
 		FA1C87E924AF7F8E00E3A1BA /* PhotoPreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1C87E824AF7F8E00E3A1BA /* PhotoPreviewViewController.swift */; };
+		FA1C87EB24AFCA0500E3A1BA /* ReminderPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1C87EA24AFCA0500E3A1BA /* ReminderPhotoViewController.swift */; };
 		FA1E65B7245205A200502D95 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1E65B6245205A200502D95 /* AppDelegate.swift */; };
 		FA1E65B9245205A200502D95 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1E65B8245205A200502D95 /* SceneDelegate.swift */; };
 		FA1E65BE245205A200502D95 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA1E65BC245205A200502D95 /* Main.storyboard */; };
@@ -40,6 +41,7 @@
 		FA1C87E424AE44BA00E3A1BA /* CaptureType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureType.swift; sourceTree = "<group>"; };
 		FA1C87E624AE454000E3A1BA /* SelectedCamera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedCamera.swift; sourceTree = "<group>"; };
 		FA1C87E824AF7F8E00E3A1BA /* PhotoPreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPreviewViewController.swift; sourceTree = "<group>"; };
+		FA1C87EA24AFCA0500E3A1BA /* ReminderPhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderPhotoViewController.swift; sourceTree = "<group>"; };
 		FA1E65B3245205A200502D95 /* Remage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Remage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA1E65B6245205A200502D95 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA1E65B8245205A200502D95 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -181,6 +183,7 @@
 			children = (
 				FA6E1F022459F6CE008AF502 /* TestCollectionViewController.swift */,
 				FA6E1F042459F9EE008AF502 /* RemindersViewController.swift */,
+				FA1C87EA24AFCA0500E3A1BA /* ReminderPhotoViewController.swift */,
 			);
 			path = "Reminders SB";
 			sourceTree = "<group>";
@@ -272,6 +275,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA776B712457489D00B897F6 /* CoreDataModelController.swift in Sources */,
+				FA1C87EB24AFCA0500E3A1BA /* ReminderPhotoViewController.swift in Sources */,
 				FA6E1F072459FCC3008AF502 /* ReminderCollectionViewCell.swift in Sources */,
 				FA1C87E524AE44BA00E3A1BA /* CaptureType.swift in Sources */,
 				FA1C87E324AE3BA700E3A1BA /* CameraPreviewView.swift in Sources */,

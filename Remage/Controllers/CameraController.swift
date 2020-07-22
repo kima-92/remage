@@ -34,11 +34,19 @@ class CameraController {
         
         guard let cameraPreviewView = cameraPreviewView else { return }
         
+        // Set Photo Orientation
+        if UIDevice.current.orientation == .portrait {
+            cameraPreviewView.videoPlayerView.connection?.videoOrientation = .portrait
+        } else if UIDevice.current.orientation == .portraitUpsideDown {
+            cameraPreviewView.videoPlayerView.connection?.videoOrientation = .portraitUpsideDown
+        } else if UIDevice.current.orientation == .landscapeLeft {
+            cameraPreviewView.videoPlayerView.connection?.videoOrientation = .landscapeLeft
+        } else if UIDevice.current.orientation == .landscapeRight {
+            cameraPreviewView.videoPlayerView.connection?.videoOrientation = .landscapeRight
+        }
+        
         // Full screen camera interface
         cameraPreviewView.videoPlayerView.videoGravity = .resizeAspectFill
-        
-        // Set layer to be on portrait orientation
-        cameraPreviewView.videoPlayerView.connection?.videoOrientation = .portrait
     }
     
     // Setup Capture Session
@@ -175,7 +183,7 @@ class CameraController {
     }
     
     // Best microphone for this device
-    private func setbBestMicrophone() {
+    private func setBestMicrophone() {
         
         // If there's an audio device, set it as the microphone
         if let device = AVCaptureDevice.default(for: .audio) {
