@@ -50,7 +50,6 @@ class RemindersViewController: UIViewController {
         remindersCollectionView.reloadData()
     }
     
-    
     // MARK: - Methods
     
     // Setting the height of the remindersCollectionView
@@ -76,7 +75,7 @@ class RemindersViewController: UIViewController {
     }
     
     // Update Views when ViewDidLoad is called
-    func updateViews() {
+    private func updateViews() {
         
         // Set up the remindersCollectionView's delegate and data source
         remindersCollectionView.delegate = self
@@ -90,10 +89,14 @@ class RemindersViewController: UIViewController {
         
         // TODO: - Tapping on the cell does not hit prepareFroSegue
         
-        if segue.identifier == "ShowReminderImageSegue" {
-            guard let reminderPhotoVC = segue.destination as? ReminderPhotoViewController else { return }
+        if segue.identifier == "SegueFromVCTOVC" || segue.identifier == "ShowReminderImageSegue" {
+
+            let cell = sender as? UICollectionViewCell
             
-            guard let indexPath = remindersCollectionView.indexPathsForSelectedItems?.first else { return }
+            guard let reminderPhotoVC = segue.destination as? ReminderPhotoViewController,
+                    let indexPath = remindersCollectionView.indexPathsForSelectedItems?.first
+                    else { return }
+            
             let reminder = fetchResultsController.object(at: indexPath)
             reminderPhotoVC.reminder = reminder
         }
@@ -101,7 +104,7 @@ class RemindersViewController: UIViewController {
 }
 
 // MARK: - Extension for CollectionView
-extension RemindersViewController: UICollectionViewDataSource, UICollectionViewDelegate, NSFetchedResultsControllerDelegate {
+extension RemindersViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, NSFetchedResultsControllerDelegate {
     
     // CollectionView Methods
     
@@ -119,5 +122,12 @@ extension RemindersViewController: UICollectionViewDataSource, UICollectionViewD
         setCollectionViewHeight(cell: reminderCell )
         
         return reminderCell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        if indexPath.item == indexPath.item {
+            performSegue(withIdentifier: "SegueFromVCTOVC", sender: self)
+        }
     }
 }

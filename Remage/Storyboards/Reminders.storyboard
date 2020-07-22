@@ -42,14 +42,14 @@
                                                     <inset key="sectionInset" minX="5" minY="5" maxX="5" maxY="5"/>
                                                 </collectionViewFlowLayout>
                                                 <cells>
-                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="reminderCell" id="e5s-5r-Km8" customClass="ReminderCollectionViewCell" customModule="Remage" customModuleProvider="target">
+                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" contentMode="center" reuseIdentifier="reminderCell" id="e5s-5r-Km8" customClass="ReminderCollectionViewCell" customModule="Remage" customModuleProvider="target">
                                                         <rect key="frame" x="5" y="5" width="100" height="135"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="jAV-s3-pos" customClass="ReminderCollectionViewCell" customModule="Remage" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="0.0" width="100" height="135"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <subviews>
-                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BCR-0w-R9C">
+                                                                <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BCR-0w-R9C">
                                                                     <rect key="frame" x="0.0" y="0.0" width="100" height="135"/>
                                                                     <subviews>
                                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="WAf-b4-PpO">
@@ -133,12 +133,58 @@
                     <connections>
                         <outlet property="remindersCollectionView" destination="JSR-jW-s61" id="SVv-YL-MEZ"/>
                         <outlet property="remindersCollectionViewHeight" destination="DwL-5d-hAP" id="W6n-wb-jBp"/>
-                        <segue destination="Xuo-Ke-zLW" kind="show" identifier="ShowReminderImageSegue" id="NQP-Aq-Nex"/>
+                        <segue destination="Xuo-Ke-zLW" kind="show" identifier="SegueFromVCTOVC" id="bXX-fa-Hft"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gPw-j4-bK3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4050.7246376811599" y="91.741071428571431"/>
+        </scene>
+        <!--Collection View Controller-->
+        <scene sceneID="JKT-6m-weH">
+            <objects>
+                <collectionViewController id="2z5-UR-uvP" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="6Zf-qV-1xe">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Ijd-7b-i3Y">
+                            <size key="itemSize" width="128" height="128"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <view key="backgroundView" contentMode="scaleToFill" id="HL7-96-YVC">
+                            <rect key="frame" x="0.0" y="-44" width="414" height="896"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KGK-QC-7cS">
+                                    <rect key="frame" x="121" y="0.0" width="240" height="128"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                </view>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        </view>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Qwl-wB-GC6">
+                                <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="tIN-ER-cpK">
+                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </collectionViewCellContentView>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="2z5-UR-uvP" id="YQe-V5-VbD"/>
+                            <outlet property="delegate" destination="2z5-UR-uvP" id="fsO-sM-xpL"/>
+                        </connections>
+                    </collectionView>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="H7L-iu-YuL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4051" y="769"/>
         </scene>
         <!--Reminder Photo View Controller-->
         <scene sceneID="kTE-cT-J0c">
@@ -203,7 +249,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="NQP-Aq-Nex"/>
+        <segue reference="12m-o5-1ri"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="rectangle.3.offgrid" catalog="system" width="128" height="80"/>
