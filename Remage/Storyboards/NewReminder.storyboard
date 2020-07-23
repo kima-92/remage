@@ -264,7 +264,7 @@
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="bGd-gf-wrz">
-                                                        <rect key="frame" x="23" y="310" width="338" height="110"/>
+                                                        <rect key="frame" x="23" y="350" width="338" height="70"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Te3-AU-nL5">
                                                                 <rect key="frame" x="0.0" y="0.0" width="338" height="30"/>
@@ -280,14 +280,6 @@
                                                                 <state key="normal" title="Set Alert"/>
                                                                 <connections>
                                                                     <action selector="setAlertButtonTapped:" destination="ftG-iM-aUh" eventType="touchUpInside" id="tlH-wo-zjw"/>
-                                                                </connections>
-                                                            </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vaM-HF-RkP">
-                                                                <rect key="frame" x="0.0" y="80" width="338" height="30"/>
-                                                                <color key="backgroundColor" red="1" green="0.3411764706" blue="0.3411764706" alpha="1" colorSpace="calibratedRGB"/>
-                                                                <state key="normal" title="Set Due Date"/>
-                                                                <connections>
-                                                                    <action selector="setDueDateButtonTapped:" destination="ftG-iM-aUh" eventType="touchUpInside" id="X2p-UJ-XPi"/>
                                                                 </connections>
                                                             </button>
                                                         </subviews>
@@ -390,7 +382,6 @@
                         <outlet property="imageView" destination="F0E-0Z-mSK" id="1Ny-9Y-qVe"/>
                         <outlet property="noteTextView" destination="iPe-x7-kEz" id="9lH-hd-8Ue"/>
                         <outlet property="setAlertButton" destination="UP9-Io-cHQ" id="AqR-XL-bn6"/>
-                        <outlet property="setDueDateButton" destination="vaM-HF-RkP" id="7Hn-K7-aBG"/>
                         <outlet property="timePickerTextField" destination="ajN-R7-TAH" id="JZS-be-eu3"/>
                         <outlet property="titleTextField" destination="vHe-Z8-EPF" id="szP-xC-Mf2"/>
                     </connections>

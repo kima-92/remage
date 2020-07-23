@@ -43,9 +43,6 @@ class NewReminderDetailViewController: UIViewController {
     @IBAction func setAlertButtonTapped(_ sender: UIButton) {
     }
     
-    @IBAction func setDueDateButtonTapped(_ sender: UIButton) {
-    }
-    
     @IBAction func saveButtonTapped(_ sender: UIBarButtonItem) {
         saveNewReminder()
     }
