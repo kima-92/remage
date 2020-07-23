@@ -14,6 +14,8 @@ class NewReminderDetailViewController: UIViewController {
     var cdModelController: CoreDataModelController?
     var image: UIImage?
     
+    let datePicker = UIDatePicker()
+    
     // MARK: - Outlets
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var noteTextView: UITextView!
@@ -23,6 +25,8 @@ class NewReminderDetailViewController: UIViewController {
     @IBOutlet weak var setDueDateButton: UIButton!
     
     @IBOutlet weak var imageView: UIImageView!
+    
+    @IBOutlet weak var datePickerTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,6 +49,27 @@ class NewReminderDetailViewController: UIViewController {
     }
     
     // MARK: - Methods
+    
+    private func createDatePicker() {
+        
+        // Create the top tool bar
+        let toolbar = UIToolbar()
+        toolbar.sizeToFit()
+        
+        // Bar Buttons
+        let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: nil)
+        
+        // Add buttons to the toolbar
+        toolbar.setItems([doneButton], animated: true)
+        
+        // Assign toolbar keyboard as the input for the TextField
+        datePickerTextField.inputAccessoryView = toolbar
+        
+        // Assign the datePicker to the textField
+        datePickerTextField.inputView = datePicker
+        
+        
+    }
     
     // Capture details to save a new Reminder
     func saveNewReminder() {
@@ -108,6 +133,8 @@ class NewReminderDetailViewController: UIViewController {
         if let image = image {
             imageView.image = image
         }
+        
+        createDatePicker()
     }
     
     /*
