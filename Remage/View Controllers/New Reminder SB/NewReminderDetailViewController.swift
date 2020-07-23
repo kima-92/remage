@@ -23,7 +23,7 @@ class NewReminderDetailViewController: UIViewController {
     // MARK: - Outlets
     
     @IBOutlet weak var titleTextField: UITextField!
-    @IBOutlet weak var noteTextView: UITextView!
+    @IBOutlet weak var descriptionTextField: UITextField!
     
     @IBOutlet weak var addImagesButton: UIButton!
     
@@ -190,18 +190,18 @@ class NewReminderDetailViewController: UIViewController {
         // TODO: - The reminder should be able to save if it has either a titile, a note or a default image
         
         guard let title = titleTextField.text,
-            let note = noteTextView.text else { return }
+            let descriptionTxt = descriptionTextField.text else { return }
         
         let newImage = imageView.image
         
         // If either the Title or the Note are not empty,
         // save the reminder
-        if !title.isEmpty || !note.isEmpty || newImage != nil {
+        if !title.isEmpty || !descriptionTxt.isEmpty || newImage != nil {
             
             // Create new Reminder
             let reminder = Reminder(id: UUID().uuidString, context: CoreDataStack.shared.mainContext)
             reminder.title = title
-            reminder.note = note
+            reminder.note = descriptionTxt
             reminder.defaultImage = newImage?.pngData()
             // TODO: - Save the default image to the reminder
             
@@ -241,21 +241,19 @@ class NewReminderDetailViewController: UIViewController {
     // MARK: - Update Views
     private func updateViews() {
         
-        // Make sure the noteTextView is empty
-        noteTextView.text = ""
-        
         // Show image if the Reminder has one
         if let image = image {
             imageView.image = image
             imageView.contentMode = .scaleAspectFit
         }
         
+        // Round corners
         imageView.layer.cornerRadius = 20
         addImagesButton.layer.cornerRadius = 15
         
         // TextFields Background colors
         titleTextField.backgroundColor = UIColor(displayP3Red: 255/255, green: 255/255, blue: 255/255, alpha: 0.3)
-        noteTextView.backgroundColor = UIColor(displayP3Red: 255/255, green: 255/255, blue: 255/255, alpha: 0.3)
+        descriptionTextField.backgroundColor = UIColor(displayP3Red: 255/255, green: 255/255, blue: 255/255, alpha: 0.3)
         datePickerTextField.backgroundColor = UIColor(displayP3Red: 255/255, green: 255/255, blue: 255/255, alpha: 0.3)
         timePickerTextField.backgroundColor = UIColor(displayP3Red: 255/255, green: 255/255, blue: 255/255, alpha: 0.3)
         
