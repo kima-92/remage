@@ -264,7 +264,7 @@
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="bGd-gf-wrz">
-                                                        <rect key="frame" x="23" y="350" width="338" height="70"/>
+                                                        <rect key="frame" x="23" y="390" width="338" height="30"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Te3-AU-nL5">
                                                                 <rect key="frame" x="0.0" y="0.0" width="338" height="30"/>
@@ -272,14 +272,6 @@
                                                                 <state key="normal" title="Add Images"/>
                                                                 <connections>
                                                                     <action selector="addImagesButtonTapped:" destination="ftG-iM-aUh" eventType="touchUpInside" id="2qq-rf-8ZW"/>
-                                                                </connections>
-                                                            </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UP9-Io-cHQ">
-                                                                <rect key="frame" x="0.0" y="40" width="338" height="30"/>
-                                                                <color key="backgroundColor" red="1" green="0.3411764706" blue="0.3411764706" alpha="1" colorSpace="calibratedRGB"/>
-                                                                <state key="normal" title="Set Alert"/>
-                                                                <connections>
-                                                                    <action selector="setAlertButtonTapped:" destination="ftG-iM-aUh" eventType="touchUpInside" id="tlH-wo-zjw"/>
                                                                 </connections>
                                                             </button>
                                                         </subviews>
@@ -403,7 +395,6 @@
                         <outlet property="datePickerTextField" destination="uZh-rn-nTH" id="bxl-19-5YC"/>
                         <outlet property="imageView" destination="F0E-0Z-mSK" id="1Ny-9Y-qVe"/>
                         <outlet property="noteTextView" destination="iPe-x7-kEz" id="9lH-hd-8Ue"/>
-                        <outlet property="setAlertButton" destination="UP9-Io-cHQ" id="AqR-XL-bn6"/>
                         <outlet property="timePickerTextField" destination="ajN-R7-TAH" id="JZS-be-eu3"/>
                         <outlet property="titleTextField" destination="vHe-Z8-EPF" id="szP-xC-Mf2"/>
                     </connections>

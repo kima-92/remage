@@ -26,7 +26,6 @@ class NewReminderDetailViewController: UIViewController {
     @IBOutlet weak var noteTextView: UITextView!
     
     @IBOutlet weak var addImagesButton: UIButton!
-    @IBOutlet weak var setAlertButton: UIButton!
     
     @IBOutlet weak var imageView: UIImageView!
     
@@ -46,9 +45,6 @@ class NewReminderDetailViewController: UIViewController {
     
     @IBAction func addImagesButtonTapped(_ sender: UIButton) {
         showCameraOrLibraryActionSheet()
-    }
-    
-    @IBAction func setAlertButtonTapped(_ sender: UIButton) {
     }
     
     @IBAction func saveButtonTapped(_ sender: UIBarButtonItem) {
@@ -158,7 +154,6 @@ class NewReminderDetailViewController: UIViewController {
         }
         
         let photoLibrary = UIAlertAction(title: "Photo Library", style: .default) { action in
-            
             self.chooseImageFromLibrary()
         }
         
@@ -171,6 +166,7 @@ class NewReminderDetailViewController: UIViewController {
         present(actionSheet, animated: true, completion: nil)
     }
     
+    // Get Image from PhotoLibrary
     private func chooseImageFromLibrary() {
         
         // Set to Pick from PhotoLibrary
@@ -223,22 +219,23 @@ class NewReminderDetailViewController: UIViewController {
         self.present(alert, animated: true)
     }
     
-    // Alert for empty Reminder before saving
+    // Can't save empty Reminder Alert
     func showMissingAlertDetails() {
         let alert = UIAlertController(title: "Nothing to Save", message: "Your reminder can't be saved until you enter an Image, a Title or a Note", preferredStyle: .alert)
         
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-        // TODO: - The reminder should be able to save if it has either a titile, a note or a default image
+        // TODO: - The reminder should be able to save if it has either a title, a note or a default image
         
         self.present(alert, animated: true)
     }
     
     // MARK: - Update Views
-    func updateViews() {
+    private func updateViews() {
         
         // Make sure the noteTextView is empty
         noteTextView.text = ""
         
+        // Show image if the Reminder has one
         if let image = image {
             imageView.image = image
         }
@@ -249,18 +246,9 @@ class NewReminderDetailViewController: UIViewController {
         
         imagePicker.delegate = self
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 }
 
+// ImagePicker Delegate Protocols
 extension NewReminderDetailViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     // Try to get image
