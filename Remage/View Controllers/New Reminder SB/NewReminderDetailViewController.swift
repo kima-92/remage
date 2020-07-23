@@ -15,6 +15,7 @@ class NewReminderDetailViewController: UIViewController {
     var image: UIImage?
     
     let datePicker = UIDatePicker()
+    let timePicker = UIDatePicker()
     
     // MARK: - Outlets
     @IBOutlet weak var titleTextField: UITextField!
@@ -27,6 +28,7 @@ class NewReminderDetailViewController: UIViewController {
     @IBOutlet weak var imageView: UIImageView!
     
     @IBOutlet weak var datePickerTextField: UITextField!
+    @IBOutlet weak var timePickerTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,14 +52,15 @@ class NewReminderDetailViewController: UIViewController {
     
     // MARK: - Methods
     
+    // Date Picker
     private func createDatePicker() {
         
-        // Create the top tool bar
+        // Create the top tool bar on keyboard
         let toolbar = UIToolbar()
         toolbar.sizeToFit()
         
         // Bar Buttons
-        let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(doneBarButtonPressed))
+        let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(dateDoneBarButtonPressed))
         
         // Add buttons to the toolbar
         toolbar.setItems([doneButton], animated: true)
@@ -70,17 +73,39 @@ class NewReminderDetailViewController: UIViewController {
         
         // Set date as datePicker's mode
         datePicker.datePickerMode = .date
-        
     }
     
-    @objc private func doneBarButtonPressed() {
+    // Time Picker
+    private func createTimePicker() {
         
-        // Setup a DateFormatter
+        // Create the top tool bar on keyboard
+        let toolbar = UIToolbar()
+        toolbar.sizeToFit()
         
+        // Bar Buttons
+        let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(timeDoneBarButtonPressed))
+        
+        // Add buttons to the toolbar
+        toolbar.setItems([doneButton], animated: true)
+        
+        // Assign toolbar keyboard as the input for the TextField
+        timePickerTextField.inputAccessoryView = toolbar
+        
+        // Assign the timePicker to the textField
+        timePickerTextField.inputView = timePicker
+        
+        // Set time as datePicker's mode
+        timePicker.datePickerMode = .time
+    }
+    
+    // Date Done Button
+    @objc private func dateDoneBarButtonPressed() {
+        
+        // DateFormatter
         let formatter = DateFormatter()
         // Date Style
         formatter.dateStyle = .medium
-        // don't need to display time
+        // Don't need to display time
         formatter.timeStyle = .none
         
         // Get date as string from Picker using the formatter
@@ -88,6 +113,26 @@ class NewReminderDetailViewController: UIViewController {
         
         // Add formatted date to textField
         datePickerTextField.text = dateString
+        
+        // End editing
+        self.view.endEditing(true)
+    }
+    
+    // Time Done Button
+    @objc private func timeDoneBarButtonPressed() {
+        
+        // DateFormatter
+        let formatter = DateFormatter()
+        // Don't need to display time
+        formatter.dateStyle = .none
+        // Time Style
+        formatter.timeStyle = .short
+        
+        // Get time as string from Picker using the formatter
+        let timeString = formatter.string(from: timePicker.date)
+        
+        // Add formatted time to textField
+        timePickerTextField.text = timeString
         
         // End editing
         self.view.endEditing(true)
@@ -157,6 +202,7 @@ class NewReminderDetailViewController: UIViewController {
         }
         
         createDatePicker()
+        createTimePicker()
     }
     
     /*

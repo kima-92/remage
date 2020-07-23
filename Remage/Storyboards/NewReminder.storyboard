@@ -308,16 +308,35 @@
                                                             </textField>
                                                         </subviews>
                                                     </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="4Zi-Xa-yTU">
+                                                        <rect key="frame" x="20" y="134.5" width="344" height="34"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Set time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tTV-F4-6QM">
+                                                                <rect key="frame" x="0.0" y="0.0" width="63.5" height="34"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ajN-R7-TAH">
+                                                                <rect key="frame" x="73.5" y="0.0" width="270.5" height="34"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <textInputTraits key="textInputTraits"/>
+                                                            </textField>
+                                                        </subviews>
+                                                    </stackView>
                                                 </subviews>
                                                 <color key="backgroundColor" red="0.32369780539999998" green="0.1063579395" blue="0.574860394" alpha="0.15384203767123289" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="bottom" secondItem="bGd-gf-wrz" secondAttribute="bottom" constant="20" id="0MW-Vd-msB"/>
                                                     <constraint firstItem="w7l-OT-kGU" firstAttribute="top" secondItem="7pM-Yd-zE8" secondAttribute="top" constant="20" id="BBt-0R-5VL"/>
+                                                    <constraint firstItem="4Zi-Xa-yTU" firstAttribute="leading" secondItem="7pM-Yd-zE8" secondAttribute="leading" constant="20" id="RR5-Dw-mkJ"/>
+                                                    <constraint firstItem="4Zi-Xa-yTU" firstAttribute="top" secondItem="KNS-2t-IdW" secondAttribute="bottom" constant="30" id="USf-MM-lEO"/>
                                                     <constraint firstAttribute="trailing" secondItem="KNS-2t-IdW" secondAttribute="trailing" constant="20" id="c6N-IC-O4w"/>
                                                     <constraint firstItem="w7l-OT-kGU" firstAttribute="leading" secondItem="7pM-Yd-zE8" secondAttribute="leading" constant="20" id="cog-rN-mgX"/>
                                                     <constraint firstItem="KNS-2t-IdW" firstAttribute="leading" secondItem="7pM-Yd-zE8" secondAttribute="leading" constant="20" id="dsM-vh-yhh"/>
                                                     <constraint firstItem="bGd-gf-wrz" firstAttribute="leading" secondItem="7pM-Yd-zE8" secondAttribute="leading" constant="23" id="eRx-6G-iYN"/>
                                                     <constraint firstAttribute="trailing" secondItem="w7l-OT-kGU" secondAttribute="trailing" constant="20" id="esf-tp-vv1"/>
+                                                    <constraint firstAttribute="trailing" secondItem="4Zi-Xa-yTU" secondAttribute="trailing" constant="20" id="pHl-1N-bhM"/>
                                                     <constraint firstAttribute="trailing" secondItem="bGd-gf-wrz" secondAttribute="trailing" constant="23" id="ucD-yJ-aJB"/>
                                                     <constraint firstItem="KNS-2t-IdW" firstAttribute="top" secondItem="w7l-OT-kGU" secondAttribute="bottom" constant="30" id="xgD-Xq-BsQ"/>
                                                 </constraints>
@@ -372,6 +391,7 @@
                         <outlet property="noteTextView" destination="iPe-x7-kEz" id="9lH-hd-8Ue"/>
                         <outlet property="setAlertButton" destination="UP9-Io-cHQ" id="AqR-XL-bn6"/>
                         <outlet property="setDueDateButton" destination="vaM-HF-RkP" id="7Hn-K7-aBG"/>
+                        <outlet property="timePickerTextField" destination="ajN-R7-TAH" id="JZS-be-eu3"/>
                         <outlet property="titleTextField" destination="vHe-Z8-EPF" id="szP-xC-Mf2"/>
                     </connections>
                 </viewController>
