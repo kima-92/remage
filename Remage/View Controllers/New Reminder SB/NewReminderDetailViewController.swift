@@ -39,6 +39,7 @@ class NewReminderDetailViewController: UIViewController {
         super.viewDidLoad()
         
         updateViews()
+        hideKeyboardWhenTappedAround()
     }
     
     // MARK: - Actions
