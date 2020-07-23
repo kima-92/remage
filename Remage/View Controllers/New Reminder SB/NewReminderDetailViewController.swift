@@ -57,7 +57,7 @@ class NewReminderDetailViewController: UIViewController {
         toolbar.sizeToFit()
         
         // Bar Buttons
-        let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: nil)
+        let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(doneBarButtonPressed))
         
         // Add buttons to the toolbar
         toolbar.setItems([doneButton], animated: true)
@@ -68,7 +68,29 @@ class NewReminderDetailViewController: UIViewController {
         // Assign the datePicker to the textField
         datePickerTextField.inputView = datePicker
         
+        // Set date as datePicker's mode
+        datePicker.datePickerMode = .date
         
+    }
+    
+    @objc private func doneBarButtonPressed() {
+        
+        // Setup a DateFormatter
+        
+        let formatter = DateFormatter()
+        // Date Style
+        formatter.dateStyle = .medium
+        // don't need to display time
+        formatter.timeStyle = .none
+        
+        // Get date as string from Picker using the formatter
+        let dateString = formatter.string(from: datePicker.date)
+        
+        // Add formatted date to textField
+        datePickerTextField.text = dateString
+        
+        // End editing
+        self.view.endEditing(true)
     }
     
     // Capture details to save a new Reminder
