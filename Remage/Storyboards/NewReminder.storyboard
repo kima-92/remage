@@ -316,11 +316,31 @@
                                                             </textField>
                                                         </subviews>
                                                     </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="QgG-Rp-fPH">
+                                                        <rect key="frame" x="20" y="188.5" width="344" height="31"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alarm" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bwr-pj-XoC">
+                                                                <rect key="frame" x="0.0" y="0.0" width="45" height="31"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="lHC-Qk-jnp">
+                                                                <rect key="frame" x="55" y="0.0" width="289" height="32"/>
+                                                                <segments>
+                                                                    <segment title="Off"/>
+                                                                    <segment title="On"/>
+                                                                </segments>
+                                                            </segmentedControl>
+                                                        </subviews>
+                                                    </stackView>
                                                 </subviews>
                                                 <color key="backgroundColor" red="0.32369780539999998" green="0.1063579395" blue="0.574860394" alpha="0.15384203767123289" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="bottom" secondItem="bGd-gf-wrz" secondAttribute="bottom" constant="20" id="0MW-Vd-msB"/>
                                                     <constraint firstItem="w7l-OT-kGU" firstAttribute="top" secondItem="7pM-Yd-zE8" secondAttribute="top" constant="20" id="BBt-0R-5VL"/>
+                                                    <constraint firstItem="QgG-Rp-fPH" firstAttribute="top" secondItem="4Zi-Xa-yTU" secondAttribute="bottom" constant="20" id="EQX-Wf-y1h"/>
+                                                    <constraint firstAttribute="trailing" secondItem="QgG-Rp-fPH" secondAttribute="trailing" constant="20" id="HIb-NZ-Ujd"/>
                                                     <constraint firstItem="4Zi-Xa-yTU" firstAttribute="leading" secondItem="7pM-Yd-zE8" secondAttribute="leading" constant="20" id="RR5-Dw-mkJ"/>
                                                     <constraint firstItem="4Zi-Xa-yTU" firstAttribute="top" secondItem="KNS-2t-IdW" secondAttribute="bottom" constant="30" id="USf-MM-lEO"/>
                                                     <constraint firstAttribute="trailing" secondItem="KNS-2t-IdW" secondAttribute="trailing" constant="20" id="c6N-IC-O4w"/>
@@ -328,6 +348,7 @@
                                                     <constraint firstItem="KNS-2t-IdW" firstAttribute="leading" secondItem="7pM-Yd-zE8" secondAttribute="leading" constant="20" id="dsM-vh-yhh"/>
                                                     <constraint firstItem="bGd-gf-wrz" firstAttribute="leading" secondItem="7pM-Yd-zE8" secondAttribute="leading" constant="23" id="eRx-6G-iYN"/>
                                                     <constraint firstAttribute="trailing" secondItem="w7l-OT-kGU" secondAttribute="trailing" constant="20" id="esf-tp-vv1"/>
+                                                    <constraint firstItem="QgG-Rp-fPH" firstAttribute="leading" secondItem="7pM-Yd-zE8" secondAttribute="leading" constant="20" id="m4f-DX-cjE"/>
                                                     <constraint firstAttribute="trailing" secondItem="4Zi-Xa-yTU" secondAttribute="trailing" constant="20" id="pHl-1N-bhM"/>
                                                     <constraint firstAttribute="trailing" secondItem="bGd-gf-wrz" secondAttribute="trailing" constant="23" id="ucD-yJ-aJB"/>
                                                     <constraint firstItem="KNS-2t-IdW" firstAttribute="top" secondItem="w7l-OT-kGU" secondAttribute="bottom" constant="30" id="xgD-Xq-BsQ"/>
@@ -378,6 +399,7 @@
                     <size key="freeformSize" width="414" height="950"/>
                     <connections>
                         <outlet property="addImagesButton" destination="Te3-AU-nL5" id="L3K-MO-9Pj"/>
+                        <outlet property="alarmSegmentedControl" destination="lHC-Qk-jnp" id="IsV-cN-lfK"/>
                         <outlet property="datePickerTextField" destination="uZh-rn-nTH" id="bxl-19-5YC"/>
                         <outlet property="imageView" destination="F0E-0Z-mSK" id="1Ny-9Y-qVe"/>
                         <outlet property="noteTextView" destination="iPe-x7-kEz" id="9lH-hd-8Ue"/>

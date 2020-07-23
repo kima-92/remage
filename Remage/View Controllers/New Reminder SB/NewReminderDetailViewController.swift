@@ -11,6 +11,7 @@ import UIKit
 class NewReminderDetailViewController: UIViewController {
     
     // MARK: - Properties
+    
     var cdModelController: CoreDataModelController?
     var image: UIImage?
     
@@ -18,18 +19,21 @@ class NewReminderDetailViewController: UIViewController {
     let timePicker = UIDatePicker()
     
     // MARK: - Outlets
+    
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var noteTextView: UITextView!
     
     @IBOutlet weak var addImagesButton: UIButton!
     @IBOutlet weak var setAlertButton: UIButton!
-    @IBOutlet weak var setDueDateButton: UIButton!
     
     @IBOutlet weak var imageView: UIImageView!
     
     @IBOutlet weak var datePickerTextField: UITextField!
     @IBOutlet weak var timePickerTextField: UITextField!
     
+    @IBOutlet weak var alarmSegmentedControl: UISegmentedControl!
+    
+    // MARK: - DidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -37,6 +41,7 @@ class NewReminderDetailViewController: UIViewController {
     }
     
     // MARK: - Actions
+    
     @IBAction func addImagesButtonTapped(_ sender: UIButton) {
     }
     
@@ -198,6 +203,7 @@ class NewReminderDetailViewController: UIViewController {
             imageView.image = image
         }
         
+        // Create Pickers
         createDatePicker()
         createTimePicker()
     }
