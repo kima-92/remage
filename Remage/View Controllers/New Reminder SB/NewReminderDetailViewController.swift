@@ -62,9 +62,11 @@ class NewReminderDetailViewController: UIViewController {
         
         // Bar Buttons
         let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(dateDoneBarButtonPressed))
+        let flexSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        let cancel = UIBarButtonItem(barButtonSystemItem: .cancel, target: nil, action: #selector(cancelBarButtonPressed))
         
         // Add buttons to the toolbar
-        toolbar.setItems([doneButton], animated: true)
+        toolbar.setItems([doneButton, flexSpace, cancel], animated: true)
         
         // Assign toolbar keyboard as the input for the TextField
         datePickerTextField.inputAccessoryView = toolbar
@@ -85,9 +87,11 @@ class NewReminderDetailViewController: UIViewController {
         
         // Bar Buttons
         let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(timeDoneBarButtonPressed))
+        let flexSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        let cancel = UIBarButtonItem(barButtonSystemItem: .cancel, target: nil, action: #selector(cancelBarButtonPressed))
         
         // Add buttons to the toolbar
-        toolbar.setItems([doneButton], animated: true)
+        toolbar.setItems([doneButton, flexSpace, cancel], animated: true)
         
         // Assign toolbar keyboard as the input for the TextField
         timePickerTextField.inputAccessoryView = toolbar
@@ -135,6 +139,11 @@ class NewReminderDetailViewController: UIViewController {
         // Add formatted time to textField
         timePickerTextField.text = timeString
         
+        // End editing
+        self.view.endEditing(true)
+    }
+    
+    @objc private func cancelBarButtonPressed() {
         // End editing
         self.view.endEditing(true)
     }
