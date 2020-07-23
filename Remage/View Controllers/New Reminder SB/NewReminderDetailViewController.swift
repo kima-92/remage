@@ -247,7 +247,17 @@ class NewReminderDetailViewController: UIViewController {
         // Show image if the Reminder has one
         if let image = image {
             imageView.image = image
+            imageView.contentMode = .scaleAspectFit
         }
+        
+        imageView.layer.cornerRadius = 20
+        addImagesButton.layer.cornerRadius = 15
+        
+        // TextFields Background colors
+        titleTextField.backgroundColor = UIColor(displayP3Red: 255/255, green: 255/255, blue: 255/255, alpha: 0.3)
+        noteTextView.backgroundColor = UIColor(displayP3Red: 255/255, green: 255/255, blue: 255/255, alpha: 0.3)
+        datePickerTextField.backgroundColor = UIColor(displayP3Red: 255/255, green: 255/255, blue: 255/255, alpha: 0.3)
+        timePickerTextField.backgroundColor = UIColor(displayP3Red: 255/255, green: 255/255, blue: 255/255, alpha: 0.3)
         
         // Create Pickers
         createDatePicker()
