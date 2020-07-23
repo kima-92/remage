@@ -18,6 +18,8 @@ class NewReminderDetailViewController: UIViewController {
     let datePicker = UIDatePicker()
     let timePicker = UIDatePicker()
     
+    var imagePicker = UIImagePickerController()
+    
     // MARK: - Outlets
     
     @IBOutlet weak var titleTextField: UITextField!
@@ -43,6 +45,7 @@ class NewReminderDetailViewController: UIViewController {
     // MARK: - Actions
     
     @IBAction func addImagesButtonTapped(_ sender: UIButton) {
+        showCameraOrLibraryActionSheet()
     }
     
     @IBAction func setAlertButtonTapped(_ sender: UIButton) {
@@ -140,6 +143,43 @@ class NewReminderDetailViewController: UIViewController {
         self.view.endEditing(true)
     }
     
+    // Pick from Camera or PhotoLibrary Alert
+    private func showCameraOrLibraryActionSheet() {
+        
+        // ActionSheet
+        let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        
+        // Buttons
+        let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        
+        let camera = UIAlertAction(title: "Camera", style: .default) { action in
+            
+            // s
+        }
+        
+        let photoLibrary = UIAlertAction(title: "Photo Library", style: .default) { action in
+            
+            self.chooseImageFromLibrary()
+        }
+        
+        // Add Buttons (Order matters)
+        actionSheet.addAction(camera)
+        actionSheet.addAction(photoLibrary)
+        actionSheet.addAction(cancel)
+        
+        // Present the ActionSheet
+        present(actionSheet, animated: true, completion: nil)
+    }
+    
+    private func chooseImageFromLibrary() {
+        
+        // Set to Pick from PhotoLibrary
+        imagePicker.sourceType = .photoLibrary
+        
+        imagePicker.allowsEditing = true
+        present(imagePicker, animated: true, completion: nil)
+    }
+    
     // Capture details to save a new Reminder
     func saveNewReminder() {
         // TODO: - The reminder should be able to save if it has either a titile, a note or a default image
@@ -206,6 +246,8 @@ class NewReminderDetailViewController: UIViewController {
         // Create Pickers
         createDatePicker()
         createTimePicker()
+        
+        imagePicker.delegate = self
     }
     
     /*
@@ -217,4 +259,31 @@ class NewReminderDetailViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+}
+
+extension NewReminderDetailViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    // Try to get image
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+        // If you can get an edited image
+        if let image = info[.editedImage] as? UIImage {
+            
+            imageView.image = image
+            
+        // If you get the original Image
+        } else if let image = info[.originalImage] as? UIImage {
+            
+            imageView.image = image
+            
+        }
+        // Dismiss
+        picker.dismiss(animated: true, completion: nil)
+    }
+    
+    // If user decides to cancel
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        // Dismiss
+        picker.dismiss(animated: true, completion: nil)
+    }
 }
