@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="TZ0-Je-AfU">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="TZ0-Je-AfU">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -221,14 +221,14 @@
             <objects>
                 <viewController id="ftG-iM-aUh" customClass="NewReminderDetailViewController" customModule="Remage" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eg6-VP-91t">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="950"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="1100"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="emK-Sz-ufc">
-                                <rect key="frame" x="0.0" y="88" width="414" height="779"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="929"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pLg-Pb-e4u">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="779"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="929"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="emptyImage" translatesAutoresizingMaskIntoConstraints="NO" id="F0E-0Z-mSK">
                                                 <rect key="frame" x="15" y="30" width="384" height="300"/>
@@ -337,14 +337,25 @@
                                                     <constraint firstAttribute="trailing" secondItem="2zD-GN-TH9" secondAttribute="trailing" constant="20" id="p0B-MG-043"/>
                                                 </constraints>
                                             </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2E0-XH-DIw">
+                                                <rect key="frame" x="0.0" y="706" width="414" height="203"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="203" id="tb0-gf-BaU"/>
+                                                </constraints>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="F0E-0Z-mSK" secondAttribute="trailing" constant="15" id="8hF-3a-vlg"/>
+                                            <constraint firstAttribute="bottom" secondItem="2E0-XH-DIw" secondAttribute="bottom" constant="20" id="9sR-9X-vFt"/>
+                                            <constraint firstItem="2E0-XH-DIw" firstAttribute="top" secondItem="7pM-Yd-zE8" secondAttribute="bottom" constant="20" id="Evo-s4-bqy"/>
                                             <constraint firstItem="F0E-0Z-mSK" firstAttribute="leading" secondItem="pLg-Pb-e4u" secondAttribute="leading" constant="15" id="G6Y-3X-wxD"/>
                                             <constraint firstItem="7pM-Yd-zE8" firstAttribute="top" secondItem="F0E-0Z-mSK" secondAttribute="bottom" constant="15" id="GBQ-7U-hYD"/>
+                                            <constraint firstItem="2E0-XH-DIw" firstAttribute="leading" secondItem="pLg-Pb-e4u" secondAttribute="leading" id="MGv-fn-pci"/>
                                             <constraint firstItem="F0E-0Z-mSK" firstAttribute="top" secondItem="pLg-Pb-e4u" secondAttribute="top" constant="30" id="Ukd-Ne-lFQ"/>
                                             <constraint firstItem="7pM-Yd-zE8" firstAttribute="leading" secondItem="pLg-Pb-e4u" secondAttribute="leading" constant="15" id="YsK-bj-JS2"/>
+                                            <constraint firstAttribute="trailing" secondItem="2E0-XH-DIw" secondAttribute="trailing" id="pxY-HA-dit"/>
                                             <constraint firstAttribute="trailing" secondItem="7pM-Yd-zE8" secondAttribute="trailing" constant="15" id="sPA-kr-sca"/>
                                         </constraints>
                                     </view>
@@ -352,7 +363,7 @@
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="pLg-Pb-e4u" secondAttribute="bottom" id="Dkm-5w-Ely"/>
                                     <constraint firstAttribute="trailing" secondItem="pLg-Pb-e4u" secondAttribute="trailing" id="EKb-Wm-GWY"/>
-                                    <constraint firstItem="pLg-Pb-e4u" firstAttribute="height" secondItem="emK-Sz-ufc" secondAttribute="height" id="Hte-pB-76q"/>
+                                    <constraint firstItem="pLg-Pb-e4u" firstAttribute="height" secondItem="emK-Sz-ufc" secondAttribute="height" priority="250" id="Hte-pB-76q"/>
                                     <constraint firstItem="pLg-Pb-e4u" firstAttribute="top" secondItem="emK-Sz-ufc" secondAttribute="top" id="Ugg-wq-fsS"/>
                                     <constraint firstItem="pLg-Pb-e4u" firstAttribute="width" secondItem="emK-Sz-ufc" secondAttribute="width" id="XBE-6J-FDr"/>
                                     <constraint firstItem="pLg-Pb-e4u" firstAttribute="leading" secondItem="emK-Sz-ufc" secondAttribute="leading" id="qS7-fL-B8g"/>
@@ -375,7 +386,7 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <size key="freeformSize" width="414" height="950"/>
+                    <size key="freeformSize" width="414" height="1100"/>
                     <connections>
                         <outlet property="addImagesButton" destination="Te3-AU-nL5" id="L3K-MO-9Pj"/>
                         <outlet property="alarmSegmentedControl" destination="lHC-Qk-jnp" id="IsV-cN-lfK"/>
