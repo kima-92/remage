@@ -9,22 +9,21 @@
 import UIKit
 
 class NRDescriptionViewController: UIViewController {
-
+    
+    // MARK: - Outlets
+    
+    @IBOutlet weak var addDescriptionLabel: UILabel!
+    @IBOutlet weak var backgroundCardView: UIView!
+    @IBOutlet weak var descriptionTextView: UITextView!
+    
+    // MARK: - DidLoad
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    // MARK: - Actions
+    
+    @IBAction func saveBarButtomTapped(_ sender: UIBarButtonItem) {
     }
-    */
-
 }

@@ -437,7 +437,7 @@
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="560" id="rkn-bU-iS2"/>
                                                                 </constraints>
-                                                                <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
+                                                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -493,9 +493,18 @@
                         <viewLayoutGuide key="safeArea" id="qRv-Y3-r3Z"/>
                     </view>
                     <navigationItem key="navigationItem" id="JZk-Wc-KNc">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="DiC-U7-YPf"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="DiC-U7-YPf">
+                            <connections>
+                                <action selector="saveBarButtomTapped:" destination="ozr-GA-mdF" id="nhm-yg-Wgq"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <size key="freeformSize" width="414" height="1000"/>
+                    <connections>
+                        <outlet property="addDescriptionLabel" destination="Xin-uA-StC" id="uqA-yo-Pp2"/>
+                        <outlet property="backgroundCardView" destination="3ma-rj-0Xn" id="x7h-Ye-plw"/>
+                        <outlet property="descriptionTextView" destination="aEo-ms-qQw" id="Vtw-fY-GHD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7kO-dK-Ktp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
