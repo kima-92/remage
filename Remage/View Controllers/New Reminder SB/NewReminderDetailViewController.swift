@@ -22,17 +22,18 @@ class NewReminderDetailViewController: UIViewController {
     
     // MARK: - Outlets
     
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var backgroundCardView: UIView!
+    
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var descriptionTextField: UITextField!
     
+    @IBOutlet weak var alarmSegmentedControl: UISegmentedControl!
     @IBOutlet weak var addImagesButton: UIButton!
-    
-    @IBOutlet weak var imageView: UIImageView!
     
     @IBOutlet weak var datePickerTextField: UITextField!
     @IBOutlet weak var timePickerTextField: UITextField!
     
-    @IBOutlet weak var alarmSegmentedControl: UISegmentedControl!
     
     // MARK: - DidLoad
     override func viewDidLoad() {
@@ -251,6 +252,7 @@ class NewReminderDetailViewController: UIViewController {
         // Round corners
         imageView.layer.cornerRadius = 20
         addImagesButton.layer.cornerRadius = 15
+        backgroundCardView.layer.cornerRadius = 20
         
         // TextFields Background colors
         titleTextField.backgroundColor = UIColor(displayP3Red: 255/255, green: 255/255, blue: 255/255, alpha: 0.3)

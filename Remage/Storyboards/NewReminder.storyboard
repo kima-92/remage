@@ -390,6 +390,7 @@
                     <connections>
                         <outlet property="addImagesButton" destination="Te3-AU-nL5" id="L3K-MO-9Pj"/>
                         <outlet property="alarmSegmentedControl" destination="lHC-Qk-jnp" id="IsV-cN-lfK"/>
+                        <outlet property="backgroundCardView" destination="7pM-Yd-zE8" id="Dtf-UA-Mpi"/>
                         <outlet property="datePickerTextField" destination="uZh-rn-nTH" id="bxl-19-5YC"/>
                         <outlet property="descriptionTextField" destination="f3m-qm-Jxb" id="0cZ-70-kNv"/>
                         <outlet property="imageView" destination="F0E-0Z-mSK" id="1Ny-9Y-qVe"/>
