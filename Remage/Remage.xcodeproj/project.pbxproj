@@ -35,6 +35,7 @@
 		FA776B712457489D00B897F6 /* CoreDataModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA776B702457489D00B897F6 /* CoreDataModelController.swift */; };
 		FA90E84724CF2F7F007148EF /* NRNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA90E84624CF2F7F007148EF /* NRNoteViewController.swift */; };
 		FA90E84924CF46F0007148EF /* ReminderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA90E84824CF46F0007148EF /* ReminderController.swift */; };
+		FA90E84C24CF83DD007148EF /* SettingsMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA90E84B24CF83DD007148EF /* SettingsMenuViewController.swift */; };
 		FADA155E24C94CF40006CA62 /* ViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADA155D24C94CF40006CA62 /* ViewControllerExtension.swift */; };
 /* End PBXBuildFile section */
 
@@ -69,6 +70,7 @@
 		FA776B702457489D00B897F6 /* CoreDataModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataModelController.swift; sourceTree = "<group>"; };
 		FA90E84624CF2F7F007148EF /* NRNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NRNoteViewController.swift; sourceTree = "<group>"; };
 		FA90E84824CF46F0007148EF /* ReminderController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderController.swift; sourceTree = "<group>"; };
+		FA90E84B24CF83DD007148EF /* SettingsMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsMenuViewController.swift; sourceTree = "<group>"; };
 		FADA155D24C94CF40006CA62 /* ViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -133,6 +135,7 @@
 		FA1E65CB245207E100502D95 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				FA90E84A24CF838B007148EF /* Settings SB */,
 				FA6E1F012459F6A5008AF502 /* Reminders SB */,
 				FA776B692457332500B897F6 /* New Reminder SB */,
 			);
@@ -206,6 +209,14 @@
 				FA90E84624CF2F7F007148EF /* NRNoteViewController.swift */,
 			);
 			path = "New Reminder SB";
+			sourceTree = "<group>";
+		};
+		FA90E84A24CF838B007148EF /* Settings SB */ = {
+			isa = PBXGroup;
+			children = (
+				FA90E84B24CF83DD007148EF /* SettingsMenuViewController.swift */,
+			);
+			path = "Settings SB";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -291,6 +302,7 @@
 				FA1C87E024AE3B0900E3A1BA /* CameraController.swift in Sources */,
 				FA776B622452191600B897F6 /* Remage.xcdatamodeld in Sources */,
 				FA776B6624521C4E00B897F6 /* ReminderRepresentation.swift in Sources */,
+				FA90E84C24CF83DD007148EF /* SettingsMenuViewController.swift in Sources */,
 				FA90E84724CF2F7F007148EF /* NRNoteViewController.swift in Sources */,
 				FADA155E24C94CF40006CA62 /* ViewControllerExtension.swift in Sources */,
 				FA6E1F032459F6CE008AF502 /* TestCollectionViewController.swift in Sources */,
