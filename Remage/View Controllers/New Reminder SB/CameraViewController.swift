@@ -90,6 +90,7 @@ class CameraViewController: UIViewController {
         if segue.identifier == "ShowPhotoPreviewSegue" {
             
             guard let photoPreviewVC = segue.destination as? PhotoPreviewViewController else { return }
+            photoPreviewVC.reminderController = reminderController
             photoPreviewVC.image = image
         }
     }

@@ -13,6 +13,8 @@ class NewReminderDetailViewController: UIViewController {
     // MARK: - Properties
     
     var reminderController: ReminderController?
+    var imageFromCamera: UIImage?
+    var emptyPhotoImage: UIImage?
     var image: UIImage?
     
     let datePicker = UIDatePicker()
@@ -58,7 +60,7 @@ class NewReminderDetailViewController: UIViewController {
         saveNewReminder()
     }
     
-    // MARK: - Methods
+    // MARK: - Pickers
     
     // Date Picker
     private func createDatePicker() {
@@ -150,10 +152,13 @@ class NewReminderDetailViewController: UIViewController {
         self.view.endEditing(true)
     }
     
+    // CancelBarButton for TimePicker and DatePicker
     @objc private func cancelBarButtonPressed() {
         // End editing
         self.view.endEditing(true)
     }
+    
+    // MARK: - Methods
     
     // Pick from Camera or PhotoLibrary Alert
     private func showCameraOrLibraryActionSheet() {
@@ -166,7 +171,7 @@ class NewReminderDetailViewController: UIViewController {
         
         let camera = UIAlertAction(title: "Camera", style: .default) { action in
             
-            // s
+            // TODO: - Go to Camera
         }
         
         let photoLibrary = UIAlertAction(title: "Photo Library", style: .default) { action in
@@ -193,18 +198,25 @@ class NewReminderDetailViewController: UIViewController {
     }
     
     // Capture details to save a new Reminder
-    func saveNewReminder() {
-        // TODO: - The reminder should be able to save if it has either a titile, a note or a default image
+    private func saveNewReminder() {
+        // TODO: - The reminder should be able to save if it has either a title, a note or a default image
+        
+        guard let reminderController = reminderController else {
+            showCantSaveReminder()
+            return
+        }
         
         guard let title = titleTextField.text else { return }
         
-        let newImage = imageView.image
+        // Get image if it's not the emptyPhotoImage
+        if imageView.image != emptyPhotoImage {
+            image = imageView.image
+        }
         
-        // If either the Title or the Note are not empty,
-        // save the reminder
-        if !title.isEmpty || newImage != nil {
+        // Try to save the reminder
+        if !title.isEmpty || image != nil {
             
-            reminderController?.saveNewReminder(title: title, defaultImage: newImage?.pngData())
+            reminderController.saveNewReminder(title: title, defaultImage: image?.pngData())
             
             // Alert user the reminder is saved and pop back to root VC
             showReminderCreatedSuccessfullyAlert()
@@ -216,7 +228,7 @@ class NewReminderDetailViewController: UIViewController {
     }
     
     // Alert the user the new Reminder has been saved
-    func showReminderCreatedSuccessfullyAlert() {
+    private func showReminderCreatedSuccessfullyAlert() {
         let alert = UIAlertController(title: "Done!", message: "Reminder saved Successfully", preferredStyle: .alert)
         
         alert.addAction(UIAlertAction(title: "Go Back", style: .default, handler: { action in
@@ -227,7 +239,7 @@ class NewReminderDetailViewController: UIViewController {
     }
     
     // Can't save empty Reminder Alert
-    func showMissingAlertDetails() {
+    private func showMissingAlertDetails() {
         let alert = UIAlertController(title: "Nothing to Save", message: "Your reminder can't be saved until you enter an Image, a Title or a Note", preferredStyle: .alert)
         
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
@@ -236,13 +248,26 @@ class NewReminderDetailViewController: UIViewController {
         self.present(alert, animated: true)
     }
     
+    // Can't save Reminder Alert
+    private func showCantSaveReminder() {
+        let alert = UIAlertController(title: "Oops!", message: "Something when't wrong, couldn't save this reminder. Please try again.", preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        
+        self.present(alert, animated: true)
+    }
+    
     // MARK: - Update Views
     private func updateViews() {
         
-        // Show image if the Reminder has one
-        if let image = image {
+        // Show image if segue from Camera
+        if let image = imageFromCamera {
             imageView.image = image
-            imageView.contentMode = .scaleAspectFit
+            //imageView.contentMode = .scaleAspectFit
+        }
+        // Else save the emptyPhotoImage
+        else {
+            emptyPhotoImage = imageView.image
         }
         
         // Round corners
@@ -259,6 +284,7 @@ class NewReminderDetailViewController: UIViewController {
         createDatePicker()
         createTimePicker()
         
+        // Set Delegates
         imagePicker.delegate = self
     }
     
