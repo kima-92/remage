@@ -20,16 +20,18 @@ class NewReminderDetailViewController: UIViewController {
     
     var imagePicker = UIImagePickerController()
     
+    var reminder: Reminder?
+    
     // MARK: - Outlets
     
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var backgroundCardView: UIView!
     
     @IBOutlet weak var titleTextField: UITextField!
-    @IBOutlet weak var descriptionTextField: UITextField!
     
     @IBOutlet weak var alarmSegmentedControl: UISegmentedControl!
     @IBOutlet weak var addImagesButton: UIButton!
+    @IBOutlet weak var addNoteButton: UIButton!
     
     @IBOutlet weak var datePickerTextField: UITextField!
     @IBOutlet weak var timePickerTextField: UITextField!
@@ -47,6 +49,9 @@ class NewReminderDetailViewController: UIViewController {
     
     @IBAction func addImagesButtonTapped(_ sender: UIButton) {
         showCameraOrLibraryActionSheet()
+    }
+    
+    @IBAction func addNoteButtonTapped(_ sender: UIButton) {
     }
     
     @IBAction func saveButtonTapped(_ sender: UIBarButtonItem) {
@@ -191,19 +196,18 @@ class NewReminderDetailViewController: UIViewController {
     func saveNewReminder() {
         // TODO: - The reminder should be able to save if it has either a titile, a note or a default image
         
-        guard let title = titleTextField.text,
-            let descriptionTxt = descriptionTextField.text else { return }
+        guard let title = titleTextField.text else { return }
         
         let newImage = imageView.image
         
         // If either the Title or the Note are not empty,
         // save the reminder
-        if !title.isEmpty || !descriptionTxt.isEmpty || newImage != nil {
+        if !title.isEmpty || newImage != nil {
             
             // Create new Reminder
             let reminder = Reminder(id: UUID().uuidString, context: CoreDataStack.shared.mainContext)
             reminder.title = title
-            reminder.note = descriptionTxt
+            //reminder.note = descriptionTxt
             reminder.defaultImage = newImage?.pngData()
             // TODO: - Save the default image to the reminder
             
@@ -256,7 +260,6 @@ class NewReminderDetailViewController: UIViewController {
         
         // TextFields Background colors
         titleTextField.backgroundColor = UIColor(displayP3Red: 255/255, green: 255/255, blue: 255/255, alpha: 0.3)
-        descriptionTextField.backgroundColor = UIColor(displayP3Red: 255/255, green: 255/255, blue: 255/255, alpha: 0.3)
         datePickerTextField.backgroundColor = UIColor(displayP3Red: 255/255, green: 255/255, blue: 255/255, alpha: 0.3)
         timePickerTextField.backgroundColor = UIColor(displayP3Red: 255/255, green: 255/255, blue: 255/255, alpha: 0.3)
         
@@ -265,6 +268,19 @@ class NewReminderDetailViewController: UIViewController {
         createTimePicker()
         
         imagePicker.delegate = self
+    }
+    
+    
+    // MARK: - Navigation
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        // Segue to NRNote
+        if segue.identifier == "AddNewNoteSegue" {
+            guard let noteVC = segue.destination as? NRNoteViewController else { return }
+            
+            noteVC.reminder = reminder
+        }
     }
 }
 
