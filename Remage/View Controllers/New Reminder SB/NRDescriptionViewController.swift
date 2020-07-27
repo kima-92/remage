@@ -10,6 +10,9 @@ import UIKit
 
 class NRDescriptionViewController: UIViewController {
     
+    // MARK: - Properties
+    var reminder: Reminder?
+    
     // MARK: - Outlets
     
     @IBOutlet weak var addDescriptionLabel: UILabel!

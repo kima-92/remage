@@ -20,6 +20,8 @@ class NewReminderDetailViewController: UIViewController {
     
     var imagePicker = UIImagePickerController()
     
+    var reminder = Reminder()
+    
     // MARK: - Outlets
     
     @IBOutlet weak var imageView: UIImageView!
@@ -44,6 +46,10 @@ class NewReminderDetailViewController: UIViewController {
     }
     
     // MARK: - Actions
+    
+    @IBAction func descriptionTextFieldTapped(_ sender: UITextField) {
+        performSegue(withIdentifier: "addNRDescriptionSegue", sender: self)
+    }
     
     @IBAction func addImagesButtonTapped(_ sender: UIButton) {
         showCameraOrLibraryActionSheet()
@@ -265,6 +271,20 @@ class NewReminderDetailViewController: UIViewController {
         createTimePicker()
         
         imagePicker.delegate = self
+    }
+    
+    
+    // MARK: - Navigation
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        // Segue to NRDescriptionVC1234
+        
+        if segue.identifier == "addNRDescriptionSegue" {
+            guard let descriptionVC = segue.destination as? NRDescriptionViewController else { return }
+            
+            descriptionVC.reminder = reminder
+        }
     }
 }
 
