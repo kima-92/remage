@@ -31,6 +31,7 @@ class NewReminderDetailViewController: UIViewController {
     
     @IBOutlet weak var alarmSegmentedControl: UISegmentedControl!
     @IBOutlet weak var addImagesButton: UIButton!
+    @IBOutlet weak var addNoteButton: UIButton!
     
     @IBOutlet weak var datePickerTextField: UITextField!
     @IBOutlet weak var timePickerTextField: UITextField!
@@ -46,12 +47,11 @@ class NewReminderDetailViewController: UIViewController {
     
     // MARK: - Actions
     
-    @IBAction func descriptionTextFieldTapped(_ sender: UITextField) {
-        performSegue(withIdentifier: "addNRDescriptionSegue", sender: self)
-    }
-    
     @IBAction func addImagesButtonTapped(_ sender: UIButton) {
         showCameraOrLibraryActionSheet()
+    }
+    
+    @IBAction func addNoteButtonTapped(_ sender: UIButton) {
     }
     
     @IBAction func saveButtonTapped(_ sender: UIBarButtonItem) {
