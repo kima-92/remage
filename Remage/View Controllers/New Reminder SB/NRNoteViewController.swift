@@ -10,6 +10,10 @@ import UIKit
 
 class NRNoteViewController: UIViewController {
     
+    // MARK: - Properties
+    
+    var reminder: Reminder?
+    
     // MARK: - Outlets
     
     @IBOutlet weak var addNoteLabel: UILabel!
@@ -22,6 +26,7 @@ class NRNoteViewController: UIViewController {
         super.viewDidLoad()
         
         updateViews()
+        tryLoadNote()
     }
     
     // MARK: - Actions
@@ -30,6 +35,13 @@ class NRNoteViewController: UIViewController {
     }
     
     // MARK: - Methods
+    
+    private func tryLoadNote() {
+        guard let reminder = reminder,
+            let note = reminder.note else { return }
+        
+        noteTextView.text = note
+    }
     
     private func updateViews() {
         // Round corners

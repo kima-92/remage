@@ -20,7 +20,7 @@ class NewReminderDetailViewController: UIViewController {
     
     var imagePicker = UIImagePickerController()
     
-    var reminder = Reminder()
+    var reminder: Reminder?
     
     // MARK: - Outlets
     
@@ -275,12 +275,11 @@ class NewReminderDetailViewController: UIViewController {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        // Segue to NRDescriptionVC1234
-        
-        if segue.identifier == "addNRDescriptionSegue" {
-            //guard let descriptionVC = segue.destination as? NRDescriptionViewController else { return }
+        // Segue to NRNote
+        if segue.identifier == "AddNewNoteSegue" {
+            guard let noteVC = segue.destination as? NRNoteViewController else { return }
             
-            //descriptionVC.reminder = reminder
+            noteVC.reminder = reminder
         }
     }
 }
