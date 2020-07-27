@@ -12,7 +12,8 @@ class NRNoteViewController: UIViewController {
     
     // MARK: - Properties
     
-    var reminder: Reminder?
+    var note: String?
+    var getNoteDelegate: GetNoteDelegate!
     
     // MARK: - Outlets
     
@@ -32,16 +33,30 @@ class NRNoteViewController: UIViewController {
     // MARK: - Actions
     
     @IBAction func saveBarButtonTapped(_ sender: UIBarButtonItem) {
+        sendNoteToReminder()
+        navigationController?.popViewController(animated: true)
     }
     
     // MARK: - Methods
     
     private func tryLoadNote() {
-        guard let reminder = reminder,
-            let note = reminder.note else { return }
+        guard let note = note else { return }
         
         noteTextView.text = note
     }
+    
+    private func sendNoteToReminder() {
+        
+        guard let note = noteTextView.text,
+                !note.isEmpty
+            else {
+                // TODO: - Alert User
+                return
+        }
+        getNoteDelegate.get(note: note)
+    }
+    
+    // MARK: - UpdateViews
     
     private func updateViews() {
         // Round corners
@@ -51,4 +66,11 @@ class NRNoteViewController: UIViewController {
         // TextView should start empty
         noteTextView.text = ""
     }
+}
+
+// MARK: - Protocol
+
+// Pass the Note to NewReminderDetailVC
+protocol GetNoteDelegate {
+    func get(note: String)
 }

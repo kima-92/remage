@@ -15,7 +15,9 @@ class NewReminderDetailViewController: UIViewController {
     var reminderController: ReminderController?
     var imageFromCamera: UIImage?
     var emptyPhotoImage: UIImage?
+    
     var image: UIImage?
+    var noteRecieved: String?
     
     let datePicker = UIDatePicker()
     let timePicker = UIDatePicker()
@@ -296,7 +298,8 @@ class NewReminderDetailViewController: UIViewController {
         if segue.identifier == "AddNewNoteSegue" {
             guard let noteVC = segue.destination as? NRNoteViewController else { return }
             
-            noteVC.reminder = reminder
+            noteVC.note = noteRecieved
+            noteVC.getNoteDelegate = self
         }
     }
 }
@@ -326,5 +329,12 @@ extension NewReminderDetailViewController: UIImagePickerControllerDelegate, UINa
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         // Dismiss
         picker.dismiss(animated: true, completion: nil)
+    }
+}
+
+// Getting the Note for this Reminder from NRNoteVC
+extension NewReminderDetailViewController: GetNoteDelegate {
+    func get(note: String) {
+        noteRecieved = note
     }
 }
