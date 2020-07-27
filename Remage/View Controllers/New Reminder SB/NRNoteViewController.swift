@@ -20,10 +20,23 @@ class NRNoteViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        updateViews()
     }
     
     // MARK: - Actions
     
     @IBAction func saveBarButtonTapped(_ sender: UIBarButtonItem) {
+    }
+    
+    // MARK: - Methods
+    
+    private func updateViews() {
+        // Round corners
+        backgroundCardView.layer.cornerRadius = 15
+        noteTextView.layer.cornerRadius = 15
+        
+        // TextView should start empty
+        noteTextView.text = ""
     }
 }
