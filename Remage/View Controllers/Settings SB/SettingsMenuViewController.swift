@@ -13,7 +13,9 @@ class SettingsMenuViewController: UIViewController {
     // MARK: - Outlets
     
     @IBOutlet weak var backgroundCardView: UIView!
+    
     @IBOutlet weak var backgroundLabel: UILabel!
+    @IBOutlet weak var backgroundColorChoiceButton: UIButton!
     
     // MARK: - DidLoad
     override func viewDidLoad() {
