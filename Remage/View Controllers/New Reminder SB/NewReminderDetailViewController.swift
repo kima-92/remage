@@ -201,7 +201,6 @@ class NewReminderDetailViewController: UIViewController {
     
     // Capture details to save a new Reminder
     private func saveNewReminder() {
-        // TODO: - The reminder should be able to save if it has either a title, a note or a default image
         
         guard let reminderController = reminderController else {
             showCantSaveReminder()
@@ -216,11 +215,11 @@ class NewReminderDetailViewController: UIViewController {
         }
         
         // Try to save the reminder
-        if !title.isEmpty || image != nil {
+        if !title.isEmpty || image != nil || noteRecieved != nil {
             
-            reminderController.saveNewReminder(title: title, defaultImage: image?.pngData())
+            reminderController.saveNewReminder(title: title, defaultImage: image?.pngData(), note: noteRecieved)
             
-            // Alert user the reminder is saved and pop back to root VC
+            // Alert user the reminder is saved, and pop back to root VC
             showReminderCreatedSuccessfullyAlert()
         }
         else {
@@ -228,6 +227,8 @@ class NewReminderDetailViewController: UIViewController {
             showMissingAlertDetails()
         }
     }
+    
+    // MARK: - Alerts
     
     // Alert the user the new Reminder has been saved
     private func showReminderCreatedSuccessfullyAlert() {
@@ -260,6 +261,7 @@ class NewReminderDetailViewController: UIViewController {
     }
     
     // MARK: - Update Views
+    
     private func updateViews() {
         
         // Show image if segue from Camera
@@ -303,6 +305,8 @@ class NewReminderDetailViewController: UIViewController {
         }
     }
 }
+
+// MARK: - Extensions
 
 // ImagePicker Delegate Protocols
 extension NewReminderDetailViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
