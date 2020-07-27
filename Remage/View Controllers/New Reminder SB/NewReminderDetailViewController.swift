@@ -12,7 +12,7 @@ class NewReminderDetailViewController: UIViewController {
     
     // MARK: - Properties
     
-    var cdModelController: CoreDataModelController?
+    var reminderController: ReminderController?
     var image: UIImage?
     
     let datePicker = UIDatePicker()
@@ -204,15 +204,7 @@ class NewReminderDetailViewController: UIViewController {
         // save the reminder
         if !title.isEmpty || newImage != nil {
             
-            // Create new Reminder
-            let reminder = Reminder(id: UUID().uuidString, context: CoreDataStack.shared.mainContext)
-            reminder.title = title
-            //reminder.note = descriptionTxt
-            reminder.defaultImage = newImage?.pngData()
-            // TODO: - Save the default image to the reminder
-            
-            // Save reminder in Core Data
-            CoreDataStack.shared.save(context: CoreDataStack.shared.mainContext)
+            reminderController?.saveNewReminder(title: title, defaultImage: newImage?.pngData())
             
             // Alert user the reminder is saved and pop back to root VC
             showReminderCreatedSuccessfullyAlert()
@@ -269,7 +261,6 @@ class NewReminderDetailViewController: UIViewController {
         
         imagePicker.delegate = self
     }
-    
     
     // MARK: - Navigation
 

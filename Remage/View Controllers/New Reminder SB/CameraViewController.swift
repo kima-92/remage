@@ -13,7 +13,7 @@ class CameraViewController: UIViewController {
     
     // MARK: - Properties
     
-    var cdModelController: CoreDataModelController?
+    var reminderController: ReminderController?
     var cameraController: CameraController?
     
     var captureType: CaptureType = .picture
