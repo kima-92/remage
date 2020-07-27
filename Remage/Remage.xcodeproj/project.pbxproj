@@ -36,6 +36,7 @@
 		FA90E84724CF2F7F007148EF /* NRNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA90E84624CF2F7F007148EF /* NRNoteViewController.swift */; };
 		FA90E84924CF46F0007148EF /* ReminderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA90E84824CF46F0007148EF /* ReminderController.swift */; };
 		FA90E84C24CF83DD007148EF /* SettingsMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA90E84B24CF83DD007148EF /* SettingsMenuViewController.swift */; };
+		FA90E84E24CF88A7007148EF /* BackgroundColorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA90E84D24CF88A7007148EF /* BackgroundColorViewController.swift */; };
 		FADA155E24C94CF40006CA62 /* ViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADA155D24C94CF40006CA62 /* ViewControllerExtension.swift */; };
 /* End PBXBuildFile section */
 
@@ -71,6 +72,7 @@
 		FA90E84624CF2F7F007148EF /* NRNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NRNoteViewController.swift; sourceTree = "<group>"; };
 		FA90E84824CF46F0007148EF /* ReminderController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderController.swift; sourceTree = "<group>"; };
 		FA90E84B24CF83DD007148EF /* SettingsMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsMenuViewController.swift; sourceTree = "<group>"; };
+		FA90E84D24CF88A7007148EF /* BackgroundColorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundColorViewController.swift; sourceTree = "<group>"; };
 		FADA155D24C94CF40006CA62 /* ViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -215,6 +217,7 @@
 			isa = PBXGroup;
 			children = (
 				FA90E84B24CF83DD007148EF /* SettingsMenuViewController.swift */,
+				FA90E84D24CF88A7007148EF /* BackgroundColorViewController.swift */,
 			);
 			path = "Settings SB";
 			sourceTree = "<group>";
@@ -314,6 +317,7 @@
 				FA1C87E924AF7F8E00E3A1BA /* PhotoPreviewViewController.swift in Sources */,
 				FA1E65B9245205A200502D95 /* SceneDelegate.swift in Sources */,
 				FA6E1F052459F9EE008AF502 /* RemindersViewController.swift in Sources */,
+				FA90E84E24CF88A7007148EF /* BackgroundColorViewController.swift in Sources */,
 				FA776B6B2457465E00B897F6 /* NewReminderTypeViewController.swift in Sources */,
 				FA776B6424521C3000B897F6 /* Reminder+Convenience.swift in Sources */,
 				FA776B6F2457468800B897F6 /* CameraViewController.swift in Sources */,
