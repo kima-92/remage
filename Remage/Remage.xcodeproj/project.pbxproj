@@ -34,6 +34,7 @@
 		FA776B6F2457468800B897F6 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA776B6E2457468800B897F6 /* CameraViewController.swift */; };
 		FA776B712457489D00B897F6 /* CoreDataModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA776B702457489D00B897F6 /* CoreDataModelController.swift */; };
 		FA90E84724CF2F7F007148EF /* NRNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA90E84624CF2F7F007148EF /* NRNoteViewController.swift */; };
+		FA90E84924CF46F0007148EF /* ReminderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA90E84824CF46F0007148EF /* ReminderController.swift */; };
 		FADA155E24C94CF40006CA62 /* ViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADA155D24C94CF40006CA62 /* ViewControllerExtension.swift */; };
 /* End PBXBuildFile section */
 
@@ -67,6 +68,7 @@
 		FA776B6E2457468800B897F6 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		FA776B702457489D00B897F6 /* CoreDataModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataModelController.swift; sourceTree = "<group>"; };
 		FA90E84624CF2F7F007148EF /* NRNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NRNoteViewController.swift; sourceTree = "<group>"; };
+		FA90E84824CF46F0007148EF /* ReminderController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderController.swift; sourceTree = "<group>"; };
 		FADA155D24C94CF40006CA62 /* ViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -171,6 +173,7 @@
 			isa = PBXGroup;
 			children = (
 				FA776B702457489D00B897F6 /* CoreDataModelController.swift */,
+				FA90E84824CF46F0007148EF /* ReminderController.swift */,
 			);
 			path = "Model Controllers";
 			sourceTree = "<group>";
@@ -293,6 +296,7 @@
 				FA6E1F032459F6CE008AF502 /* TestCollectionViewController.swift in Sources */,
 				FA776B6D2457467900B897F6 /* NewReminderDetailViewController.swift in Sources */,
 				FA1E65B7245205A200502D95 /* AppDelegate.swift in Sources */,
+				FA90E84924CF46F0007148EF /* ReminderController.swift in Sources */,
 				FA776B682457256C00B897F6 /* CoreDataStack.swift in Sources */,
 				FA1C87E724AE454000E3A1BA /* SelectedCamera.swift in Sources */,
 				FA1C87E924AF7F8E00E3A1BA /* PhotoPreviewViewController.swift in Sources */,

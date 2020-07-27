@@ -13,6 +13,7 @@ class PhotoPreviewViewController: UIViewController {
     // MARK: - Properties
     
     var image: UIImage?
+    var reminderController: ReminderController?
     
     // MARK: - Outlets
     
@@ -55,7 +56,8 @@ class PhotoPreviewViewController: UIViewController {
         if segue.identifier == "PhotoPreviewToNewReminderDetailSegue" {
             
             guard let newReminderDetailVC = segue.destination as? NewReminderDetailViewController else { return }
-            newReminderDetailVC.image = image
+            newReminderDetailVC.imageFromCamera = image
+            newReminderDetailVC.reminderController = reminderController
         }
     }
 }
