@@ -278,9 +278,9 @@ class NewReminderDetailViewController: UIViewController {
         // Segue to NRDescriptionVC1234
         
         if segue.identifier == "addNRDescriptionSegue" {
-            guard let descriptionVC = segue.destination as? NRDescriptionViewController else { return }
+            //guard let descriptionVC = segue.destination as? NRDescriptionViewController else { return }
             
-            descriptionVC.reminder = reminder
+            //descriptionVC.reminder = reminder
         }
     }
 }

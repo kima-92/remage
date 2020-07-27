@@ -408,10 +408,10 @@
             </objects>
             <point key="canvasLocation" x="3089.8550724637685" y="568.52678571428567"/>
         </scene>
-        <!--Description View Controller-->
+        <!--Note View Controller-->
         <scene sceneID="PUz-UM-9rx">
             <objects>
-                <viewController id="ozr-GA-mdF" customClass="NRDescriptionViewController" customModule="Remage" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="ozr-GA-mdF" customClass="NRNoteViewController" customModule="Remage" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Fdf-02-Gqb">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="1000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -498,15 +498,15 @@
                     <navigationItem key="navigationItem" id="JZk-Wc-KNc">
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="DiC-U7-YPf">
                             <connections>
-                                <action selector="saveBarButtomTapped:" destination="ozr-GA-mdF" id="nhm-yg-Wgq"/>
+                                <action selector="saveBarButtonTapped:" destination="ozr-GA-mdF" id="SIt-lm-g8f"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <size key="freeformSize" width="414" height="1000"/>
                     <connections>
-                        <outlet property="addDescriptionLabel" destination="Xin-uA-StC" id="uqA-yo-Pp2"/>
-                        <outlet property="backgroundCardView" destination="3ma-rj-0Xn" id="x7h-Ye-plw"/>
-                        <outlet property="descriptionTextView" destination="aEo-ms-qQw" id="Vtw-fY-GHD"/>
+                        <outlet property="addNoteLabel" destination="Xin-uA-StC" id="Ral-E0-qcd"/>
+                        <outlet property="backgroundCardView" destination="3ma-rj-0Xn" id="3a6-sb-8re"/>
+                        <outlet property="noteTextView" destination="aEo-ms-qQw" id="vPF-h9-0en"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7kO-dK-Ktp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
