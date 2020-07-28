@@ -20,5 +20,11 @@ class SettingsMenuViewController: UIViewController {
     // MARK: - DidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
+        updateViews()
+    }
+    
+    private func updateViews() {
+        backgroundCardView.layer.cornerRadius = 15
+        backgroundColorChoiceButton.layer.cornerRadius = 10
     }
 }

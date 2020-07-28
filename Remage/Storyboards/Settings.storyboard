@@ -425,7 +425,7 @@
                                         </subviews>
                                     </stackView>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" red="0.75130233192302054" green="0.51781869606820341" blue="1" alpha="0.4785958904" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="1NY-L7-zZM" secondAttribute="trailing" constant="30" id="4l7-Uo-QHD"/>
                                     <constraint firstItem="1NY-L7-zZM" firstAttribute="top" secondItem="1I5-kL-YgN" secondAttribute="top" constant="25" id="Mq8-7B-KlS"/>
@@ -440,7 +440,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4R1-an-cFi">
-                                <rect key="frame" x="20" y="564" width="374" height="156"/>
+                                <rect key="frame" x="20" y="564" width="374" height="196"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="gdK-jv-qf3">
                                         <rect key="frame" x="20" y="20" width="334" height="116"/>
@@ -453,19 +453,20 @@
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qms-sp-Rp3">
                                                 <rect key="frame" x="137" y="56" width="60" height="60"/>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                <color key="backgroundColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="qms-sp-Rp3" secondAttribute="height" multiplier="1:1" id="5V8-Yd-xTQ"/>
                                                     <constraint firstAttribute="height" constant="60" id="WqA-8K-yws"/>
                                                 </constraints>
                                             </view>
                                         </subviews>
+                                        <color key="backgroundColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </stackView>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" red="0.90368416078769853" green="0.78966245323373196" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="gdK-jv-qf3" firstAttribute="top" secondItem="4R1-an-cFi" secondAttribute="top" constant="20" id="1xI-5q-n6c"/>
-                                    <constraint firstAttribute="bottom" secondItem="gdK-jv-qf3" secondAttribute="bottom" constant="20" id="B8s-9h-qpw"/>
+                                    <constraint firstAttribute="bottom" secondItem="gdK-jv-qf3" secondAttribute="bottom" constant="60" id="B8s-9h-qpw"/>
                                     <constraint firstItem="gdK-jv-qf3" firstAttribute="leading" secondItem="4R1-an-cFi" secondAttribute="leading" constant="20" id="D3l-WO-SyD"/>
                                     <constraint firstAttribute="trailing" secondItem="gdK-jv-qf3" secondAttribute="trailing" constant="20" id="bxC-AT-noB"/>
                                 </constraints>

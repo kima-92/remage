@@ -24,12 +24,21 @@ class ColorGridViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        updateViews()
     }
     
     // MARK: - Actions
     
     @IBAction func gridSquareButtonTapped(_ sender: UIButton) {
         print("Tapped on \(sender.tag)")
+    }
+    
+    // MARK: - Methods
+    
+    private func updateViews() {
+        backgoundCardView.layer.cornerRadius = 15
+        backgroundCardView2.layer.cornerRadius = 15
+        currentColorView.layer.cornerRadius = 10
     }
     
     /*
