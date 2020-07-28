@@ -108,10 +108,10 @@
             </objects>
             <point key="canvasLocation" x="1094" y="148"/>
         </scene>
-        <!--Background Color View Controller-->
+        <!--Color Grid View Controller-->
         <scene sceneID="kKM-04-hGI">
             <objects>
-                <viewController id="Y9F-uV-y2y" customClass="BackgroundColorViewController" customModule="Remage" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Y9F-uV-y2y" customClass="ColorGridViewController" customModule="Remage" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5tB-TJ-MBG">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -125,7 +125,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="g5g-gW-kVO">
                                                 <rect key="frame" x="0.0" y="0.0" width="55" height="315"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PNt-Dq-aCu">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PNt-Dq-aCu" customClass="GridColorButton" customModule="Remage" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="55" height="55"/>
                                                         <color key="backgroundColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
@@ -136,7 +136,7 @@
                                                             <action selector="gridSquareButtonTapped:" destination="Y9F-uV-y2y" eventType="touchUpInside" id="pQg-Rf-67c"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XEk-az-6PD">
+                                                    <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XEk-az-6PD" customClass="GridColorButton" customModule="Remage" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="65" width="55" height="55"/>
                                                         <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
@@ -147,7 +147,7 @@
                                                             <action selector="gridSquareButtonTapped:" destination="Y9F-uV-y2y" eventType="touchUpInside" id="UnT-c6-fbG"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XzO-V8-Q28">
+                                                    <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XzO-V8-Q28" customClass="GridColorButton" customModule="Remage" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="130" width="55" height="55"/>
                                                         <color key="backgroundColor" red="0.77530372140000003" green="0.4775345325" blue="0.95754545930000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
@@ -158,7 +158,7 @@
                                                             <action selector="gridSquareButtonTapped:" destination="Y9F-uV-y2y" eventType="touchUpInside" id="iEI-fk-2ja"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" tag="15" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8gx-dx-0vA">
+                                                    <button opaque="NO" tag="15" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8gx-dx-0vA" customClass="GridColorButton" customModule="Remage" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="195" width="55" height="55"/>
                                                         <color key="backgroundColor" red="0.67700076099999995" green="0.91105854509999995" blue="0.61922669409999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
@@ -169,7 +169,7 @@
                                                             <action selector="gridSquareButtonTapped:" destination="Y9F-uV-y2y" eventType="touchUpInside" id="Ah3-MF-eeC"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" tag="20" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G15-7N-pJL">
+                                                    <button opaque="NO" tag="20" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G15-7N-pJL" customClass="GridColorButton" customModule="Remage" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="260" width="55" height="55"/>
                                                         <color key="backgroundColor" red="0.34983670709999998" green="0.35012659429999998" blue="0.34988158940000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
@@ -185,7 +185,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Wjr-Px-phB">
                                                 <rect key="frame" x="65" y="0.0" width="55" height="315"/>
                                                 <subviews>
-                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ebc-OH-Evo">
+                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ebc-OH-Evo" customClass="GridColorButton" customModule="Remage" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="55" height="55"/>
                                                         <color key="backgroundColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
@@ -196,7 +196,7 @@
                                                             <action selector="gridSquareButtonTapped:" destination="Y9F-uV-y2y" eventType="touchUpInside" id="NSF-Jq-Edi"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Acm-NU-EPF">
+                                                    <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Acm-NU-EPF" customClass="GridColorButton" customModule="Remage" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="65" width="55" height="55"/>
                                                         <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
@@ -207,7 +207,7 @@
                                                             <action selector="gridSquareButtonTapped:" destination="Y9F-uV-y2y" eventType="touchUpInside" id="5zK-fp-WzT"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="An4-SX-tfq">
+                                                    <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="An4-SX-tfq" customClass="GridColorButton" customModule="Remage" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="130" width="55" height="55"/>
                                                         <color key="backgroundColor" red="0.97841709850000003" green="0.46456182000000001" blue="0.69156998400000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
@@ -218,7 +218,7 @@
                                                             <action selector="gridSquareButtonTapped:" destination="Y9F-uV-y2y" eventType="touchUpInside" id="Uqp-FB-7kW"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" tag="16" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wyy-f3-2BV">
+                                                    <button opaque="NO" tag="16" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wyy-f3-2BV" customClass="GridColorButton" customModule="Remage" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="195" width="55" height="55"/>
                                                         <color key="backgroundColor" red="0.51313132049999999" green="0.89110732079999999" blue="0.82760149240000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
@@ -229,7 +229,7 @@
                                                             <action selector="gridSquareButtonTapped:" destination="Y9F-uV-y2y" eventType="touchUpInside" id="1XT-dK-vZC"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" tag="21" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A4t-hP-nfH">
+                                                    <button opaque="NO" tag="21" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A4t-hP-nfH" customClass="GridColorButton" customModule="Remage" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="260" width="55" height="55"/>
                                                         <color key="backgroundColor" red="0.2974405289" green="0.29051500559999999" blue="0.49238091709999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
@@ -245,7 +245,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ueB-gy-6FS">
                                                 <rect key="frame" x="130" y="0.0" width="55" height="315"/>
                                                 <subviews>
-                                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aVY-Qe-PTv">
+                                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aVY-Qe-PTv" customClass="GridColorButton" customModule="Remage" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="55" height="55"/>
                                                         <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
@@ -256,7 +256,7 @@
                                                             <action selector="gridSquareButtonTapped:" destination="Y9F-uV-y2y" eventType="touchUpInside" id="fGb-67-EA9"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DKt-x7-kbP">
+                                                    <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DKt-x7-kbP" customClass="GridColorButton" customModule="Remage" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="65" width="55" height="55"/>
                                                         <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
@@ -267,7 +267,7 @@
                                                             <action selector="gridSquareButtonTapped:" destination="Y9F-uV-y2y" eventType="touchUpInside" id="8ia-iC-JVE"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" tag="12" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fP1-rQ-gb4">
+                                                    <button opaque="NO" tag="12" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fP1-rQ-gb4" customClass="GridColorButton" customModule="Remage" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="130" width="55" height="55"/>
                                                         <color key="backgroundColor" red="0.91229969259999999" green="0.62426632640000002" blue="0.49327224489999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
@@ -278,7 +278,7 @@
                                                             <action selector="gridSquareButtonTapped:" destination="Y9F-uV-y2y" eventType="touchUpInside" id="hEX-rG-i8K"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" tag="17" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r7P-vy-ROs">
+                                                    <button opaque="NO" tag="17" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r7P-vy-ROs" customClass="GridColorButton" customModule="Remage" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="195" width="55" height="55"/>
                                                         <color key="backgroundColor" red="0.4500136971" green="0.76960974930000003" blue="0.96391254660000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
@@ -289,7 +289,7 @@
                                                             <action selector="gridSquareButtonTapped:" destination="Y9F-uV-y2y" eventType="touchUpInside" id="JT6-gR-tMj"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" tag="22" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QK0-sB-KOP">
+                                                    <button opaque="NO" tag="22" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QK0-sB-KOP" customClass="GridColorButton" customModule="Remage" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="260" width="55" height="55"/>
                                                         <color key="backgroundColor" red="0.3758333921" green="0.20432054999999999" blue="0.33346176150000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
@@ -305,7 +305,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="MTO-rS-w3p">
                                                 <rect key="frame" x="195" y="0.0" width="55" height="315"/>
                                                 <subviews>
-                                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aKM-FJ-vod">
+                                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aKM-FJ-vod" customClass="GridColorButton" customModule="Remage" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="55" height="55"/>
                                                         <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
@@ -316,7 +316,7 @@
                                                             <action selector="gridSquareButtonTapped:" destination="Y9F-uV-y2y" eventType="touchUpInside" id="bOL-8E-eau"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FF4-uW-9RX">
+                                                    <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FF4-uW-9RX" customClass="GridColorButton" customModule="Remage" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="65" width="55" height="55"/>
                                                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
@@ -327,7 +327,7 @@
                                                             <action selector="gridSquareButtonTapped:" destination="Y9F-uV-y2y" eventType="touchUpInside" id="5UZ-fB-VNh"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" tag="13" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MPZ-Ex-bDN">
+                                                    <button opaque="NO" tag="13" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MPZ-Ex-bDN" customClass="GridColorButton" customModule="Remage" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="130" width="55" height="55"/>
                                                         <color key="backgroundColor" red="0.94398552179999995" green="0.77606886630000005" blue="0.5313110352" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
@@ -338,7 +338,7 @@
                                                             <action selector="gridSquareButtonTapped:" destination="Y9F-uV-y2y" eventType="touchUpInside" id="z3e-KG-dOs"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" tag="18" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Biw-FK-G8G">
+                                                    <button opaque="NO" tag="18" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Biw-FK-G8G" customClass="GridColorButton" customModule="Remage" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="195" width="55" height="55"/>
                                                         <color key="backgroundColor" red="0.55871540310000001" green="0.62185233829999997" blue="0.8953310847" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
@@ -349,7 +349,7 @@
                                                             <action selector="gridSquareButtonTapped:" destination="Y9F-uV-y2y" eventType="touchUpInside" id="OFD-fZ-eMy"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" tag="23" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t6d-lF-Kcq">
+                                                    <button opaque="NO" tag="23" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t6d-lF-Kcq" customClass="GridColorButton" customModule="Remage" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="260" width="55" height="55"/>
                                                         <color key="backgroundColor" red="0.35473024850000001" green="0.20890709760000001" blue="0.13223388790000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
@@ -365,7 +365,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="wzd-Zc-mwp">
                                                 <rect key="frame" x="260" y="0.0" width="55" height="315"/>
                                                 <subviews>
-                                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W2f-vv-fpK">
+                                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W2f-vv-fpK" customClass="GridColorButton" customModule="Remage" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="55" height="55"/>
                                                         <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
@@ -376,7 +376,7 @@
                                                             <action selector="gridSquareButtonTapped:" destination="Y9F-uV-y2y" eventType="touchUpInside" id="eup-Gr-2MU"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6r6-Ps-16i">
+                                                    <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6r6-Ps-16i" customClass="GridColorButton" customModule="Remage" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="65" width="55" height="55"/>
                                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
@@ -387,7 +387,7 @@
                                                             <action selector="gridSquareButtonTapped:" destination="Y9F-uV-y2y" eventType="touchUpInside" id="NVu-4z-J9t"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" tag="14" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ixU-ik-4x5">
+                                                    <button opaque="NO" tag="14" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ixU-ik-4x5" customClass="GridColorButton" customModule="Remage" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="130" width="55" height="55"/>
                                                         <color key="backgroundColor" red="0.99137872459999998" green="0.89341849090000003" blue="0.62604367729999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
@@ -398,7 +398,7 @@
                                                             <action selector="gridSquareButtonTapped:" destination="Y9F-uV-y2y" eventType="touchUpInside" id="2Ix-qB-MdT"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" tag="19" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cjc-II-h4r">
+                                                    <button opaque="NO" tag="19" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cjc-II-h4r" customClass="GridColorButton" customModule="Remage" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="195" width="55" height="55"/>
                                                         <color key="backgroundColor" red="0.50690186020000005" green="0.5073042512" blue="0.50696420669999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
@@ -409,7 +409,7 @@
                                                             <action selector="gridSquareButtonTapped:" destination="Y9F-uV-y2y" eventType="touchUpInside" id="he8-hV-ayY"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" tag="24" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="au7-to-u0I">
+                                                    <button opaque="NO" tag="24" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="au7-to-u0I" customClass="GridColorButton" customModule="Remage" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="260" width="55" height="55"/>
                                                         <color key="backgroundColor" red="0.13792225720000001" green="0.2119395137" blue="0.047029770909999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
@@ -491,7 +491,6 @@
                         <outlet property="chooseColorLabel" destination="FCj-TE-Hm4" id="vV5-U0-r1b"/>
                         <outlet property="currentColorLabel" destination="xxV-RW-Gh3" id="sps-U3-SCx"/>
                         <outlet property="currentColorView" destination="qms-sp-Rp3" id="tJB-hY-mQ5"/>
-                        <outlet property="gridSquareButton" destination="au7-to-u0I" id="hRA-bw-H7U"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="grn-Li-XPy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

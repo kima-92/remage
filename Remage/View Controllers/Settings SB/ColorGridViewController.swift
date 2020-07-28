@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BackgroundColorViewController: UIViewController {
+class ColorGridViewController: UIViewController {
     
     // MARK: - Outlets
     
@@ -17,8 +17,6 @@ class BackgroundColorViewController: UIViewController {
     @IBOutlet weak var backgoundCardView: UIView!
     @IBOutlet weak var backgroundCardView2: UIView!
     
-    @IBOutlet weak var gridSquareButton: UIButton!
-    
     @IBOutlet weak var currentColorLabel: UILabel!
     @IBOutlet weak var currentColorView: UIView!
     
@@ -26,19 +24,12 @@ class BackgroundColorViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        updateViews()
     }
     
     // MARK: - Actions
     
     @IBAction func gridSquareButtonTapped(_ sender: UIButton) {
         print("Tapped on \(sender.tag)")
-    }
-    
-    private func updateViews() {
-        //gridSquareButton.clipsToBounds = false
-        gridSquareButton.layer.cornerRadius = 10
-        
     }
     
     /*
