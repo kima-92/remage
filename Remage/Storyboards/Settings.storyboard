@@ -505,13 +505,88 @@
                     <view key="view" contentMode="scaleToFill" id="pXN-rt-HWv">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="PAq-uf-3uN">
+                                <rect key="frame" x="105" y="212" width="187.5" height="500"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FZu-g2-WeW">
+                                        <rect key="frame" x="0.0" y="0.0" width="187.5" height="100"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="6ro-pW-nRl"/>
+                                            <constraint firstAttribute="width" secondItem="FZu-g2-WeW" secondAttribute="height" multiplier="15:8" id="bCU-e7-u1G"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dUk-7a-bIS">
+                                        <rect key="frame" x="0.0" y="100" width="187.5" height="100"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="85N-2I-JNk"/>
+                                            <constraint firstAttribute="width" secondItem="dUk-7a-bIS" secondAttribute="height" multiplier="15:8" id="y89-F9-xCQ"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WC0-El-5rc">
+                                        <rect key="frame" x="0.0" y="200" width="187.5" height="100"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="WC0-El-5rc" secondAttribute="height" multiplier="15:8" id="a3F-oO-pjE"/>
+                                            <constraint firstAttribute="height" constant="100" id="kfB-gN-uG9"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="piR-8R-kbw">
+                                        <rect key="frame" x="0.0" y="300" width="187.5" height="100"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="CYe-Bl-Sfc"/>
+                                            <constraint firstAttribute="width" secondItem="piR-8R-kbw" secondAttribute="height" multiplier="15:8" id="Zf8-zy-6en"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pqj-6f-sYf">
+                                        <rect key="frame" x="0.0" y="400" width="187.5" height="100"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="Pqj-6f-sYf" secondAttribute="height" multiplier="15:8" id="1mX-Zc-QVi"/>
+                                            <constraint firstAttribute="height" constant="100" id="x8V-oi-qpU"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="WC0-El-5rc" firstAttribute="width" secondItem="WC0-El-5rc" secondAttribute="height" multiplier="15:8" id="3St-2S-3ri"/>
+                                    <constraint firstItem="dUk-7a-bIS" firstAttribute="width" secondItem="dUk-7a-bIS" secondAttribute="height" multiplier="15:8" id="5eR-Mz-ZZI"/>
+                                    <constraint firstItem="piR-8R-kbw" firstAttribute="width" secondItem="piR-8R-kbw" secondAttribute="height" multiplier="15:8" id="WNy-cP-yKc"/>
+                                    <constraint firstItem="Pqj-6f-sYf" firstAttribute="width" secondItem="Pqj-6f-sYf" secondAttribute="height" multiplier="15:8" id="dC6-hz-Wcf"/>
+                                </constraints>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tQJ-Vb-QAN">
+                                <rect key="frame" x="30" y="94" width="354" height="48"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="Try Color!"/>
+                                <connections>
+                                    <action selector="tryColorButtonTapped:" destination="dCB-36-hVr" eventType="touchUpInside" id="eAN-wm-Wk7"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="tQJ-Vb-QAN" firstAttribute="leading" secondItem="q4d-j0-GfI" secondAttribute="leading" constant="30" id="1PU-Qo-iU5"/>
+                            <constraint firstItem="PAq-uf-3uN" firstAttribute="top" secondItem="tQJ-Vb-QAN" secondAttribute="bottom" constant="70" id="Nxx-mK-UZG"/>
+                            <constraint firstItem="tQJ-Vb-QAN" firstAttribute="top" secondItem="q4d-j0-GfI" secondAttribute="top" constant="50" id="cPi-NA-wBA"/>
+                            <constraint firstItem="q4d-j0-GfI" firstAttribute="trailing" secondItem="tQJ-Vb-QAN" secondAttribute="trailing" constant="30" id="pmd-ZY-Nmd"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="q4d-j0-GfI"/>
                     </view>
+                    <connections>
+                        <outlet property="box1" destination="FZu-g2-WeW" id="mwm-o9-j3x"/>
+                        <outlet property="box2" destination="dUk-7a-bIS" id="vym-Fc-NCK"/>
+                        <outlet property="box3" destination="WC0-El-5rc" id="KGa-XG-FFe"/>
+                        <outlet property="box4" destination="piR-8R-kbw" id="TLp-Vm-Hna"/>
+                        <outlet property="box5" destination="Pqj-6f-sYf" id="KWv-GK-g9E"/>
+                        <outlet property="tryColorButton" destination="tQJ-Vb-QAN" id="RLj-jg-LEI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HNQ-2g-tYf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3099" y="91"/>
+            <point key="canvasLocation" x="3041" y="130"/>
         </scene>
         <!--Settings-->
         <scene sceneID="zvV-Ax-huS">
