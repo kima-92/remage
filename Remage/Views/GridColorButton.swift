@@ -23,5 +23,16 @@ class GridColorButton: UIButton {
     
     private func setupButton() {
         layer.cornerRadius = 10
+        
+        setShadow()
+    }
+    
+    private func setShadow() {
+        layer.shadowColor = UIColor.black.cgColor
+        layer.shadowOffset = CGSize(width: 0.0, height: 6.0)
+        layer.shadowRadius = 8
+        layer.shadowOpacity = 0.5
+        clipsToBounds = true
+        layer.masksToBounds = false
     }
 }
