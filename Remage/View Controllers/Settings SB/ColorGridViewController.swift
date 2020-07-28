@@ -32,6 +32,12 @@ class ColorGridViewController: UIViewController {
     // MARK: - Actions
     
     @IBAction func gridSquareButtonTapped(_ sender: GridColorButton) {
+        selectColor(sender: sender)
+    }
+    
+    // MARK: - Methods
+    
+    private func selectColor(sender: GridColorButton) {
         
         // Clear all borders
         clearBorders()
@@ -54,8 +60,6 @@ class ColorGridViewController: UIViewController {
         backgoundCardView.backgroundColor = sender.backgroundColor
     }
     
-    // MARK: - Methods
-    
     // Clear borders of all GridColorButtons in the array
     private func clearBorders() {
         for cube in gridSquares {
@@ -63,7 +67,7 @@ class ColorGridViewController: UIViewController {
         }
     }
     
-    // Update Views
+    // MARK: - UpdateViews
     private func updateViews() {
         
         // Round corners
@@ -75,16 +79,7 @@ class ColorGridViewController: UIViewController {
         currentColorView.layer.borderColor = UIColor.black.cgColor
         currentColorView.layer.borderWidth = 3
         
+        // Clear second backgroundView
         backgroundCardView2.backgroundColor = .clear
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 }
