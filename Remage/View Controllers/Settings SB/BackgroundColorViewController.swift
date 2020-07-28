@@ -9,14 +9,38 @@
 import UIKit
 
 class BackgroundColorViewController: UIViewController {
-
+    
+    // MARK: - Outlets
+    
+    @IBOutlet weak var chooseColorLabel: UILabel!
+    
+    @IBOutlet weak var backgoundCardView: UIView!
+    @IBOutlet weak var backgroundCardView2: UIView!
+    
+    @IBOutlet weak var gridSquareButton: UIButton!
+    
+    @IBOutlet weak var currentColorLabel: UILabel!
+    @IBOutlet weak var currentColorView: UIView!
+    
+    // MARK: - DidLoad
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        updateViews()
     }
     
-
+    // MARK: - Actions
+    
+    @IBAction func gridSquareButtonTapped(_ sender: UIButton) {
+        print("Tapped on \(sender.tag)")
+    }
+    
+    private func updateViews() {
+        //gridSquareButton.clipsToBounds = false
+        gridSquareButton.layer.cornerRadius = 10
+        
+    }
+    
     /*
     // MARK: - Navigation
 
@@ -26,5 +50,4 @@ class BackgroundColorViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
 }

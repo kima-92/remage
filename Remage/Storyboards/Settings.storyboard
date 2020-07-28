@@ -117,305 +117,320 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1I5-kL-YgN">
-                                <rect key="frame" x="20" y="164" width="380" height="380"/>
+                                <rect key="frame" x="20" y="164" width="375" height="370"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="SSm-yq-vGH">
-                                        <rect key="frame" x="20" y="20" width="340" height="340"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="1NY-L7-zZM">
+                                        <rect key="frame" x="30" y="25" width="315" height="315"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Cbs-9F-NZT">
-                                                <rect key="frame" x="0.0" y="0.0" width="60" height="340"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="g5g-gW-kVO">
+                                                <rect key="frame" x="0.0" y="0.0" width="55" height="315"/>
                                                 <subviews>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fTm-ac-agI">
-                                                        <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PNt-Dq-aCu">
+                                                        <rect key="frame" x="0.0" y="0.0" width="55" height="55"/>
                                                         <color key="backgroundColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="width" secondItem="fTm-ac-agI" secondAttribute="height" multiplier="1:1" id="0Ch-EE-K6o"/>
-                                                            <constraint firstAttribute="height" constant="60" id="AfY-4g-od6"/>
+                                                            <constraint firstAttribute="width" secondItem="PNt-Dq-aCu" secondAttribute="height" multiplier="1:1" id="Y7I-6I-nOq"/>
+                                                            <constraint firstAttribute="height" constant="55" id="ok1-P2-7bg"/>
                                                         </constraints>
-                                                    </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hZy-AB-lfh">
-                                                        <rect key="frame" x="0.0" y="70" width="60" height="60"/>
+                                                        <connections>
+                                                            <action selector="gridSquareButtonTapped:" destination="Y9F-uV-y2y" eventType="touchUpInside" id="pQg-Rf-67c"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XEk-az-6PD">
+                                                        <rect key="frame" x="0.0" y="65" width="55" height="55"/>
                                                         <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="60" id="d9L-hv-OU5"/>
-                                                            <constraint firstAttribute="width" secondItem="hZy-AB-lfh" secondAttribute="height" multiplier="1:1" id="rcW-ne-Ogk"/>
+                                                            <constraint firstAttribute="width" secondItem="XEk-az-6PD" secondAttribute="height" multiplier="1:1" id="boW-z7-nvc"/>
+                                                            <constraint firstAttribute="height" constant="55" id="nfO-Xf-ILM"/>
                                                         </constraints>
-                                                    </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fCw-6c-csW">
-                                                        <rect key="frame" x="0.0" y="140" width="60" height="60"/>
-                                                        <color key="backgroundColor" red="0.75745457208463929" green="0.41224521619927967" blue="0.9494566941624365" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <connections>
+                                                            <action selector="gridSquareButtonTapped:" destination="Y9F-uV-y2y" eventType="touchUpInside" id="UnT-c6-fbG"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XzO-V8-Q28">
+                                                        <rect key="frame" x="0.0" y="130" width="55" height="55"/>
+                                                        <color key="backgroundColor" red="0.77530372140000003" green="0.4775345325" blue="0.95754545930000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="width" secondItem="fCw-6c-csW" secondAttribute="height" multiplier="1:1" id="Gzs-8c-wCo"/>
-                                                            <constraint firstAttribute="height" constant="60" id="ZzU-yP-mZd"/>
+                                                            <constraint firstAttribute="width" secondItem="XzO-V8-Q28" secondAttribute="height" multiplier="1:1" id="7aD-Sh-tiZ"/>
+                                                            <constraint firstAttribute="height" constant="55" id="dSU-eM-igU"/>
                                                         </constraints>
-                                                    </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xBn-Ct-PaC">
-                                                        <rect key="frame" x="0.0" y="210" width="60" height="60"/>
-                                                        <color key="backgroundColor" red="0.62450065749537509" green="0.90660691624365486" blue="0.57894614116940757" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <connections>
+                                                            <action selector="gridSquareButtonTapped:" destination="Y9F-uV-y2y" eventType="touchUpInside" id="iEI-fk-2ja"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="15" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8gx-dx-0vA">
+                                                        <rect key="frame" x="0.0" y="195" width="55" height="55"/>
+                                                        <color key="backgroundColor" red="0.67700076099999995" green="0.91105854509999995" blue="0.61922669409999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="60" id="39o-iO-kfU"/>
-                                                            <constraint firstAttribute="width" secondItem="xBn-Ct-PaC" secondAttribute="height" multiplier="1:1" id="QAJ-Hw-QI2"/>
+                                                            <constraint firstAttribute="height" constant="55" id="Gsh-gK-MKr"/>
+                                                            <constraint firstAttribute="width" secondItem="8gx-dx-0vA" secondAttribute="height" multiplier="1:1" id="cU0-cC-LUL"/>
                                                         </constraints>
-                                                    </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V27-hU-UJY">
-                                                        <rect key="frame" x="0.0" y="280" width="60" height="60"/>
-                                                        <color key="backgroundColor" red="0.3108740482233503" green="0.3108740482233503" blue="0.3108740482233503" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <connections>
+                                                            <action selector="gridSquareButtonTapped:" destination="Y9F-uV-y2y" eventType="touchUpInside" id="Ah3-MF-eeC"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="20" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G15-7N-pJL">
+                                                        <rect key="frame" x="0.0" y="260" width="55" height="55"/>
+                                                        <color key="backgroundColor" red="0.34983670709999998" green="0.35012659429999998" blue="0.34988158940000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="60" id="1HC-Pp-xG0"/>
-                                                            <constraint firstAttribute="width" secondItem="V27-hU-UJY" secondAttribute="height" multiplier="1:1" id="9bt-zU-i6x"/>
+                                                            <constraint firstAttribute="width" secondItem="G15-7N-pJL" secondAttribute="height" multiplier="1:1" id="UVn-9c-pgt"/>
+                                                            <constraint firstAttribute="height" constant="55" id="k4Z-QP-U6Y"/>
                                                         </constraints>
-                                                    </view>
+                                                        <connections>
+                                                            <action selector="gridSquareButtonTapped:" destination="Y9F-uV-y2y" eventType="touchUpInside" id="HOD-qg-xbU"/>
+                                                        </connections>
+                                                    </button>
                                                 </subviews>
-                                                <constraints>
-                                                    <constraint firstItem="V27-hU-UJY" firstAttribute="width" secondItem="V27-hU-UJY" secondAttribute="height" multiplier="1:1" id="0ya-C9-aTx"/>
-                                                    <constraint firstItem="V27-hU-UJY" firstAttribute="width" secondItem="V27-hU-UJY" secondAttribute="height" multiplier="1:1" id="3Oe-WJ-H4p"/>
-                                                    <constraint firstItem="V27-hU-UJY" firstAttribute="width" secondItem="V27-hU-UJY" secondAttribute="height" multiplier="1:1" id="GQU-Ns-DS4"/>
-                                                    <constraint firstItem="xBn-Ct-PaC" firstAttribute="width" secondItem="xBn-Ct-PaC" secondAttribute="height" multiplier="1:1" id="HCQ-nv-28b"/>
-                                                    <constraint firstItem="xBn-Ct-PaC" firstAttribute="width" secondItem="xBn-Ct-PaC" secondAttribute="height" multiplier="1:1" id="SMd-W9-jmn"/>
-                                                    <constraint firstItem="hZy-AB-lfh" firstAttribute="width" secondItem="hZy-AB-lfh" secondAttribute="height" multiplier="1:1" id="V3g-BE-vwY"/>
-                                                    <constraint firstItem="xBn-Ct-PaC" firstAttribute="width" secondItem="xBn-Ct-PaC" secondAttribute="height" multiplier="1:1" id="hxM-Tt-v6A"/>
-                                                    <constraint firstItem="V27-hU-UJY" firstAttribute="width" secondItem="V27-hU-UJY" secondAttribute="height" multiplier="1:1" id="mGS-6M-YbG"/>
-                                                    <constraint firstItem="fCw-6c-csW" firstAttribute="width" secondItem="fCw-6c-csW" secondAttribute="height" multiplier="1:1" id="qj9-Y3-VtQ"/>
-                                                    <constraint firstItem="fCw-6c-csW" firstAttribute="width" secondItem="fCw-6c-csW" secondAttribute="height" multiplier="1:1" id="yG8-qy-iVV"/>
-                                                </constraints>
                                             </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="EsX-Ut-OZj">
-                                                <rect key="frame" x="70" y="0.0" width="60" height="340"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Wjr-Px-phB">
+                                                <rect key="frame" x="65" y="0.0" width="55" height="315"/>
                                                 <subviews>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RyT-e1-x9r">
-                                                        <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ebc-OH-Evo">
+                                                        <rect key="frame" x="0.0" y="0.0" width="55" height="55"/>
                                                         <color key="backgroundColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="60" id="3gO-Tl-eVt"/>
-                                                            <constraint firstAttribute="width" secondItem="RyT-e1-x9r" secondAttribute="height" multiplier="1:1" id="RgU-tP-dEo"/>
+                                                            <constraint firstAttribute="height" constant="55" id="21i-kd-6Vd"/>
+                                                            <constraint firstAttribute="width" secondItem="ebc-OH-Evo" secondAttribute="height" multiplier="1:1" id="tYU-J6-t1z"/>
                                                         </constraints>
-                                                    </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jgj-NI-f20">
-                                                        <rect key="frame" x="0.0" y="70" width="60" height="60"/>
+                                                        <connections>
+                                                            <action selector="gridSquareButtonTapped:" destination="Y9F-uV-y2y" eventType="touchUpInside" id="NSF-Jq-Edi"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Acm-NU-EPF">
+                                                        <rect key="frame" x="0.0" y="65" width="55" height="55"/>
                                                         <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="60" id="Iol-cQ-4lI"/>
-                                                            <constraint firstAttribute="width" secondItem="Jgj-NI-f20" secondAttribute="height" multiplier="1:1" id="nQD-Xv-E6e"/>
+                                                            <constraint firstAttribute="width" secondItem="Acm-NU-EPF" secondAttribute="height" multiplier="1:1" id="XhR-8F-2Ji"/>
+                                                            <constraint firstAttribute="height" constant="55" id="vtw-69-f4i"/>
                                                         </constraints>
-                                                    </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XE0-cq-4k8">
-                                                        <rect key="frame" x="0.0" y="140" width="60" height="60"/>
-                                                        <color key="backgroundColor" red="1" green="0.39648052081103491" blue="0.65693458231470969" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <connections>
+                                                            <action selector="gridSquareButtonTapped:" destination="Y9F-uV-y2y" eventType="touchUpInside" id="5zK-fp-WzT"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="An4-SX-tfq">
+                                                        <rect key="frame" x="0.0" y="130" width="55" height="55"/>
+                                                        <color key="backgroundColor" red="0.97841709850000003" green="0.46456182000000001" blue="0.69156998400000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="width" secondItem="XE0-cq-4k8" secondAttribute="height" multiplier="1:1" id="2fY-9B-vRN"/>
-                                                            <constraint firstAttribute="height" constant="60" id="7En-Qa-P5H"/>
+                                                            <constraint firstAttribute="width" secondItem="An4-SX-tfq" secondAttribute="height" multiplier="1:1" id="dZq-jc-8EJ"/>
+                                                            <constraint firstAttribute="height" constant="55" id="ods-jc-yhP"/>
                                                         </constraints>
-                                                    </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pzD-2X-V50">
-                                                        <rect key="frame" x="0.0" y="210" width="60" height="60"/>
-                                                        <color key="backgroundColor" red="0.43270541306647453" green="0.88080980329949243" blue="0.8049409591104173" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <connections>
+                                                            <action selector="gridSquareButtonTapped:" destination="Y9F-uV-y2y" eventType="touchUpInside" id="Uqp-FB-7kW"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="16" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wyy-f3-2BV">
+                                                        <rect key="frame" x="0.0" y="195" width="55" height="55"/>
+                                                        <color key="backgroundColor" red="0.51313132049999999" green="0.89110732079999999" blue="0.82760149240000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="60" id="3IN-y9-9TR"/>
-                                                            <constraint firstAttribute="width" secondItem="pzD-2X-V50" secondAttribute="height" multiplier="1:1" id="GiS-aR-luQ"/>
+                                                            <constraint firstAttribute="width" secondItem="Wyy-f3-2BV" secondAttribute="height" multiplier="1:1" id="6AK-Dj-Y9Z"/>
+                                                            <constraint firstAttribute="height" constant="55" id="Qsf-1H-tAM"/>
                                                         </constraints>
-                                                    </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9gp-M6-gu9">
-                                                        <rect key="frame" x="0.0" y="280" width="60" height="60"/>
-                                                        <color key="backgroundColor" red="0.2573714314309436" green="0.24996938955279563" blue="0.44559010152284262" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <connections>
+                                                            <action selector="gridSquareButtonTapped:" destination="Y9F-uV-y2y" eventType="touchUpInside" id="1XT-dK-vZC"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="21" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A4t-hP-nfH">
+                                                        <rect key="frame" x="0.0" y="260" width="55" height="55"/>
+                                                        <color key="backgroundColor" red="0.2974405289" green="0.29051500559999999" blue="0.49238091709999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="width" secondItem="9gp-M6-gu9" secondAttribute="height" multiplier="1:1" id="Pkv-ws-1oV"/>
-                                                            <constraint firstAttribute="height" constant="60" id="xUJ-rv-2He"/>
+                                                            <constraint firstAttribute="height" constant="55" id="KpZ-bG-aJX"/>
+                                                            <constraint firstAttribute="width" secondItem="A4t-hP-nfH" secondAttribute="height" multiplier="1:1" id="ruu-4D-Yc2"/>
                                                         </constraints>
-                                                    </view>
+                                                        <connections>
+                                                            <action selector="gridSquareButtonTapped:" destination="Y9F-uV-y2y" eventType="touchUpInside" id="jrn-Th-OBF"/>
+                                                        </connections>
+                                                    </button>
                                                 </subviews>
-                                                <constraints>
-                                                    <constraint firstItem="XE0-cq-4k8" firstAttribute="width" secondItem="XE0-cq-4k8" secondAttribute="height" multiplier="1:1" id="1Ha-j8-O7O"/>
-                                                    <constraint firstItem="XE0-cq-4k8" firstAttribute="width" secondItem="XE0-cq-4k8" secondAttribute="height" multiplier="1:1" id="5ZG-WJ-CY8"/>
-                                                    <constraint firstItem="pzD-2X-V50" firstAttribute="width" secondItem="pzD-2X-V50" secondAttribute="height" multiplier="1:1" id="CKU-Sf-Gxk"/>
-                                                    <constraint firstItem="pzD-2X-V50" firstAttribute="width" secondItem="pzD-2X-V50" secondAttribute="height" multiplier="1:1" id="FZ4-jd-S0Y"/>
-                                                    <constraint firstItem="pzD-2X-V50" firstAttribute="width" secondItem="pzD-2X-V50" secondAttribute="height" multiplier="1:1" id="ILr-fn-YMd"/>
-                                                    <constraint firstItem="Jgj-NI-f20" firstAttribute="width" secondItem="Jgj-NI-f20" secondAttribute="height" multiplier="1:1" id="Mey-Qn-Egs"/>
-                                                    <constraint firstItem="9gp-M6-gu9" firstAttribute="width" secondItem="9gp-M6-gu9" secondAttribute="height" multiplier="1:1" id="Xda-Fn-I5v"/>
-                                                    <constraint firstItem="9gp-M6-gu9" firstAttribute="width" secondItem="9gp-M6-gu9" secondAttribute="height" multiplier="1:1" id="Zea-p2-FK3"/>
-                                                    <constraint firstItem="9gp-M6-gu9" firstAttribute="width" secondItem="9gp-M6-gu9" secondAttribute="height" multiplier="1:1" id="e7o-hs-t7A"/>
-                                                    <constraint firstItem="9gp-M6-gu9" firstAttribute="width" secondItem="9gp-M6-gu9" secondAttribute="height" multiplier="1:1" id="wMX-rG-GJY"/>
-                                                </constraints>
                                             </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="fDj-HI-tMZ">
-                                                <rect key="frame" x="140" y="0.0" width="60" height="340"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ueB-gy-6FS">
+                                                <rect key="frame" x="130" y="0.0" width="55" height="315"/>
                                                 <subviews>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y0i-wH-6BD">
-                                                        <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aVY-Qe-PTv">
+                                                        <rect key="frame" x="0.0" y="0.0" width="55" height="55"/>
                                                         <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="60" id="G9n-W9-4yT"/>
-                                                            <constraint firstAttribute="width" secondItem="Y0i-wH-6BD" secondAttribute="height" multiplier="1:1" id="Mbr-LF-4F7"/>
+                                                            <constraint firstAttribute="height" constant="55" id="lhL-4E-zbO"/>
+                                                            <constraint firstAttribute="width" secondItem="aVY-Qe-PTv" secondAttribute="height" multiplier="1:1" id="wUl-2h-QAh"/>
                                                         </constraints>
-                                                    </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yiu-6J-u9K">
-                                                        <rect key="frame" x="0.0" y="70" width="60" height="60"/>
+                                                        <connections>
+                                                            <action selector="gridSquareButtonTapped:" destination="Y9F-uV-y2y" eventType="touchUpInside" id="fGb-67-EA9"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DKt-x7-kbP">
+                                                        <rect key="frame" x="0.0" y="65" width="55" height="55"/>
                                                         <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="width" secondItem="Yiu-6J-u9K" secondAttribute="height" multiplier="1:1" id="8KS-Vb-uZi"/>
-                                                            <constraint firstAttribute="height" constant="60" id="xQE-j7-6BC"/>
+                                                            <constraint firstAttribute="height" constant="55" id="gdG-gU-80p"/>
+                                                            <constraint firstAttribute="width" secondItem="DKt-x7-kbP" secondAttribute="height" multiplier="1:1" id="ng1-jV-osS"/>
                                                         </constraints>
-                                                    </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fcn-18-1FK">
-                                                        <rect key="frame" x="0.0" y="140" width="60" height="60"/>
-                                                        <color key="backgroundColor" red="0.91648159898477155" green="0.5778281991307328" blue="0.45006215634894264" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <connections>
+                                                            <action selector="gridSquareButtonTapped:" destination="Y9F-uV-y2y" eventType="touchUpInside" id="8ia-iC-JVE"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="12" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fP1-rQ-gb4">
+                                                        <rect key="frame" x="0.0" y="130" width="55" height="55"/>
+                                                        <color key="backgroundColor" red="0.91229969259999999" green="0.62426632640000002" blue="0.49327224489999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="width" secondItem="fcn-18-1FK" secondAttribute="height" multiplier="1:1" id="hgy-Ys-UNu"/>
-                                                            <constraint firstAttribute="height" constant="60" id="txh-g8-LAg"/>
+                                                            <constraint firstAttribute="width" secondItem="fP1-rQ-gb4" secondAttribute="height" multiplier="1:1" id="V7D-Nd-pfQ"/>
+                                                            <constraint firstAttribute="height" constant="55" id="qcc-4j-SKW"/>
                                                         </constraints>
-                                                    </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vxq-Lg-tpH">
-                                                        <rect key="frame" x="0.0" y="210" width="60" height="60"/>
-                                                        <color key="backgroundColor" red="0.36660282729542071" green="0.74218933750622651" blue="0.9577054251269036" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <connections>
+                                                            <action selector="gridSquareButtonTapped:" destination="Y9F-uV-y2y" eventType="touchUpInside" id="hEX-rG-i8K"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="17" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r7P-vy-ROs">
+                                                        <rect key="frame" x="0.0" y="195" width="55" height="55"/>
+                                                        <color key="backgroundColor" red="0.4500136971" green="0.76960974930000003" blue="0.96391254660000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="width" secondItem="Vxq-Lg-tpH" secondAttribute="height" multiplier="1:1" id="PWP-Tq-aPx"/>
-                                                            <constraint firstAttribute="height" constant="60" id="y2C-6k-He3"/>
+                                                            <constraint firstAttribute="width" secondItem="r7P-vy-ROs" secondAttribute="height" multiplier="1:1" id="Kvh-sh-N3l"/>
+                                                            <constraint firstAttribute="height" constant="55" id="zoA-Aw-7fR"/>
                                                         </constraints>
-                                                    </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AbK-ng-Wpg">
-                                                        <rect key="frame" x="0.0" y="280" width="60" height="60"/>
-                                                        <color key="backgroundColor" red="0.3421438769035533" green="0.174228623472305" blue="0.29380197597542707" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <connections>
+                                                            <action selector="gridSquareButtonTapped:" destination="Y9F-uV-y2y" eventType="touchUpInside" id="JT6-gR-tMj"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="22" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QK0-sB-KOP">
+                                                        <rect key="frame" x="0.0" y="260" width="55" height="55"/>
+                                                        <color key="backgroundColor" red="0.3758333921" green="0.20432054999999999" blue="0.33346176150000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="width" secondItem="AbK-ng-Wpg" secondAttribute="height" multiplier="1:1" id="T13-iz-e8q"/>
-                                                            <constraint firstAttribute="height" constant="60" id="vjs-Dg-Wnm"/>
+                                                            <constraint firstAttribute="height" constant="55" id="QRc-Zj-088"/>
+                                                            <constraint firstAttribute="width" secondItem="QK0-sB-KOP" secondAttribute="height" multiplier="1:1" id="dB0-iA-qjq"/>
                                                         </constraints>
-                                                    </view>
+                                                        <connections>
+                                                            <action selector="gridSquareButtonTapped:" destination="Y9F-uV-y2y" eventType="touchUpInside" id="CG4-j5-dcx"/>
+                                                        </connections>
+                                                    </button>
                                                 </subviews>
-                                                <constraints>
-                                                    <constraint firstItem="AbK-ng-Wpg" firstAttribute="width" secondItem="AbK-ng-Wpg" secondAttribute="height" multiplier="1:1" id="2jz-bK-V0m"/>
-                                                    <constraint firstItem="Yiu-6J-u9K" firstAttribute="width" secondItem="Yiu-6J-u9K" secondAttribute="height" multiplier="1:1" id="8mE-eB-mUR"/>
-                                                    <constraint firstItem="Vxq-Lg-tpH" firstAttribute="width" secondItem="Vxq-Lg-tpH" secondAttribute="height" multiplier="1:1" id="LXD-sM-T6T"/>
-                                                    <constraint firstItem="fcn-18-1FK" firstAttribute="width" secondItem="fcn-18-1FK" secondAttribute="height" multiplier="1:1" id="Oea-vS-W5z"/>
-                                                    <constraint firstItem="AbK-ng-Wpg" firstAttribute="width" secondItem="AbK-ng-Wpg" secondAttribute="height" multiplier="1:1" id="OkG-Qh-LyB"/>
-                                                    <constraint firstItem="AbK-ng-Wpg" firstAttribute="width" secondItem="AbK-ng-Wpg" secondAttribute="height" multiplier="1:1" id="atN-bl-bxf"/>
-                                                    <constraint firstItem="Vxq-Lg-tpH" firstAttribute="width" secondItem="Vxq-Lg-tpH" secondAttribute="height" multiplier="1:1" id="exf-rP-BjO"/>
-                                                    <constraint firstItem="Vxq-Lg-tpH" firstAttribute="width" secondItem="Vxq-Lg-tpH" secondAttribute="height" multiplier="1:1" id="mLW-cd-nCd"/>
-                                                    <constraint firstItem="fcn-18-1FK" firstAttribute="width" secondItem="fcn-18-1FK" secondAttribute="height" multiplier="1:1" id="nK9-D5-GgC"/>
-                                                    <constraint firstItem="AbK-ng-Wpg" firstAttribute="width" secondItem="AbK-ng-Wpg" secondAttribute="height" multiplier="1:1" id="onX-16-3W2"/>
-                                                </constraints>
                                             </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Urq-Fi-gCN">
-                                                <rect key="frame" x="210" y="0.0" width="60" height="340"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="MTO-rS-w3p">
+                                                <rect key="frame" x="195" y="0.0" width="55" height="315"/>
                                                 <subviews>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YrR-8g-FHR">
-                                                        <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aKM-FJ-vod">
+                                                        <rect key="frame" x="0.0" y="0.0" width="55" height="55"/>
                                                         <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="60" id="76x-iL-hc2"/>
-                                                            <constraint firstAttribute="width" secondItem="YrR-8g-FHR" secondAttribute="height" multiplier="1:1" id="EP3-x9-szn"/>
+                                                            <constraint firstAttribute="width" secondItem="aKM-FJ-vod" secondAttribute="height" multiplier="1:1" id="jrw-BK-L3c"/>
+                                                            <constraint firstAttribute="height" constant="55" id="kig-3b-nt6"/>
                                                         </constraints>
-                                                    </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Msp-3d-qqu">
-                                                        <rect key="frame" x="0.0" y="70" width="60" height="60"/>
+                                                        <connections>
+                                                            <action selector="gridSquareButtonTapped:" destination="Y9F-uV-y2y" eventType="touchUpInside" id="bOL-8E-eau"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FF4-uW-9RX">
+                                                        <rect key="frame" x="0.0" y="65" width="55" height="55"/>
                                                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="60" id="2Ak-eQ-GFQ"/>
-                                                            <constraint firstAttribute="width" secondItem="Msp-3d-qqu" secondAttribute="height" multiplier="1:1" id="Hwx-CP-BBe"/>
+                                                            <constraint firstAttribute="width" secondItem="FF4-uW-9RX" secondAttribute="height" multiplier="1:1" id="06j-nc-p0D"/>
+                                                            <constraint firstAttribute="height" constant="55" id="1Tj-QI-qW9"/>
                                                         </constraints>
-                                                    </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OWJ-QO-pgw">
-                                                        <rect key="frame" x="0.0" y="140" width="60" height="60"/>
-                                                        <color key="backgroundColor" red="0.95032915609137059" green="0.74322424194426617" blue="0.48844443778413205" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <connections>
+                                                            <action selector="gridSquareButtonTapped:" destination="Y9F-uV-y2y" eventType="touchUpInside" id="5UZ-fB-VNh"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="13" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MPZ-Ex-bDN">
+                                                        <rect key="frame" x="0.0" y="130" width="55" height="55"/>
+                                                        <color key="backgroundColor" red="0.94398552179999995" green="0.77606886630000005" blue="0.5313110352" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="60" id="Ls7-ZV-FM0"/>
-                                                            <constraint firstAttribute="width" secondItem="OWJ-QO-pgw" secondAttribute="height" multiplier="1:1" id="NFJ-eo-eQp"/>
+                                                            <constraint firstAttribute="width" secondItem="MPZ-Ex-bDN" secondAttribute="height" multiplier="1:1" id="Lw0-Bg-vuV"/>
+                                                            <constraint firstAttribute="height" constant="55" id="tsP-Rp-lvT"/>
                                                         </constraints>
-                                                    </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CJ3-28-Vm1">
-                                                        <rect key="frame" x="0.0" y="210" width="60" height="60"/>
-                                                        <color key="backgroundColor" red="0.5075780542443098" green="0.57559477100222112" blue="0.87757772842639592" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <connections>
+                                                            <action selector="gridSquareButtonTapped:" destination="Y9F-uV-y2y" eventType="touchUpInside" id="z3e-KG-dOs"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="18" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Biw-FK-G8G">
+                                                        <rect key="frame" x="0.0" y="195" width="55" height="55"/>
+                                                        <color key="backgroundColor" red="0.55871540310000001" green="0.62185233829999997" blue="0.8953310847" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="width" secondItem="CJ3-28-Vm1" secondAttribute="height" multiplier="1:1" id="22z-xr-aC2"/>
-                                                            <constraint firstAttribute="height" constant="60" id="Eal-qg-BKm"/>
+                                                            <constraint firstAttribute="height" constant="55" id="KnQ-Mk-rPf"/>
+                                                            <constraint firstAttribute="width" secondItem="Biw-FK-G8G" secondAttribute="height" multiplier="1:1" id="Mzt-ik-viC"/>
                                                         </constraints>
-                                                    </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IXF-qP-Hu3">
-                                                        <rect key="frame" x="0.0" y="280" width="60" height="60"/>
-                                                        <color key="backgroundColor" red="0.32039181472081213" green="0.17884616097807751" blue="0.12100474540241131" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <connections>
+                                                            <action selector="gridSquareButtonTapped:" destination="Y9F-uV-y2y" eventType="touchUpInside" id="OFD-fZ-eMy"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="23" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t6d-lF-Kcq">
+                                                        <rect key="frame" x="0.0" y="260" width="55" height="55"/>
+                                                        <color key="backgroundColor" red="0.35473024850000001" green="0.20890709760000001" blue="0.13223388790000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="width" secondItem="IXF-qP-Hu3" secondAttribute="height" multiplier="1:1" id="m9z-XK-FKO"/>
-                                                            <constraint firstAttribute="height" constant="60" id="vns-ni-Z9P"/>
+                                                            <constraint firstAttribute="width" secondItem="t6d-lF-Kcq" secondAttribute="height" multiplier="1:1" id="OTI-gb-HS2"/>
+                                                            <constraint firstAttribute="height" constant="55" id="fl6-lN-sFP"/>
                                                         </constraints>
-                                                    </view>
+                                                        <connections>
+                                                            <action selector="gridSquareButtonTapped:" destination="Y9F-uV-y2y" eventType="touchUpInside" id="fUB-aM-Ieb"/>
+                                                        </connections>
+                                                    </button>
                                                 </subviews>
-                                                <constraints>
-                                                    <constraint firstItem="IXF-qP-Hu3" firstAttribute="width" secondItem="IXF-qP-Hu3" secondAttribute="height" multiplier="1:1" id="3ct-a2-rt5"/>
-                                                    <constraint firstItem="Msp-3d-qqu" firstAttribute="width" secondItem="Msp-3d-qqu" secondAttribute="height" multiplier="1:1" id="4yZ-4m-Bi9"/>
-                                                    <constraint firstItem="CJ3-28-Vm1" firstAttribute="width" secondItem="CJ3-28-Vm1" secondAttribute="height" multiplier="1:1" id="5dy-kG-Xd2"/>
-                                                    <constraint firstItem="OWJ-QO-pgw" firstAttribute="width" secondItem="OWJ-QO-pgw" secondAttribute="height" multiplier="1:1" id="5nk-Ho-EhE"/>
-                                                    <constraint firstItem="IXF-qP-Hu3" firstAttribute="width" secondItem="IXF-qP-Hu3" secondAttribute="height" multiplier="1:1" id="K6z-b8-Lwe"/>
-                                                    <constraint firstItem="IXF-qP-Hu3" firstAttribute="width" secondItem="IXF-qP-Hu3" secondAttribute="height" multiplier="1:1" id="MfA-wi-Pgh"/>
-                                                    <constraint firstItem="CJ3-28-Vm1" firstAttribute="width" secondItem="CJ3-28-Vm1" secondAttribute="height" multiplier="1:1" id="Ndq-79-583"/>
-                                                    <constraint firstItem="CJ3-28-Vm1" firstAttribute="width" secondItem="CJ3-28-Vm1" secondAttribute="height" multiplier="1:1" id="VV0-l2-f29"/>
-                                                    <constraint firstItem="OWJ-QO-pgw" firstAttribute="width" secondItem="OWJ-QO-pgw" secondAttribute="height" multiplier="1:1" id="XyL-zV-9wM"/>
-                                                    <constraint firstItem="IXF-qP-Hu3" firstAttribute="width" secondItem="IXF-qP-Hu3" secondAttribute="height" multiplier="1:1" id="bvJ-cf-KEZ"/>
-                                                </constraints>
                                             </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="XKb-P9-wB5">
-                                                <rect key="frame" x="280" y="0.0" width="60" height="340"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="wzd-Zc-mwp">
+                                                <rect key="frame" x="260" y="0.0" width="55" height="315"/>
                                                 <subviews>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tkO-Cr-dAL">
-                                                        <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W2f-vv-fpK">
+                                                        <rect key="frame" x="0.0" y="0.0" width="55" height="55"/>
                                                         <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="60" id="Efx-ja-csW"/>
-                                                            <constraint firstAttribute="width" secondItem="tkO-Cr-dAL" secondAttribute="height" multiplier="1:1" id="aJv-65-Ugv"/>
+                                                            <constraint firstAttribute="width" secondItem="W2f-vv-fpK" secondAttribute="height" multiplier="1:1" id="EoY-G5-vPD"/>
+                                                            <constraint firstAttribute="height" constant="55" id="eNr-zN-waa"/>
                                                         </constraints>
-                                                    </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sxd-aR-oSw">
-                                                        <rect key="frame" x="0.0" y="70" width="60" height="60"/>
+                                                        <connections>
+                                                            <action selector="gridSquareButtonTapped:" destination="Y9F-uV-y2y" eventType="touchUpInside" id="eup-Gr-2MU"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6r6-Ps-16i">
+                                                        <rect key="frame" x="0.0" y="65" width="55" height="55"/>
                                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="width" secondItem="Sxd-aR-oSw" secondAttribute="height" multiplier="1:1" id="0am-oR-UmZ"/>
-                                                            <constraint firstAttribute="height" constant="60" id="yPa-zY-f4t"/>
+                                                            <constraint firstAttribute="width" secondItem="6r6-Ps-16i" secondAttribute="height" multiplier="1:1" id="I1L-uJ-zdz"/>
+                                                            <constraint firstAttribute="height" constant="55" id="wAQ-dg-aBD"/>
                                                         </constraints>
-                                                    </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fGb-qA-OCd">
-                                                        <rect key="frame" x="0.0" y="140" width="60" height="60"/>
-                                                        <color key="backgroundColor" red="1" green="0.87930258017673779" blue="0.59005629560259132" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <connections>
+                                                            <action selector="gridSquareButtonTapped:" destination="Y9F-uV-y2y" eventType="touchUpInside" id="NVu-4z-J9t"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="14" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ixU-ik-4x5">
+                                                        <rect key="frame" x="0.0" y="130" width="55" height="55"/>
+                                                        <color key="backgroundColor" red="0.99137872459999998" green="0.89341849090000003" blue="0.62604367729999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="width" secondItem="fGb-qA-OCd" secondAttribute="height" multiplier="1:1" id="6Op-XE-Yod"/>
-                                                            <constraint firstAttribute="height" constant="60" id="vQh-Pl-0IU"/>
+                                                            <constraint firstAttribute="width" secondItem="ixU-ik-4x5" secondAttribute="height" multiplier="1:1" id="ZrH-xI-CGg"/>
+                                                            <constraint firstAttribute="height" constant="55" id="oZH-0w-Scf"/>
                                                         </constraints>
-                                                    </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="raT-E0-4qf">
-                                                        <rect key="frame" x="0.0" y="210" width="60" height="60"/>
-                                                        <color key="backgroundColor" red="0.4611754441624365" green="0.4611754441624365" blue="0.4611754441624365" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <connections>
+                                                            <action selector="gridSquareButtonTapped:" destination="Y9F-uV-y2y" eventType="touchUpInside" id="2Ix-qB-MdT"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="19" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cjc-II-h4r">
+                                                        <rect key="frame" x="0.0" y="195" width="55" height="55"/>
+                                                        <color key="backgroundColor" red="0.50690186020000005" green="0.5073042512" blue="0.50696420669999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="width" secondItem="raT-E0-4qf" secondAttribute="height" multiplier="1:1" id="vgZ-pm-x8g"/>
-                                                            <constraint firstAttribute="height" constant="60" id="yXl-1p-whR"/>
+                                                            <constraint firstAttribute="width" secondItem="Cjc-II-h4r" secondAttribute="height" multiplier="1:1" id="Mqj-eD-2Iz"/>
+                                                            <constraint firstAttribute="height" constant="55" id="oYQ-UN-RPh"/>
                                                         </constraints>
-                                                    </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GKK-TA-n10">
-                                                        <rect key="frame" x="0.0" y="280" width="60" height="60"/>
-                                                        <color key="backgroundColor" red="0.11976173773575527" green="0.18906646573604058" blue="0.058949374750058035" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <connections>
+                                                            <action selector="gridSquareButtonTapped:" destination="Y9F-uV-y2y" eventType="touchUpInside" id="he8-hV-ayY"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="24" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="au7-to-u0I">
+                                                        <rect key="frame" x="0.0" y="260" width="55" height="55"/>
+                                                        <color key="backgroundColor" red="0.13792225720000001" green="0.2119395137" blue="0.047029770909999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="width" secondItem="GKK-TA-n10" secondAttribute="height" multiplier="1:1" id="ARB-Ut-1SE"/>
-                                                            <constraint firstAttribute="height" constant="60" id="E9N-4x-CbK"/>
+                                                            <constraint firstAttribute="width" secondItem="au7-to-u0I" secondAttribute="height" multiplier="1:1" id="AR8-6S-x6D"/>
+                                                            <constraint firstAttribute="height" constant="55" id="TuB-o1-kc9"/>
                                                         </constraints>
-                                                    </view>
+                                                        <connections>
+                                                            <action selector="gridSquareButtonTapped:" destination="Y9F-uV-y2y" eventType="touchUpInside" id="vTv-nK-Fk5"/>
+                                                        </connections>
+                                                    </button>
                                                 </subviews>
-                                                <constraints>
-                                                    <constraint firstItem="GKK-TA-n10" firstAttribute="width" secondItem="GKK-TA-n10" secondAttribute="height" multiplier="1:1" id="1ya-oc-31i"/>
-                                                    <constraint firstItem="raT-E0-4qf" firstAttribute="width" secondItem="raT-E0-4qf" secondAttribute="height" multiplier="1:1" id="EB5-dC-Fxa"/>
-                                                    <constraint firstItem="Sxd-aR-oSw" firstAttribute="width" secondItem="Sxd-aR-oSw" secondAttribute="height" multiplier="1:1" id="MY4-cT-WG7"/>
-                                                    <constraint firstItem="raT-E0-4qf" firstAttribute="width" secondItem="raT-E0-4qf" secondAttribute="height" multiplier="1:1" id="Ocy-OM-wY0"/>
-                                                    <constraint firstItem="fGb-qA-OCd" firstAttribute="width" secondItem="fGb-qA-OCd" secondAttribute="height" multiplier="1:1" id="PBh-SJ-AFJ"/>
-                                                    <constraint firstItem="GKK-TA-n10" firstAttribute="width" secondItem="GKK-TA-n10" secondAttribute="height" multiplier="1:1" id="Szg-aT-5gQ"/>
-                                                    <constraint firstItem="GKK-TA-n10" firstAttribute="width" secondItem="GKK-TA-n10" secondAttribute="height" multiplier="1:1" id="k1T-XI-XoV"/>
-                                                    <constraint firstItem="GKK-TA-n10" firstAttribute="width" secondItem="GKK-TA-n10" secondAttribute="height" multiplier="1:1" id="t5p-Sf-V4q"/>
-                                                    <constraint firstItem="fGb-qA-OCd" firstAttribute="width" secondItem="fGb-qA-OCd" secondAttribute="height" multiplier="1:1" id="uz8-6U-jtX"/>
-                                                    <constraint firstItem="raT-E0-4qf" firstAttribute="width" secondItem="raT-E0-4qf" secondAttribute="height" multiplier="1:1" id="zfK-hm-PRL"/>
-                                                </constraints>
                                             </stackView>
                                         </subviews>
                                     </stackView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="SSm-yq-vGH" secondAttribute="trailing" constant="20" id="BDS-5o-xpP"/>
-                                    <constraint firstItem="SSm-yq-vGH" firstAttribute="leading" secondItem="1I5-kL-YgN" secondAttribute="leading" constant="20" id="bG5-xx-Lts"/>
-                                    <constraint firstItem="SSm-yq-vGH" firstAttribute="top" secondItem="1I5-kL-YgN" secondAttribute="top" constant="20" id="rHo-Nk-4q3"/>
-                                    <constraint firstAttribute="bottom" secondItem="SSm-yq-vGH" secondAttribute="bottom" constant="20" id="wg5-PA-nfi"/>
+                                    <constraint firstAttribute="trailing" secondItem="1NY-L7-zZM" secondAttribute="trailing" constant="30" id="4l7-Uo-QHD"/>
+                                    <constraint firstItem="1NY-L7-zZM" firstAttribute="top" secondItem="1I5-kL-YgN" secondAttribute="top" constant="25" id="Mq8-7B-KlS"/>
+                                    <constraint firstAttribute="bottom" secondItem="1NY-L7-zZM" secondAttribute="bottom" constant="30" id="oRD-dv-fZ7"/>
+                                    <constraint firstItem="1NY-L7-zZM" firstAttribute="leading" secondItem="1I5-kL-YgN" secondAttribute="leading" constant="30" id="xBx-M0-eAn"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose a Background Color!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FCj-TE-Hm4">
@@ -425,7 +440,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4R1-an-cFi">
-                                <rect key="frame" x="20" y="574" width="374" height="156"/>
+                                <rect key="frame" x="20" y="564" width="374" height="156"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="gdK-jv-qf3">
                                         <rect key="frame" x="20" y="20" width="334" height="116"/>
@@ -470,10 +485,33 @@
                         <viewLayoutGuide key="safeArea" id="Tsr-OZ-rlF"/>
                     </view>
                     <navigationItem key="navigationItem" id="3tC-FP-XwV"/>
+                    <connections>
+                        <outlet property="backgoundCardView" destination="1I5-kL-YgN" id="agp-v2-jnm"/>
+                        <outlet property="backgroundCardView2" destination="4R1-an-cFi" id="b2X-l1-sgq"/>
+                        <outlet property="chooseColorLabel" destination="FCj-TE-Hm4" id="vV5-U0-r1b"/>
+                        <outlet property="currentColorLabel" destination="xxV-RW-Gh3" id="sps-U3-SCx"/>
+                        <outlet property="currentColorView" destination="qms-sp-Rp3" id="tJB-hY-mQ5"/>
+                        <outlet property="gridSquareButton" destination="au7-to-u0I" id="hRA-bw-H7U"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="grn-Li-XPy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2042.0289855072465" y="113.83928571428571"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="vGz-y6-uXL">
+            <objects>
+                <viewController id="dCB-36-hVr" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="pXN-rt-HWv">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="q4d-j0-GfI"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HNQ-2g-tYf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3099" y="91"/>
         </scene>
         <!--Settings-->
         <scene sceneID="zvV-Ax-huS">
