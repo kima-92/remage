@@ -48,6 +48,10 @@ class ColorGridViewController: UIViewController {
             sender.layer.borderColor = UIColor.white.cgColor
             sender.layer.borderWidth = 3
         }
+        
+        // Set Current color
+        currentColorView.backgroundColor = sender.backgroundColor
+        backgoundCardView.backgroundColor = sender.backgroundColor
     }
     
     // MARK: - Methods
@@ -70,6 +74,8 @@ class ColorGridViewController: UIViewController {
         // Border
         currentColorView.layer.borderColor = UIColor.black.cgColor
         currentColorView.layer.borderWidth = 3
+        
+        backgroundCardView2.backgroundColor = .clear
     }
     
     /*
