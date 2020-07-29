@@ -53,8 +53,11 @@ class BGColorSelectionViewController: UIViewController {
         // Background Color
         colorsCollectionView?.backgroundColor = .cyan
         
-        // Register cell class
+        // Register the cell
         colorsCollectionView?.register(ColorCollectionViewCell.nib(), forCellWithReuseIdentifier: ColorCollectionViewCell.identifier)
+        
+        // Register the Header
+        colorsCollectionView?.register(ColorHeaderCollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: ColorHeaderCollectionReusableView.identifier)
         
         // Add it to the view
         if let colorsCollectionView = colorsCollectionView {
@@ -72,10 +75,28 @@ extension BGColorSelectionViewController: UICollectionViewDelegate, UICollection
         return 4
     }
     
+    // Dequeue the Cell
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ColorCollectionViewCell.identifier, for: indexPath)
         
         return cell
+    }
+    
+    // Dequeue the Header
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        
+        let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: ColorHeaderCollectionReusableView.identifier, for: indexPath) as! ColorHeaderCollectionReusableView
+        
+        // Configure the Header
+        header.configure()
+        
+        return header
+    }
+    
+    // Set the size of the Header
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+    
+        return CGSize(width: view.frame.size.width, height: 200)
     }
 }
