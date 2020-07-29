@@ -14,14 +14,6 @@ class ColorGridViewController: UIViewController {
     
     // MARK: - Outlets
     
-    @IBOutlet weak var chooseColorLabel: UILabel!
-    
-    @IBOutlet weak var backgoundCardView: UIView!
-    @IBOutlet weak var backgroundCardView2: UIView!
-    
-    @IBOutlet weak var currentColorLabel: UILabel!
-    @IBOutlet weak var currentColorView: UIView!
-    
     // MARK: - DidLoad
     
     override func viewDidLoad() {
@@ -30,10 +22,6 @@ class ColorGridViewController: UIViewController {
     }
     
     // MARK: - Actions
-    
-    @IBAction func gridSquareButtonTapped(_ sender: GridColorButton) {
-        selectColor(sender: sender)
-    }
     
     // MARK: - Methods
     
@@ -56,8 +44,8 @@ class ColorGridViewController: UIViewController {
         }
         
         // Set Current color
-        currentColorView.backgroundColor = sender.backgroundColor
-        backgoundCardView.backgroundColor = sender.backgroundColor
+        //currentColorView.backgroundColor = sender.backgroundColor
+        //backgoundCardView.backgroundColor = sender.backgroundColor
     }
     
     // Clear borders of all GridColorButtons in the array
@@ -71,15 +59,11 @@ class ColorGridViewController: UIViewController {
     private func updateViews() {
         
         // Round corners
-        backgoundCardView.layer.cornerRadius = 15
-        backgroundCardView2.layer.cornerRadius = 15
-        currentColorView.layer.cornerRadius = 10
+        //backgoundCardView.layer.cornerRadius = 15
+        //currentColorView.layer.cornerRadius = 10
         
         // Border
-        currentColorView.layer.borderColor = UIColor.black.cgColor
-        currentColorView.layer.borderWidth = 3
-        
-        // Clear second backgroundView
-        backgroundCardView2.backgroundColor = .clear
+        //currentColorView.layer.borderColor = UIColor.black.cgColor
+        //currentColorView.layer.borderWidth = 3
     }
 }
