@@ -14,6 +14,7 @@ class BGColorSelectionViewController: UIViewController {
     var colorsCollectionView: UICollectionView?
     
     var headerView = UIView()
+    var cellSize: CGFloat?
     
     var titleLabel: UILabel = {
        
@@ -45,10 +46,11 @@ class BGColorSelectionViewController: UIViewController {
         let layout = UICollectionViewFlowLayout()
         
         layout.scrollDirection = .horizontal
-        layout.sectionInset = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
+        layout.sectionInset = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
         
         // Size of each cell
-        let cellSize = view.frame.size.width/2.2
+        let cellSize = view.frame.size.width/2
+        self.cellSize = cellSize
         layout.itemSize = CGSize(width: cellSize, height: cellSize)
         
         // Setup collectionView
@@ -56,9 +58,6 @@ class BGColorSelectionViewController: UIViewController {
         
         colorsCollectionView?.delegate = self
         colorsCollectionView?.dataSource = self
-        
-        // Background Color
-        colorsCollectionView?.backgroundColor = .cyan
         
         // Register the cell
         colorsCollectionView?.register(ColorCollectionViewCell.nib(), forCellWithReuseIdentifier: ColorCollectionViewCell.identifier)
@@ -72,10 +71,11 @@ class BGColorSelectionViewController: UIViewController {
         colorsCollectionView.translatesAutoresizingMaskIntoConstraints = false
         
         colorsCollectionView.topAnchor.constraint(equalTo: headerView.bottomAnchor, constant:  20).isActive = true
-        colorsCollectionView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 10).isActive = true
-        colorsCollectionView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -10).isActive = true
+        colorsCollectionView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor).isActive = true
+        colorsCollectionView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor).isActive = true
 //        colorsCollectionView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: 10).isActive = true
-        colorsCollectionView.heightAnchor.constraint(equalToConstant: 400).isActive = true
+        
+        colorsCollectionView.heightAnchor.constraint(equalToConstant: (cellSize * 2) / 1.5).isActive = true
     }
     
     // HeaderView Setup
@@ -105,6 +105,7 @@ class BGColorSelectionViewController: UIViewController {
     private func setBGColors() {
         headerView.backgroundColor = .darkGray
         titleLabel.backgroundColor = .magenta
+        colorsCollectionView?.backgroundColor = .cyan
     }
     
     // MARK: - Update Views
