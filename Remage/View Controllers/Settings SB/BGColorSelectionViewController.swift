@@ -13,20 +13,27 @@ class BGColorSelectionViewController: UIViewController {
     // MARK: - Properties
     var colorsCollectionView: UICollectionView?
     
+    var headerView = UIView()
+    
+    var titleLabel: UILabel = {
+       
+        let label = UILabel()
+        
+        label.text = "Choose Color Theme!"
+        label.textAlignment = .center
+        label.backgroundColor = .white
+        label.textColor = .black
+        
+        label.font = UIFont.boldSystemFont(ofSize: 25)
+        
+        return label
+    }()
+    
     // MARK: - DidLoad
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupCollectionView()
-    }
-    
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        
-        let size = CGRect(x: view.bounds.minX, y: view.bounds.minY, width: view.bounds.width, height: view.bounds.height / 2)
-        
-        // Size of colorsCollectionView
-        colorsCollectionView?.frame = view.bounds
-        //colorsCollectionView?.frame = size
+        updateViews()
     }
     
     // MARK: - Methods
@@ -57,9 +64,55 @@ class BGColorSelectionViewController: UIViewController {
         colorsCollectionView?.register(ColorCollectionViewCell.nib(), forCellWithReuseIdentifier: ColorCollectionViewCell.identifier)
         
         // Add it to the view
-        if let colorsCollectionView = colorsCollectionView {
-            view.addSubview(colorsCollectionView)
-        }
+        guard let colorsCollectionView = colorsCollectionView else { return }
+        
+        view.addSubview(colorsCollectionView)
+        
+        // Constraints
+        colorsCollectionView.translatesAutoresizingMaskIntoConstraints = false
+        
+        colorsCollectionView.topAnchor.constraint(equalTo: headerView.bottomAnchor, constant:  20).isActive = true
+        colorsCollectionView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 10).isActive = true
+        colorsCollectionView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -10).isActive = true
+//        colorsCollectionView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: 10).isActive = true
+        colorsCollectionView.heightAnchor.constraint(equalToConstant: 400).isActive = true
+    }
+    
+    // HeaderView Setup
+    private func setupHeaderView() {
+        
+        // Header
+        view.addSubview(headerView)
+        
+        headerView.translatesAutoresizingMaskIntoConstraints = false
+        
+        headerView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20).isActive = true
+        headerView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20).isActive = true
+        headerView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20).isActive = true
+        
+        // NameLabel
+        headerView.addSubview(titleLabel)
+        
+        titleLabel.translatesAutoresizingMaskIntoConstraints = false
+        
+        titleLabel.topAnchor.constraint(equalTo: headerView.topAnchor, constant: 20).isActive = true
+        titleLabel.bottomAnchor.constraint(equalTo: headerView.bottomAnchor, constant: -20).isActive = true
+        titleLabel.leadingAnchor.constraint(equalTo: headerView.leadingAnchor, constant: 20).isActive = true
+        titleLabel.trailingAnchor.constraint(equalTo: headerView.trailingAnchor, constant: -20).isActive = true
+    }
+    
+    // Set Background Colors
+    private func setBGColors() {
+        headerView.backgroundColor = .darkGray
+        titleLabel.backgroundColor = .magenta
+    }
+    
+    // MARK: - Update Views
+    
+    private func updateViews() {
+        setupHeaderView()
+        setupCollectionView()
+        setBGColors()
     }
 }
 
