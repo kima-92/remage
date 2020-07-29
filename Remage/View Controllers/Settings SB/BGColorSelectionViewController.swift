@@ -59,6 +59,9 @@ class BGColorSelectionViewController: UIViewController {
         // Register the Header
         colorsCollectionView?.register(ColorHeaderCollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: ColorHeaderCollectionReusableView.identifier)
         
+        // Register the Footer
+        colorsCollectionView?.register(ColorFooterCollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: ColorFooterCollectionReusableView.identifier)
+        
         // Add it to the view
         if let colorsCollectionView = colorsCollectionView {
             view.addSubview(colorsCollectionView)
@@ -83,20 +86,40 @@ extension BGColorSelectionViewController: UICollectionViewDelegate, UICollection
         return cell
     }
     
-    // Dequeue the Header
+    // Dequeue the Header and Footer
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         
-        let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: ColorHeaderCollectionReusableView.identifier, for: indexPath) as! ColorHeaderCollectionReusableView
-        
-        // Configure the Header
-        header.configure()
-        
-        return header
+        // Return Footer
+        if kind == UICollectionView.elementKindSectionFooter {
+            
+            let footer = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: ColorFooterCollectionReusableView.identifier, for: indexPath) as! ColorFooterCollectionReusableView
+            
+            // Configure the Footer
+            footer.configure()
+            
+            return footer
+            
+        // Return Header
+        } else {
+            
+            let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: ColorHeaderCollectionReusableView.identifier, for: indexPath) as! ColorHeaderCollectionReusableView
+            
+            // Configure the Header
+            header.configure()
+            
+            return header
+        }
     }
     
     // Set the size of the Header
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        
+        return CGSize(width: view.frame.size.width, height: 200)
+    }
     
+    // Set the size of the Footer
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
+        
         return CGSize(width: view.frame.size.width, height: 200)
     }
 }
