@@ -108,10 +108,10 @@
             </objects>
             <point key="canvasLocation" x="1094" y="148"/>
         </scene>
-        <!--View Controller-->
+        <!--Color Selection View Controller-->
         <scene sceneID="N9r-aO-cjh">
             <objects>
-                <viewController id="2RE-OH-6gn" sceneMemberID="viewController">
+                <viewController id="2RE-OH-6gn" customClass="BGColorSelectionViewController" customModule="Remage" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="daf-1w-2O2">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
