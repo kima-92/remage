@@ -25,8 +25,6 @@
 		FA638D0824D1E49000E5E5B9 /* BGColorSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA638D0724D1E49000E5E5B9 /* BGColorSelectionViewController.swift */; };
 		FA638D0B24D1EB3700E5E5B9 /* ColorCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA638D0924D1EB3700E5E5B9 /* ColorCollectionViewCell.swift */; };
 		FA638D0C24D1EB3700E5E5B9 /* ColorCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA638D0A24D1EB3700E5E5B9 /* ColorCollectionViewCell.xib */; };
-		FA638D0F24D1F17100E5E5B9 /* ColorHeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA638D0E24D1F17100E5E5B9 /* ColorHeaderCollectionReusableView.swift */; };
-		FA638D1124D1F55B00E5E5B9 /* ColorFooterCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA638D1024D1F55B00E5E5B9 /* ColorFooterCollectionReusableView.swift */; };
 		FA6E1F032459F6CE008AF502 /* TestCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6E1F022459F6CE008AF502 /* TestCollectionViewController.swift */; };
 		FA6E1F052459F9EE008AF502 /* RemindersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6E1F042459F9EE008AF502 /* RemindersViewController.swift */; };
 		FA6E1F072459FCC3008AF502 /* ReminderCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6E1F062459FCC3008AF502 /* ReminderCollectionViewCell.swift */; };
@@ -71,8 +69,6 @@
 		FA638D0724D1E49000E5E5B9 /* BGColorSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BGColorSelectionViewController.swift; sourceTree = "<group>"; };
 		FA638D0924D1EB3700E5E5B9 /* ColorCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorCollectionViewCell.swift; sourceTree = "<group>"; };
 		FA638D0A24D1EB3700E5E5B9 /* ColorCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ColorCollectionViewCell.xib; sourceTree = "<group>"; };
-		FA638D0E24D1F17100E5E5B9 /* ColorHeaderCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorHeaderCollectionReusableView.swift; sourceTree = "<group>"; };
-		FA638D1024D1F55B00E5E5B9 /* ColorFooterCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorFooterCollectionReusableView.swift; sourceTree = "<group>"; };
 		FA6E1F022459F6CE008AF502 /* TestCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCollectionViewController.swift; sourceTree = "<group>"; };
 		FA6E1F042459F9EE008AF502 /* RemindersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemindersViewController.swift; sourceTree = "<group>"; };
 		FA6E1F062459FCC3008AF502 /* ReminderCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -222,8 +218,6 @@
 			children = (
 				FA638D0924D1EB3700E5E5B9 /* ColorCollectionViewCell.swift */,
 				FA638D0A24D1EB3700E5E5B9 /* ColorCollectionViewCell.xib */,
-				FA638D0E24D1F17100E5E5B9 /* ColorHeaderCollectionReusableView.swift */,
-				FA638D1024D1F55B00E5E5B9 /* ColorFooterCollectionReusableView.swift */,
 			);
 			path = "Settings SB";
 			sourceTree = "<group>";
@@ -343,7 +337,6 @@
 				FA1C87EB24AFCA0500E3A1BA /* ReminderPhotoViewController.swift in Sources */,
 				FA6E1F072459FCC3008AF502 /* ReminderCollectionViewCell.swift in Sources */,
 				FAD929F724D0DCF20060916B /* ColorList.swift in Sources */,
-				FA638D0F24D1F17100E5E5B9 /* ColorHeaderCollectionReusableView.swift in Sources */,
 				FA1C87E524AE44BA00E3A1BA /* CaptureType.swift in Sources */,
 				FA638D0B24D1EB3700E5E5B9 /* ColorCollectionViewCell.swift in Sources */,
 				FA1C87E324AE3BA700E3A1BA /* CameraPreviewView.swift in Sources */,
@@ -364,7 +357,6 @@
 				FA90E84924CF46F0007148EF /* ReminderController.swift in Sources */,
 				FA776B682457256C00B897F6 /* CoreDataStack.swift in Sources */,
 				FA1C87E724AE454000E3A1BA /* SelectedCamera.swift in Sources */,
-				FA638D1124D1F55B00E5E5B9 /* ColorFooterCollectionReusableView.swift in Sources */,
 				FA1C87E924AF7F8E00E3A1BA /* PhotoPreviewViewController.swift in Sources */,
 				FA1E65B9245205A200502D95 /* SceneDelegate.swift in Sources */,
 				FA6E1F052459F9EE008AF502 /* RemindersViewController.swift in Sources */,
