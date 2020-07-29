@@ -15,8 +15,45 @@
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mAn-RF-ESs">
+                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vJc-Cs-X3O">
+                                <rect key="frame" x="0.0" y="0.0" width="50" height="26"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Color Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VKM-mZ-Wia">
+                                <rect key="frame" x="0.0" y="26" width="50" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="VKM-mZ-Wia" firstAttribute="top" secondItem="vJc-Cs-X3O" secondAttribute="bottom" id="2Hb-gv-mjM"/>
+                            <constraint firstItem="VKM-mZ-Wia" firstAttribute="leading" secondItem="mAn-RF-ESs" secondAttribute="leading" id="9Ec-PM-xqm"/>
+                            <constraint firstItem="vJc-Cs-X3O" firstAttribute="leading" secondItem="mAn-RF-ESs" secondAttribute="leading" id="L2M-6t-DkX"/>
+                            <constraint firstAttribute="trailing" secondItem="vJc-Cs-X3O" secondAttribute="trailing" id="Wy7-xt-E1J"/>
+                            <constraint firstAttribute="bottom" secondItem="VKM-mZ-Wia" secondAttribute="bottom" id="ZaE-tT-eNK"/>
+                            <constraint firstAttribute="trailing" secondItem="VKM-mZ-Wia" secondAttribute="trailing" id="hWj-0K-J0x"/>
+                            <constraint firstItem="vJc-Cs-X3O" firstAttribute="top" secondItem="mAn-RF-ESs" secondAttribute="top" id="w26-tJ-AL1"/>
+                        </constraints>
+                    </view>
+                </subviews>
             </view>
+            <constraints>
+                <constraint firstItem="mAn-RF-ESs" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="5FE-S3-ZRR"/>
+                <constraint firstAttribute="trailing" secondItem="mAn-RF-ESs" secondAttribute="trailing" id="8it-nQ-TtP"/>
+                <constraint firstAttribute="bottom" secondItem="mAn-RF-ESs" secondAttribute="bottom" id="HID-zG-9Qa"/>
+                <constraint firstItem="mAn-RF-ESs" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="bce-4l-Uku"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <connections>
+                <outlet property="circleView" destination="vJc-Cs-X3O" id="4ma-BQ-YZx"/>
+                <outlet property="nameLabel" destination="VKM-mZ-Wia" id="Iq9-ha-dSL"/>
+            </connections>
             <point key="canvasLocation" x="132" y="125"/>
         </collectionViewCell>
     </objects>
