@@ -18,4 +18,30 @@ class ThemeController {
     var bgColors: [BGColor] {
         return colorList.bgColors
     }
+    
+    var currentColor: BGColor?
+    var userBGColor: BGColor?
+    
+    // MARK: - Methods
+    
+    // Setup CurrentColor
+    func setCurrentColor() {
+        
+        // Try to get User's prefered color
+        if userBGColor != nil {
+            currentColor = userBGColor
+            
+        // Set as default: Magical Sea
+        } else {
+            let colors = bgColors.filter({$0.name == "Magical Sea"})
+            currentColor = colors[0]
+        }
+    }
+    
+    func userSetColorAs(color: BGColor) {
+        currentColor = color
+        userBGColor = color
+        
+        // TODO: - Set User's new color preference in CoreData
+    }
 }

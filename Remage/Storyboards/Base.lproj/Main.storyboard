@@ -17,10 +17,10 @@
             </objects>
             <point key="canvasLocation" x="-515" y="420"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Main Tab Bar Controller-->
         <scene sceneID="fUz-pc-YWK">
             <objects>
-                <tabBarController id="VAv-3m-RwU" sceneMemberID="viewController">
+                <tabBarController id="VAv-3m-RwU" customClass="MainTabBarController" customModule="Remage" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="OGa-fJ-mqX">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
