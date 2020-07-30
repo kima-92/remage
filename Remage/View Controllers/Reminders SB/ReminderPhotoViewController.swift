@@ -28,6 +28,11 @@ class ReminderPhotoViewController: UIViewController {
         updateViews()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setBGColors()
+    }
+    
     // MARK: - Methods
     private func updateViews() {
         guard let reminder = reminder else { return }
@@ -38,6 +43,31 @@ class ReminderPhotoViewController: UIViewController {
         } else {
             // TODO: - Perform Segue to see Reminder Details with no Image
         }
+    }
+    
+    // Background Colors Setup
+    private func setBGColors() {
+        
+        // Get BGColor
+        guard let themeController = themeController,
+            let color = themeController.currentColor else { return }
+        
+        // Background
+        view.backgroundColor = color.bgColor
+        bottomView.backgroundColor = color.bgColor
+        //scrollSubView.backgroundColor = color.bgColor
+        //scrollPushingView.backgroundColor = color.bgColor
+        
+        // Set NavigationBar and TabBar Colors
+        let textAttribute = [NSAttributedString.Key.foregroundColor: color.fontColor]
+        
+        navigationController?.navigationBar.tintColor = color.fontColor
+        navigationController?.navigationBar.barTintColor = color.bgCardColor.withAlphaComponent(0.5)
+        navigationController?.navigationBar.titleTextAttributes = textAttribute
+        
+        tabBarController?.tabBar.barTintColor = color.bgColor.withAlphaComponent(0.5)
+        tabBarController?.tabBar.tintColor = color.fontColor
+        tabBarController?.tabBar.unselectedItemTintColor = color.fontColor.withAlphaComponent(0.3)
     }
     
 

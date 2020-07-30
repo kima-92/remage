@@ -127,6 +127,7 @@ class RemindersViewController: UIViewController {
             
             let reminder = fetchResultsController.object(at: indexPath)
             reminderPhotoVC.reminder = reminder
+            reminderPhotoVC.themeController = themeController
         }
      }
 }
