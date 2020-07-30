@@ -13,6 +13,8 @@ class BGColorSelectionViewController: UIViewController {
     // MARK: - Properties
     var colorsCollectionView: UICollectionView?
     
+    var themeController: ThemeController?
+    
     var headerView = UIView()
     var cellSize: CGFloat?
     
@@ -132,5 +134,9 @@ extension BGColorSelectionViewController: UICollectionViewDelegate, UICollection
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ColorCollectionViewCell.identifier, for: indexPath)
         
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print("Tapped cell at index \(indexPath)")
     }
 }

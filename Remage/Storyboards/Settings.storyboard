@@ -48,7 +48,7 @@
                                                                     <constraint firstAttribute="height" constant="40" id="Qwc-Te-AVs"/>
                                                                 </constraints>
                                                                 <connections>
-                                                                    <segue destination="2RE-OH-6gn" kind="show" id="U5q-h8-plc"/>
+                                                                    <segue destination="2RE-OH-6gn" kind="show" identifier="ShowBGColorSelectionVCSegue" id="U5q-h8-plc"/>
                                                                 </connections>
                                                             </button>
                                                         </subviews>

@@ -44,4 +44,16 @@ class SettingsMenuViewController: UIViewController {
         backgroundCardView.layer.cornerRadius = 15
         backgroundColorChoiceButton.layer.cornerRadius = 10
     }
+    
+    // MARK: - Navigation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+       
+       if segue.identifier == "ShowBGColorSelectionVCSegue" {
+           
+        guard let bgColorSelectionVC = segue.destination as? BGColorSelectionViewController else { return }
+           
+           bgColorSelectionVC.themeController = themeController
+       }
+    }
 }
