@@ -18,4 +18,6 @@ class ThemeController {
     var bgColors: [BGColor] {
         return colorList.bgColors
     }
+    
+    var currentColor: BGColor?
 }
