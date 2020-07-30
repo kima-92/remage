@@ -92,30 +92,40 @@ class BGColorSelectionViewController: UIViewController {
         headerView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20).isActive = true
         headerView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20).isActive = true
         
+        headerView.layer.cornerRadius = 10
+        
         // NameLabel
         headerView.addSubview(titleLabel)
         
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         
-        titleLabel.topAnchor.constraint(equalTo: headerView.topAnchor, constant: 20).isActive = true
-        titleLabel.bottomAnchor.constraint(equalTo: headerView.bottomAnchor, constant: -20).isActive = true
+        titleLabel.topAnchor.constraint(equalTo: headerView.topAnchor, constant: 40).isActive = true
+        titleLabel.bottomAnchor.constraint(equalTo: headerView.bottomAnchor, constant: -40).isActive = true
         titleLabel.leadingAnchor.constraint(equalTo: headerView.leadingAnchor, constant: 20).isActive = true
         titleLabel.trailingAnchor.constraint(equalTo: headerView.trailingAnchor, constant: -20).isActive = true
+        
+        titleLabel.layer.cornerRadius = 10
+        titleLabel.layer.masksToBounds = true
     }
     
     // Set Background Colors
-    private func setBGColors() {
-        headerView.backgroundColor = .darkGray
-        titleLabel.backgroundColor = .magenta
-        colorsCollectionView?.backgroundColor = .cyan
+    private func setBGColors(color: BGColor) {
+        headerView.backgroundColor = color.bgCardColor
+        titleLabel.backgroundColor = color.textLabelColor.withAlphaComponent(0.5)
+        colorsCollectionView?.backgroundColor = color.color8
+        view.backgroundColor = color.bgColor
     }
     
     // MARK: - Update Views
     
     private func updateViews() {
+        
+        guard let themeController = themeController,
+            let color = themeController.currentColor else { return }
+        
         setupHeaderView()
         setupCollectionView()
-        setBGColors()
+        setBGColors(color: color)
     }
 }
 

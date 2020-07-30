@@ -26,6 +26,8 @@ class MainTabBarController: UITabBarController {
         if user != nil {
             themeController.userBGColor = user?.userRepresentation?.bgColor
             themeController.setCurrentColor()
+        } else {
+            themeController.setCurrentColor()
         }
     }
 }
