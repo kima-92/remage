@@ -13,6 +13,7 @@ class CameraViewController: UIViewController {
     
     // MARK: - Properties
     
+    var themeController: ThemeController?
     var reminderController: ReminderController?
     var cameraController: CameraController?
     

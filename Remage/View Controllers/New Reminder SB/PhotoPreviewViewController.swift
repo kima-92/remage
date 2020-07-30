@@ -12,8 +12,10 @@ class PhotoPreviewViewController: UIViewController {
     
     // MARK: - Properties
     
-    var image: UIImage?
+    var themeController: ThemeController?
     var reminderController: ReminderController?
+    
+    var image: UIImage?
     
     // MARK: - Outlets
     

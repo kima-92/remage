@@ -12,6 +12,9 @@ class NRNoteViewController: UIViewController {
     
     // MARK: - Properties
     
+    var themeController: ThemeController?
+    var reminderController: ReminderController?
+    
     var note: String?
     var getNoteDelegate: GetNoteDelegate!
     

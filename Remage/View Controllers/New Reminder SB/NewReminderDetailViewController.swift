@@ -12,7 +12,9 @@ class NewReminderDetailViewController: UIViewController {
     
     // MARK: - Properties
     
+    var themeController: ThemeController?
     var reminderController: ReminderController?
+    
     var imageFromCamera: UIImage?
     var emptyPhotoImage: UIImage?
     
@@ -27,12 +29,16 @@ class NewReminderDetailViewController: UIViewController {
     var reminder: Reminder?
     
     // MARK: - Outlets
+    @IBOutlet weak var scrollSubView: UIView!
     
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var backgroundCardView: UIView!
     
     @IBOutlet weak var titleTextField: UITextField!
     
+    @IBOutlet weak var setDateLabel: UILabel!
+    @IBOutlet weak var setTimeLabel: UILabel!
+    @IBOutlet weak var alarmLabel: UILabel!
     @IBOutlet weak var alarmSegmentedControl: UISegmentedControl!
     @IBOutlet weak var addImagesButton: UIButton!
     @IBOutlet weak var addNoteButton: UIButton!
@@ -40,6 +46,7 @@ class NewReminderDetailViewController: UIViewController {
     @IBOutlet weak var datePickerTextField: UITextField!
     @IBOutlet weak var timePickerTextField: UITextField!
     
+    @IBOutlet weak var scrollPushingView: UIView!
     
     // MARK: - DidLoad
     override func viewDidLoad() {
@@ -47,6 +54,11 @@ class NewReminderDetailViewController: UIViewController {
         
         updateViews()
         hideKeyboardWhenTappedAround()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        setBGColors()
     }
     
     // MARK: - Actions
@@ -290,6 +302,41 @@ class NewReminderDetailViewController: UIViewController {
         
         // Set Delegates
         imagePicker.delegate = self
+        
+        // Set Backgound Colors
+        setBGColors()
+    }
+    
+    // Background Colors Setup
+    private func setBGColors() {
+        
+        // Get BGColor
+        guard let themeController = themeController,
+            let color = themeController.currentColor else { return }
+        
+        // Background
+        view.backgroundColor = color.bgColor
+        scrollSubView.backgroundColor = color.bgColor
+        scrollPushingView.backgroundColor = color.bgColor
+        backgroundCardView.backgroundColor = color.bgCardColor
+        
+        // TextField
+        titleTextField.backgroundColor = color.textLabelColor
+        titleTextField.textColor = color.fontColor
+        
+        // Labels
+        setDateLabel.textColor = color.fontColor
+        setTimeLabel.textColor = color.fontColor
+        alarmLabel.textColor = color.fontColor
+        
+        // Pickers
+        datePickerTextField.backgroundColor = color.textLabelColor
+        timePickerTextField.backgroundColor = color.textLabelColor
+        
+        // Segmented Control
+        let textAttributes = [NSAttributedString.Key.foregroundColor: color.fontColor]
+        alarmSegmentedControl.setTitleTextAttributes(textAttributes, for: .normal)
+        alarmSegmentedControl.selectedSegmentTintColor = color.color8
     }
     
     // MARK: - Navigation

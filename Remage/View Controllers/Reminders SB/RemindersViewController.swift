@@ -12,6 +12,10 @@ import CoreData
 class RemindersViewController: UIViewController {
     
     // MARK: - Properties
+    
+    var themeController: ThemeController?
+    var reminderController: ReminderController?
+    
     var fetchResultsController: NSFetchedResultsController<Reminder> {
         
         let fetchRequest: NSFetchRequest<Reminder> = Reminder.fetchRequest()
@@ -41,6 +45,7 @@ class RemindersViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        receiveDataFromTabBar()
         updateViews()
     }
     
@@ -51,6 +56,14 @@ class RemindersViewController: UIViewController {
     }
     
     // MARK: - Methods
+    
+    // To receive the ThemeController and ReminderController from the Main TabBar
+    private func receiveDataFromTabBar() {
+        guard let tabBar = tabBarController as? MainTabBarController else { return }
+        
+        self.themeController = tabBar.themeController
+        self.reminderController = tabBar.reminderController
+    }
     
     // Setting the height of the remindersCollectionView
     func setCollectionViewHeight(cell: ReminderCollectionViewCell) {
