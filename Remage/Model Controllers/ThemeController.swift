@@ -37,4 +37,11 @@ class ThemeController {
             currentColor = colors[0]
         }
     }
+    
+    func userSetColorAs(color: BGColor) {
+        currentColor = color
+        userBGColor = color
+        
+        // TODO: - Set User's new color preference in CoreData
+    }
 }

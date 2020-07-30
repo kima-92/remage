@@ -140,6 +140,7 @@ extension BGColorSelectionViewController: UICollectionViewDelegate, UICollection
         
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ColorCollectionViewCell.identifier, for: indexPath) as? ColorCollectionViewCell else { return UICollectionViewCell() }
         
+        // Set BGColor for this Cell
         cell.color = themeController?.bgColors[indexPath.item]
         cell.setColors()
         
@@ -147,6 +148,16 @@ extension BGColorSelectionViewController: UICollectionViewDelegate, UICollection
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("Tapped cell at index \(indexPath)")
+        
+        guard let themeController = themeController else { return }
+        
+        // Get chosen Color
+        let color = themeController.bgColors[indexPath.item]
+        
+        // Set as currentColor in the ThemeController
+        themeController.userSetColorAs(color: color)
+        
+        // Change the background colors of this VC
+        setBGColors(color: color)
     }
 }
