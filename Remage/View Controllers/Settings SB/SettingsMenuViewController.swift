@@ -17,6 +17,8 @@ class SettingsMenuViewController: UIViewController {
     
     // MARK: - Outlets
     
+    @IBOutlet weak var scrollSubView: UIView!
+    @IBOutlet weak var scrollPushingView: UIView!
     @IBOutlet weak var backgroundCardView: UIView!
     
     @IBOutlet weak var backgroundLabel: UILabel!
@@ -27,6 +29,12 @@ class SettingsMenuViewController: UIViewController {
         super.viewDidLoad()
         receiveDataFromTabBar()
         updateViews()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        setBGColors()
     }
     
     // MARK: - Methods
@@ -41,8 +49,44 @@ class SettingsMenuViewController: UIViewController {
     
     // Update Views
     private func updateViews() {
+        
+        // Round Corners
         backgroundCardView.layer.cornerRadius = 15
         backgroundColorChoiceButton.layer.cornerRadius = 10
+        
+        // Setup Current Color Button
+        backgroundColorChoiceButton.layer.borderColor = UIColor.black.cgColor
+        backgroundColorChoiceButton.layer.borderWidth = 3
+    }
+    
+    // Background Colors Setup
+    private func setBGColors() {
+        
+        // Get BGColor
+        guard let themeController = themeController,
+            let color = themeController.currentColor else { return }
+        
+        // Background
+        view.backgroundColor = color.bgColor
+        scrollSubView.backgroundColor = color.bgColor
+        scrollPushingView.backgroundColor = color.bgColor
+        backgroundCardView.backgroundColor = color.bgCardColor
+        
+        // Background Color Settings
+        backgroundColorChoiceButton.backgroundColor = color.color1
+        backgroundLabel.textColor = color.fontColor
+        
+        // Set NavigationBar and TabBar Colors
+        
+        let textAttribute = [NSAttributedString.Key.foregroundColor: color.fontColor]
+        
+        navigationController?.navigationBar.tintColor = color.fontColor
+        navigationController?.navigationBar.barTintColor = color.bgCardColor.withAlphaComponent(0.5)
+        navigationController?.navigationBar.titleTextAttributes = textAttribute
+        
+        tabBarController?.tabBar.barTintColor = color.bgColor.withAlphaComponent(0.5)
+        tabBarController?.tabBar.tintColor = color.fontColor
+        tabBarController?.tabBar.unselectedItemTintColor = color.fontColor.withAlphaComponent(0.3)
     }
     
     // MARK: - Navigation
