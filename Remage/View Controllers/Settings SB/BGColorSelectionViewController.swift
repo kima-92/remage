@@ -11,12 +11,11 @@ import UIKit
 class BGColorSelectionViewController: UIViewController {
     
     // MARK: - Properties
-    var colorsCollectionView: UICollectionView?
     
     var themeController: ThemeController?
     
+    var colorsCollectionView: UICollectionView?
     var headerView = UIView()
-    var cellSize: CGFloat?
     
     var titleLabel: UILabel = {
        
@@ -52,7 +51,6 @@ class BGColorSelectionViewController: UIViewController {
         
         // Size of each cell
         let cellSize = view.frame.size.width/2
-        self.cellSize = cellSize
         layout.itemSize = CGSize(width: cellSize, height: cellSize)
         
         // Setup collectionView
@@ -72,12 +70,11 @@ class BGColorSelectionViewController: UIViewController {
         // Constraints
         colorsCollectionView.translatesAutoresizingMaskIntoConstraints = false
         
-        colorsCollectionView.topAnchor.constraint(equalTo: headerView.bottomAnchor, constant:  20).isActive = true
+        colorsCollectionView.topAnchor.constraint(equalTo: headerView.bottomAnchor, constant:  view.bounds.height / 15).isActive = true
         colorsCollectionView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor).isActive = true
         colorsCollectionView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor).isActive = true
-//        colorsCollectionView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: 10).isActive = true
         
-        colorsCollectionView.heightAnchor.constraint(equalToConstant: (cellSize * 2) / 1.5).isActive = true
+        colorsCollectionView.heightAnchor.constraint(equalToConstant: view.bounds.height / 2).isActive = true
     }
     
     // HeaderView Setup
@@ -92,7 +89,7 @@ class BGColorSelectionViewController: UIViewController {
         headerView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20).isActive = true
         headerView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20).isActive = true
         
-        headerView.layer.cornerRadius = 10
+        headerView.layer.cornerRadius = 15
         
         // NameLabel
         headerView.addSubview(titleLabel)
@@ -104,7 +101,7 @@ class BGColorSelectionViewController: UIViewController {
         titleLabel.leadingAnchor.constraint(equalTo: headerView.leadingAnchor, constant: 20).isActive = true
         titleLabel.trailingAnchor.constraint(equalTo: headerView.trailingAnchor, constant: -20).isActive = true
         
-        titleLabel.layer.cornerRadius = 10
+        titleLabel.layer.cornerRadius = 5
         titleLabel.layer.masksToBounds = true
     }
     

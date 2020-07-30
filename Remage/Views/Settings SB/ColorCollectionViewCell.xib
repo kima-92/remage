@@ -20,20 +20,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="268" height="211"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vJc-Cs-X3O">
-                                <rect key="frame" x="0.0" y="0.0" width="268" height="187"/>
+                                <rect key="frame" x="0.0" y="0.0" width="268" height="197"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="UGf-OF-6hB">
-                                        <rect key="frame" x="0.0" y="0.0" width="268" height="187"/>
+                                        <rect key="frame" x="0.0" y="5" width="268" height="187"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dWL-DK-FSV">
-                                                <rect key="frame" x="40.5" y="0.0" width="187" height="93.5"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="dWL-DK-FSV">
+                                                <rect key="frame" x="35.5" y="0.0" width="197" height="93.5"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Crp-Os-Jyf">
                                                         <rect key="frame" x="0.0" y="0.0" width="93.5" height="93.5"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a8F-ap-6kk">
-                                                        <rect key="frame" x="93.5" y="0.0" width="93.5" height="93.5"/>
+                                                        <rect key="frame" x="103.5" y="0.0" width="93.5" height="93.5"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                     </view>
                                                 </subviews>
@@ -56,14 +56,14 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="UGf-OF-6hB" secondAttribute="bottom" id="44J-lT-mPg"/>
-                                    <constraint firstItem="UGf-OF-6hB" firstAttribute="top" secondItem="vJc-Cs-X3O" secondAttribute="top" id="MHb-rD-Zrt"/>
+                                    <constraint firstAttribute="bottom" secondItem="UGf-OF-6hB" secondAttribute="bottom" constant="5" id="44J-lT-mPg"/>
+                                    <constraint firstItem="UGf-OF-6hB" firstAttribute="top" secondItem="vJc-Cs-X3O" secondAttribute="top" constant="5" id="MHb-rD-Zrt"/>
                                     <constraint firstItem="UGf-OF-6hB" firstAttribute="leading" secondItem="vJc-Cs-X3O" secondAttribute="leading" id="g8x-WU-JAE"/>
                                     <constraint firstAttribute="trailing" secondItem="UGf-OF-6hB" secondAttribute="trailing" id="xpl-0S-Wdj"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Color Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VKM-mZ-Wia">
-                                <rect key="frame" x="0.0" y="187" width="268" height="24"/>
+                                <rect key="frame" x="0.0" y="197" width="268" height="14"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>

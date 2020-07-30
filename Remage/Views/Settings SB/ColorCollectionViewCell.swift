@@ -29,10 +29,7 @@ class ColorCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
-        //setupCircle()
         updateViews()
-        //setColors()
     }
     
     // MARK: - Methods
@@ -44,6 +41,7 @@ class ColorCollectionViewCell: UICollectionViewCell {
     
     // Update Views
     private func updateViews() {
+        let circleSize = leftCircleView.bounds.height / 2.5
         
         // Round Corners
         self.contentView.layer.cornerRadius = 15
@@ -57,29 +55,32 @@ class ColorCollectionViewCell: UICollectionViewCell {
         self.layer.masksToBounds = false
         
         // Round Circles
-        leftCircleView.layer.cornerRadius = 45
-        rightCircleView.layer.cornerRadius = 45
-        bottomCircleView.layer.cornerRadius = 45
+        leftCircleView.layer.cornerRadius = circleSize
+        rightCircleView.layer.cornerRadius = circleSize
+        bottomCircleView.layer.cornerRadius = circleSize
     }
     
     func setColors() {
         
         guard let color = color else { return }
         
-        circlesView.backgroundColor = color.bgCardColor // cell background
+        circlesView.backgroundColor = color.bgColor // cell background
         nameLabel.backgroundColor = color.textLabelColor
         nameLabel.textColor = color.fontColor
         
         // Circles
-        leftCircleView.backgroundColor = color.bgColor
+        leftCircleView.backgroundColor = color.bgCardColor
         rightCircleView.backgroundColor = color.color3
         
-        if let lastColor = color.color10 {
+        if let lastColor = color.color9 {
             bottomCircleView.backgroundColor = lastColor
-        } else if let lastColor = color.color9 {
+        } else if let lastColor = color.color8 {
             bottomCircleView.backgroundColor = lastColor
         } else {
-            bottomCircleView.backgroundColor = color.color8
+            bottomCircleView.backgroundColor = color.color7
         }
+        
+        // Set Color Name
+        nameLabel.text = color.name
     }
 }
