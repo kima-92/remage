@@ -37,7 +37,7 @@ class ColorList {
         
         
         // Assign colors
-        var forestGreen = BGColor(name: "Forest Green", fontColor: fgColor9, bgCardColor: fgColor2, bgColor: fgColor1, textLabelColor: fgColor3)
+        var forestGreen = BGColor(name: "Forest Green", fontColor: fgColor9, bgCardColor: fgColor2, bgColor: fgColor1, textLabelColor: fgColor3.withAlphaComponent(0.5))
         
         forestGreen.color1 = fgColor1
         forestGreen.color2 = fgColor2
@@ -67,7 +67,7 @@ class ColorList {
         let msColor10 = UIColor(red: 116/255, green: 0/255, blue: 184/255, alpha: 1)   // purple
         
         // Assign colors
-        var magicalSea = BGColor(name: "Magical Sea", fontColor: msColor10, bgCardColor: msColor6, bgColor: msColor1, textLabelColor: msColor2)
+        var magicalSea = BGColor(name: "Magical Sea", fontColor: msColor10, bgCardColor: msColor6, bgColor: msColor1, textLabelColor: msColor2.withAlphaComponent(0.5))
         
         magicalSea.color1 = msColor1
         magicalSea.color2 = msColor2

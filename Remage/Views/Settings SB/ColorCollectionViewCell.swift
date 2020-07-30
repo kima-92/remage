@@ -13,19 +13,26 @@ class ColorCollectionViewCell: UICollectionViewCell {
     // MARK: - Properties
     
     static let identifier = "ColorCollectionViewCell"
+    var color: BGColor?
     
     // MARK: - Outlets
     
-    @IBOutlet weak var circleView: UIView!
+    @IBOutlet weak var circlesView: UIView!
     @IBOutlet weak var nameLabel: UILabel!
+    
+    // Circles
+    @IBOutlet weak var leftCircleView: UIView!
+    @IBOutlet weak var rightCircleView: UIView!
+    @IBOutlet weak var bottomCircleView: UIView!
     
     // MARK: - Awake from Nib
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        setupCircle()
+        //setupCircle()
         updateViews()
+        //setColors()
     }
     
     // MARK: - Methods
@@ -38,10 +45,6 @@ class ColorCollectionViewCell: UICollectionViewCell {
     // Update Views
     private func updateViews() {
         
-        // Background Color
-        circleView.backgroundColor = .blue
-        //backgroundColor = .blue
-        
         // Round Corners
         self.contentView.layer.cornerRadius = 15
         self.contentView.layer.masksToBounds = true
@@ -52,28 +55,31 @@ class ColorCollectionViewCell: UICollectionViewCell {
         self.layer.shadowRadius = 2.0
         self.layer.shadowOpacity = 0.5
         self.layer.masksToBounds = false
+        
+        // Round Circles
+        leftCircleView.layer.cornerRadius = 45
+        rightCircleView.layer.cornerRadius = 45
+        bottomCircleView.layer.cornerRadius = 45
     }
     
-    // Circle Setup
-    private func setupCircle()  {
-        let circleLayer = CAShapeLayer()
+    func setColors() {
         
-        // Center of Cell
-        let center = CGPoint(x: self.frame.maxX * 1.85, y: self.frame.maxY * 1.5)
+        guard let color = color else { return }
         
-        // Circle's Path
-        let circularPath = UIBezierPath(arcCenter: center, radius: self.bounds.height, startAngle: 0, endAngle: 2 * CGFloat.pi, clockwise: true)
+        circlesView.backgroundColor = color.bgCardColor // cell background
+        nameLabel.backgroundColor = color.textLabelColor
+        nameLabel.textColor = color.fontColor
         
-        // Add Path
-        circleLayer.path = circularPath.cgPath
+        // Circles
+        leftCircleView.backgroundColor = color.bgColor
+        rightCircleView.backgroundColor = color.color3
         
-        // Set Stroke Color
-        circleLayer.strokeColor = UIColor.red.cgColor
-        circleLayer.lineWidth = 20
-        
-        // Set Color
-        circleLayer.fillColor = UIColor.green.cgColor
-        
-        circleView.layer.addSublayer(circleLayer)
+        if let lastColor = color.color10 {
+            bottomCircleView.backgroundColor = lastColor
+        } else if let lastColor = color.color9 {
+            bottomCircleView.backgroundColor = lastColor
+        } else {
+            bottomCircleView.backgroundColor = color.color8
+        }
     }
 }
