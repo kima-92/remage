@@ -13,6 +13,7 @@ class CoreDataModelController {
     
     // MARK: - Properties
     var reminder: Reminder?
+    var user: User?
     
     // MARK: - Fetching from CoreData Methods
     
@@ -64,5 +65,68 @@ class CoreDataModelController {
             NSLog("Couldn't perform fetch for reminders")
             return nil
         }
+    }
+    
+    // Fetch for one Reminder by id
+    func fetchOneUserFromCoreData(id: String) -> User? {
+        
+        let moc = CoreDataStack.shared.mainContext
+        
+        // Create a fetch request for fetching users
+        let fetchRequest: NSFetchRequest<User> = User.fetchRequest()
+        
+        // An array of the IDs we need to fetch for
+        let usersByIDs = [id]
+        
+        // Add a predicate to the fetch request
+        fetchRequest.predicate = NSPredicate(format: "id IN %@", usersByIDs)
+        
+        // Try to fetch
+        do {
+            let users = try moc.fetch(fetchRequest)
+            
+            for user in users {
+                
+                if user.id == id {
+                    self.user = user
+                }
+                else {
+                    self.user = nil
+                }
+            }
+        } catch {
+            NSLog("Couldn't perform fetch for user")
+            self.user = nil
+        }
+        return user
+    }
+    
+    // Fetch the main user of this app
+    func fetchMainUserFromCoreData() -> User? {
+        
+        let moc = CoreDataStack.shared.mainContext
+        
+        // Create a fetch request for fetching users
+        let fetchRequest: NSFetchRequest<User> = User.fetchRequest()
+        
+        // An array of the IDs we need to fetch for
+        //let usersByIDs = [id]
+        
+        // Add a predicate to the fetch request
+        //fetchRequest.predicate = NSPredicate(format: "id IN %@", usersByIDs)
+        
+        // Try to fetch
+        do {
+            let users = try moc.fetch(fetchRequest)
+            
+            // Save user if there is one
+            if users.count >= 1 {
+                self.user = users[0]
+            }
+        } catch {
+            NSLog("Couldn't perform fetch for user")
+            self.user = nil
+        }
+        return user
     }
 }

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		FA06590824D2485D00527EB7 /* User+Conveniece.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA06590724D2485D00527EB7 /* User+Conveniece.swift */; };
 		FA06590A24D2487400527EB7 /* UserRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA06590924D2487400527EB7 /* UserRepresentation.swift */; };
+		FA06590D24D24A9100527EB7 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA06590C24D24A9100527EB7 /* MainTabBarController.swift */; };
 		FA1C87E024AE3B0900E3A1BA /* CameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1C87DF24AE3B0900E3A1BA /* CameraController.swift */; };
 		FA1C87E324AE3BA700E3A1BA /* CameraPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1C87E224AE3BA700E3A1BA /* CameraPreviewView.swift */; };
 		FA1C87E524AE44BA00E3A1BA /* CaptureType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1C87E424AE44BA00E3A1BA /* CaptureType.swift */; };
@@ -53,6 +54,7 @@
 /* Begin PBXFileReference section */
 		FA06590724D2485D00527EB7 /* User+Conveniece.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+Conveniece.swift"; sourceTree = "<group>"; };
 		FA06590924D2487400527EB7 /* UserRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepresentation.swift; sourceTree = "<group>"; };
+		FA06590C24D24A9100527EB7 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		FA1C87DF24AE3B0900E3A1BA /* CameraController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraController.swift; sourceTree = "<group>"; };
 		FA1C87E224AE3BA700E3A1BA /* CameraPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPreviewView.swift; sourceTree = "<group>"; };
 		FA1C87E424AE44BA00E3A1BA /* CaptureType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureType.swift; sourceTree = "<group>"; };
@@ -107,12 +109,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FA06590B24D24A5100527EB7 /* Main SB */ = {
+			isa = PBXGroup;
+			children = (
+				FAD929F224D0B3E10060916B /* TestingColorsViewController.swift */,
+				FA06590C24D24A9100527EB7 /* MainTabBarController.swift */,
+			);
+			path = "Main SB";
+			sourceTree = "<group>";
+		};
 		FA1E65AA245205A200502D95 = {
 			isa = PBXGroup;
 			children = (
 				FA1E65CA245205C700502D95 /* Storyboards */,
 				FA1E65CB245207E100502D95 /* View Controllers */,
-				FAD929F224D0B3E10060916B /* TestingColorsViewController.swift */,
 				FA1E65CE245207F900502D95 /* Views */,
 				FA1E65D0245208AA00502D95 /* Controllers */,
 				FA1E65CF2452089D00502D95 /* Model Controllers */,
@@ -158,6 +168,7 @@
 		FA1E65CB245207E100502D95 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				FA06590B24D24A5100527EB7 /* Main SB */,
 				FA90E84A24CF838B007148EF /* Settings SB */,
 				FA6E1F012459F6A5008AF502 /* Reminders SB */,
 				FA776B692457332500B897F6 /* New Reminder SB */,
@@ -355,6 +366,7 @@
 				FA776B6624521C4E00B897F6 /* ReminderRepresentation.swift in Sources */,
 				FA638D0824D1E49000E5E5B9 /* BGColorSelectionViewController.swift in Sources */,
 				FA90E84C24CF83DD007148EF /* SettingsMenuViewController.swift in Sources */,
+				FA06590D24D24A9100527EB7 /* MainTabBarController.swift in Sources */,
 				FA90E84724CF2F7F007148EF /* NRNoteViewController.swift in Sources */,
 				FADA155E24C94CF40006CA62 /* ViewControllerExtension.swift in Sources */,
 				FA6E1F032459F6CE008AF502 /* TestCollectionViewController.swift in Sources */,
