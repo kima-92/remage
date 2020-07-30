@@ -81,6 +81,7 @@ class NewReminderTypeViewController: UIViewController {
             guard let cameraVC = segue.destination as? CameraViewController else { return }
             
             cameraVC.reminderController = reminderController
+            cameraVC.themeController = themeController
             cameraVC.cameraController = cameraController
         }
         

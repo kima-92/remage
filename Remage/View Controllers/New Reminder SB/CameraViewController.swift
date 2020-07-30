@@ -92,6 +92,7 @@ class CameraViewController: UIViewController {
             
             guard let photoPreviewVC = segue.destination as? PhotoPreviewViewController else { return }
             photoPreviewVC.reminderController = reminderController
+            photoPreviewVC.themeController = themeController
             photoPreviewVC.image = image
         }
     }

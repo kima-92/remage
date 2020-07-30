@@ -60,6 +60,7 @@ class PhotoPreviewViewController: UIViewController {
             guard let newReminderDetailVC = segue.destination as? NewReminderDetailViewController else { return }
             newReminderDetailVC.imageFromCamera = image
             newReminderDetailVC.reminderController = reminderController
+            newReminderDetailVC.themeController = themeController
         }
     }
 }
