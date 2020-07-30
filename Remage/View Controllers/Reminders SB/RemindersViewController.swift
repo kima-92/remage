@@ -38,15 +38,22 @@ class RemindersViewController: UIViewController {
     }
     
     // MARK: - Outlets
+    
+    @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var remindersCollectionView: UICollectionView!
-    @IBOutlet weak var remindersCollectionViewHeight: NSLayoutConstraint!
     
     // MARK: - ViewDidload
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         receiveDataFromTabBar()
         updateViews()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        setBGColors()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -65,28 +72,6 @@ class RemindersViewController: UIViewController {
         self.reminderController = tabBar.reminderController
     }
     
-    // Setting the height of the remindersCollectionView
-    func setCollectionViewHeight(cell: ReminderCollectionViewCell) {
-        
-        let cellHeight = cell.insideCellView.layer.bounds.height
-        let remindersCount = fetchResultsController.fetchedObjects?.count ?? 0
-        
-        let heightCGFloat = CGFloat(remindersCount / 3)
-        let heightDouble = Double(remindersCount) / 3
-        
-        var roundedCellHeight: CGFloat = 0
-        
-        // Check if it has a remeinder
-        if heightDouble.truncatingRemainder(dividingBy: 1) == 0 {
-            roundedCellHeight = heightCGFloat
-        } else {
-            roundedCellHeight = (heightCGFloat + 1)
-        }
-        
-        let height = roundedCellHeight * (cellHeight + 10)
-        remindersCollectionViewHeight.constant = height
-    }
-    
     // Update Views when ViewDidLoad is called
     private func updateViews() {
         
@@ -96,18 +81,48 @@ class RemindersViewController: UIViewController {
         
     }
     
+    // Background Colors Setup
+    private func setBGColors() {
+        
+        // Get BGColor
+        guard let themeController = themeController,
+            let color = themeController.currentColor else { return }
+        
+        // Background
+        view.backgroundColor = color.bgColor
+        //scrollSubView.backgroundColor = color.bgColor
+        //scrollPushingView.backgroundColor = color.bgColor
+        
+        // CollectionView
+        remindersCollectionView.backgroundColor = color.textLabelColor
+        
+        // Header View
+        headerView.backgroundColor = color.bgCardColor
+        
+        // Set NavigationBar and TabBar Colors
+        let textAttribute = [NSAttributedString.Key.foregroundColor: color.fontColor]
+        
+        navigationController?.navigationBar.tintColor = color.fontColor
+        navigationController?.navigationBar.barTintColor = color.bgCardColor.withAlphaComponent(0.5)
+        navigationController?.navigationBar.titleTextAttributes = textAttribute
+        
+        tabBarController?.tabBar.barTintColor = color.bgColor.withAlphaComponent(0.5)
+        tabBarController?.tabBar.tintColor = color.fontColor
+        tabBarController?.tabBar.unselectedItemTintColor = color.fontColor.withAlphaComponent(0.3)
+    }
+    
      // MARK: - Navigation
      
      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         // TODO: - Tapping on the cell does not hit prepareFroSegue
         
-        if segue.identifier == "SegueFromVCTOVC" || segue.identifier == "ShowReminderImageSegue" {
+        if segue.identifier == "ShowReminderImageSegue" {
 
-            let cell = sender as? UICollectionViewCell
+            let cell = sender as? ReminderCollectionViewCell
             
             guard let reminderPhotoVC = segue.destination as? ReminderPhotoViewController,
-                    let indexPath = remindersCollectionView.indexPathsForSelectedItems?.first
+                let indexPath = remindersCollectionView.indexPath(for: cell!)
                     else { return }
             
             let reminder = fetchResultsController.object(at: indexPath)
@@ -116,7 +131,9 @@ class RemindersViewController: UIViewController {
      }
 }
 
-// MARK: - Extension for CollectionView
+// MARK: - Extension
+
+// CollectionView Protocols
 extension RemindersViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, NSFetchedResultsControllerDelegate {
     
     // CollectionView Methods
@@ -131,16 +148,9 @@ extension RemindersViewController: UICollectionViewDataSource, UICollectionViewD
         
         reminderCell.reminder = fetchResultsController.object(at: indexPath)
         
-        // Set the height of the collectionView
-        setCollectionViewHeight(cell: reminderCell )
-        
         return reminderCell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
-        if indexPath.item == indexPath.item {
-            performSegue(withIdentifier: "SegueFromVCTOVC", sender: self)
-        }
     }
 }
