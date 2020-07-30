@@ -20,6 +20,9 @@ class NRNoteViewController: UIViewController {
     
     // MARK: - Outlets
     
+    @IBOutlet weak var scrollSubView: UIView!
+    @IBOutlet weak var scrollPushingView: UIView!
+    
     @IBOutlet weak var addNoteLabel: UILabel!
     @IBOutlet weak var backgroundCardView: UIView!
     @IBOutlet weak var noteTextView: UITextView!
@@ -31,6 +34,11 @@ class NRNoteViewController: UIViewController {
         
         updateViews()
         tryLoadNote()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        setBGColors()
     }
     
     // MARK: - Actions
@@ -83,6 +91,32 @@ class NRNoteViewController: UIViewController {
         
         // TextView should start empty
         noteTextView.text = ""
+        
+        // Set Background Colors
+        setBGColors()
+        
+    }
+    
+    // Background Colors Setup
+    private func setBGColors() {
+        
+        // Get BGColor
+        guard let themeController = themeController,
+            let color = themeController.currentColor else { return }
+        
+        // Background
+        view.backgroundColor = color.bgColor
+        scrollSubView.backgroundColor = color.bgColor
+        scrollPushingView.backgroundColor = color.bgColor
+        backgroundCardView.backgroundColor = color.bgCardColor
+        
+        // TextView
+        noteTextView.backgroundColor = color.textLabelColor
+        noteTextView.textColor = color.fontColor
+        
+        // Label
+        addNoteLabel.backgroundColor = color.textLabelColor
+        addNoteLabel.textColor = color.fontColor
     }
 }
 

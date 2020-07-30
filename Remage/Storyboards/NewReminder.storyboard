@@ -512,6 +512,8 @@
                         <outlet property="addNoteLabel" destination="Xin-uA-StC" id="Ral-E0-qcd"/>
                         <outlet property="backgroundCardView" destination="3ma-rj-0Xn" id="3a6-sb-8re"/>
                         <outlet property="noteTextView" destination="aEo-ms-qQw" id="vPF-h9-0en"/>
+                        <outlet property="scrollPushingView" destination="AtX-EY-iMt" id="siH-yQ-7f0"/>
+                        <outlet property="scrollSubView" destination="xDT-XF-xbP" id="Gqo-Xe-pt6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7kO-dK-Ktp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

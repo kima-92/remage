@@ -303,7 +303,7 @@ class NewReminderDetailViewController: UIViewController {
         // Set Delegates
         imagePicker.delegate = self
         
-        // Set Backgound Colors
+        // Set Background Colors
         setBGColors()
     }
     
@@ -349,6 +349,7 @@ class NewReminderDetailViewController: UIViewController {
             
             noteVC.note = noteRecieved
             noteVC.getNoteDelegate = self
+            noteVC.themeController = themeController
         }
     }
 }
