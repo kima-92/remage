@@ -13,6 +13,7 @@ class CameraViewController: UIViewController {
     
     // MARK: - Properties
     
+    var themeController: ThemeController?
     var reminderController: ReminderController?
     var cameraController: CameraController?
     
@@ -34,11 +35,12 @@ class CameraViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupSession()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super .viewDidAppear(animated)
-        setupSession()
+//        setupSession()
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -91,6 +93,7 @@ class CameraViewController: UIViewController {
             
             guard let photoPreviewVC = segue.destination as? PhotoPreviewViewController else { return }
             photoPreviewVC.reminderController = reminderController
+            photoPreviewVC.themeController = themeController
             photoPreviewVC.image = image
         }
     }

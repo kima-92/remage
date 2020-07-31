@@ -10,14 +10,21 @@ import UIKit
 
 class MainTabBarController: UITabBarController {
     
+    // MARK: - Properties
+    
     var themeController = ThemeController()
     var reminderController = ReminderController()
+    
+    // MARK: - DidLoad
 
     override func viewDidLoad() {
         super.viewDidLoad()
         getTheme()
     }
     
+    // MARK: - Methods
+    
+    // Get Theme from ThemeController
     private func getTheme() {
         // Get main user
         let user = reminderController.cdModelController.fetchMainUserFromCoreData()

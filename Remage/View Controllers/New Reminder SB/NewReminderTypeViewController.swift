@@ -11,7 +11,10 @@ import UIKit
 class NewReminderTypeViewController: UIViewController {
     
     // MARK: - Properties
-    let reminderController = ReminderController()
+    
+    var themeController: ThemeController?
+    var reminderController: ReminderController?
+    
     let cameraController = CameraController()  // TODO: - Should initiate at initial screen, and pass to this VC
     
     // MARK: - Outlets
@@ -21,6 +24,12 @@ class NewReminderTypeViewController: UIViewController {
     // MARK: - ViewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
+        receiveDataFromTabBar()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setBGColors()
     }
     
     // MARK: - Actions
@@ -30,6 +39,38 @@ class NewReminderTypeViewController: UIViewController {
     @IBAction func noteButtonPressed(_ sender: UIButton) {
     }
     
+    // MARK: - Methods
+    
+    // To receive the ThemeController and ReminderController from the Main TabBar
+    private func receiveDataFromTabBar() {
+        guard let tabBar = tabBarController as? MainTabBarController else { return }
+        
+        self.themeController = tabBar.themeController
+        self.reminderController = tabBar.reminderController
+    }
+    
+    // Background Colors Setup
+    private func setBGColors() {
+        
+        // Get BGColor
+        guard let themeController = themeController,
+            let color = themeController.currentColor else { return }
+        
+        
+        // Set Colors
+        view.backgroundColor = color.bgColor
+        
+        // Set NavigationBar and TabBar Colors
+        let textAttribute = [NSAttributedString.Key.foregroundColor: color.fontColor]
+        
+        navigationController?.navigationBar.tintColor = color.fontColor
+        navigationController?.navigationBar.barTintColor = color.bgColor.withAlphaComponent(0.5)
+        navigationController?.navigationBar.titleTextAttributes = textAttribute
+        
+        tabBarController?.tabBar.barTintColor = color.bgColor.withAlphaComponent(0.5)
+        tabBarController?.tabBar.tintColor = color.fontColor
+        tabBarController?.tabBar.unselectedItemTintColor = color.fontColor.withAlphaComponent(0.3)
+    }
     
     // MARK: - Navigation
 
@@ -40,6 +81,7 @@ class NewReminderTypeViewController: UIViewController {
             guard let cameraVC = segue.destination as? CameraViewController else { return }
             
             cameraVC.reminderController = reminderController
+            cameraVC.themeController = themeController
             cameraVC.cameraController = cameraController
         }
         
@@ -48,6 +90,7 @@ class NewReminderTypeViewController: UIViewController {
             guard let newReminderDetailVC = segue.destination as? NewReminderDetailViewController else { return }
             
             newReminderDetailVC.reminderController = self.reminderController
+            newReminderDetailVC.themeController = themeController
         }
     }
 }

@@ -396,10 +396,15 @@
                     <connections>
                         <outlet property="addImagesButton" destination="Te3-AU-nL5" id="L3K-MO-9Pj"/>
                         <outlet property="addNoteButton" destination="WMz-Ua-rWG" id="jga-hO-k3S"/>
+                        <outlet property="alarmLabel" destination="bwr-pj-XoC" id="ol5-FN-3oB"/>
                         <outlet property="alarmSegmentedControl" destination="lHC-Qk-jnp" id="IsV-cN-lfK"/>
                         <outlet property="backgroundCardView" destination="7pM-Yd-zE8" id="Dtf-UA-Mpi"/>
                         <outlet property="datePickerTextField" destination="uZh-rn-nTH" id="bxl-19-5YC"/>
                         <outlet property="imageView" destination="F0E-0Z-mSK" id="1Ny-9Y-qVe"/>
+                        <outlet property="scrollPushingView" destination="2E0-XH-DIw" id="8HF-UJ-u5d"/>
+                        <outlet property="scrollSubView" destination="pLg-Pb-e4u" id="RQH-Hz-Y5e"/>
+                        <outlet property="setDateLabel" destination="Viw-MZ-SMO" id="vbU-7e-c3e"/>
+                        <outlet property="setTimeLabel" destination="tTV-F4-6QM" id="aYZ-cb-DXI"/>
                         <outlet property="timePickerTextField" destination="ajN-R7-TAH" id="JZS-be-eu3"/>
                         <outlet property="titleTextField" destination="vHe-Z8-EPF" id="szP-xC-Mf2"/>
                     </connections>
@@ -507,6 +512,8 @@
                         <outlet property="addNoteLabel" destination="Xin-uA-StC" id="Ral-E0-qcd"/>
                         <outlet property="backgroundCardView" destination="3ma-rj-0Xn" id="3a6-sb-8re"/>
                         <outlet property="noteTextView" destination="aEo-ms-qQw" id="vPF-h9-0en"/>
+                        <outlet property="scrollPushingView" destination="AtX-EY-iMt" id="siH-yQ-7f0"/>
+                        <outlet property="scrollSubView" destination="xDT-XF-xbP" id="Gqo-Xe-pt6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7kO-dK-Ktp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

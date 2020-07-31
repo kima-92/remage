@@ -102,6 +102,8 @@
                         <outlet property="backgroundCardView" destination="jJd-vo-PFT" id="NMw-dk-0vA"/>
                         <outlet property="backgroundColorChoiceButton" destination="2yf-mW-qc8" id="8yY-LU-Ztl"/>
                         <outlet property="backgroundLabel" destination="WVb-ZY-BYk" id="87J-qU-K8z"/>
+                        <outlet property="scrollPushingView" destination="o5T-Xx-NpJ" id="XGS-hd-CIh"/>
+                        <outlet property="scrollSubView" destination="3as-jP-CyZ" id="ggJ-O4-dLN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5zx-4O-xlj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

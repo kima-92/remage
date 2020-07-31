@@ -12,8 +12,10 @@ class PhotoPreviewViewController: UIViewController {
     
     // MARK: - Properties
     
-    var image: UIImage?
+    var themeController: ThemeController?
     var reminderController: ReminderController?
+    
+    var image: UIImage?
     
     // MARK: - Outlets
     
@@ -58,6 +60,7 @@ class PhotoPreviewViewController: UIViewController {
             guard let newReminderDetailVC = segue.destination as? NewReminderDetailViewController else { return }
             newReminderDetailVC.imageFromCamera = image
             newReminderDetailVC.reminderController = reminderController
+            newReminderDetailVC.themeController = themeController
         }
     }
 }

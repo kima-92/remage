@@ -13,11 +13,12 @@ class BGColorSelectionViewController: UIViewController {
     // MARK: - Properties
     
     var themeController: ThemeController?
+    var reminderController: ReminderController?
     
     var colorsCollectionView: UICollectionView?
     var headerView = UIView()
     
-    var titleLabel: UILabel = {
+    var chooseColorLabel: UILabel = {
        
         let label = UILabel()
         
@@ -92,25 +93,17 @@ class BGColorSelectionViewController: UIViewController {
         headerView.layer.cornerRadius = 15
         
         // NameLabel
-        headerView.addSubview(titleLabel)
+        headerView.addSubview(chooseColorLabel)
         
-        titleLabel.translatesAutoresizingMaskIntoConstraints = false
+        chooseColorLabel.translatesAutoresizingMaskIntoConstraints = false
         
-        titleLabel.topAnchor.constraint(equalTo: headerView.topAnchor, constant: 40).isActive = true
-        titleLabel.bottomAnchor.constraint(equalTo: headerView.bottomAnchor, constant: -40).isActive = true
-        titleLabel.leadingAnchor.constraint(equalTo: headerView.leadingAnchor, constant: 20).isActive = true
-        titleLabel.trailingAnchor.constraint(equalTo: headerView.trailingAnchor, constant: -20).isActive = true
+        chooseColorLabel.topAnchor.constraint(equalTo: headerView.topAnchor, constant: 40).isActive = true
+        chooseColorLabel.bottomAnchor.constraint(equalTo: headerView.bottomAnchor, constant: -40).isActive = true
+        chooseColorLabel.leadingAnchor.constraint(equalTo: headerView.leadingAnchor, constant: 20).isActive = true
+        chooseColorLabel.trailingAnchor.constraint(equalTo: headerView.trailingAnchor, constant: -20).isActive = true
         
-        titleLabel.layer.cornerRadius = 5
-        titleLabel.layer.masksToBounds = true
-    }
-    
-    // Set Background Colors
-    private func setBGColors(color: BGColor) {
-        headerView.backgroundColor = color.bgCardColor
-        titleLabel.backgroundColor = color.textLabelColor.withAlphaComponent(0.5)
-        colorsCollectionView?.backgroundColor = color.color8
-        view.backgroundColor = color.bgColor
+        chooseColorLabel.layer.cornerRadius = 5
+        chooseColorLabel.layer.masksToBounds = true
     }
     
     // MARK: - Update Views
@@ -123,6 +116,30 @@ class BGColorSelectionViewController: UIViewController {
         setupHeaderView()
         setupCollectionView()
         setBGColors(color: color)
+    }
+    
+    // Set Background Colors
+    private func setBGColors(color: BGColor) {
+        
+        view.backgroundColor = color.bgColor
+        headerView.backgroundColor = color.bgCardColor
+        colorsCollectionView?.backgroundColor = color.color8
+        
+        // Label
+        chooseColorLabel.backgroundColor = color.textLabelColor.withAlphaComponent(0.5)
+        chooseColorLabel.textColor = color.fontColor
+        
+        // Set NavigationBar and TabBar Colors
+        
+        let textAttribute = [NSAttributedString.Key.foregroundColor: color.fontColor]
+        
+        navigationController?.navigationBar.tintColor = color.fontColor
+        navigationController?.navigationBar.barTintColor = color.bgCardColor.withAlphaComponent(0.5)
+        navigationController?.navigationBar.titleTextAttributes = textAttribute
+        
+        tabBarController?.tabBar.barTintColor = color.bgColor.withAlphaComponent(0.5)
+        tabBarController?.tabBar.tintColor = color.fontColor
+        tabBarController?.tabBar.unselectedItemTintColor = color.fontColor.withAlphaComponent(0.3)
     }
 }
 
