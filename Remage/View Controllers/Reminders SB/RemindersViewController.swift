@@ -51,15 +51,11 @@ class RemindersViewController: UIViewController {
         updateViews()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        setBGColors()
-    }
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         remindersCollectionView.reloadData()
+        setBGColors()
     }
     
     // MARK: - Methods

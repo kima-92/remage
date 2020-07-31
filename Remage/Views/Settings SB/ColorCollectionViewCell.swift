@@ -65,13 +65,14 @@ class ColorCollectionViewCell: UICollectionViewCell {
         guard let color = color else { return }
         
         circlesView.backgroundColor = color.bgColor // cell background
-        nameLabel.backgroundColor = color.textLabelColor
-        nameLabel.textColor = color.fontColor
         
         // Circles
-        leftCircleView.backgroundColor = color.bgCardColor
-        rightCircleView.backgroundColor = color.color3
         
+        // Left
+        leftCircleView.backgroundColor = color.bgCardColor
+        // Right
+        rightCircleView.backgroundColor = color.color3
+        // Bottom
         if let lastColor = color.color9 {
             bottomCircleView.backgroundColor = lastColor
         } else if let lastColor = color.color8 {
@@ -80,7 +81,9 @@ class ColorCollectionViewCell: UICollectionViewCell {
             bottomCircleView.backgroundColor = color.color7
         }
         
-        // Set Color Name
+        // Name Label
         nameLabel.text = color.name
+        nameLabel.backgroundColor = color.textLabelColor // TODO: - Currently NOT giving correct shade
+        nameLabel.textColor = color.fontColor
     }
 }
