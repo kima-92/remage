@@ -18,6 +18,8 @@ class NewReminderTypeViewController: UIViewController {
     let cameraController = CameraController()  // TODO: - Should initiate at initial screen, and pass to this VC
     
     // MARK: - Outlets
+    @IBOutlet weak var newReminderLabel: UILabel!
+    
     @IBOutlet weak var cameraButton: UIButton!
     @IBOutlet weak var noteButton: UIButton!
     
@@ -59,6 +61,8 @@ class NewReminderTypeViewController: UIViewController {
         
         // Set Colors
         view.backgroundColor = color.bgColor
+        newReminderLabel.textColor = color.fontColor
+        newReminderLabel.backgroundColor = color.textLabelColor
         
         // Set NavigationBar and TabBar Colors
         let textAttribute = [NSAttributedString.Key.foregroundColor: color.fontColor]

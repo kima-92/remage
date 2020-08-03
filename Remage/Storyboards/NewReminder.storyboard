@@ -68,6 +68,7 @@
                     <navigationItem key="navigationItem" id="pYe-rz-CUg"/>
                     <connections>
                         <outlet property="cameraButton" destination="E9n-Kz-4sl" id="USf-v0-GCo"/>
+                        <outlet property="newReminderLabel" destination="PxR-xJ-1Gh" id="LFa-gI-h5G"/>
                         <outlet property="noteButton" destination="M6K-X7-aCW" id="JKn-Zx-QU7"/>
                     </connections>
                 </viewController>
@@ -522,7 +523,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="JAA-r4-BaZ"/>
+        <segue reference="F7Y-UV-5wD"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="bolt" catalog="system" width="101" height="128"/>
