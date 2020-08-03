@@ -337,6 +337,10 @@ class NewReminderDetailViewController: UIViewController {
         let textAttributes = [NSAttributedString.Key.foregroundColor: color.fontColor]
         alarmSegmentedControl.setTitleTextAttributes(textAttributes, for: .normal)
         alarmSegmentedControl.selectedSegmentTintColor = color.color8
+        
+        // Set Buttons Images
+        addImagesButton.setBackgroundImage(color.cameraImage, for: .normal)
+        addNoteButton.setBackgroundImage(color.docImage, for: .normal)
     }
     
     // MARK: - Navigation

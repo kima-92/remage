@@ -68,6 +68,7 @@
                     <navigationItem key="navigationItem" id="pYe-rz-CUg"/>
                     <connections>
                         <outlet property="cameraButton" destination="E9n-Kz-4sl" id="USf-v0-GCo"/>
+                        <outlet property="newReminderLabel" destination="PxR-xJ-1Gh" id="LFa-gI-h5G"/>
                         <outlet property="noteButton" destination="M6K-X7-aCW" id="JKn-Zx-QU7"/>
                     </connections>
                 </viewController>
@@ -88,10 +89,10 @@
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Liu-EO-Amv">
-                                <rect key="frame" x="184.5" y="728" width="45" height="45"/>
+                                <rect key="frame" x="167" y="693" width="80" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Liu-EO-Amv" secondAttribute="height" multiplier="1:1" id="5vU-Ev-ksa"/>
-                                    <constraint firstAttribute="width" constant="45" id="jqH-sW-HQI"/>
+                                    <constraint firstAttribute="width" constant="80" id="jqH-sW-HQI"/>
                                 </constraints>
                                 <state key="normal" image="circle" catalog="system"/>
                                 <connections>
@@ -310,7 +311,7 @@
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="Te3-AU-nL5" secondAttribute="height" multiplier="1:1" id="hBd-Fo-T1Y"/>
                                                                 </constraints>
-                                                                <state key="normal" image="purpleCamera"/>
+                                                                <state key="normal" backgroundImage="purpleCamera"/>
                                                                 <connections>
                                                                     <action selector="addImagesButtonTapped:" destination="ftG-iM-aUh" eventType="touchUpInside" id="2qq-rf-8ZW"/>
                                                                 </connections>
@@ -321,7 +322,7 @@
                                                                     <constraint firstAttribute="width" secondItem="WMz-Ua-rWG" secondAttribute="height" multiplier="1:1" id="er9-3E-ai0"/>
                                                                     <constraint firstAttribute="height" constant="120" id="yHN-vS-P5A"/>
                                                                 </constraints>
-                                                                <state key="normal" image="purpleDocument"/>
+                                                                <state key="normal" backgroundImage="purpleDocument"/>
                                                                 <connections>
                                                                     <action selector="addNoteButtonTapped:" destination="ftG-iM-aUh" eventType="touchUpInside" id="r18-Vu-2Yo"/>
                                                                     <segue destination="ozr-GA-mdF" kind="show" identifier="AddNewNoteSegue" id="og6-Aq-rUe"/>
@@ -522,7 +523,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="JAA-r4-BaZ"/>
+        <segue reference="F7Y-UV-5wD"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="bolt" catalog="system" width="101" height="128"/>

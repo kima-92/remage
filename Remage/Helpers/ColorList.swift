@@ -35,7 +35,6 @@ class ColorList {
         let fgColor8 = UIColor(red: 183/255, green: 228/255, blue: 199/255, alpha: 1)   // super light green
         let fgColor9 = UIColor(red: 216/255, green: 243/255, blue: 220/255, alpha: 1)   // white-ish green
         
-        
         // Assign colors
         var forestGreen = BGColor(name: "Forest Green", fontColor: fgColor9, bgCardColor: fgColor2, bgColor: fgColor1, textLabelColor: fgColor3.withAlphaComponent(0.5))
         
@@ -48,6 +47,15 @@ class ColorList {
         forestGreen.color7 = fgColor7
         forestGreen.color8 = fgColor8
         forestGreen.color9 = fgColor9
+        
+        // Assign Images
+        let fgCamImage = UIImage(named: "fgCamera")
+        let fgDocImage = UIImage(named: "fgDoc")
+        let fgCameraButton = UIImage(named: "fgCameraButton")
+        
+        forestGreen.docImage = fgDocImage
+        forestGreen.cameraImage = fgCamImage
+        forestGreen.cameraButton = fgCameraButton
         
         // Append
         colors.append(forestGreen)
@@ -79,6 +87,15 @@ class ColorList {
         magicalSea.color8 = msColor8
         magicalSea.color9 = msColor9
         magicalSea.color10 = msColor10
+        
+        // Assign Images
+        let msCamImage = UIImage(named: "msCamera")
+        let msDocImage = UIImage(named: "msDoc")
+        let msCameraButton = UIImage(named: "msCameraButton")
+        
+        magicalSea.docImage = msDocImage
+        magicalSea.cameraImage = msCamImage
+        magicalSea.cameraButton = msCameraButton
         
         //Append
         colors.append(magicalSea)

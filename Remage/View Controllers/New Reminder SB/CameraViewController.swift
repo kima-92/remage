@@ -38,6 +38,11 @@ class CameraViewController: UIViewController {
         setupSession()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setBGColors()
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         super .viewDidAppear(animated)
 //        setupSession()
@@ -82,6 +87,21 @@ class CameraViewController: UIViewController {
         
         let photoSettings = AVCapturePhotoSettings()
         cameraController.photoOutput.capturePhoto(with: photoSettings, delegate: self)
+    }
+    
+    // Background Colors Setup
+    private func setBGColors() {
+        
+        // Get BGColor
+        guard let themeController = themeController,
+            let color = themeController.currentColor else { return }
+        
+        // Set Buttons Images
+        captureImageButton.setImage(color.cameraButton, for: .normal)
+        flashButton.setImage(nil, for: .normal)
+        rotateCameraButton.setImage(nil, for: .normal)
+        
+        // TODO: - Set Images for flashButton and rotateCameraButton
     }
     
     // MARK: - Navigation
