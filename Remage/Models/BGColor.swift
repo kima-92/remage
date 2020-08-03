@@ -28,4 +28,7 @@ struct BGColor {
     var color8: UIColor?
     var color9: UIColor?
     var color10: UIColor?
+    
+    var docImage: UIImage
+    var cameraImage: UIImage
 }

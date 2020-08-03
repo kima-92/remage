@@ -310,7 +310,7 @@
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="Te3-AU-nL5" secondAttribute="height" multiplier="1:1" id="hBd-Fo-T1Y"/>
                                                                 </constraints>
-                                                                <state key="normal" image="purpleCamera"/>
+                                                                <state key="normal" backgroundImage="purpleCamera"/>
                                                                 <connections>
                                                                     <action selector="addImagesButtonTapped:" destination="ftG-iM-aUh" eventType="touchUpInside" id="2qq-rf-8ZW"/>
                                                                 </connections>
@@ -321,7 +321,7 @@
                                                                     <constraint firstAttribute="width" secondItem="WMz-Ua-rWG" secondAttribute="height" multiplier="1:1" id="er9-3E-ai0"/>
                                                                     <constraint firstAttribute="height" constant="120" id="yHN-vS-P5A"/>
                                                                 </constraints>
-                                                                <state key="normal" image="purpleDocument"/>
+                                                                <state key="normal" backgroundImage="purpleDocument"/>
                                                                 <connections>
                                                                     <action selector="addNoteButtonTapped:" destination="ftG-iM-aUh" eventType="touchUpInside" id="r18-Vu-2Yo"/>
                                                                     <segue destination="ozr-GA-mdF" kind="show" identifier="AddNewNoteSegue" id="og6-Aq-rUe"/>

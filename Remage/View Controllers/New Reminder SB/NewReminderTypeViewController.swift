@@ -70,6 +70,10 @@ class NewReminderTypeViewController: UIViewController {
         tabBarController?.tabBar.barTintColor = color.bgColor.withAlphaComponent(0.5)
         tabBarController?.tabBar.tintColor = color.fontColor
         tabBarController?.tabBar.unselectedItemTintColor = color.fontColor.withAlphaComponent(0.3)
+        
+        // Set Buttons Images
+        cameraButton.setBackgroundImage(color.cameraImage, for: .normal)
+        noteButton.setBackgroundImage(color.docImage, for: .normal)
     }
     
     // MARK: - Navigation

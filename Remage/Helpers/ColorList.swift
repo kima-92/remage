@@ -35,9 +35,11 @@ class ColorList {
         let fgColor8 = UIColor(red: 183/255, green: 228/255, blue: 199/255, alpha: 1)   // super light green
         let fgColor9 = UIColor(red: 216/255, green: 243/255, blue: 220/255, alpha: 1)   // white-ish green
         
+        let fgCamImage = UIImage(named: "fgCamera")!
+        let fgDocImage = UIImage(named: "fgDoc")!
         
         // Assign colors
-        var forestGreen = BGColor(name: "Forest Green", fontColor: fgColor9, bgCardColor: fgColor2, bgColor: fgColor1, textLabelColor: fgColor3.withAlphaComponent(0.5))
+        var forestGreen = BGColor(name: "Forest Green", fontColor: fgColor9, bgCardColor: fgColor2, bgColor: fgColor1, textLabelColor: fgColor3.withAlphaComponent(0.5), docImage: fgDocImage, cameraImage: fgCamImage)
         
         forestGreen.color1 = fgColor1
         forestGreen.color2 = fgColor2
@@ -66,8 +68,12 @@ class ColorList {
         let msColor9 = UIColor(red: 105/255, green: 48/255, blue: 195/255, alpha: 1)   // light indigo
         let msColor10 = UIColor(red: 116/255, green: 0/255, blue: 184/255, alpha: 1)   // purple
         
+        
+        let msCamImage = UIImage(named: "msCamera")!
+        let msDocImage = UIImage(named: "msDoc")!
+        
         // Assign colors
-        var magicalSea = BGColor(name: "Magical Sea", fontColor: msColor10, bgCardColor: msColor6, bgColor: msColor1, textLabelColor: msColor2.withAlphaComponent(0.5))
+        var magicalSea = BGColor(name: "Magical Sea", fontColor: msColor10, bgCardColor: msColor6, bgColor: msColor1, textLabelColor: msColor2.withAlphaComponent(0.5), docImage: msDocImage, cameraImage: msCamImage)
         
         magicalSea.color1 = msColor1
         magicalSea.color2 = msColor2
