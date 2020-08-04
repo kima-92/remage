@@ -32,4 +32,5 @@ struct BGColor {
     var docImage: UIImage?
     var cameraImage: UIImage?
     var cameraButton: UIImage?
+    var emptyPictureImage: UIImage?
 }

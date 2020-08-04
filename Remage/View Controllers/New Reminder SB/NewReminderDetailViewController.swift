@@ -341,6 +341,20 @@ class NewReminderDetailViewController: UIViewController {
         // Set Buttons Images
         addImagesButton.setBackgroundImage(color.cameraImage, for: .normal)
         addNoteButton.setBackgroundImage(color.docImage, for: .normal)
+        
+        // Images
+        imageView.image = color.emptyPictureImage
+        
+        // Set NavigationBar and TabBar Colors
+        let textAttribute = [NSAttributedString.Key.foregroundColor: color.fontColor]
+        
+        navigationController?.navigationBar.tintColor = color.fontColor
+        navigationController?.navigationBar.barTintColor = color.bgColor.withAlphaComponent(0.5)
+        navigationController?.navigationBar.titleTextAttributes = textAttribute
+        
+        tabBarController?.tabBar.barTintColor = color.bgColor.withAlphaComponent(0.5)
+        tabBarController?.tabBar.tintColor = color.fontColor
+        tabBarController?.tabBar.unselectedItemTintColor = color.fontColor.withAlphaComponent(0.3)
     }
     
     // MARK: - Navigation
