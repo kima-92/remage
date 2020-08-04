@@ -341,6 +341,9 @@ class NewReminderDetailViewController: UIViewController {
         // Set Buttons Images
         addImagesButton.setBackgroundImage(color.cameraImage, for: .normal)
         addNoteButton.setBackgroundImage(color.docImage, for: .normal)
+        
+        // Images
+        imageView.image = color.emptyPictureImage
     }
     
     // MARK: - Navigation

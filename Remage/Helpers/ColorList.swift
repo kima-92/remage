@@ -49,13 +49,10 @@ class ColorList {
         forestGreen.color9 = fgColor9
         
         // Assign Images
-        let fgCamImage = UIImage(named: "fgCamera")
-        let fgDocImage = UIImage(named: "fgDoc")
-        let fgCameraButton = UIImage(named: "fgCameraButton")
-        
-        forestGreen.docImage = fgDocImage
-        forestGreen.cameraImage = fgCamImage
-        forestGreen.cameraButton = fgCameraButton
+        forestGreen.docImage = UIImage(named: "fgDoc")
+        forestGreen.cameraImage = UIImage(named: "fgCamera")
+        forestGreen.cameraButton = UIImage(named: "fgCameraButton")
+        forestGreen.emptyPictureImage = UIImage(named: "darkEmptyPicture")
         
         // Append
         colors.append(forestGreen)
@@ -89,13 +86,10 @@ class ColorList {
         magicalSea.color10 = msColor10
         
         // Assign Images
-        let msCamImage = UIImage(named: "msCamera")
-        let msDocImage = UIImage(named: "msDoc")
-        let msCameraButton = UIImage(named: "msCameraButton")
-        
-        magicalSea.docImage = msDocImage
-        magicalSea.cameraImage = msCamImage
-        magicalSea.cameraButton = msCameraButton
+        magicalSea.docImage = UIImage(named: "msDoc")
+        magicalSea.cameraImage = UIImage(named: "msCamera")
+        magicalSea.cameraButton = UIImage(named: "msCameraButton")
+        magicalSea.emptyPictureImage = UIImage(named: "lightEmptyPicture")
         
         //Append
         colors.append(magicalSea)
