@@ -60,10 +60,4 @@ class ReminderCollectionViewCell: UICollectionViewCell {
         
         self.layer.shadowPath = UIBezierPath(roundedRect: thumbnailImageView.bounds, cornerRadius: thumbnailImageView.layer.cornerRadius).cgPath
     }
-    
-    // Testing that the cell is being tapped
-    override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
-        print(point, event!)
-        return self
-    }
 }
