@@ -68,13 +68,12 @@ class RemindersViewController: UIViewController {
         self.reminderController = tabBar.reminderController
     }
     
-    // Update Views when ViewDidLoad is called
+    // Update Views
     private func updateViews() {
         
-        // Set up the remindersCollectionView's delegate and data source
+        // RemindersCollectionView's delegate and data source
         remindersCollectionView.delegate = self
         remindersCollectionView.dataSource = self
-        
     }
     
     // Background Colors Setup
@@ -111,8 +110,6 @@ class RemindersViewController: UIViewController {
      
      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        // TODO: - Tapping on the cell does not hit prepareFroSegue
-        
         if segue.identifier == "ShowReminderImageSegue" {
 
             let cell = sender as? ReminderCollectionViewCell
@@ -132,8 +129,6 @@ class RemindersViewController: UIViewController {
 
 // CollectionView Protocols
 extension RemindersViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, NSFetchedResultsControllerDelegate {
-    
-    // CollectionView Methods
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return fetchResultsController.fetchedObjects?.count ?? 0
