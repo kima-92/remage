@@ -9,17 +9,19 @@
 import UIKit
 
 class AlarmsTableViewController: UITableViewController {
+    
+    // MARK: - Properties
+    
+    var themeController: ThemeController?
+    var reminderController: ReminderController?
+    
+    // MARK: - DidLoad
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = .purple
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        receiveDataFromTabBar()
+        setBGColors()
     }
 
     // MARK: - Table view data source
@@ -78,6 +80,41 @@ class AlarmsTableViewController: UITableViewController {
         return true
     }
     */
+    
+    // MARK: - Methods
+    
+    // To receive the ThemeController and ReminderController from the Main TabBar
+    private func receiveDataFromTabBar() {
+        guard let tabBar = tabBarController as? MainTabBarController else { return }
+        
+        self.themeController = tabBar.themeController
+        self.reminderController = tabBar.reminderController
+    }
+    
+    // Background Colors Setup
+    private func setBGColors() {
+        
+        // Get BGColor
+        guard let themeController = themeController,
+            let color = themeController.currentColor else { return }
+        
+        // Background
+        view.backgroundColor = color.bgColor
+        
+        // CollectionView
+        //remindersCollectionView.backgroundColor = color.textLabelColor
+        
+        // Set NavigationBar and TabBar Colors
+        let textAttribute = [NSAttributedString.Key.foregroundColor: color.fontColor]
+        
+        navigationController?.navigationBar.tintColor = color.fontColor
+        navigationController?.navigationBar.barTintColor = color.bgCardColor.withAlphaComponent(0.5)
+        navigationController?.navigationBar.titleTextAttributes = textAttribute
+        
+        tabBarController?.tabBar.barTintColor = color.bgColor.withAlphaComponent(0.5)
+        tabBarController?.tabBar.tintColor = color.fontColor
+        tabBarController?.tabBar.unselectedItemTintColor = color.fontColor.withAlphaComponent(0.3)
+    }
 
     /*
     // MARK: - Navigation
