@@ -253,12 +253,11 @@ class NewReminderDetailViewController: UIViewController {
     // Capture details to save a new Reminder
     private func saveNewReminder() {
         
-        guard let reminderController = reminderController else {
+        guard let reminderController = reminderController,
+            let title = titleTextField.text else {
             showCantSaveReminder()
             return
         }
-        
-        guard let title = titleTextField.text else { return }
         
         // Get image if it's not one of the default Images
         let lightImage = UIImage(named: "lightEmptyPicture")
