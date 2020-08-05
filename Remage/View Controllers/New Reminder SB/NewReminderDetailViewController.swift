@@ -260,18 +260,21 @@ class NewReminderDetailViewController: UIViewController {
         
         guard let title = titleTextField.text else { return }
         
-        // Get image if it's not the emptyPhotoImage
-        if imageView.image != emptyPhotoImage {
+        // Get image if it's not one of the default Images
+        let lightImage = UIImage(named: "lightEmptyPicture")
+        let darkImage = UIImage(named: "darkEmptyPicture")
+        
+        if imageView.image != lightImage && imageView.image != darkImage {
             image = imageView.image
         }
         
-        // If Alarm is on
+        // Set Alarm if AlarmSegment is On
         if alarmSegmentedControl.selectedSegmentIndex == 1 {
             setAlarm()
         }
         
         // Try to save the reminder
-        if !title.isEmpty || image != nil || noteRecieved != nil || date != nil {
+        if !title.isEmpty || image != nil || noteRecieved != nil {
             
             reminderController.saveNewReminder(title: title, defaultImage: image?.pngData(), note: noteRecieved, alarmDate: date)
             
@@ -320,14 +323,9 @@ class NewReminderDetailViewController: UIViewController {
     
     private func updateViews() {
         
-        // Show image if segue from Camera
+        // Show image if segue from CameraVC
         if let image = imageFromCamera {
             imageView.image = image
-            //imageView.contentMode = .scaleAspectFit
-        }
-        // Else save the emptyPhotoImage
-        else {
-            emptyPhotoImage = imageView.image
         }
         
         // Round corners
