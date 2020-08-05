@@ -10,7 +10,7 @@ import Foundation
 
 struct ReminderRepresentation: Codable {
     
-    var id: String
+    var id: String = UUID().uuidString
     var title: String?
     var note: String?
     var priority: String?
@@ -25,8 +25,9 @@ struct ReminderRepresentation: Codable {
     var image4: Data?
     var image5: Data?
     
-    var dayCreated: Date?
-    var dueDate: Date?
+    var dayCreated: Date = Date()
+    var alarmDate: Date?
+    var alarmOn: Bool = false
     
     init(id: String) {
         
