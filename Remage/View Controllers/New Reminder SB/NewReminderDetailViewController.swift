@@ -27,6 +27,7 @@ class NewReminderDetailViewController: UIViewController {
     var imagePicker = UIImagePickerController()
     
     var reminder: Reminder?
+    var date: Date?
     
     // MARK: - Outlets
     @IBOutlet weak var scrollSubView: UIView!
@@ -151,7 +152,7 @@ class NewReminderDetailViewController: UIViewController {
         
         // DateFormatter
         let formatter = DateFormatter()
-        // Don't need to display time
+        // Don't need to display date
         formatter.dateStyle = .none
         // Time Style
         formatter.timeStyle = .short
@@ -173,6 +174,44 @@ class NewReminderDetailViewController: UIViewController {
     }
     
     // MARK: - Methods
+    
+    // Set alarm
+    private func setAlarm() {
+        
+        // 1.   Create formatter
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MMMM dd, yyyy h:mm a"
+        
+        // 2.   Grab the date
+        
+        // DateFormatter
+        let dateFormatter = DateFormatter()
+        // Date Style
+        dateFormatter.dateStyle = .medium
+        // Don't want time in this formatter
+        dateFormatter.timeStyle = .none
+        // Get date as string from Picker using the formatter
+        let dateString = dateFormatter.string(from: datePicker.date)
+        
+        
+        // 3.   Grab the Time
+        
+        // TimeFormatter
+        let timeFormatter = DateFormatter()
+        // Don't need date in this formatter
+        timeFormatter.dateStyle = .none
+        // Time Style
+        timeFormatter.timeStyle = .short
+        // Get time as string from Picker using the formatter
+        let timeString = timeFormatter.string(from: timePicker.date)
+        
+        // 4.   Make a Date for this reminder's alarmDate
+        
+        let string = dateString + " " + timeString
+        let date = formatter.date(from: string)
+
+        self.date = date
+    }
     
     // Pick from Camera or PhotoLibrary Alert
     private func showCameraOrLibraryActionSheet() {
@@ -226,10 +265,15 @@ class NewReminderDetailViewController: UIViewController {
             image = imageView.image
         }
         
+        // If Alarm is on
+        if alarmSegmentedControl.selectedSegmentIndex == 1 {
+            setAlarm()
+        }
+        
         // Try to save the reminder
-        if !title.isEmpty || image != nil || noteRecieved != nil {
+        if !title.isEmpty || image != nil || noteRecieved != nil || date != nil {
             
-            reminderController.saveNewReminder(title: title, defaultImage: image?.pngData(), note: noteRecieved)
+            reminderController.saveNewReminder(title: title, defaultImage: image?.pngData(), note: noteRecieved, alarmDate: date)
             
             // Alert user the reminder is saved, and pop back to root VC
             showReminderCreatedSuccessfullyAlert()
@@ -376,6 +420,7 @@ class NewReminderDetailViewController: UIViewController {
 
 // ImagePicker Delegate Protocols
 extension NewReminderDetailViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+
     
     // Try to get image
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
@@ -408,3 +453,11 @@ extension NewReminderDetailViewController: GetNoteDelegate {
         noteRecieved = note
     }
 }
+
+//// Testing ----
+//extension NewReminderDetailViewController: UITextFieldDelegate {
+//
+//    override func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+//        return false
+//    }
+//}
