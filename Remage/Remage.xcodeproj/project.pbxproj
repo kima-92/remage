@@ -24,7 +24,6 @@
 		FA1E65D224520C0100502D95 /* NewReminder.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA1E65D124520C0100502D95 /* NewReminder.storyboard */; };
 		FA1E65D424520D3500502D95 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA1E65D324520D3500502D95 /* Settings.storyboard */; };
 		FA1E65D624520DCE00502D95 /* Reminders.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA1E65D524520DCE00502D95 /* Reminders.storyboard */; };
-		FA1E65D824520E1400502D95 /* Alerts.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA1E65D724520E1400502D95 /* Alerts.storyboard */; };
 		FA638D0824D1E49000E5E5B9 /* BGColorSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA638D0724D1E49000E5E5B9 /* BGColorSelectionViewController.swift */; };
 		FA638D0B24D1EB3700E5E5B9 /* ColorCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA638D0924D1EB3700E5E5B9 /* ColorCollectionViewCell.swift */; };
 		FA638D0C24D1EB3700E5E5B9 /* ColorCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA638D0A24D1EB3700E5E5B9 /* ColorCollectionViewCell.xib */; };
@@ -38,6 +37,8 @@
 		FA776B6D2457467900B897F6 /* NewReminderDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA776B6C2457467900B897F6 /* NewReminderDetailViewController.swift */; };
 		FA776B6F2457468800B897F6 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA776B6E2457468800B897F6 /* CameraViewController.swift */; };
 		FA776B712457489D00B897F6 /* CoreDataModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA776B702457489D00B897F6 /* CoreDataModelController.swift */; };
+		FA90B58924DB6862008DEAF8 /* AlarmsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA90B58824DB6862008DEAF8 /* AlarmsTableViewController.swift */; };
+		FA90B58B24DB76E5008DEAF8 /* Alarms.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA90B58A24DB76E5008DEAF8 /* Alarms.storyboard */; };
 		FA90E84724CF2F7F007148EF /* NRNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA90E84624CF2F7F007148EF /* NRNoteViewController.swift */; };
 		FA90E84924CF46F0007148EF /* ReminderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA90E84824CF46F0007148EF /* ReminderController.swift */; };
 		FA90E84C24CF83DD007148EF /* SettingsMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA90E84B24CF83DD007148EF /* SettingsMenuViewController.swift */; };
@@ -69,7 +70,6 @@
 		FA1E65D124520C0100502D95 /* NewReminder.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewReminder.storyboard; sourceTree = "<group>"; };
 		FA1E65D324520D3500502D95 /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		FA1E65D524520DCE00502D95 /* Reminders.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Reminders.storyboard; sourceTree = "<group>"; };
-		FA1E65D724520E1400502D95 /* Alerts.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Alerts.storyboard; sourceTree = "<group>"; };
 		FA638D0724D1E49000E5E5B9 /* BGColorSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BGColorSelectionViewController.swift; sourceTree = "<group>"; };
 		FA638D0924D1EB3700E5E5B9 /* ColorCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorCollectionViewCell.swift; sourceTree = "<group>"; };
 		FA638D0A24D1EB3700E5E5B9 /* ColorCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ColorCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -83,6 +83,8 @@
 		FA776B6C2457467900B897F6 /* NewReminderDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewReminderDetailViewController.swift; sourceTree = "<group>"; };
 		FA776B6E2457468800B897F6 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		FA776B702457489D00B897F6 /* CoreDataModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataModelController.swift; sourceTree = "<group>"; };
+		FA90B58824DB6862008DEAF8 /* AlarmsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmsTableViewController.swift; sourceTree = "<group>"; };
+		FA90B58A24DB76E5008DEAF8 /* Alarms.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Alarms.storyboard; sourceTree = "<group>"; };
 		FA90E84624CF2F7F007148EF /* NRNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NRNoteViewController.swift; sourceTree = "<group>"; };
 		FA90E84824CF46F0007148EF /* ReminderController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderController.swift; sourceTree = "<group>"; };
 		FA90E84B24CF83DD007148EF /* SettingsMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsMenuViewController.swift; sourceTree = "<group>"; };
@@ -156,7 +158,7 @@
 				FA1E65D124520C0100502D95 /* NewReminder.storyboard */,
 				FA1E65D324520D3500502D95 /* Settings.storyboard */,
 				FA1E65D524520DCE00502D95 /* Reminders.storyboard */,
-				FA1E65D724520E1400502D95 /* Alerts.storyboard */,
+				FA90B58A24DB76E5008DEAF8 /* Alarms.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -164,6 +166,7 @@
 		FA1E65CB245207E100502D95 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				FA90B58724DB67B4008DEAF8 /* Alarms SB */,
 				FA06590B24D24A5100527EB7 /* Main SB */,
 				FA90E84A24CF838B007148EF /* Settings SB */,
 				FA6E1F012459F6A5008AF502 /* Reminders SB */,
@@ -256,6 +259,14 @@
 			path = "New Reminder SB";
 			sourceTree = "<group>";
 		};
+		FA90B58724DB67B4008DEAF8 /* Alarms SB */ = {
+			isa = PBXGroup;
+			children = (
+				FA90B58824DB6862008DEAF8 /* AlarmsTableViewController.swift */,
+			);
+			path = "Alarms SB";
+			sourceTree = "<group>";
+		};
 		FA90E84A24CF838B007148EF /* Settings SB */ = {
 			isa = PBXGroup;
 			children = (
@@ -327,10 +338,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA1E65C3245205A600502D95 /* LaunchScreen.storyboard in Resources */,
-				FA1E65D824520E1400502D95 /* Alerts.storyboard in Resources */,
 				FA638D0C24D1EB3700E5E5B9 /* ColorCollectionViewCell.xib in Resources */,
 				FA1E65D224520C0100502D95 /* NewReminder.storyboard in Resources */,
 				FA1E65D624520DCE00502D95 /* Reminders.storyboard in Resources */,
+				FA90B58B24DB76E5008DEAF8 /* Alarms.storyboard in Resources */,
 				FA1E65C0245205A600502D95 /* Assets.xcassets in Resources */,
 				FA1E65BE245205A200502D95 /* Main.storyboard in Resources */,
 				FA1E65D424520D3500502D95 /* Settings.storyboard in Resources */,
@@ -363,6 +374,7 @@
 				FA06590D24D24A9100527EB7 /* MainTabBarController.swift in Sources */,
 				FA90E84724CF2F7F007148EF /* NRNoteViewController.swift in Sources */,
 				FADA155E24C94CF40006CA62 /* ViewControllerExtension.swift in Sources */,
+				FA90B58924DB6862008DEAF8 /* AlarmsTableViewController.swift in Sources */,
 				FA90E85024D07B1A007148EF /* GridColorButton.swift in Sources */,
 				FA776B6D2457467900B897F6 /* NewReminderDetailViewController.swift in Sources */,
 				FA06590824D2485D00527EB7 /* User+Conveniece.swift in Sources */,
