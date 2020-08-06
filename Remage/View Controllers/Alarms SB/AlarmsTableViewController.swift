@@ -49,10 +49,10 @@ class AlarmsTableViewController: UITableViewController, NSFetchedResultsControll
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        let reminders = fetchResultsController.fetchedObjects
-//        let alarms = reminders?.compactMap({ $0.alarmDate })
-//        return alarms?.count ?? 0
-        return fetchResultsController.fetchedObjects?.count ?? 0
+        let reminders = fetchResultsController.fetchedObjects
+        let alarms = reminders?.compactMap({ $0.alarmDate })
+        return alarms?.count ?? 0
+//        return fetchResultsController.fetchedObjects?.count ?? 0
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
