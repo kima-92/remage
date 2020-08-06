@@ -7,13 +7,35 @@
 //
 
 import UIKit
+import CoreData
 
-class AlarmsTableViewController: UITableViewController {
+class AlarmsTableViewController: UITableViewController, NSFetchedResultsControllerDelegate {
     
     // MARK: - Properties
     
     var themeController: ThemeController?
     var reminderController: ReminderController?
+    
+    var fetchResultsController: NSFetchedResultsController<Reminder> {
+        
+        let fetchRequest: NSFetchRequest<Reminder> = Reminder.fetchRequest()
+        
+        // Sort Reminders by Alarm Date
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "alarmDate", ascending: true)]
+        
+        let moc = CoreDataStack.shared.mainContext
+        let fetchResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: moc, sectionNameKeyPath: nil, cacheName: nil)
+        
+        fetchResultsController.delegate = self
+        
+        // Try to perform Fetch
+        do {
+            try fetchResultsController.performFetch()
+        } catch {
+            fatalError("Failed to fetch reminder entities: \(error)")
+        }
+        return fetchResultsController
+    }
     
     // MARK: - DidLoad
 
@@ -26,25 +48,24 @@ class AlarmsTableViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+//        let reminders = fetchResultsController.fetchedObjects
+//        let alarms = reminders?.compactMap({ $0.alarmDate })
+//        return alarms?.count ?? 0
+        return fetchResultsController.fetchedObjects?.count ?? 0
     }
 
-    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "AlarmCell", for: indexPath) as? AlarmTableViewCell else { return UITableViewCell() }
 
-        // Configure the cell...
+        let reminder = fetchResultsController.object(at: indexPath)
+        cell.themeController = themeController
+        cell.alarmDate = reminder.alarmDate
 
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.
