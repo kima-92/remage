@@ -92,7 +92,7 @@ class RemindersViewController: UIViewController {
         remindersCollectionView.backgroundColor = color.textLabelColor
         
         // Header View
-        headerView.backgroundColor = color.bgCardColor
+        //headerView.backgroundColor = color.bgCardColor
         
         // Set NavigationBar and TabBar Colors
         let textAttribute = [NSAttributedString.Key.foregroundColor: color.fontColor]
