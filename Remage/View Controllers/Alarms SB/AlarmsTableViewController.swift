@@ -15,6 +15,7 @@ class AlarmsTableViewController: UITableViewController, NSFetchedResultsControll
     
     var themeController: ThemeController?
     var reminderController: ReminderController?
+    var reminders: [Reminder]?
     
     var fetchResultsController: NSFetchedResultsController<Reminder> {
         
@@ -44,6 +45,7 @@ class AlarmsTableViewController: UITableViewController, NSFetchedResultsControll
         
         receiveDataFromTabBar()
         setBGColors()
+        setupReminders()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -55,18 +57,15 @@ class AlarmsTableViewController: UITableViewController, NSFetchedResultsControll
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let reminders = fetchResultsController.fetchedObjects
-        let alarms = reminders?.compactMap({ $0.alarmDate })
-        return alarms?.count ?? 0
+        return reminders?.count ?? 0
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "AlarmCell", for: indexPath) as? AlarmTableViewCell else { return UITableViewCell() }
-
-        let reminder = fetchResultsController.object(at: indexPath)
+        
         cell.themeController = themeController
-        cell.alarmDate = reminder.alarmDate
+        cell.reminder = reminders?[indexPath.row]
 
         return cell
     }
@@ -115,6 +114,12 @@ class AlarmsTableViewController: UITableViewController, NSFetchedResultsControll
         
         self.themeController = tabBar.themeController
         self.reminderController = tabBar.reminderController
+    }
+    
+    // Get only the Reminders with an Alarm
+    private func setupReminders() {
+        let allReminders = fetchResultsController.fetchedObjects
+        reminders = allReminders?.filter({ $0.alarmDate != nil })
     }
     
     // Background Colors Setup
