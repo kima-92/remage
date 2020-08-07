@@ -30,7 +30,7 @@ class AlarmTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
@@ -57,5 +57,9 @@ class AlarmTableViewCell: UITableViewCell {
         
         // DefaultImage
         pictureImageView.image = color.emptyPictureImage
+        
+        // Colors
+        titleLabel.textColor = color.fontColor
+        alarmLabel.textColor = color.fontColor
     }
 }

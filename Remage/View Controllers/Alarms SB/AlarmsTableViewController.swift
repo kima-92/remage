@@ -45,6 +45,12 @@ class AlarmsTableViewController: UITableViewController, NSFetchedResultsControll
         receiveDataFromTabBar()
         setBGColors()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setBGColors()
+        tableView.reloadData()
+    }
 
     // MARK: - Table view data source
 
@@ -52,7 +58,6 @@ class AlarmsTableViewController: UITableViewController, NSFetchedResultsControll
         let reminders = fetchResultsController.fetchedObjects
         let alarms = reminders?.compactMap({ $0.alarmDate })
         return alarms?.count ?? 0
-//        return fetchResultsController.fetchedObjects?.count ?? 0
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -121,9 +126,7 @@ class AlarmsTableViewController: UITableViewController, NSFetchedResultsControll
         
         // Background
         view.backgroundColor = color.bgColor
-        
-        // CollectionView
-        //remindersCollectionView.backgroundColor = color.textLabelColor
+        tableView.separatorColor = color.bgCardColor
         
         // Set NavigationBar and TabBar Colors
         let textAttribute = [NSAttributedString.Key.foregroundColor: color.fontColor]
