@@ -20,6 +20,12 @@ class AlarmTableViewCell: UITableViewCell {
         }
     }
     
+    // MARK: - Outlets
+    
+    @IBOutlet weak var alarmLabel: UILabel!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var pictureImageView: UIImageView!
+    
     // MARK: - Awake from Nib
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -37,9 +43,6 @@ class AlarmTableViewCell: UITableViewCell {
         //guard let alarmDate = alarmDate else { return }
         
         setBGColors()
-        
-        // Height
-        heightAnchor.constraint(equalToConstant: 60).isActive = true
     }
     
     // Background Colors Setup
@@ -51,5 +54,8 @@ class AlarmTableViewCell: UITableViewCell {
         
         // Background
         backgroundColor = color.bgColor
+        
+        // DefaultImage
+        pictureImageView.image = color.emptyPictureImage
     }
 }
