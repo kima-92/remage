@@ -6,7 +6,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Alarms Table View Controller-->
+        <!--Alarms-->
         <scene sceneID="Kiu-zf-aYR">
             <objects>
                 <tableViewController id="c2b-Zi-VkA" customClass="AlarmsTableViewController" customModule="Remage" customModuleProvider="target" sceneMemberID="viewController">
@@ -69,7 +69,7 @@
                             <outlet property="delegate" destination="c2b-Zi-VkA" id="Sog-VF-1tY"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="7mb-hJ-8A7"/>
+                    <navigationItem key="navigationItem" title="Alarms" id="7mb-hJ-8A7"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SXu-PB-NyN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

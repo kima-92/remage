@@ -14,7 +14,7 @@ class AlarmTableViewCell: UITableViewCell {
     
     var themeController: ThemeController?
     
-    var alarmDate: Date? {
+    var reminder: Reminder? {
         didSet  {
             updateViews()
         }
@@ -40,9 +40,36 @@ class AlarmTableViewCell: UITableViewCell {
     // MARK: - Methods
     
     private func updateViews() {
-        //guard let alarmDate = alarmDate else { return }
         
+        guard let reminder = reminder,
+            let alarmDate = reminder.alarmDate else { return }
+        
+        // Set BGColor
         setBGColors()
+        
+        // Title Label
+        if let alarmTitle = reminder.title {
+            titleLabel.text = alarmTitle
+        } else if let alarmNote = reminder.note {
+            titleLabel.text = alarmNote
+        }
+        
+        // Alarm Label
+        
+        // Date Formatter
+        let formatter = DateFormatter()
+        formatter.dateStyle = .medium
+        formatter.timeStyle = .short
+        // Get date as string
+        let dateString = formatter.string(from: alarmDate)
+        // Add formatted date to Label
+        alarmLabel.text = dateString
+        
+        // Picture ImageView
+        if let imageData = reminder.defaultImage,
+            let image = UIImage(data: imageData) {
+            pictureImageView.image = image
+        }
     }
     
     // Background Colors Setup
