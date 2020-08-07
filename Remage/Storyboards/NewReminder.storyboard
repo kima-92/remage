@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--New Reminder Type View Controller-->
+        <!--New Reminder-->
         <scene sceneID="ACA-hh-CRo">
             <objects>
                 <viewController id="1qf-cw-xvb" customClass="NewReminderTypeViewController" customModule="Remage" customModuleProvider="target" sceneMemberID="viewController">
@@ -15,66 +15,102 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" text="Create a New Reminder" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PxR-xJ-1Gh">
-                                <rect key="frame" x="20" y="118" width="374" height="36"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="XAk-v5-xF4">
-                                <rect key="frame" x="107" y="293" width="200" height="430"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="vdm-Yb-vuC">
+                                <rect key="frame" x="87" y="161" width="240" height="574"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E9n-Kz-4sl">
-                                        <rect key="frame" x="0.0" y="0.5" width="200" height="198"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3cb-Jm-vbo">
+                                        <rect key="frame" x="0.0" y="0.0" width="240" height="277"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Take a Picture" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wN6-F0-mrG">
+                                                <rect key="frame" x="20" y="220" width="200" height="37"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E9n-Kz-4sl">
+                                                <rect key="frame" x="20" y="20.5" width="200" height="198"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="200" id="1hg-8V-sf3"/>
+                                                    <constraint firstAttribute="width" secondItem="E9n-Kz-4sl" secondAttribute="height" multiplier="1:1" id="x1v-Dy-szP"/>
+                                                </constraints>
+                                                <state key="normal" backgroundImage="camera" catalog="system"/>
+                                                <connections>
+                                                    <action selector="cameraButtonPressed:" destination="1qf-cw-xvb" eventType="touchUpInside" id="bD9-Qh-5ng"/>
+                                                    <segue destination="c5m-7Q-zza" kind="show" identifier="ShowCameraVCSegue" id="Dmb-Ax-gRV"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="200" id="1hg-8V-sf3"/>
-                                            <constraint firstAttribute="width" secondItem="E9n-Kz-4sl" secondAttribute="height" multiplier="1:1" id="x1v-Dy-szP"/>
+                                            <constraint firstItem="wN6-F0-mrG" firstAttribute="leading" secondItem="3cb-Jm-vbo" secondAttribute="leading" constant="20" id="5Xn-Ed-j66"/>
+                                            <constraint firstAttribute="trailing" secondItem="E9n-Kz-4sl" secondAttribute="trailing" constant="20" id="C0q-Ly-svs"/>
+                                            <constraint firstItem="E9n-Kz-4sl" firstAttribute="leading" secondItem="3cb-Jm-vbo" secondAttribute="leading" constant="20" id="M65-Gi-BH5"/>
+                                            <constraint firstItem="E9n-Kz-4sl" firstAttribute="top" secondItem="3cb-Jm-vbo" secondAttribute="top" constant="20" id="WP1-ns-TaG"/>
+                                            <constraint firstAttribute="trailing" secondItem="wN6-F0-mrG" secondAttribute="trailing" constant="20" id="gdV-DI-kns"/>
+                                            <constraint firstItem="wN6-F0-mrG" firstAttribute="top" secondItem="E9n-Kz-4sl" secondAttribute="bottom" id="jSu-UO-PLg"/>
+                                            <constraint firstAttribute="bottom" secondItem="wN6-F0-mrG" secondAttribute="bottom" constant="20" id="nzo-2A-r7o"/>
                                         </constraints>
-                                        <state key="normal" backgroundImage="camera" catalog="system"/>
-                                        <connections>
-                                            <action selector="cameraButtonPressed:" destination="1qf-cw-xvb" eventType="touchUpInside" id="bD9-Qh-5ng"/>
-                                            <segue destination="c5m-7Q-zza" kind="show" identifier="ShowCameraVCSegue" id="Dmb-Ax-gRV"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M6K-X7-aCW">
-                                        <rect key="frame" x="0.0" y="229.5" width="200" height="199"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yVw-qc-Jka">
+                                        <rect key="frame" x="0.0" y="297" width="240" height="277"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create with Notes" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eqt-3F-F7w">
+                                                <rect key="frame" x="20" y="220" width="200" height="37"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M6K-X7-aCW">
+                                                <rect key="frame" x="20" y="19.5" width="200" height="199"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="M6K-X7-aCW" secondAttribute="height" multiplier="1:1" id="fWg-ee-QKH"/>
+                                                </constraints>
+                                                <state key="normal" backgroundImage="square.and.pencil" catalog="system"/>
+                                                <connections>
+                                                    <action selector="noteButtonPressed:" destination="1qf-cw-xvb" eventType="touchUpInside" id="QbB-mr-HRr"/>
+                                                    <segue destination="ftG-iM-aUh" kind="show" identifier="ShowNewReminderDetailVCSegue" id="F7Y-UV-5wD"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" secondItem="M6K-X7-aCW" secondAttribute="height" multiplier="1:1" id="fWg-ee-QKH"/>
+                                            <constraint firstAttribute="bottom" secondItem="eqt-3F-F7w" secondAttribute="bottom" constant="20" id="C7Q-Tx-Rt8"/>
+                                            <constraint firstItem="eqt-3F-F7w" firstAttribute="leading" secondItem="yVw-qc-Jka" secondAttribute="leading" constant="20" id="Wxp-GU-oaS"/>
+                                            <constraint firstItem="M6K-X7-aCW" firstAttribute="leading" secondItem="yVw-qc-Jka" secondAttribute="leading" constant="20" id="Zn3-H1-uQZ"/>
+                                            <constraint firstItem="M6K-X7-aCW" firstAttribute="top" secondItem="yVw-qc-Jka" secondAttribute="top" constant="20" id="ej3-UO-It5"/>
+                                            <constraint firstAttribute="trailing" secondItem="M6K-X7-aCW" secondAttribute="trailing" constant="20" id="lIw-T7-Yo2"/>
+                                            <constraint firstAttribute="trailing" secondItem="eqt-3F-F7w" secondAttribute="trailing" constant="20" id="nCO-Xs-G8q"/>
+                                            <constraint firstItem="eqt-3F-F7w" firstAttribute="top" secondItem="M6K-X7-aCW" secondAttribute="bottom" id="rkD-J7-UMS"/>
                                         </constraints>
-                                        <state key="normal" backgroundImage="square.and.pencil" catalog="system"/>
-                                        <connections>
-                                            <action selector="noteButtonPressed:" destination="1qf-cw-xvb" eventType="touchUpInside" id="QbB-mr-HRr"/>
-                                            <segue destination="ftG-iM-aUh" kind="show" identifier="ShowNewReminderDetailVCSegue" id="F7Y-UV-5wD"/>
-                                        </connections>
-                                    </button>
+                                    </view>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="M6K-X7-aCW" firstAttribute="width" secondItem="M6K-X7-aCW" secondAttribute="height" multiplier="1:1" id="PYU-vu-kRR"/>
+                                    <constraint firstItem="yVw-qc-Jka" firstAttribute="height" secondItem="3cb-Jm-vbo" secondAttribute="height" id="M1B-4F-YaV"/>
+                                    <constraint firstItem="M6K-X7-aCW" firstAttribute="height" secondItem="E9n-Kz-4sl" secondAttribute="height" id="ZWf-XZ-448"/>
+                                    <constraint firstItem="eqt-3F-F7w" firstAttribute="height" secondItem="wN6-F0-mrG" secondAttribute="height" id="ifH-0g-TQd"/>
                                 </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="PxR-xJ-1Gh" firstAttribute="leading" secondItem="8iG-md-wOO" secondAttribute="leading" constant="20" id="4Yr-u9-rTS"/>
-                            <constraint firstItem="PxR-xJ-1Gh" firstAttribute="top" secondItem="8iG-md-wOO" secondAttribute="top" constant="30" id="CRE-ch-Wfe"/>
-                            <constraint firstItem="8iG-md-wOO" firstAttribute="bottom" secondItem="XAk-v5-xF4" secondAttribute="bottom" constant="90" id="R5N-wP-W0K"/>
-                            <constraint firstItem="8iG-md-wOO" firstAttribute="trailing" secondItem="PxR-xJ-1Gh" secondAttribute="trailing" constant="20" id="Uqb-UH-S6O"/>
-                            <constraint firstItem="XAk-v5-xF4" firstAttribute="top" relation="greaterThanOrEqual" secondItem="PxR-xJ-1Gh" secondAttribute="bottom" constant="100" id="ZKu-yY-kGd"/>
-                            <constraint firstItem="XAk-v5-xF4" firstAttribute="leading" secondItem="8iG-md-wOO" secondAttribute="leading" constant="107" id="grV-dc-5iv"/>
-                            <constraint firstItem="8iG-md-wOO" firstAttribute="trailing" secondItem="XAk-v5-xF4" secondAttribute="trailing" constant="107" id="msP-Kf-qLZ"/>
+                            <constraint firstItem="vdm-Yb-vuC" firstAttribute="centerY" secondItem="vkO-7K-XYw" secondAttribute="centerY" id="CTd-wl-XF1"/>
+                            <constraint firstItem="vdm-Yb-vuC" firstAttribute="centerX" secondItem="vkO-7K-XYw" secondAttribute="centerX" id="l6w-lh-bp6"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="8iG-md-wOO"/>
                     </view>
-                    <navigationItem key="navigationItem" id="pYe-rz-CUg"/>
+                    <navigationItem key="navigationItem" title="New Reminder" id="pYe-rz-CUg"/>
                     <connections>
+                        <outlet property="cameraBGCardView" destination="3cb-Jm-vbo" id="cyV-Ql-K3G"/>
                         <outlet property="cameraButton" destination="E9n-Kz-4sl" id="USf-v0-GCo"/>
-                        <outlet property="newReminderLabel" destination="PxR-xJ-1Gh" id="LFa-gI-h5G"/>
+                        <outlet property="createWithNotesLabel" destination="eqt-3F-F7w" id="lSl-dT-o6E"/>
+                        <outlet property="noteBGCardView" destination="yVw-qc-Jka" id="E14-yd-BCl"/>
                         <outlet property="noteButton" destination="M6K-X7-aCW" id="JKn-Zx-QU7"/>
+                        <outlet property="takePictureLabel" destination="wN6-F0-mrG" id="Hss-MB-Suo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g7J-bt-HRx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1068.1159420289855" y="139.95535714285714"/>
+            <point key="canvasLocation" x="1066.6666666666667" y="139.95535714285714"/>
         </scene>
         <!--Camera View Controller-->
         <scene sceneID="sYU-ZR-gZV">
