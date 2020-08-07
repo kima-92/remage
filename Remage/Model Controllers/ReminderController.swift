@@ -13,10 +13,31 @@ class ReminderController {
     var cdModelController = CoreDataModelController()
     
     // Save a New Reminder in CD
-    func saveNewReminder(title: String? = nil, defaultImage: Data? = nil, note: String? = nil, alarmDate: Date? = nil) {
+    // WITH a alarm
+    func saveNewReminderWith(alarmDate: Date, title: String? = nil, defaultImage: Data? = nil, note: String? = nil) {
         
-//        // Create new Reminder
-//        let reminder = Reminder(id: UUID().uuidString, context: CoreDataStack.shared.mainContext)
+        // Create new Reminder
+        //let reminder = Reminder(id: UUID().uuidString, context: CoreDataStack.shared.mainContext)
+        let reminder = Reminder(context: CoreDataStack.shared.mainContext)
+        
+        // Add Properties available
+        reminder.title = title
+        reminder.note = note
+        reminder.defaultImage = defaultImage
+        reminder.alarmDate = alarmDate
+        
+        // TODO: - Save the other images
+        
+        // Save reminder in Core Data
+        CoreDataStack.shared.save(context: CoreDataStack.shared.mainContext)
+    }
+    
+    // Save a New Reminder in CD
+    // WITHOUT a alarm
+    func saveNewReminder(title: String? = nil, defaultImage: Data? = nil, note: String? = nil) {
+        
+        // Create new Reminder
+        //let reminder = Reminder(id: UUID().uuidString, context: CoreDataStack.shared.mainContext)
         let reminder = Reminder(context: CoreDataStack.shared.mainContext)
         
         // Add Properties available

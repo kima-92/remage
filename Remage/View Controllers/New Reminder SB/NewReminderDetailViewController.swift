@@ -176,7 +176,7 @@ class NewReminderDetailViewController: UIViewController {
     // MARK: - Methods
     
     // Set alarm
-    private func setAlarm() {
+    private func setAlarm() -> Date? {
         
         // 1.   Create formatter
         let formatter = DateFormatter()
@@ -193,7 +193,6 @@ class NewReminderDetailViewController: UIViewController {
         // Get date as string from Picker using the formatter
         let dateString = dateFormatter.string(from: datePicker.date)
         
-        
         // 3.   Grab the Time
         
         // TimeFormatter
@@ -209,8 +208,9 @@ class NewReminderDetailViewController: UIViewController {
         
         let string = dateString + " " + timeString
         let date = formatter.date(from: string)
-
-        self.date = date
+        
+        guard let finalDate = date else { return nil }
+        return finalDate
     }
     
     // Pick from Camera or PhotoLibrary Alert
@@ -267,15 +267,21 @@ class NewReminderDetailViewController: UIViewController {
             image = imageView.image
         }
         
-        // Set Alarm if AlarmSegment is On
-        if alarmSegmentedControl.selectedSegmentIndex == 1 {
-            setAlarm()
-        }
-        
         // Try to save the reminder
         if !title.isEmpty || image != nil || noteRecieved != nil {
             
-            reminderController.saveNewReminder(title: title, defaultImage: image?.pngData(), note: noteRecieved, alarmDate: date)
+            // Set Alarm if AlarmSegment is On
+            if alarmSegmentedControl.selectedSegmentIndex == 1 {
+                
+                self.date = setAlarm()
+                guard let date = date else { return }
+                
+                reminderController.saveNewReminderWith(alarmDate: date, title: title, defaultImage: image?.pngData(), note: noteRecieved)
+                
+            // Else save Reminder without an Alarm
+            } else {
+                reminderController.saveNewReminder(title: title, defaultImage: image?.pngData(), note: noteRecieved)
+            }
             
             // Alert user the reminder is saved, and pop back to root VC
             showReminderCreatedSuccessfullyAlert()
