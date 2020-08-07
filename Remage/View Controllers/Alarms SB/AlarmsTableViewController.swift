@@ -51,6 +51,7 @@ class AlarmsTableViewController: UITableViewController, NSFetchedResultsControll
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setBGColors()
+        setupReminders()
         tableView.reloadData()
     }
 
