@@ -338,20 +338,12 @@ class NewReminderDetailViewController: UIViewController {
         addImagesButton.layer.cornerRadius = 15
         backgroundCardView.layer.cornerRadius = 20
         
-        // TextFields Background colors
-        titleTextField.backgroundColor = UIColor(displayP3Red: 255/255, green: 255/255, blue: 255/255, alpha: 0.3)
-        datePickerTextField.backgroundColor = UIColor(displayP3Red: 255/255, green: 255/255, blue: 255/255, alpha: 0.3)
-        timePickerTextField.backgroundColor = UIColor(displayP3Red: 255/255, green: 255/255, blue: 255/255, alpha: 0.3)
-        
         // Create Pickers
         createDatePicker()
         createTimePicker()
         
         // Set Delegates
         imagePicker.delegate = self
-        
-        // Set Background Colors
-        setBGColors()
     }
     
     // Background Colors Setup
@@ -389,8 +381,10 @@ class NewReminderDetailViewController: UIViewController {
         addImagesButton.setBackgroundImage(color.cameraImage, for: .normal)
         addNoteButton.setBackgroundImage(color.docImage, for: .normal)
         
-        // Images
-        imageView.image = color.emptyPictureImage
+        // Image
+        if imageFromCamera == nil {
+            imageView.image = color.emptyPictureImage
+        }
         
         // Set NavigationBar and TabBar Colors
         let textAttribute = [NSAttributedString.Key.foregroundColor: color.fontColor]
