@@ -39,10 +39,14 @@ class NewReminderDetailViewController: UIViewController {
     
     @IBOutlet weak var setDateLabel: UILabel!
     @IBOutlet weak var setTimeLabel: UILabel!
+    
     @IBOutlet weak var alarmLabel: UILabel!
     @IBOutlet weak var alarmSegmentedControl: UISegmentedControl!
+    
     @IBOutlet weak var addImagesButton: UIButton!
+    @IBOutlet weak var addPictureLabel: UILabel!
     @IBOutlet weak var addNoteButton: UIButton!
+    @IBOutlet weak var addNoteLabel: UILabel!
     
     @IBOutlet weak var datePickerTextField: UITextField!
     @IBOutlet weak var timePickerTextField: UITextField!
@@ -367,6 +371,8 @@ class NewReminderDetailViewController: UIViewController {
         setDateLabel.textColor = color.fontColor
         setTimeLabel.textColor = color.fontColor
         alarmLabel.textColor = color.fontColor
+        addPictureLabel.textColor = color.fontColor
+        addNoteLabel.textColor = color.fontColor
         
         // Pickers
         datePickerTextField.backgroundColor = color.textLabelColor
