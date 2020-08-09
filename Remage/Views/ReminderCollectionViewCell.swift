@@ -11,6 +11,9 @@ import UIKit
 class ReminderCollectionViewCell: UICollectionViewCell {
     
     // MARK: - Properties
+    
+    var color: BGColor?
+    
     var reminder: Reminder? {
         didSet {
             updateViews()
@@ -35,14 +38,20 @@ class ReminderCollectionViewCell: UICollectionViewCell {
             titleLabel.text = reminder.note
         }
         
+        // Display Reminder's Picture
         if let image = reminder.defaultImage {
+            
             thumbnailImageView.image = UIImage(data: image)
             thumbnailImageView.contentMode = .scaleAspectFill
-//            thumbnailImageView.image?.imageOrientation = 
-        }
+//            thumbnailImageView.image?.imageOrientation =
         
-        // TODO: - If the reminder has a default image, it
-        // should display that in the thumbnailImageView
+        // Else display the emptyImage Picture
+        } else {
+            guard let color = color else { return }
+            
+            thumbnailImageView.backgroundColor = color.bgColor
+            thumbnailImageView.image = color.emptyPictureImage
+        }
         
         thumbnailImageView.layer.cornerRadius = 8.0
         

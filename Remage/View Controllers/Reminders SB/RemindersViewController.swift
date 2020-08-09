@@ -85,14 +85,9 @@ class RemindersViewController: UIViewController {
         
         // Background
         view.backgroundColor = color.bgColor
-        //scrollSubView.backgroundColor = color.bgColor
-        //scrollPushingView.backgroundColor = color.bgColor
         
         // CollectionView
         remindersCollectionView.backgroundColor = color.textLabelColor
-        
-        // Header View
-        //headerView.backgroundColor = color.bgCardColor
         
         // Set NavigationBar and TabBar Colors
         let textAttribute = [NSAttributedString.Key.foregroundColor: color.fontColor]
@@ -138,6 +133,7 @@ extension RemindersViewController: UICollectionViewDataSource, UICollectionViewD
         
         guard let reminderCell = collectionView.dequeueReusableCell(withReuseIdentifier: "reminderCell", for: indexPath) as? ReminderCollectionViewCell else { return UICollectionViewCell() }
         
+        reminderCell.color = themeController?.currentColor
         reminderCell.reminder = fetchResultsController.object(at: indexPath)
         
         return reminderCell
