@@ -102,7 +102,7 @@ class ColorList {
         let msColor10 = UIColor(red: 116/255, green: 0/255, blue: 184/255, alpha: 1)   // purple
         
         // Assign colors
-        var magicalSea = BGColor(name: "Magical Sea", fontColor: msColor10, bgCardColor: msColor6, bgColor: msColor1, textLabelColor: msColor2.withAlphaComponent(0.5), barBGTintColor: msColor6.withAlphaComponent(0.5), barTintColor: msColor10, barUnselectedTintColor: msColor10.withAlphaComponent(0.3), highlightColor: msColor3)
+        var magicalSea = BGColor(name: "Magical Sea", fontColor: msColor10, bgCardColor: msColor4, bgColor: msColor1, textLabelColor: msColor2.withAlphaComponent(0.5), barBGTintColor: msColor2.withAlphaComponent(0.5), barTintColor: msColor10, barUnselectedTintColor: msColor10.withAlphaComponent(0.3), highlightColor: msColor3)
         
         magicalSea.color1 = msColor1
         magicalSea.color2 = msColor2
