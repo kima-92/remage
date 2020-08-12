@@ -66,7 +66,7 @@ class ColorList {
         let fgColor9 = UIColor(red: 216/255, green: 243/255, blue: 220/255, alpha: 1)   // white-ish green
         
         // Assign colors
-        var forestGreen = BGColor(name: "Forest Green", fontColor: fgColor9, bgCardColor: fgColor2, bgColor: fgColor1, textLabelColor: fgColor3.withAlphaComponent(0.5), barBGTintColor: fgColor1.withAlphaComponent(0.5), barTintColor: fgColor9, barUnselectedTintColor: fgColor9.withAlphaComponent(0.3), highlightColor: fgColor4)
+        var forestGreen = BGColor(name: "Forest Green", fontColor: fgColor9, bgCardColor: fgColor2, bgColor: fgColor1, textLabelColor: fgColor3.withAlphaComponent(0.5), barBGTintColor: fgColor1.withAlphaComponent(0.5), barTintColor: fgColor8, barUnselectedTintColor: fgColor8.withAlphaComponent(0.3), highlightColor: fgColor4)
         
         forestGreen.color1 = fgColor1
         forestGreen.color2 = fgColor2
