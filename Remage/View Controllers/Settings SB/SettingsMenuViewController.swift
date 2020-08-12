@@ -73,20 +73,19 @@ class SettingsMenuViewController: UIViewController {
         backgroundCardView.backgroundColor = color.bgCardColor
         
         // Background Color Settings
-        backgroundColorChoiceButton.backgroundColor = color.color1
+        backgroundColorChoiceButton.backgroundColor = color.highlightColor
         backgroundLabel.textColor = color.fontColor
         
         // Set NavigationBar and TabBar Colors
-        
         let textAttribute = [NSAttributedString.Key.foregroundColor: color.fontColor]
-        
-        navigationController?.navigationBar.tintColor = color.fontColor
-        navigationController?.navigationBar.barTintColor = color.bgCardColor.withAlphaComponent(0.5)
         navigationController?.navigationBar.titleTextAttributes = textAttribute
         
-        tabBarController?.tabBar.barTintColor = color.bgColor.withAlphaComponent(0.5)
-        tabBarController?.tabBar.tintColor = color.fontColor
-        tabBarController?.tabBar.unselectedItemTintColor = color.fontColor.withAlphaComponent(0.3)
+        navigationController?.navigationBar.tintColor = color.barTintColor
+        navigationController?.navigationBar.barTintColor = color.barBGTintColor // Entire bar BG color
+        
+        tabBarController?.tabBar.barTintColor = color.barBGTintColor // Entire bar BG color
+        tabBarController?.tabBar.tintColor = color.barTintColor // Selected tab bar button
+        tabBarController?.tabBar.unselectedItemTintColor = color.barUnselectedTintColor // Unselected bar buttons
     }
     
     // MARK: - Navigation

@@ -33,7 +33,7 @@ class ThemeController {
             
         // Set as default: Magical Sea
         } else {
-            let colors = bgColors.filter({$0.name == "Magical Sea"})
+            let colors = bgColors.filter({$0.name == "Light Sunset"})
             currentColor = colors[0]
         }
     }

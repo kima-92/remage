@@ -22,6 +22,36 @@ class ColorList {
     private func addColors() -> [BGColor] {
         var colors: [BGColor] = []
         
+        // MARK: - Light Sunset
+        
+        // All colors
+        
+        let lsColor1 = UIColor(red: 255/255, green: 248/255, blue: 240/255, alpha: 1)       // light cream
+        let lsColor2 = UIColor(red: 244/255, green: 208/255, blue: 111/255, alpha: 1)      // light cream orange
+        let lsColor3 = UIColor(red: 255/255, green: 136/255, blue: 17/255, alpha: 1)     // orange
+        let lsColor4 = UIColor(red: 157/255, green: 217/255, blue: 210/255, alpha: 1)    // light blue
+        let lsColor5 = UIColor(red: 57/255, green: 47/255, blue: 90/255, alpha: 1)   // blue / purple
+        let lsColor6: UIColor = .white
+        
+        // Assign colors
+        var lightSunset = BGColor(name: "Light Sunset", fontColor: lsColor5, bgCardColor: lsColor1, bgColor: lsColor6, textLabelColor: lsColor1.withAlphaComponent(0.5), barBGTintColor: lsColor1.withAlphaComponent(0.2), barTintColor: lsColor3, barUnselectedTintColor: lsColor3.withAlphaComponent(0.5), highlightColor: lsColor3)
+        
+        lightSunset.color1 = lsColor1
+        lightSunset.color2 = lsColor2
+        lightSunset.color3 = lsColor3
+        lightSunset.color4 = lsColor4
+        lightSunset.color5 = lsColor5
+        
+        // Assign Images
+        lightSunset.docImage = UIImage(named: "lsDoc")
+        lightSunset.cameraImage = UIImage(named: "lsCamera")
+        lightSunset.cameraButton = UIImage(named: "lsCameraButton")
+        lightSunset.emptyPictureImage = UIImage(named: "lightEmptyPicture")
+        
+        // Append
+        colors.append(lightSunset)
+        
+        
         // MARK: - Forest green
         
         // All colors
@@ -36,7 +66,7 @@ class ColorList {
         let fgColor9 = UIColor(red: 216/255, green: 243/255, blue: 220/255, alpha: 1)   // white-ish green
         
         // Assign colors
-        var forestGreen = BGColor(name: "Forest Green", fontColor: fgColor9, bgCardColor: fgColor2, bgColor: fgColor1, textLabelColor: fgColor3.withAlphaComponent(0.5))
+        var forestGreen = BGColor(name: "Forest Green", fontColor: fgColor9, bgCardColor: fgColor2, bgColor: fgColor1, textLabelColor: fgColor3.withAlphaComponent(0.5), barBGTintColor: fgColor1.withAlphaComponent(0.5), barTintColor: fgColor8, barUnselectedTintColor: fgColor8.withAlphaComponent(0.3), highlightColor: fgColor4)
         
         forestGreen.color1 = fgColor1
         forestGreen.color2 = fgColor2
@@ -72,7 +102,7 @@ class ColorList {
         let msColor10 = UIColor(red: 116/255, green: 0/255, blue: 184/255, alpha: 1)   // purple
         
         // Assign colors
-        var magicalSea = BGColor(name: "Magical Sea", fontColor: msColor10, bgCardColor: msColor6, bgColor: msColor1, textLabelColor: msColor2.withAlphaComponent(0.5))
+        var magicalSea = BGColor(name: "Magical Sea", fontColor: msColor10, bgCardColor: msColor4, bgColor: msColor1, textLabelColor: msColor2.withAlphaComponent(0.5), barBGTintColor: msColor2.withAlphaComponent(0.5), barTintColor: msColor10, barUnselectedTintColor: msColor10.withAlphaComponent(0.3), highlightColor: msColor3)
         
         magicalSea.color1 = msColor1
         magicalSea.color2 = msColor2
