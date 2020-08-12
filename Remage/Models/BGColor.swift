@@ -17,6 +17,10 @@ struct BGColor {
     var bgCardColor: UIColor
     var bgColor: UIColor
     var textLabelColor: UIColor
+    var barBGTintColor: UIColor
+    var barTintColor: UIColor
+    var barUnselectedTintColor: UIColor
+    var highlightColor: UIColor
     
     var color1: UIColor?
     var color2: UIColor?
