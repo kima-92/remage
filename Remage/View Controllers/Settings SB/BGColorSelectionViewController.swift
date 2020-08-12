@@ -122,11 +122,11 @@ class BGColorSelectionViewController: UIViewController {
     private func setBGColors(color: BGColor) {
         
         view.backgroundColor = color.bgColor
-        headerView.backgroundColor = color.bgCardColor
-        colorsCollectionView?.backgroundColor = color.color8
+        headerView.backgroundColor = color.bgColor
+        colorsCollectionView?.backgroundColor = color.highlightColor
         
         // Label
-        chooseColorLabel.backgroundColor = color.textLabelColor.withAlphaComponent(0.5)
+        chooseColorLabel.backgroundColor = color.bgColor
         chooseColorLabel.textColor = color.fontColor
         
         // Set NavigationBar and TabBar Colors

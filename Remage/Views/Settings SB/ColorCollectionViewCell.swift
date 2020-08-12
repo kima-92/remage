@@ -68,17 +68,21 @@ class ColorCollectionViewCell: UICollectionViewCell {
         
         // Circles
         
-        // Left
-        leftCircleView.backgroundColor = color.bgCardColor
-        // Right
-        rightCircleView.backgroundColor = color.color3
+        let color1 = color.bgCardColor
+        let color2 = color.fontColor
+        let color3 = color.highlightColor
+        
+        // Left & Right
+        leftCircleView.backgroundColor = color1
+        rightCircleView.backgroundColor = color2
+        
         // Bottom
-        if let lastColor = color.color9 {
-            bottomCircleView.backgroundColor = lastColor
-        } else if let lastColor = color.color8 {
-            bottomCircleView.backgroundColor = lastColor
-        } else {
-            bottomCircleView.backgroundColor = color.color7
+        if color3 != color1 && color3 != color2 {
+            bottomCircleView.backgroundColor = color3
+        } else if color.barTintColor != color1 && color.barTintColor != color2 && color.barTintColor != color3 {
+            bottomCircleView.backgroundColor = color.barTintColor
+        } else if color.textLabelColor != color1 && color.textLabelColor != color2 && color.textLabelColor != color3 {
+            bottomCircleView.backgroundColor = color.textLabelColor
         }
         
         // Name Label

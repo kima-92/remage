@@ -66,7 +66,7 @@ class ColorList {
         let fgColor9 = UIColor(red: 216/255, green: 243/255, blue: 220/255, alpha: 1)   // white-ish green
         
         // Assign colors
-        var forestGreen = BGColor(name: "Forest Green", fontColor: fgColor9, bgCardColor: fgColor2, bgColor: fgColor1, textLabelColor: fgColor3.withAlphaComponent(0.5), barBGTintColor: fgColor1.withAlphaComponent(0.5), barTintColor: fgColor9, barUnselectedTintColor: fgColor9.withAlphaComponent(0.3), highlightColor: fgColor2)
+        var forestGreen = BGColor(name: "Forest Green", fontColor: fgColor9, bgCardColor: fgColor2, bgColor: fgColor1, textLabelColor: fgColor3.withAlphaComponent(0.5), barBGTintColor: fgColor1.withAlphaComponent(0.5), barTintColor: fgColor9, barUnselectedTintColor: fgColor9.withAlphaComponent(0.3), highlightColor: fgColor4)
         
         forestGreen.color1 = fgColor1
         forestGreen.color2 = fgColor2
@@ -102,7 +102,7 @@ class ColorList {
         let msColor10 = UIColor(red: 116/255, green: 0/255, blue: 184/255, alpha: 1)   // purple
         
         // Assign colors
-        var magicalSea = BGColor(name: "Magical Sea", fontColor: msColor10, bgCardColor: msColor6, bgColor: msColor1, textLabelColor: msColor2.withAlphaComponent(0.5), barBGTintColor: msColor6.withAlphaComponent(0.5), barTintColor: msColor10, barUnselectedTintColor: msColor10.withAlphaComponent(0.3), highlightColor: msColor1)
+        var magicalSea = BGColor(name: "Magical Sea", fontColor: msColor10, bgCardColor: msColor6, bgColor: msColor1, textLabelColor: msColor2.withAlphaComponent(0.5), barBGTintColor: msColor6.withAlphaComponent(0.5), barTintColor: msColor10, barUnselectedTintColor: msColor10.withAlphaComponent(0.3), highlightColor: msColor3)
         
         magicalSea.color1 = msColor1
         magicalSea.color2 = msColor2
