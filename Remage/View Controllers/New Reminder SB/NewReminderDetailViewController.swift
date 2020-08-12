@@ -15,12 +15,14 @@ class NewReminderDetailViewController: UIViewController {
     var themeController: ThemeController?
     var reminderController: ReminderController?
     
+    var image: UIImage?
     var imageFromCamera: UIImage?
     var imageFromLibrary: UIImage?
     var emptyPhotoImage: UIImage?
     
-    var image: UIImage?
     var noteRecieved: String?
+    var oldNote: String?
+    var didShowNewNoteAlert = false
     
     let datePicker = UIDatePicker()
     let timePicker = UIDatePicker()
@@ -29,6 +31,7 @@ class NewReminderDetailViewController: UIViewController {
     
     var reminder: Reminder?
     var date: Date?
+    
     
     // MARK: - Outlets
     @IBOutlet weak var scrollSubView: UIView!
@@ -65,6 +68,11 @@ class NewReminderDetailViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setBGColors()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        tryShowNoteRecivedAlert()
     }
     
     // MARK: - Actions
@@ -179,6 +187,24 @@ class NewReminderDetailViewController: UIViewController {
     }
     
     // MARK: - Methods
+    
+    // Alert User if the Note was recived
+    private func tryShowNoteRecivedAlert() {
+        
+        // If Recived a new Note
+        if noteRecieved != nil && didShowNewNoteAlert == false {
+            
+            showReceivedNoteAlert()
+            didShowNewNoteAlert = true
+            oldNote = noteRecieved
+        }
+            
+        // Else, if recieved an updated Note
+        else if noteRecieved != oldNote {
+            showUpdatedNoteAlert()
+            oldNote = noteRecieved
+        }
+    }
     
     // Set alarm
     private func setAlarm() -> Date? {
@@ -329,6 +355,24 @@ class NewReminderDetailViewController: UIViewController {
         self.present(alert, animated: true)
     }
     
+    // Recieved New Note
+    private func showReceivedNoteAlert() {
+        let alert = UIAlertController(title: "Saved!", message: "A Note has been added to this Reminder", preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "Continue", style: .default, handler: nil))
+        
+        self.present(alert, animated: true)
+    }
+    
+    // Updated Note
+    private func showUpdatedNoteAlert() {
+        let alert = UIAlertController(title: "Saved Changes!", message: "The Note has been updated successfully", preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "Continue", style: .default, handler: nil))
+        
+        self.present(alert, animated: true)
+    }
+    
     // MARK: - Update Views
     
     private func updateViews() {
@@ -458,11 +502,3 @@ extension NewReminderDetailViewController: GetNoteDelegate {
         noteRecieved = note
     }
 }
-
-//// Testing ----
-//extension NewReminderDetailViewController: UITextFieldDelegate {
-//
-//    override func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-//        return false
-//    }
-//}
