@@ -16,6 +16,7 @@ class NewReminderDetailViewController: UIViewController {
     var reminderController: ReminderController?
     
     var imageFromCamera: UIImage?
+    var imageFromLibrary: UIImage?
     var emptyPhotoImage: UIImage?
     
     var image: UIImage?
@@ -388,7 +389,7 @@ class NewReminderDetailViewController: UIViewController {
         addNoteButton.setBackgroundImage(color.docImage, for: .normal)
         
         // Image
-        if imageFromCamera == nil {
+        if imageFromCamera == nil && imageFromLibrary == nil {
             imageView.image = color.emptyPictureImage
         }
         
@@ -431,13 +432,14 @@ extension NewReminderDetailViewController: UIImagePickerControllerDelegate, UINa
         // If you can get an edited image
         if let image = info[.editedImage] as? UIImage {
             
+            imageFromLibrary = image
             imageView.image = image
             
         // If you get the original Image
         } else if let image = info[.originalImage] as? UIImage {
             
+            imageFromLibrary = image
             imageView.image = image
-            
         }
         // Dismiss
         picker.dismiss(animated: true, completion: nil)
