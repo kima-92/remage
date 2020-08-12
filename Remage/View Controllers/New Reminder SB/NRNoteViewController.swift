@@ -34,6 +34,7 @@ class NRNoteViewController: UIViewController {
         
         updateViews()
         tryLoadNote()
+        hideKeyboardWhenTappedAround()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -113,9 +114,9 @@ class NRNoteViewController: UIViewController {
         // TextView
         noteTextView.backgroundColor = color.textLabelColor
         noteTextView.textColor = color.fontColor
+        //noteTextView.textInputView.tintColor = color.fontColor
         
         // Label
-        addNoteLabel.backgroundColor = color.textLabelColor
         addNoteLabel.textColor = color.fontColor
     }
 }
