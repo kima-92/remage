@@ -73,7 +73,7 @@ class SettingsMenuViewController: UIViewController {
         backgroundCardView.backgroundColor = color.bgCardColor
         
         // Background Color Settings
-        backgroundColorChoiceButton.backgroundColor = color.color1
+        backgroundColorChoiceButton.backgroundColor = color.highlightColor
         backgroundLabel.textColor = color.fontColor
         
         // Set NavigationBar and TabBar Colors
