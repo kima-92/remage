@@ -29,6 +29,7 @@
 		FA638D0C24D1EB3700E5E5B9 /* ColorCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA638D0A24D1EB3700E5E5B9 /* ColorCollectionViewCell.xib */; };
 		FA6E1F052459F9EE008AF502 /* RemindersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6E1F042459F9EE008AF502 /* RemindersViewController.swift */; };
 		FA6E1F072459FCC3008AF502 /* ReminderCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6E1F062459FCC3008AF502 /* ReminderCollectionViewCell.swift */; };
+		FA755EE324E62E3E007A0A92 /* ReminderDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA755EE224E62E3E007A0A92 /* ReminderDetailsViewController.swift */; };
 		FA776B622452191600B897F6 /* Remage.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FA776B602452191600B897F6 /* Remage.xcdatamodeld */; };
 		FA776B6424521C3000B897F6 /* Reminder+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA776B6324521C3000B897F6 /* Reminder+Convenience.swift */; };
 		FA776B6624521C4E00B897F6 /* ReminderRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA776B6524521C4E00B897F6 /* ReminderRepresentation.swift */; };
@@ -75,6 +76,7 @@
 		FA638D0A24D1EB3700E5E5B9 /* ColorCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ColorCollectionViewCell.xib; sourceTree = "<group>"; };
 		FA6E1F042459F9EE008AF502 /* RemindersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemindersViewController.swift; sourceTree = "<group>"; };
 		FA6E1F062459FCC3008AF502 /* ReminderCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderCollectionViewCell.swift; sourceTree = "<group>"; };
+		FA755EE224E62E3E007A0A92 /* ReminderDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderDetailsViewController.swift; sourceTree = "<group>"; };
 		FA776B612452191600B897F6 /* Remage.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Remage.xcdatamodel; sourceTree = "<group>"; };
 		FA776B6324521C3000B897F6 /* Reminder+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reminder+Convenience.swift"; sourceTree = "<group>"; };
 		FA776B6524521C4E00B897F6 /* ReminderRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderRepresentation.swift; sourceTree = "<group>"; };
@@ -243,6 +245,7 @@
 			children = (
 				FA6E1F042459F9EE008AF502 /* RemindersViewController.swift */,
 				FA1C87EA24AFCA0500E3A1BA /* ReminderPhotoViewController.swift */,
+				FA755EE224E62E3E007A0A92 /* ReminderDetailsViewController.swift */,
 			);
 			path = "Reminders SB";
 			sourceTree = "<group>";
@@ -404,6 +407,7 @@
 				FA90B58E24DB7BA0008DEAF8 /* AlarmTableViewCell.swift in Sources */,
 				FA1E65B7245205A200502D95 /* AppDelegate.swift in Sources */,
 				FA90E84924CF46F0007148EF /* ReminderController.swift in Sources */,
+				FA755EE324E62E3E007A0A92 /* ReminderDetailsViewController.swift in Sources */,
 				FA776B682457256C00B897F6 /* CoreDataStack.swift in Sources */,
 				FA1C87E724AE454000E3A1BA /* SelectedCamera.swift in Sources */,
 				FA1C87E924AF7F8E00E3A1BA /* PhotoPreviewViewController.swift in Sources */,

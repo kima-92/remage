@@ -20,7 +20,6 @@ class ReminderPhotoViewController: UIViewController {
     // MARK: - Outlets
 
     @IBOutlet weak var imageView: UIImageView!
-    @IBOutlet weak var bottomView: UIView!
     
     // MARK: - DidLoad
     override func viewDidLoad() {
@@ -54,9 +53,6 @@ class ReminderPhotoViewController: UIViewController {
         
         // Background
         view.backgroundColor = color.bgColor
-        bottomView.backgroundColor = color.bgColor
-        //scrollSubView.backgroundColor = color.bgColor
-        //scrollPushingView.backgroundColor = color.bgColor
         
         // Set NavigationBar and TabBar Colors
         let textAttribute = [NSAttributedString.Key.foregroundColor: color.fontColor]
