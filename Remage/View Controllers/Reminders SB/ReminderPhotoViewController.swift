@@ -66,15 +66,18 @@ class ReminderPhotoViewController: UIViewController {
         tabBarController?.tabBar.unselectedItemTintColor = color.barUnselectedTintColor // Unselected bar buttons
     }
     
-
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        
+        if segue.identifier == "ShowReminderDetailsSegue" {
+            guard let reminderDetailsVC = segue.destination as? ReminderDetailsViewController else { return }
+            
+            reminderDetailsVC.reminder = reminder
+            reminderDetailsVC.themeController = themeController
+            reminderDetailsVC.reminderController = reminderController
+        }
     }
-    */
 
 }

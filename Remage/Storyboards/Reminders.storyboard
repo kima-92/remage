@@ -124,7 +124,7 @@
                     <navigationItem key="navigationItem" id="9ks-xF-D7g">
                         <barButtonItem key="rightBarButtonItem" title="Details" id="dT6-hO-7wn">
                             <connections>
-                                <segue destination="dRr-Yb-5jx" kind="show" id="UIM-MZ-1TI"/>
+                                <segue destination="dRr-Yb-5jx" kind="show" identifier="ShowReminderDetailsSegue" id="UIM-MZ-1TI"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
