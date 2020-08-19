@@ -19,6 +19,7 @@ class ReminderDetailsViewController: UIViewController {
     
     var titleLabel = UILabel()
     var noteTextView = UITextView()
+    var photoImageView = UIImageView()
     
     // MARK: - DidLoad
     override func viewDidLoad() {
@@ -30,13 +31,16 @@ class ReminderDetailsViewController: UIViewController {
     
     private func updateViews() {
         addSubViews()
+        
         setTitleLabel()
         setNoteTextView()
+        setPhotoImageView()
     }
     
     private func addSubViews() {
         view.addSubview(titleLabel)
         view.addSubview(noteTextView)
+        view.addSubview(photoImageView)
     }
     
     // Title Label
@@ -110,6 +114,28 @@ class ReminderDetailsViewController: UIViewController {
         noteTextView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 20).isActive = true
         noteTextView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20).isActive = true
         noteTextView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20).isActive = true
-        noteTextView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20).isActive = true
+        //noteTextView.bottomAnchor.constraint(equalTo: photoImageView.topAnchor, constant: -20).isActive = true
+    }
+    
+    private func setPhotoImageView() {
+        
+        guard let reminder = reminder,
+            let imageData = reminder.defaultImage,
+            let image = UIImage(data: imageData) else { return }
+        
+        // 2.   Setup
+        
+        photoImageView.image = image
+        
+        // 3.   Constraint
+        
+        photoImageView.translatesAutoresizingMaskIntoConstraints = false
+        
+        photoImageView.heightAnchor.constraint(equalTo: photoImageView.widthAnchor).isActive = true
+        
+        photoImageView.topAnchor.constraint(equalTo: noteTextView.bottomAnchor, constant: 20).isActive = true
+        photoImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20).isActive = true
+        photoImageView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20).isActive = true
+        photoImageView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20).isActive = true
     }
 }
