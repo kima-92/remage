@@ -52,6 +52,11 @@ class ReminderDetailsViewController: UIViewController {
         // Background
         view.backgroundColor = color.bgColor
         
+        // Views
+        noteTextView.backgroundColor = color.textLabelColor
+        noteTextView.textColor = color.fontColor
+        titleLabel.textColor = color.fontColor
+        
         // Set NavigationBar and TabBar Colors
         let textAttribute = [NSAttributedString.Key.foregroundColor: color.fontColor]
         navigationController?.navigationBar.titleTextAttributes = textAttribute
@@ -118,7 +123,7 @@ class ReminderDetailsViewController: UIViewController {
         if let note = reminder.note,
             !note.isEmpty {
 
-            noteString = note
+            noteString = "Note: \n\n" + note
 
         // Else, display No Note message
         } else {
@@ -132,7 +137,9 @@ class ReminderDetailsViewController: UIViewController {
         // 2.   Setup
         
         noteTextView.attributedText = attributedText
-        noteTextView.textAlignment = .center
+        noteTextView.textAlignment = .left
+        
+        noteTextView.layer.cornerRadius = 10
         
         // 3.   Constraint
         
