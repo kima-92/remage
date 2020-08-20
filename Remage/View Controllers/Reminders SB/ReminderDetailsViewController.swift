@@ -27,6 +27,11 @@ class ReminderDetailsViewController: UIViewController {
         updateViews()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setBGColors()
+    }
+    
     // MARK: - Update Views
     
     private func updateViews() {
@@ -35,6 +40,28 @@ class ReminderDetailsViewController: UIViewController {
         setTitleLabel()
         setNoteTextView()
         setPhotoImageView()
+    }
+    
+    // Background Colors Setup
+    private func setBGColors() {
+        
+        // Get BGColor
+        guard let themeController = themeController,
+            let color = themeController.currentColor else { return }
+        
+        // Background
+        view.backgroundColor = color.bgColor
+        
+        // Set NavigationBar and TabBar Colors
+        let textAttribute = [NSAttributedString.Key.foregroundColor: color.fontColor]
+        navigationController?.navigationBar.titleTextAttributes = textAttribute
+        
+        navigationController?.navigationBar.tintColor = color.barTintColor
+        navigationController?.navigationBar.barTintColor = color.barBGTintColor // Entire bar BG color
+        
+        tabBarController?.tabBar.barTintColor = color.barBGTintColor // Entire bar BG color
+        tabBarController?.tabBar.tintColor = color.barTintColor // Selected tab bar button
+        tabBarController?.tabBar.unselectedItemTintColor = color.barUnselectedTintColor // Unselected bar buttons
     }
     
     private func addSubViews() {
