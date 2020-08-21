@@ -22,6 +22,7 @@ class ReminderDetailsViewController: UIViewController {
     
     var titleLabel = UILabel()
     var noteLabel = UILabel()
+    var alarmLabel = UILabel()
     var photoImageView = UIImageView()
     
     // MARK: - DidLoad
@@ -42,7 +43,8 @@ class ReminderDetailsViewController: UIViewController {
         
         setScrollView()
         setTitleLabel()
-        setNoteTextView()
+        setNoteLabel()
+        setAlarmLabel()
         setPhotoImageView()
     }
     
@@ -79,6 +81,7 @@ class ReminderDetailsViewController: UIViewController {
         
         scrollContentView.addSubview(titleLabel)
         scrollContentView.addSubview(noteLabel)
+        scrollContentView.addSubview(alarmLabel)
         scrollContentView.addSubview(photoImageView)
     }
     
@@ -154,7 +157,7 @@ class ReminderDetailsViewController: UIViewController {
         titleLabel.trailingAnchor.constraint(equalTo: scrollContentView.trailingAnchor, constant: -20).isActive = true
     }
     
-    private func setNoteTextView() {
+    private func setNoteLabel() {
         guard let reminder = reminder else { return }
 
         // 1.   Text Attributes
@@ -204,6 +207,51 @@ class ReminderDetailsViewController: UIViewController {
         noteLabel.heightAnchor.constraint(equalToConstant: height).isActive = true
     }
     
+    private func setAlarmLabel() {
+        
+        guard let reminder = reminder else { return }
+        
+        // 1.   Setup
+        
+        if reminder.alarmOn {
+            guard let alarmDate = reminder.alarmDate else { return }
+        // Set Formatter
+        
+        // Create formatter
+        let formatter = DateFormatter()
+        
+        formatter.dateFormat = "MMMM dd, yyyy h:mm a"
+        formatter.dateStyle = .medium
+        formatter.timeStyle = .short
+        let dateString = formatter.string(from: alarmDate)
+        
+        
+        // 4.   Make a Date for this reminder's alarmDate
+        
+//        let string = dateString + " " + timeString
+//        let date = formatter.date(from: string)
+        
+//        guard let finalDate = date else { return nil }
+//        return finalDate
+        
+            alarmLabel.text = "Alarm set for \(dateString)"
+        } else {
+            alarmLabel.text = "Alarm off"
+        }
+        
+        // 2.   Constraint
+        
+        alarmLabel.translatesAutoresizingMaskIntoConstraints = false
+        
+        // Top & Bottom
+        alarmLabel.topAnchor.constraint(equalTo: noteLabel.bottomAnchor, constant: 20).isActive = true
+//        alarmLabel.bottomAnchor.constraint(equalTo: photoImageView.bottomAnchor, constant: -20).isActive = true
+        
+        // Leading & Trailing
+        alarmLabel.leadingAnchor.constraint(equalTo: scrollContentView.leadingAnchor, constant: 20).isActive = true
+        alarmLabel.trailingAnchor.constraint(equalTo: scrollContentView.trailingAnchor, constant: -20).isActive = true
+    }
+    
     private func setPhotoImageView() {
         
         guard let reminder = reminder,
@@ -221,7 +269,7 @@ class ReminderDetailsViewController: UIViewController {
         
         photoImageView.heightAnchor.constraint(equalTo: photoImageView.widthAnchor, multiplier: 1.5).isActive = true
         
-        photoImageView.topAnchor.constraint(equalTo: noteLabel.bottomAnchor, constant: 20).isActive = true
+        photoImageView.topAnchor.constraint(equalTo: alarmLabel.bottomAnchor, constant: 20).isActive = true
         photoImageView.leadingAnchor.constraint(equalTo: scrollContentView.leadingAnchor, constant: 20).isActive = true
         photoImageView.trailingAnchor.constraint(equalTo: scrollContentView.trailingAnchor, constant: -20).isActive = true
         photoImageView.bottomAnchor.constraint(equalTo: scrollContentView.safeAreaLayoutGuide.bottomAnchor, constant: -20).isActive = true
