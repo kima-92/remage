@@ -21,7 +21,7 @@ class ReminderDetailsViewController: UIViewController {
     var scrollContentView = UIView()
     
     var titleLabel = UILabel()
-    var noteTextView = UITextView()
+    var noteLabel = UILabel()
     var photoImageView = UIImageView()
     
     // MARK: - DidLoad
@@ -57,8 +57,8 @@ class ReminderDetailsViewController: UIViewController {
         view.backgroundColor = color.bgColor
         
         // Views
-        noteTextView.backgroundColor = color.textLabelColor
-        noteTextView.textColor = color.fontColor
+        noteLabel.backgroundColor = color.textLabelColor
+        noteLabel.textColor = color.fontColor
         titleLabel.textColor = color.fontColor
         
         // Set NavigationBar and TabBar Colors
@@ -78,7 +78,7 @@ class ReminderDetailsViewController: UIViewController {
         scrollView.addSubview(scrollContentView)
         
         scrollContentView.addSubview(titleLabel)
-        scrollContentView.addSubview(noteTextView)
+        scrollContentView.addSubview(noteLabel)
         scrollContentView.addSubview(photoImageView)
     }
     
@@ -91,11 +91,12 @@ class ReminderDetailsViewController: UIViewController {
         
         scrollView.translatesAutoresizingMaskIntoConstraints = false
         
+        // Top & Bottom
         scrollView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
         scrollView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
+        // Leading & Trailing
         scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-        
         
         // 3.   Constraint ScrollContentView
         
@@ -166,35 +167,44 @@ class ReminderDetailsViewController: UIViewController {
 
             noteString = "Note: \n\n" + note
 
-        // Else, display No Note message
+        // Else, display default message
         } else {
-            noteString = "No Note"
+            noteString = "Edit to add Notes here"
         }
 
         // Attributes
-        let noteAttributes = [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 18)]
+        let font = UIFont.boldSystemFont(ofSize: 18)
+        let noteAttributes = [NSAttributedString.Key.font : font]
         let attributedText = NSMutableAttributedString(string: noteString, attributes: noteAttributes)
         
         // 2.   Setup
         
-        noteTextView.attributedText = attributedText
-        noteTextView.textAlignment = .left
+        noteLabel.attributedText = attributedText
+        noteLabel.textAlignment = .left
+        noteLabel.numberOfLines = 0
         
-        noteTextView.layer.cornerRadius = 10
+        noteLabel.layer.cornerRadius = 10
+        noteLabel.clipsToBounds = true
         
         // 3.   Constraint
         
-        noteTextView.translatesAutoresizingMaskIntoConstraints = false
+        noteLabel.translatesAutoresizingMaskIntoConstraints = false
         
-        noteTextView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 20).isActive = true
-        noteTextView.leadingAnchor.constraint(equalTo: scrollContentView.leadingAnchor, constant: 20).isActive = true
-        noteTextView.trailingAnchor.constraint(equalTo: scrollContentView.trailingAnchor, constant: -20).isActive = true
-        noteTextView.heightAnchor.constraint(equalToConstant: 100).isActive = true
+        // Top
+        noteLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 20).isActive = true
+        // Leading & Trailing
+        noteLabel.leadingAnchor.constraint(equalTo: scrollContentView.leadingAnchor, constant: 20).isActive = true
+        noteLabel.trailingAnchor.constraint(equalTo: scrollContentView.trailingAnchor, constant: -20).isActive = true
+        
+        // Height
+        
+        // Configure based on how much text needs to be displayed
+        let height: CGFloat = DynamicLabelHeight.heighWith(attributedText: attributedText, width: view.frame.width)
+        
+        noteLabel.heightAnchor.constraint(equalToConstant: height).isActive = true
     }
     
     private func setPhotoImageView() {
-        
-        // TODO: - Set photo's heigh bigger than it's width
         
         guard let reminder = reminder,
             let imageData = reminder.defaultImage,
@@ -211,7 +221,7 @@ class ReminderDetailsViewController: UIViewController {
         
         photoImageView.heightAnchor.constraint(equalTo: photoImageView.widthAnchor, multiplier: 1.5).isActive = true
         
-        photoImageView.topAnchor.constraint(equalTo: noteTextView.bottomAnchor, constant: 20).isActive = true
+        photoImageView.topAnchor.constraint(equalTo: noteLabel.bottomAnchor, constant: 20).isActive = true
         photoImageView.leadingAnchor.constraint(equalTo: scrollContentView.leadingAnchor, constant: 20).isActive = true
         photoImageView.trailingAnchor.constraint(equalTo: scrollContentView.trailingAnchor, constant: -20).isActive = true
         photoImageView.bottomAnchor.constraint(equalTo: scrollContentView.safeAreaLayoutGuide.bottomAnchor, constant: -20).isActive = true
