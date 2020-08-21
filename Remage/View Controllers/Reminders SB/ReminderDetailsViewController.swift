@@ -17,6 +17,9 @@ class ReminderDetailsViewController: UIViewController {
     
     var reminder: Reminder?
     
+    var scrollView = UIScrollView()
+    var scrollContentView = UIView()
+    
     var titleLabel = UILabel()
     var noteTextView = UITextView()
     var photoImageView = UIImageView()
@@ -37,6 +40,7 @@ class ReminderDetailsViewController: UIViewController {
     private func updateViews() {
         addSubViews()
         
+        setScrollView()
         setTitleLabel()
         setNoteTextView()
         setPhotoImageView()
@@ -70,9 +74,46 @@ class ReminderDetailsViewController: UIViewController {
     }
     
     private func addSubViews() {
-        view.addSubview(titleLabel)
-        view.addSubview(noteTextView)
-        view.addSubview(photoImageView)
+        view.addSubview(scrollView)
+        scrollView.addSubview(scrollContentView)
+        
+        scrollContentView.addSubview(titleLabel)
+        scrollContentView.addSubview(noteTextView)
+        scrollContentView.addSubview(photoImageView)
+    }
+    
+    private func setScrollView() {
+        
+        // 1.   Setup
+        //scrollView.contentLayoutGuide
+        
+        // 2.   Constraint ScrollView
+        
+        scrollView.translatesAutoresizingMaskIntoConstraints = false
+        
+        scrollView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
+        scrollView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
+        scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        
+        
+        // 3.   Constraint ScrollContentView
+        
+        scrollContentView.translatesAutoresizingMaskIntoConstraints = false
+        
+        // Top & Bottom
+        scrollContentView.topAnchor.constraint(equalTo: scrollView.topAnchor).isActive = true
+        scrollContentView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor).isActive = true
+        // Leading & Trailing
+        scrollContentView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor).isActive = true
+        scrollContentView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor).isActive = true
+        
+        // Width & Height
+        scrollContentView.widthAnchor.constraint(equalTo: scrollView.widthAnchor).isActive = true
+        let heightConstraint = scrollContentView.heightAnchor.constraint(equalTo: scrollView.heightAnchor)
+        
+            heightConstraint.priority = UILayoutPriority(rawValue: 250)
+            heightConstraint.isActive = true
     }
     
     // Title Label
@@ -107,9 +148,9 @@ class ReminderDetailsViewController: UIViewController {
         
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         
-        titleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20).isActive = true
-        titleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20).isActive = true
-        titleLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20).isActive = true
+        titleLabel.topAnchor.constraint(equalTo: scrollContentView.safeAreaLayoutGuide.topAnchor, constant: 20).isActive = true
+        titleLabel.leadingAnchor.constraint(equalTo: scrollContentView.leadingAnchor, constant: 20).isActive = true
+        titleLabel.trailingAnchor.constraint(equalTo: scrollContentView.trailingAnchor, constant: -20).isActive = true
     }
     
     private func setNoteTextView() {
@@ -146,12 +187,14 @@ class ReminderDetailsViewController: UIViewController {
         noteTextView.translatesAutoresizingMaskIntoConstraints = false
         
         noteTextView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 20).isActive = true
-        noteTextView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20).isActive = true
-        noteTextView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20).isActive = true
-        //noteTextView.bottomAnchor.constraint(equalTo: photoImageView.topAnchor, constant: -20).isActive = true
+        noteTextView.leadingAnchor.constraint(equalTo: scrollContentView.leadingAnchor, constant: 20).isActive = true
+        noteTextView.trailingAnchor.constraint(equalTo: scrollContentView.trailingAnchor, constant: -20).isActive = true
+        noteTextView.heightAnchor.constraint(equalToConstant: 100).isActive = true
     }
     
     private func setPhotoImageView() {
+        
+        // TODO: - Set photo's heigh bigger than it's width
         
         guard let reminder = reminder,
             let imageData = reminder.defaultImage,
@@ -160,16 +203,17 @@ class ReminderDetailsViewController: UIViewController {
         // 2.   Setup
         
         photoImageView.image = image
+        photoImageView.contentMode = .scaleAspectFill
         
         // 3.   Constraint
         
         photoImageView.translatesAutoresizingMaskIntoConstraints = false
         
-        photoImageView.heightAnchor.constraint(equalTo: photoImageView.widthAnchor).isActive = true
+        photoImageView.heightAnchor.constraint(equalTo: photoImageView.widthAnchor, multiplier: 1.5).isActive = true
         
         photoImageView.topAnchor.constraint(equalTo: noteTextView.bottomAnchor, constant: 20).isActive = true
-        photoImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20).isActive = true
-        photoImageView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20).isActive = true
-        photoImageView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20).isActive = true
+        photoImageView.leadingAnchor.constraint(equalTo: scrollContentView.leadingAnchor, constant: 20).isActive = true
+        photoImageView.trailingAnchor.constraint(equalTo: scrollContentView.trailingAnchor, constant: -20).isActive = true
+        photoImageView.bottomAnchor.constraint(equalTo: scrollContentView.safeAreaLayoutGuide.bottomAnchor, constant: -20).isActive = true
     }
 }
