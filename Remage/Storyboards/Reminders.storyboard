@@ -100,52 +100,6 @@
             </objects>
             <point key="canvasLocation" x="4050.7246376811599" y="91.741071428571431"/>
         </scene>
-        <!--Collection View Controller-->
-        <scene sceneID="JKT-6m-weH">
-            <objects>
-                <collectionViewController id="2z5-UR-uvP" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="6Zf-qV-1xe">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Ijd-7b-i3Y">
-                            <size key="itemSize" width="128" height="128"/>
-                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                        </collectionViewFlowLayout>
-                        <view key="backgroundView" contentMode="scaleToFill" id="HL7-96-YVC">
-                            <rect key="frame" x="0.0" y="-44" width="414" height="896"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <subviews>
-                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KGK-QC-7cS">
-                                    <rect key="frame" x="121" y="0.0" width="240" height="128"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                </view>
-                            </subviews>
-                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        </view>
-                        <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Qwl-wB-GC6">
-                                <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="tIN-ER-cpK">
-                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </collectionViewCellContentView>
-                            </collectionViewCell>
-                        </cells>
-                        <connections>
-                            <outlet property="dataSource" destination="2z5-UR-uvP" id="YQe-V5-VbD"/>
-                            <outlet property="delegate" destination="2z5-UR-uvP" id="fsO-sM-xpL"/>
-                        </connections>
-                    </collectionView>
-                </collectionViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="H7L-iu-YuL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4051" y="769"/>
-        </scene>
         <!--Reminder Photo View Controller-->
         <scene sceneID="kTE-cT-J0c">
             <objects>
@@ -155,37 +109,48 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9Lh-Z2-f36">
-                                <rect key="frame" x="0.0" y="88" width="414" height="660"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                             </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B3n-oO-i1F">
-                                <rect key="frame" x="0.0" y="753" width="414" height="60"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="DAZ-pm-tG2"/>
-                                </constraints>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="Zf5-mD-3ym" firstAttribute="bottom" secondItem="B3n-oO-i1F" secondAttribute="bottom" id="3dJ-ED-gaE"/>
-                            <constraint firstItem="B3n-oO-i1F" firstAttribute="top" secondItem="9Lh-Z2-f36" secondAttribute="bottom" constant="5" id="6HP-K9-xy6"/>
-                            <constraint firstItem="Zf5-mD-3ym" firstAttribute="trailing" secondItem="B3n-oO-i1F" secondAttribute="trailing" id="HPO-l8-wSO"/>
+                            <constraint firstItem="Zf5-mD-3ym" firstAttribute="bottom" secondItem="9Lh-Z2-f36" secondAttribute="bottom" id="nsu-v8-13C"/>
                             <constraint firstItem="9Lh-Z2-f36" firstAttribute="top" secondItem="Zf5-mD-3ym" secondAttribute="top" id="smG-9K-jqu"/>
-                            <constraint firstItem="B3n-oO-i1F" firstAttribute="leading" secondItem="Zf5-mD-3ym" secondAttribute="leading" id="teD-dN-9wP"/>
                             <constraint firstItem="9Lh-Z2-f36" firstAttribute="leading" secondItem="Zf5-mD-3ym" secondAttribute="leading" id="uol-5p-8Sr"/>
                             <constraint firstItem="Zf5-mD-3ym" firstAttribute="trailing" secondItem="9Lh-Z2-f36" secondAttribute="trailing" id="y0P-jp-akx"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Zf5-mD-3ym"/>
                     </view>
-                    <navigationItem key="navigationItem" id="9ks-xF-D7g"/>
+                    <navigationItem key="navigationItem" id="9ks-xF-D7g">
+                        <barButtonItem key="rightBarButtonItem" title="Details" id="dT6-hO-7wn">
+                            <connections>
+                                <segue destination="dRr-Yb-5jx" kind="show" identifier="ShowReminderDetailsSegue" id="UIM-MZ-1TI"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
-                        <outlet property="bottomView" destination="B3n-oO-i1F" id="CPu-jX-B9R"/>
                         <outlet property="imageView" destination="9Lh-Z2-f36" id="fKH-rl-t0S"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8yA-7l-3SQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4939" y="92"/>
+        </scene>
+        <!--Reminder Details View Controller-->
+        <scene sceneID="PD8-m7-pjh">
+            <objects>
+                <viewController id="dRr-Yb-5jx" customClass="ReminderDetailsViewController" customModule="Remage" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Utp-gj-g6t">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="IvC-8c-5zw"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Egx-HM-yKY"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ugJ-NW-W5Z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5939" y="92"/>
         </scene>
         <!--Reminders-->
         <scene sceneID="SDs-FA-hmQ">

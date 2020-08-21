@@ -25,6 +25,7 @@ class ReminderController {
         reminder.note = note
         reminder.defaultImage = defaultImage
         reminder.alarmDate = alarmDate
+        reminder.alarmOn = true
         
         // TODO: - Save the other images
         
