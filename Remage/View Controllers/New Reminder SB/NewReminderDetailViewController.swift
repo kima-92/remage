@@ -14,6 +14,7 @@ class NewReminderDetailViewController: UIViewController {
     
     var themeController: ThemeController?
     var reminderController: ReminderController?
+    var cameraController: CameraController?
     
     var image: UIImage?
     var imageFromCamera: UIImage?
@@ -255,7 +256,8 @@ class NewReminderDetailViewController: UIViewController {
         
         let camera = UIAlertAction(title: "Camera", style: .default) { action in
             
-            // TODO: - Go to Camera
+            // Go to CameraVC
+            self.performSegue(withIdentifier: "ShowCameraFromNRDetailsVC", sender: self)
         }
         
         let photoLibrary = UIAlertAction(title: "Photo Library", style: .default) { action in
@@ -450,7 +452,7 @@ class NewReminderDetailViewController: UIViewController {
     }
     
     // MARK: - Navigation
-
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         // Segue to NRNote
@@ -460,6 +462,15 @@ class NewReminderDetailViewController: UIViewController {
             noteVC.note = noteRecieved
             noteVC.getNoteDelegate = self
             noteVC.themeController = themeController
+        }
+            
+        // Segue to CameraVC
+        else if segue.identifier == "ShowCameraFromNRDetailsVC" {
+            guard let cameraVC = segue.destination as? CameraViewController else { return }
+            
+            cameraVC.themeController = themeController
+            cameraVC.reminderController = reminderController
+            cameraVC.cameraController = cameraController
         }
     }
 }

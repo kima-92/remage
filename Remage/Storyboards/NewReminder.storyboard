@@ -466,6 +466,7 @@
                         <outlet property="setTimeLabel" destination="tTV-F4-6QM" id="aYZ-cb-DXI"/>
                         <outlet property="timePickerTextField" destination="ajN-R7-TAH" id="JZS-be-eu3"/>
                         <outlet property="titleTextField" destination="vHe-Z8-EPF" id="szP-xC-Mf2"/>
+                        <segue destination="c5m-7Q-zza" kind="show" identifier="ShowCameraFromNRDetailsVC" id="szR-xT-rSi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eSH-0c-vT1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -582,6 +583,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="F7Y-UV-5wD"/>
+        <segue reference="szR-xT-rSi"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="bolt" catalog="system" width="101" height="128"/>
