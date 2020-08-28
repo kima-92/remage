@@ -16,6 +16,7 @@ class PhotoPreviewViewController: UIViewController {
     var reminderController: ReminderController?
     
     var image: UIImage?
+    var didStartNewReminder: Bool?
     
     // MARK: - Outlets
     
@@ -41,8 +42,25 @@ class PhotoPreviewViewController: UIViewController {
         guard let image = image else { return }
         
         UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
-        //navigationController?.popToRootViewController(animated: true)
-        performSegue(withIdentifier: "PhotoPreviewToNewReminderDetailSegue", sender: self)
+        
+        if let didStartNewReminder = didStartNewReminder,
+            didStartNewReminder {
+            
+            for controller in self.navigationController!.viewControllers as Array {
+                if controller.isKind(of: NewReminderDetailViewController.self) {
+                    self.navigationController!.popToViewController(controller, animated: true)
+                    break
+                    
+                    // TODO: - Create a delegate protocol to bring this image to the NewReminderDetailVC
+                }
+            }
+        } else {
+            navigationController?.popToRootViewController(animated: true)
+            
+            // TODO: - Create a new button for "Details" in case the user wants to edit the details right now
+            // The "Save" button should say "Save photo only" or something like that cause it will popToRootVC
+        }
+        //performSegue(withIdentifier: "PhotoPreviewToNewReminderDetailSegue", sender: self)
     }
     
     private func updateViews() {

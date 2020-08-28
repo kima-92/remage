@@ -24,6 +24,7 @@ class NewReminderDetailViewController: UIViewController {
     var noteRecieved: String?
     var oldNote: String?
     var didShowNewNoteAlert = false
+    var didStartNewReminder = true
     
     let datePicker = UIDatePicker()
     let timePicker = UIDatePicker()
@@ -471,6 +472,7 @@ class NewReminderDetailViewController: UIViewController {
             cameraVC.themeController = themeController
             cameraVC.reminderController = reminderController
             cameraVC.cameraController = cameraController
+            cameraVC.didStartNewReminder = didStartNewReminder
         }
     }
 }

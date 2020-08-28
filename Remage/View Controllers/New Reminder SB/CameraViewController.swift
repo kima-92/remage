@@ -24,6 +24,7 @@ class CameraViewController: UIViewController {
     var videoOutput: AVCaptureMovieFileOutput?
     
     var image: UIImage?
+    var didStartNewReminder: Bool?
     
     // MARK: - Outlets
     
@@ -115,6 +116,7 @@ class CameraViewController: UIViewController {
             photoPreviewVC.reminderController = reminderController
             photoPreviewVC.themeController = themeController
             photoPreviewVC.image = image
+            photoPreviewVC.didStartNewReminder = didStartNewReminder
         }
     }
 }
