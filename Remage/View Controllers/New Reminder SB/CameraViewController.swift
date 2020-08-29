@@ -25,6 +25,7 @@ class CameraViewController: UIViewController {
     
     var image: UIImage?
     var didStartNewReminder: Bool?
+    var nrDetailDelegate: ImageSelectionDelegate?
     
     // MARK: - Outlets
     
@@ -117,6 +118,7 @@ class CameraViewController: UIViewController {
             photoPreviewVC.themeController = themeController
             photoPreviewVC.image = image
             photoPreviewVC.didStartNewReminder = didStartNewReminder
+            photoPreviewVC.nrDetailDelegate = nrDetailDelegate
         }
     }
 }

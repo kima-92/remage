@@ -70,6 +70,7 @@ class NewReminderDetailViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setBGColors()
+        tryDisplayImageFromCamera()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -189,6 +190,13 @@ class NewReminderDetailViewController: UIViewController {
     }
     
     // MARK: - Methods
+    
+    // If recieved the image from the camera, display it
+    private func tryDisplayImageFromCamera() {
+        if let image = imageFromCamera {
+            imageView.image = image
+        }
+    }
     
     // Alert User if the Note was recived
     private func tryShowNoteRecivedAlert() {
@@ -380,11 +388,6 @@ class NewReminderDetailViewController: UIViewController {
     
     private func updateViews() {
         
-        // Show image if segue from CameraVC
-        if let image = imageFromCamera {
-            imageView.image = image
-        }
-        
         // Round corners
         imageView.layer.cornerRadius = 20
         addImagesButton.layer.cornerRadius = 15
@@ -472,7 +475,9 @@ class NewReminderDetailViewController: UIViewController {
             cameraVC.themeController = themeController
             cameraVC.reminderController = reminderController
             cameraVC.cameraController = cameraController
+            
             cameraVC.didStartNewReminder = didStartNewReminder
+            cameraVC.nrDetailDelegate = self
         }
     }
 }
@@ -482,7 +487,6 @@ class NewReminderDetailViewController: UIViewController {
 // ImagePicker Delegate Protocols
 extension NewReminderDetailViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
-    
     // Try to get image
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
@@ -513,5 +517,12 @@ extension NewReminderDetailViewController: UIImagePickerControllerDelegate, UINa
 extension NewReminderDetailViewController: GetNoteDelegate {
     func get(note: String) {
         noteRecieved = note
+    }
+}
+
+// Get the image from PhotoPreviewVC
+extension NewReminderDetailViewController: ImageSelectionDelegate {
+    func didChoose(image: UIImage) {
+        imageFromCamera = image
     }
 }

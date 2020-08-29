@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol ImageSelectionDelegate {
+    func didChoose(image: UIImage)
+}
+
 class PhotoPreviewViewController: UIViewController {
     
     // MARK: - Properties
@@ -17,6 +21,7 @@ class PhotoPreviewViewController: UIViewController {
     
     var image: UIImage?
     var didStartNewReminder: Bool?
+    var nrDetailDelegate: ImageSelectionDelegate?
     
     // MARK: - Outlets
     
@@ -71,12 +76,16 @@ class PhotoPreviewViewController: UIViewController {
         if let didStartNewReminder = didStartNewReminder,
             didStartNewReminder {
             
+            // Find the NewReminderDetailVC
             for controller in self.navigationController!.viewControllers as Array {
                 if controller.isKind(of: NewReminderDetailViewController.self) {
                     self.navigationController!.popToViewController(controller, animated: true)
-                    break
                     
-                    // TODO: - Create a delegate protocol to bring this image to the NewReminderDetailVC
+                    // Bring this image to the NewReminderDetailVC
+                    if let nrDetailDelegate = nrDetailDelegate {
+                        nrDetailDelegate.didChoose(image: image)
+                    }
+                    break
                 }
             }
         // If the user did NOT come from the NewReminderDetailVC, popToRootVC
