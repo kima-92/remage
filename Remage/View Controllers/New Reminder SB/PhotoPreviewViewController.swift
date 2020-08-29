@@ -21,6 +21,8 @@ class PhotoPreviewViewController: UIViewController {
     // MARK: - Outlets
     
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var detailsBarButton: UIBarButtonItem!
+    @IBOutlet weak var saveBarButton: UIBarButtonItem!
     
     // MARK: - DidLoad
     override func viewDidLoad() {
@@ -29,7 +31,16 @@ class PhotoPreviewViewController: UIViewController {
         updateViews()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setBGColors()
+    }
+    
     // MARK: - Actions
+    
+    @IBAction func detailsBarButtonTapped(_ sender: UIBarButtonItem) {
+        segueToAddDetails()
+    }
     
     @IBAction func saveButtonTapped(_ sender: UIBarButtonItem) {
         savePhoto()
@@ -37,12 +48,26 @@ class PhotoPreviewViewController: UIViewController {
     
     // MARK: - Methods
     
-    // Save image in Photo Album
+    // Segue to NewReminderDetailVC to add more details to this Reminder
+    private func segueToAddDetails() {
+        performSegue(withIdentifier: "PhotoPreviewToNewReminderDetailSegue", sender: self)
+        
+        // TODO: - From SettingsVC, allow the user to set if the image should be saved to the camera roll
+        // after tapping on this button
+        
+        // Save the image in the Photo Library
+        //UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
+    }
+    
+    // Save image in Photo Album and pop to a VC
     private func savePhoto() {
         guard let image = image else { return }
         
+        // Save the image in the Photo Library
         UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
         
+        // If the user came from the NewReminderDetailVC,
+        // pop to that NewReminderDetailVC
         if let didStartNewReminder = didStartNewReminder,
             didStartNewReminder {
             
@@ -54,18 +79,39 @@ class PhotoPreviewViewController: UIViewController {
                     // TODO: - Create a delegate protocol to bring this image to the NewReminderDetailVC
                 }
             }
+        // If the user did NOT come from the NewReminderDetailVC, popToRootVC
         } else {
             navigationController?.popToRootViewController(animated: true)
-            
-            // TODO: - Create a new button for "Details" in case the user wants to edit the details right now
-            // The "Save" button should say "Save photo only" or something like that cause it will popToRootVC
         }
-        //performSegue(withIdentifier: "PhotoPreviewToNewReminderDetailSegue", sender: self)
     }
+    
+    // MARK: - Update Views
     
     private func updateViews() {
         guard let image = image else { return }
         imageView.image = image
+    }
+    
+    // Background Colors Setup
+    private func setBGColors() {
+        
+        // Get BGColor
+        guard let themeController = themeController,
+            let color = themeController.currentColor else { return }
+        
+        // Background
+        view.backgroundColor = color.bgColor
+        
+        // Set NavigationBar and TabBar Colors
+        let textAttribute = [NSAttributedString.Key.foregroundColor: color.fontColor]
+        navigationController?.navigationBar.titleTextAttributes = textAttribute
+        
+        navigationController?.navigationBar.tintColor = color.barTintColor // Bar buttons
+        navigationController?.navigationBar.barTintColor = color.barBGTintColor // Entire bar BG color
+        
+        tabBarController?.tabBar.barTintColor = color.barBGTintColor // Entire bar BG color
+        tabBarController?.tabBar.tintColor = color.barTintColor // Selected tab bar button
+        tabBarController?.tabBar.unselectedItemTintColor = color.barUnselectedTintColor // Unselected bar buttons
     }
     
     // MARK: - Navigation
