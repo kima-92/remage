@@ -90,6 +90,14 @@ class PhotoPreviewViewController: UIViewController {
     private func updateViews() {
         guard let image = image else { return }
         imageView.image = image
+        
+        // Disabled the Details bar button if the User came from
+        // NewReminderDetailVC
+        if let didStartNewReminder = didStartNewReminder,
+            didStartNewReminder {
+            detailsBarButton.isEnabled = false
+            detailsBarButton.tintColor = .clear
+        }
     }
     
     // Background Colors Setup
