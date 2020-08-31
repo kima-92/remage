@@ -204,7 +204,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="h3r-kA-61w">
-                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -217,15 +217,24 @@
                         <viewLayoutGuide key="safeArea" id="WMu-6f-AqC"/>
                     </view>
                     <navigationItem key="navigationItem" id="Ubv-4J-wEU">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="tp4-r8-USm">
-                            <connections>
-                                <action selector="saveButtonTapped:" destination="cEK-pu-c47" id="iXj-6T-ESI"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="save" id="tp4-r8-USm">
+                                <connections>
+                                    <action selector="saveButtonTapped:" destination="cEK-pu-c47" id="iXj-6T-ESI"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Details" id="agx-2Z-dX7">
+                                <connections>
+                                    <action selector="detailsBarButtonTapped:" destination="cEK-pu-c47" id="I32-cX-hqT"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
+                        <outlet property="detailsBarButton" destination="agx-2Z-dX7" id="CJo-z6-7Ja"/>
                         <outlet property="imageView" destination="h3r-kA-61w" id="CoM-jQ-RrB"/>
+                        <outlet property="saveBarButton" destination="tp4-r8-USm" id="vcy-Bz-QTu"/>
                         <segue destination="ftG-iM-aUh" kind="show" identifier="PhotoPreviewToNewReminderDetailSegue" id="JAA-r4-BaZ"/>
                     </connections>
                 </viewController>
@@ -466,6 +475,7 @@
                         <outlet property="setTimeLabel" destination="tTV-F4-6QM" id="aYZ-cb-DXI"/>
                         <outlet property="timePickerTextField" destination="ajN-R7-TAH" id="JZS-be-eu3"/>
                         <outlet property="titleTextField" destination="vHe-Z8-EPF" id="szP-xC-Mf2"/>
+                        <segue destination="c5m-7Q-zza" kind="show" identifier="ShowCameraFromNRDetailsVC" id="szR-xT-rSi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eSH-0c-vT1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -581,7 +591,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="F7Y-UV-5wD"/>
+        <segue reference="JAA-r4-BaZ"/>
+        <segue reference="szR-xT-rSi"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="bolt" catalog="system" width="101" height="128"/>

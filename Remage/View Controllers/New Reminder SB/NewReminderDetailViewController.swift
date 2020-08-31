@@ -14,6 +14,7 @@ class NewReminderDetailViewController: UIViewController {
     
     var themeController: ThemeController?
     var reminderController: ReminderController?
+    var cameraController: CameraController?
     
     var image: UIImage?
     var imageFromCamera: UIImage?
@@ -23,6 +24,7 @@ class NewReminderDetailViewController: UIViewController {
     var noteRecieved: String?
     var oldNote: String?
     var didShowNewNoteAlert = false
+    var didStartNewReminder = true
     
     let datePicker = UIDatePicker()
     let timePicker = UIDatePicker()
@@ -68,6 +70,7 @@ class NewReminderDetailViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setBGColors()
+        tryDisplayImageFromCamera()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -188,6 +191,13 @@ class NewReminderDetailViewController: UIViewController {
     
     // MARK: - Methods
     
+    // If recieved the image from the camera, display it
+    private func tryDisplayImageFromCamera() {
+        if let image = imageFromCamera {
+            imageView.image = image
+        }
+    }
+    
     // Alert User if the Note was recived
     private func tryShowNoteRecivedAlert() {
         
@@ -255,7 +265,8 @@ class NewReminderDetailViewController: UIViewController {
         
         let camera = UIAlertAction(title: "Camera", style: .default) { action in
             
-            // TODO: - Go to Camera
+            // Go to CameraVC
+            self.performSegue(withIdentifier: "ShowCameraFromNRDetailsVC", sender: self)
         }
         
         let photoLibrary = UIAlertAction(title: "Photo Library", style: .default) { action in
@@ -377,11 +388,6 @@ class NewReminderDetailViewController: UIViewController {
     
     private func updateViews() {
         
-        // Show image if segue from CameraVC
-        if let image = imageFromCamera {
-            imageView.image = image
-        }
-        
         // Round corners
         imageView.layer.cornerRadius = 20
         addImagesButton.layer.cornerRadius = 15
@@ -450,7 +456,7 @@ class NewReminderDetailViewController: UIViewController {
     }
     
     // MARK: - Navigation
-
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         // Segue to NRNote
@@ -461,6 +467,18 @@ class NewReminderDetailViewController: UIViewController {
             noteVC.getNoteDelegate = self
             noteVC.themeController = themeController
         }
+            
+        // Segue to CameraVC
+        else if segue.identifier == "ShowCameraFromNRDetailsVC" {
+            guard let cameraVC = segue.destination as? CameraViewController else { return }
+            
+            cameraVC.themeController = themeController
+            cameraVC.reminderController = reminderController
+            cameraVC.cameraController = cameraController
+            
+            cameraVC.didStartNewReminder = didStartNewReminder
+            cameraVC.nrDetailDelegate = self
+        }
     }
 }
 
@@ -469,7 +487,6 @@ class NewReminderDetailViewController: UIViewController {
 // ImagePicker Delegate Protocols
 extension NewReminderDetailViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
-    
     // Try to get image
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
@@ -500,5 +517,12 @@ extension NewReminderDetailViewController: UIImagePickerControllerDelegate, UINa
 extension NewReminderDetailViewController: GetNoteDelegate {
     func get(note: String) {
         noteRecieved = note
+    }
+}
+
+// Get the image from PhotoPreviewVC
+extension NewReminderDetailViewController: ImageSelectionDelegate {
+    func didChoose(image: UIImage) {
+        imageFromCamera = image
     }
 }

@@ -110,6 +110,7 @@ class NewReminderTypeViewController: UIViewController {
             
             newReminderDetailVC.reminderController = self.reminderController
             newReminderDetailVC.themeController = themeController
+            newReminderDetailVC.cameraController = cameraController
         }
     }
 }
