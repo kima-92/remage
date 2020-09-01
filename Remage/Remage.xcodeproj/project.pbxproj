@@ -199,11 +199,10 @@
 			isa = PBXGroup;
 			children = (
 				FA776B672457256C00B897F6 /* CoreDataStack.swift */,
-				FA1C87E424AE44BA00E3A1BA /* CaptureType.swift */,
-				FA1C87E624AE454000E3A1BA /* SelectedCamera.swift */,
-				FADA155D24C94CF40006CA62 /* ViewControllerExtension.swift */,
 				FAD929F624D0DCF20060916B /* ColorList.swift */,
 				FAEED84624F063BD009417B8 /* DynamicSizeLabel.swift */,
+				FAE46A7524FEF2730033B5F4 /* Enums */,
+				FAE46A7424FEF2350033B5F4 /* Extensions */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -310,6 +309,23 @@
 				FA1C87E224AE3BA700E3A1BA /* CameraPreviewView.swift */,
 			);
 			path = "New Reminder SB";
+			sourceTree = "<group>";
+		};
+		FAE46A7424FEF2350033B5F4 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				FADA155D24C94CF40006CA62 /* ViewControllerExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		FAE46A7524FEF2730033B5F4 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				FA1C87E424AE44BA00E3A1BA /* CaptureType.swift */,
+				FA1C87E624AE454000E3A1BA /* SelectedCamera.swift */,
+			);
+			path = Enums;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

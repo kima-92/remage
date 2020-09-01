@@ -45,7 +45,7 @@ class NewReminderTypeViewController: UIViewController {
     
     // MARK: - Methods
     
-    // To receive the ThemeController and ReminderController from the Main TabBar
+    // To receive the ModelControllers from the Main TabBar
     private func receiveDataFromTabBar() {
         guard let tabBar = tabBarController as? MainTabBarController else { return }
         
