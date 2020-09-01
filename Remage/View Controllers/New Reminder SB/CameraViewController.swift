@@ -92,10 +92,10 @@ class CameraViewController: UIViewController {
     
     // Background Colors Setup
     private func setBGColors() {
-        
         // Get BGColor
         guard let controllers = controllers,
             let color = controllers.themeController.currentColor else { return }
+        setTabBarsBGColors(color: color)
         
         // Set Buttons Images
         captureImageButton.setImage(color.cameraButton, for: .normal)

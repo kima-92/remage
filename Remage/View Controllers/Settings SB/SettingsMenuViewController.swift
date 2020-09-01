@@ -67,7 +67,8 @@ class SettingsMenuViewController: UIViewController {
             let color = controllers.themeController.currentColor else { return }
         
         // Background
-        view.backgroundColor = color.bgColor
+        setTabBarsBGColors(color: color)
+        
         scrollSubView.backgroundColor = color.bgColor
         scrollPushingView.backgroundColor = color.bgColor
         backgroundCardView.backgroundColor = color.bgCardColor
@@ -75,17 +76,6 @@ class SettingsMenuViewController: UIViewController {
         // Background Color Settings
         backgroundColorChoiceButton.backgroundColor = color.highlightColor
         backgroundLabel.textColor = color.fontColor
-        
-        // Set NavigationBar and TabBar Colors
-        let textAttribute = [NSAttributedString.Key.foregroundColor: color.fontColor]
-        navigationController?.navigationBar.titleTextAttributes = textAttribute
-        
-        navigationController?.navigationBar.tintColor = color.barTintColor
-        navigationController?.navigationBar.barTintColor = color.barBGTintColor // Entire bar BG color
-        
-        tabBarController?.tabBar.barTintColor = color.barBGTintColor // Entire bar BG color
-        tabBarController?.tabBar.tintColor = color.barTintColor // Selected tab bar button
-        tabBarController?.tabBar.unselectedItemTintColor = color.barUnselectedTintColor // Unselected bar buttons
     }
     
     // MARK: - Navigation

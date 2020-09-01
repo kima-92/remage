@@ -54,13 +54,13 @@ class NewReminderTypeViewController: UIViewController {
     
     // Background Colors Setup
     private func setBGColors() {
-        
         // Get BGColor
         guard let controllers = controllers,
             let color = controllers.themeController.currentColor else { return }
         
         // Set Colors
-        view.backgroundColor = color.bgColor
+        setTabBarsBGColors(color: color)
+        
         noteBGCardView.backgroundColor = color.bgCardColor
         cameraBGCardView.backgroundColor = color.bgCardColor
         
@@ -70,18 +70,7 @@ class NewReminderTypeViewController: UIViewController {
         // Round Corners
         noteBGCardView.layer.cornerRadius = 15
         cameraBGCardView.layer.cornerRadius = 15
-        
-        // Set NavigationBar and TabBar Colors
-        let textAttribute = [NSAttributedString.Key.foregroundColor: color.fontColor]
-        navigationController?.navigationBar.titleTextAttributes = textAttribute
-        
-        navigationController?.navigationBar.tintColor = color.barTintColor
-        navigationController?.navigationBar.barTintColor = color.barBGTintColor // Entire bar BG color
-        
-        tabBarController?.tabBar.barTintColor = color.barBGTintColor // Entire bar BG color
-        tabBarController?.tabBar.tintColor = color.barTintColor // Selected tab bar button
-        tabBarController?.tabBar.unselectedItemTintColor = color.barUnselectedTintColor // Unselected bar buttons
-        
+
         // Set Buttons Images
         cameraButton.setBackgroundImage(color.cameraImage, for: .normal)
         noteButton.setBackgroundImage(color.docImage, for: .normal)

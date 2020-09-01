@@ -120,25 +120,14 @@ class BGColorSelectionViewController: UIViewController {
     
     // Set Background Colors
     private func setBGColors(color: BGColor) {
+        setTabBarsBGColors(color: color)
         
-        view.backgroundColor = color.bgColor
         headerView.backgroundColor = color.bgColor
         colorsCollectionView?.backgroundColor = color.highlightColor
         
         // Label
         chooseColorLabel.backgroundColor = color.bgColor
         chooseColorLabel.textColor = color.fontColor
-        
-        // Set NavigationBar and TabBar Colors
-        let textAttribute = [NSAttributedString.Key.foregroundColor: color.fontColor]
-        navigationController?.navigationBar.titleTextAttributes = textAttribute
-        
-        navigationController?.navigationBar.tintColor = color.barTintColor
-        navigationController?.navigationBar.barTintColor = color.barBGTintColor // Entire bar BG color
-        
-        tabBarController?.tabBar.barTintColor = color.barBGTintColor // Entire bar BG color
-        tabBarController?.tabBar.tintColor = color.barTintColor // Selected tab bar button
-        tabBarController?.tabBar.unselectedItemTintColor = color.barUnselectedTintColor // Unselected bar buttons
     }
 }
 
