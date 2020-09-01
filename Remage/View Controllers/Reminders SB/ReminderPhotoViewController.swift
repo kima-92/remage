@@ -12,9 +12,7 @@ class ReminderPhotoViewController: UIViewController {
     
     // MARK: - Properties
     
-    var themeController: ThemeController?
-    var reminderController: ReminderController?
-    
+    var controllers: ModelControllers?
     var reminder: Reminder?
     
     // MARK: - Outlets
@@ -48,8 +46,8 @@ class ReminderPhotoViewController: UIViewController {
     private func setBGColors() {
         
         // Get BGColor
-        guard let themeController = themeController,
-            let color = themeController.currentColor else { return }
+        guard let controllers = controllers,
+            let color = controllers.themeController.currentColor else { return }
         
         // Background
         view.backgroundColor = color.bgColor
@@ -75,9 +73,7 @@ class ReminderPhotoViewController: UIViewController {
             guard let reminderDetailsVC = segue.destination as? ReminderDetailsViewController else { return }
             
             reminderDetailsVC.reminder = reminder
-            reminderDetailsVC.themeController = themeController
-            reminderDetailsVC.reminderController = reminderController
+            reminderDetailsVC.controllers = controllers
         }
     }
-
 }

@@ -12,9 +12,7 @@ class SettingsMenuViewController: UIViewController {
     
     // MARK: - Properties
     
-    var themeController: ThemeController?
-    var reminderController: ReminderController?
-    var userController: UserController?
+    var controllers: ModelControllers?
     var user: User?
     
     // MARK: - Outlets
@@ -41,13 +39,11 @@ class SettingsMenuViewController: UIViewController {
     
     // MARK: - Methods
     
-    // To receive the ThemeController and ReminderController from the Main TabBar
+    // To receive the ModelControllers from the Main TabBar
     private func receiveDataFromTabBar() {
         guard let tabBar = tabBarController as? MainTabBarController else { return }
         
-        self.themeController = tabBar.themeController
-        self.reminderController = tabBar.reminderController
-        self.userController = tabBar.userController
+        self.controllers = tabBar.controllers
         self.user = tabBar.user
     }
     
@@ -67,8 +63,8 @@ class SettingsMenuViewController: UIViewController {
     private func setBGColors() {
         
         // Get BGColor
-        guard let themeController = themeController,
-            let color = themeController.currentColor else { return }
+        guard let controllers = controllers,
+            let color = controllers.themeController.currentColor else { return }
         
         // Background
         view.backgroundColor = color.bgColor
@@ -100,8 +96,7 @@ class SettingsMenuViewController: UIViewController {
             
             guard let bgColorSelectionVC = segue.destination as? BGColorSelectionViewController else { return }
             
-            bgColorSelectionVC.themeController = themeController
-            bgColorSelectionVC.userController = userController
+            bgColorSelectionVC.controllers = controllers
             bgColorSelectionVC.user = user
         }
     }

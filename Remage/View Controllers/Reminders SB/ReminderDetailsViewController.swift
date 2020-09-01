@@ -12,8 +12,7 @@ class ReminderDetailsViewController: UIViewController {
     
     // MARK: - Properties
     
-    var themeController: ThemeController?
-    var reminderController: ReminderController?
+    var controllers: ModelControllers?
     
     var reminder: Reminder?
     
@@ -52,8 +51,8 @@ class ReminderDetailsViewController: UIViewController {
     private func setBGColors() {
         
         // Get BGColor
-        guard let themeController = themeController,
-            let color = themeController.currentColor else { return }
+        guard let controllers = controllers,
+            let color = controllers.themeController.currentColor else { return }
         
         // Background
         view.backgroundColor = color.bgColor

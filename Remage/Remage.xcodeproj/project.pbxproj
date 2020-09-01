@@ -50,6 +50,7 @@
 		FAD929F724D0DCF20060916B /* ColorList.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD929F624D0DCF20060916B /* ColorList.swift */; };
 		FADA155E24C94CF40006CA62 /* ViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADA155D24C94CF40006CA62 /* ViewControllerExtension.swift */; };
 		FAE46A7124FD9BE30033B5F4 /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE46A7024FD9BE30033B5F4 /* UserController.swift */; };
+		FAE46A7324FEE73A0033B5F4 /* ModelControllers.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE46A7224FEE73A0033B5F4 /* ModelControllers.swift */; };
 		FAEED84724F063BD009417B8 /* DynamicSizeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEED84624F063BD009417B8 /* DynamicSizeLabel.swift */; };
 /* End PBXBuildFile section */
 
@@ -99,6 +100,7 @@
 		FAD929F624D0DCF20060916B /* ColorList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorList.swift; sourceTree = "<group>"; };
 		FADA155D24C94CF40006CA62 /* ViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerExtension.swift; sourceTree = "<group>"; };
 		FAE46A7024FD9BE30033B5F4 /* UserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
+		FAE46A7224FEE73A0033B5F4 /* ModelControllers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelControllers.swift; sourceTree = "<group>"; };
 		FAEED84624F063BD009417B8 /* DynamicSizeLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicSizeLabel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -129,7 +131,6 @@
 				FA1E65CB245207E100502D95 /* View Controllers */,
 				FA1E65CE245207F900502D95 /* Views */,
 				FA1E65D0245208AA00502D95 /* Controllers */,
-				FA1E65CF2452089D00502D95 /* Model Controllers */,
 				FA1E65CC245207EE00502D95 /* Models */,
 				FA1E65CD245207F400502D95 /* Helpers */,
 				FA1E65B5245205A200502D95 /* Remage */,
@@ -221,6 +222,7 @@
 		FA1E65CF2452089D00502D95 /* Model Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				FAE46A7224FEE73A0033B5F4 /* ModelControllers.swift */,
 				FA776B702457489D00B897F6 /* CoreDataModelController.swift */,
 				FA90E84824CF46F0007148EF /* ReminderController.swift */,
 				FAE46A7024FD9BE30033B5F4 /* UserController.swift */,
@@ -233,6 +235,7 @@
 			isa = PBXGroup;
 			children = (
 				FA1C87DF24AE3B0900E3A1BA /* CameraController.swift */,
+				FA1E65CF2452089D00502D95 /* Model Controllers */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -421,6 +424,7 @@
 				FA1C87E924AF7F8E00E3A1BA /* PhotoPreviewViewController.swift in Sources */,
 				FA1E65B9245205A200502D95 /* SceneDelegate.swift in Sources */,
 				FA6E1F052459F9EE008AF502 /* RemindersViewController.swift in Sources */,
+				FAE46A7324FEE73A0033B5F4 /* ModelControllers.swift in Sources */,
 				FA776B6B2457465E00B897F6 /* NewReminderTypeViewController.swift in Sources */,
 				FA776B6424521C3000B897F6 /* Reminder+Convenience.swift in Sources */,
 				FA776B6F2457468800B897F6 /* CameraViewController.swift in Sources */,

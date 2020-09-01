@@ -16,8 +16,7 @@ class PhotoPreviewViewController: UIViewController {
     
     // MARK: - Properties
     
-    var themeController: ThemeController?
-    var reminderController: ReminderController?
+    var controllers: ModelControllers?
     
     var image: UIImage?
     var didStartNewReminder: Bool?
@@ -113,8 +112,8 @@ class PhotoPreviewViewController: UIViewController {
     private func setBGColors() {
         
         // Get BGColor
-        guard let themeController = themeController,
-            let color = themeController.currentColor else { return }
+        guard let controllers = controllers,
+            let color = controllers.themeController.currentColor else { return }
         
         // Background
         view.backgroundColor = color.bgColor
@@ -140,8 +139,7 @@ class PhotoPreviewViewController: UIViewController {
             
             guard let newReminderDetailVC = segue.destination as? NewReminderDetailViewController else { return }
             newReminderDetailVC.imageFromCamera = image
-            newReminderDetailVC.reminderController = reminderController
-            newReminderDetailVC.themeController = themeController
+            newReminderDetailVC.controllers = controllers
         }
     }
 }

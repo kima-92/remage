@@ -12,9 +12,7 @@ class BGColorSelectionViewController: UIViewController {
     
     // MARK: - Properties
     
-    var themeController: ThemeController?
-    var reminderController: ReminderController?
-    var userController: UserController?
+    var controllers: ModelControllers?
     var user: User?
     
     var colorsCollectionView: UICollectionView?
@@ -112,8 +110,8 @@ class BGColorSelectionViewController: UIViewController {
     
     private func updateViews() {
         
-        guard let themeController = themeController,
-            let color = themeController.currentColor else { return }
+        guard let controllers = controllers,
+            let color = controllers.themeController.currentColor else { return }
         
         setupHeaderView()
         setupCollectionView()
@@ -150,7 +148,7 @@ class BGColorSelectionViewController: UIViewController {
 extension BGColorSelectionViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return themeController?.bgColors.count ?? 0
+        return controllers?.themeController.bgColors.count ?? 0
     }
     
     // Dequeue the Cell
@@ -159,7 +157,7 @@ extension BGColorSelectionViewController: UICollectionViewDelegate, UICollection
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ColorCollectionViewCell.identifier, for: indexPath) as? ColorCollectionViewCell else { return UICollectionViewCell() }
         
         // Set BGColor for this Cell
-        cell.color = themeController?.bgColors[indexPath.item]
+        cell.color = controllers?.themeController.bgColors[indexPath.item]
         cell.setColors()
         
         return cell
@@ -167,18 +165,17 @@ extension BGColorSelectionViewController: UICollectionViewDelegate, UICollection
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        guard let themeController = themeController,
-            let userController = userController,
+        guard let controllers = controllers,
             let user = user else { return }
         
         // Get chosen Color
-        let color = themeController.bgColors[indexPath.item]
+        let color = controllers.themeController.bgColors[indexPath.item]
         
         // Set this color as the User's bgColor
-        userController.setBGColorFor(user: user, color: color)
+        controllers.userController.setBGColorFor(user: user, color: color)
         
         // Set as currentColor in the ThemeController
-        themeController.userSetColorAs(color: color)
+        controllers.themeController.userSetColorAs(color: color)
         
         // Change the background colors of this VC
         setBGColors(color: color)

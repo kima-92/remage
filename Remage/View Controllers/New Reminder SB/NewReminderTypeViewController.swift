@@ -12,9 +12,7 @@ class NewReminderTypeViewController: UIViewController {
     
     // MARK: - Properties
     
-    var themeController: ThemeController?
-    var reminderController: ReminderController?
-    
+    var controllers: ModelControllers?
     let cameraController = CameraController()  // TODO: - Should initiate at initial screen, and pass to this VC
     
     // MARK: - Outlets
@@ -51,17 +49,15 @@ class NewReminderTypeViewController: UIViewController {
     private func receiveDataFromTabBar() {
         guard let tabBar = tabBarController as? MainTabBarController else { return }
         
-        self.themeController = tabBar.themeController
-        self.reminderController = tabBar.reminderController
+        self.controllers = tabBar.controllers
     }
     
     // Background Colors Setup
     private func setBGColors() {
         
         // Get BGColor
-        guard let themeController = themeController,
-            let color = themeController.currentColor else { return }
-        
+        guard let controllers = controllers,
+            let color = controllers.themeController.currentColor else { return }
         
         // Set Colors
         view.backgroundColor = color.bgColor
@@ -99,8 +95,7 @@ class NewReminderTypeViewController: UIViewController {
         if segue.identifier == "ShowCameraVCSegue" {
             guard let cameraVC = segue.destination as? CameraViewController else { return }
             
-            cameraVC.reminderController = reminderController
-            cameraVC.themeController = themeController
+            cameraVC.controllers = controllers
             cameraVC.cameraController = cameraController
         }
         
@@ -108,8 +103,7 @@ class NewReminderTypeViewController: UIViewController {
         else if segue.identifier == "ShowNewReminderDetailVCSegue" {
             guard let newReminderDetailVC = segue.destination as? NewReminderDetailViewController else { return }
             
-            newReminderDetailVC.reminderController = self.reminderController
-            newReminderDetailVC.themeController = themeController
+            newReminderDetailVC.controllers = self.controllers
             newReminderDetailVC.cameraController = cameraController
         }
     }
