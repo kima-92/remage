@@ -49,6 +49,7 @@
 		FAD929F524D0B9400060916B /* ThemeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD929F424D0B9400060916B /* ThemeController.swift */; };
 		FAD929F724D0DCF20060916B /* ColorList.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD929F624D0DCF20060916B /* ColorList.swift */; };
 		FADA155E24C94CF40006CA62 /* ViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADA155D24C94CF40006CA62 /* ViewControllerExtension.swift */; };
+		FAE46A7124FD9BE30033B5F4 /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE46A7024FD9BE30033B5F4 /* UserController.swift */; };
 		FAEED84724F063BD009417B8 /* DynamicSizeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEED84624F063BD009417B8 /* DynamicSizeLabel.swift */; };
 /* End PBXBuildFile section */
 
@@ -97,6 +98,7 @@
 		FAD929F424D0B9400060916B /* ThemeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeController.swift; sourceTree = "<group>"; };
 		FAD929F624D0DCF20060916B /* ColorList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorList.swift; sourceTree = "<group>"; };
 		FADA155D24C94CF40006CA62 /* ViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerExtension.swift; sourceTree = "<group>"; };
+		FAE46A7024FD9BE30033B5F4 /* UserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
 		FAEED84624F063BD009417B8 /* DynamicSizeLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicSizeLabel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -221,6 +223,7 @@
 			children = (
 				FA776B702457489D00B897F6 /* CoreDataModelController.swift */,
 				FA90E84824CF46F0007148EF /* ReminderController.swift */,
+				FAE46A7024FD9BE30033B5F4 /* UserController.swift */,
 				FAD929F424D0B9400060916B /* ThemeController.swift */,
 			);
 			path = "Model Controllers";
@@ -403,6 +406,7 @@
 				FA90E84C24CF83DD007148EF /* SettingsMenuViewController.swift in Sources */,
 				FA06590D24D24A9100527EB7 /* MainTabBarController.swift in Sources */,
 				FA90E84724CF2F7F007148EF /* NRNoteViewController.swift in Sources */,
+				FAE46A7124FD9BE30033B5F4 /* UserController.swift in Sources */,
 				FADA155E24C94CF40006CA62 /* ViewControllerExtension.swift in Sources */,
 				FA90B58924DB6862008DEAF8 /* AlarmsTableViewController.swift in Sources */,
 				FA776B6D2457467900B897F6 /* NewReminderDetailViewController.swift in Sources */,

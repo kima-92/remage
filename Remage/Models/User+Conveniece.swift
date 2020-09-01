@@ -11,23 +11,32 @@ import CoreData
 
 extension User {
     
-    // ReminderRepresentation for encoding/decoding purposes
+    // UserRepresentation for encoding/decoding purposes
     var userRepresentation: UserRepresentation? {
+        
         guard let id = id else { return nil }
+        let color = getColor()
         
-        let color = self.bgColorString
-        let list = ColorList()
-        let colors = list.bgColors
-        let bgColors = colors.filter({$0.name == color})
-        
-        let bgColor = bgColors[0]
-        
-        return UserRepresentation(bgColor: bgColor, id: id)
+        return UserRepresentation(bgColor: color, id: id)
     }
     
     @discardableResult convenience init(id: String, context: NSManagedObjectContext) {
         self.init(context: context)
         
         self.id = id
+    }
+    
+    // Convert bgColorString to a BGColor for the UserRepresentation
+    private func getColor() -> BGColor? {
+        if let colorString = bgColorString {
+            
+            let list = ColorList()
+            let colors = list.bgColors
+            let filteredColors = colors.filter({ $0.name == colorString })
+            let color = filteredColors[0]
+            
+            return color
+        }
+        return nil
     }
 }

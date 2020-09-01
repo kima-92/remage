@@ -14,6 +14,8 @@ class BGColorSelectionViewController: UIViewController {
     
     var themeController: ThemeController?
     var reminderController: ReminderController?
+    var userController: UserController?
+    var user: User?
     
     var colorsCollectionView: UICollectionView?
     var headerView = UIView()
@@ -165,10 +167,15 @@ extension BGColorSelectionViewController: UICollectionViewDelegate, UICollection
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        guard let themeController = themeController else { return }
+        guard let themeController = themeController,
+            let userController = userController,
+            let user = user else { return }
         
         // Get chosen Color
         let color = themeController.bgColors[indexPath.item]
+        
+        // Set this color as the User's bgColor
+        userController.setBGColorFor(user: user, color: color)
         
         // Set as currentColor in the ThemeController
         themeController.userSetColorAs(color: color)
