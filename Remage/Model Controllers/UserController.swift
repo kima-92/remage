@@ -36,4 +36,12 @@ class UserController {
         
         return user
     }
+    
+    // Setting the BGColor preference of the User
+    func setBGColorFor(user: User, color: BGColor) {
+        user.bgColorString = color.name
+        
+        // Save Change in Core Data
+        CoreDataStack.shared.save(context: CoreDataStack.shared.mainContext)
+    }
 }

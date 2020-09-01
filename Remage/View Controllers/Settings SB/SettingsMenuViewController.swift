@@ -14,6 +14,8 @@ class SettingsMenuViewController: UIViewController {
     
     var themeController: ThemeController?
     var reminderController: ReminderController?
+    var userController: UserController?
+    var user: User?
     
     // MARK: - Outlets
     
@@ -45,6 +47,8 @@ class SettingsMenuViewController: UIViewController {
         
         self.themeController = tabBar.themeController
         self.reminderController = tabBar.reminderController
+        self.userController = tabBar.userController
+        self.user = tabBar.user
     }
     
     // Update Views
@@ -91,12 +95,14 @@ class SettingsMenuViewController: UIViewController {
     // MARK: - Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-       
-       if segue.identifier == "ShowBGColorSelectionVCSegue" {
-           
-        guard let bgColorSelectionVC = segue.destination as? BGColorSelectionViewController else { return }
-           
-           bgColorSelectionVC.themeController = themeController
-       }
+        
+        if segue.identifier == "ShowBGColorSelectionVCSegue" {
+            
+            guard let bgColorSelectionVC = segue.destination as? BGColorSelectionViewController else { return }
+            
+            bgColorSelectionVC.themeController = themeController
+            bgColorSelectionVC.userController = userController
+            bgColorSelectionVC.user = user
+        }
     }
 }
