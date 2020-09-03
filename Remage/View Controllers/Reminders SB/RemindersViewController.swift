@@ -13,8 +13,7 @@ class RemindersViewController: UIViewController {
     
     // MARK: - Properties
     
-    var themeController: ThemeController?
-    var reminderController: ReminderController?
+    var controllers: ModelControllers?
     
     var fetchResultsController: NSFetchedResultsController<Reminder> {
         
@@ -60,12 +59,11 @@ class RemindersViewController: UIViewController {
     
     // MARK: - Methods
     
-    // To receive the ThemeController and ReminderController from the Main TabBar
+    // To receive the ModelControllers from the Main TabBar
     private func receiveDataFromTabBar() {
         guard let tabBar = tabBarController as? MainTabBarController else { return }
         
-        self.themeController = tabBar.themeController
-        self.reminderController = tabBar.reminderController
+        self.controllers = tabBar.controllers
     }
     
     // Update Views
@@ -78,27 +76,15 @@ class RemindersViewController: UIViewController {
     
     // Background Colors Setup
     private func setBGColors() {
-        
         // Get BGColor
-        guard let themeController = themeController,
-            let color = themeController.currentColor else { return }
+        guard let controllers = controllers,
+            let color = controllers.themeController.currentColor else { return }
         
         // Background
-        view.backgroundColor = color.bgColor
+        setTabBarsBGColors(color: color)
         
         // CollectionView
         remindersCollectionView.backgroundColor = color.textLabelColor
-        
-        // Set NavigationBar and TabBar Colors
-        let textAttribute = [NSAttributedString.Key.foregroundColor: color.fontColor]
-        navigationController?.navigationBar.titleTextAttributes = textAttribute
-        
-        navigationController?.navigationBar.tintColor = color.barTintColor
-        navigationController?.navigationBar.barTintColor = color.barBGTintColor // Entire bar BG color
-        
-        tabBarController?.tabBar.barTintColor = color.barBGTintColor // Entire bar BG color
-        tabBarController?.tabBar.tintColor = color.barTintColor // Selected tab bar button
-        tabBarController?.tabBar.unselectedItemTintColor = color.barUnselectedTintColor // Unselected bar buttons
     }
     
      // MARK: - Navigation
@@ -115,7 +101,7 @@ class RemindersViewController: UIViewController {
             
             let reminder = fetchResultsController.object(at: indexPath)
             reminderPhotoVC.reminder = reminder
-            reminderPhotoVC.themeController = themeController
+            reminderPhotoVC.controllers = controllers
         }
      }
 }
@@ -131,9 +117,10 @@ extension RemindersViewController: UICollectionViewDataSource, UICollectionViewD
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        guard let reminderCell = collectionView.dequeueReusableCell(withReuseIdentifier: "reminderCell", for: indexPath) as? ReminderCollectionViewCell else { return UICollectionViewCell() }
+        guard let reminderCell = collectionView.dequeueReusableCell(withReuseIdentifier: "reminderCell", for: indexPath) as? ReminderCollectionViewCell,
+            let controllers = controllers else { return UICollectionViewCell() }
         
-        reminderCell.color = themeController?.currentColor
+        reminderCell.color = controllers.themeController.currentColor
         reminderCell.reminder = fetchResultsController.object(at: indexPath)
         
         return reminderCell

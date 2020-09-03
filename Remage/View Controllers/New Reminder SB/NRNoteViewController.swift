@@ -13,7 +13,6 @@ class NRNoteViewController: UIViewController {
     // MARK: - Properties
     
     var themeController: ThemeController?
-    var reminderController: ReminderController?
     
     var note: String?
     var getNoteDelegate: GetNoteDelegate!
@@ -92,10 +91,6 @@ class NRNoteViewController: UIViewController {
         
         // TextView should start empty
         noteTextView.text = ""
-        
-        // Set Background Colors
-        setBGColors()
-        
     }
     
     // Background Colors Setup
@@ -106,7 +101,8 @@ class NRNoteViewController: UIViewController {
             let color = themeController.currentColor else { return }
         
         // Background
-        view.backgroundColor = color.bgColor
+        setTabBarsBGColors(color: color)
+        
         scrollSubView.backgroundColor = color.bgColor
         scrollPushingView.backgroundColor = color.bgColor
         backgroundCardView.backgroundColor = color.bgCardColor

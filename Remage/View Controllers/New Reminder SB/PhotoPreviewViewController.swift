@@ -16,8 +16,7 @@ class PhotoPreviewViewController: UIViewController {
     
     // MARK: - Properties
     
-    var themeController: ThemeController?
-    var reminderController: ReminderController?
+    var controllers: ModelControllers?
     
     var image: UIImage?
     var didStartNewReminder: Bool?
@@ -111,24 +110,11 @@ class PhotoPreviewViewController: UIViewController {
     
     // Background Colors Setup
     private func setBGColors() {
-        
         // Get BGColor
-        guard let themeController = themeController,
-            let color = themeController.currentColor else { return }
+        guard let controllers = controllers,
+            let color = controllers.themeController.currentColor else { return }
         
-        // Background
-        view.backgroundColor = color.bgColor
-        
-        // Set NavigationBar and TabBar Colors
-        let textAttribute = [NSAttributedString.Key.foregroundColor: color.fontColor]
-        navigationController?.navigationBar.titleTextAttributes = textAttribute
-        
-        navigationController?.navigationBar.tintColor = color.barTintColor // Bar buttons
-        navigationController?.navigationBar.barTintColor = color.barBGTintColor // Entire bar BG color
-        
-        tabBarController?.tabBar.barTintColor = color.barBGTintColor // Entire bar BG color
-        tabBarController?.tabBar.tintColor = color.barTintColor // Selected tab bar button
-        tabBarController?.tabBar.unselectedItemTintColor = color.barUnselectedTintColor // Unselected bar buttons
+        setTabBarsBGColors(color: color)
     }
     
     // MARK: - Navigation
@@ -140,8 +126,7 @@ class PhotoPreviewViewController: UIViewController {
             
             guard let newReminderDetailVC = segue.destination as? NewReminderDetailViewController else { return }
             newReminderDetailVC.imageFromCamera = image
-            newReminderDetailVC.reminderController = reminderController
-            newReminderDetailVC.themeController = themeController
+            newReminderDetailVC.controllers = controllers
         }
     }
 }

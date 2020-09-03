@@ -12,16 +12,14 @@ class MainTabBarController: UITabBarController {
     
     // MARK: - Properties
     
-    var themeController = ThemeController()
-    var reminderController = ReminderController()
-    var userController = UserController()
-    
+    var controllers = ModelControllers()
     var user: User?
     
     // MARK: - DidLoad
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        controllers.setupControllers()
         setUser()
     }
     
@@ -29,11 +27,7 @@ class MainTabBarController: UITabBarController {
     
     // Setup for this User
     private func setUser() {
-        
-        // Set userController's cdController
-        userController.cdController = reminderController.cdModelController
-        // Get the User
-        user = userController.getUser()
+        user = controllers.userController.getUser()
         
         // Setup
         getTheme()
@@ -48,12 +42,12 @@ class MainTabBarController: UITabBarController {
             if let color = represenation.bgColor {
                 // Setup the BGColor if the User has choosen one before
                 
-                themeController.userBGColor = color
-                themeController.setCurrentColor()
+                controllers.themeController.userBGColor = color
+                controllers.themeController.setCurrentColor()
                 
             } else {
                 // Setup the default BGColor if the User doesn't have a BGColor set yet
-                themeController.setCurrentColor()
+                controllers.themeController.setCurrentColor()
             }
         }
     }

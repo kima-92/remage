@@ -13,8 +13,7 @@ class AlarmsTableViewController: UITableViewController, NSFetchedResultsControll
     
     // MARK: - Properties
     
-    var themeController: ThemeController?
-    var reminderController: ReminderController?
+    var controllers: ModelControllers?
     var reminders: [Reminder]?
     
     var fetchResultsController: NSFetchedResultsController<Reminder> {
@@ -44,8 +43,6 @@ class AlarmsTableViewController: UITableViewController, NSFetchedResultsControll
         super.viewDidLoad()
         
         receiveDataFromTabBar()
-        setBGColors()
-        setupReminders()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -63,9 +60,10 @@ class AlarmsTableViewController: UITableViewController, NSFetchedResultsControll
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "AlarmCell", for: indexPath) as? AlarmTableViewCell else { return UITableViewCell() }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "AlarmCell", for: indexPath) as? AlarmTableViewCell,
+            let controllers = controllers else { return UITableViewCell() }
         
-        cell.themeController = themeController
+        cell.themeController = controllers.themeController
         cell.reminder = reminders?[indexPath.row]
 
         return cell
@@ -109,12 +107,11 @@ class AlarmsTableViewController: UITableViewController, NSFetchedResultsControll
     
     // MARK: - Methods
     
-    // To receive the ThemeController and ReminderController from the Main TabBar
+    // To receive the ModelControllers from the Main TabBar
     private func receiveDataFromTabBar() {
         guard let tabBar = tabBarController as? MainTabBarController else { return }
         
-        self.themeController = tabBar.themeController
-        self.reminderController = tabBar.reminderController
+        self.controllers = tabBar.controllers
     }
     
     // Get only the Reminders with an Alarm
@@ -125,25 +122,13 @@ class AlarmsTableViewController: UITableViewController, NSFetchedResultsControll
     
     // Background Colors Setup
     private func setBGColors() {
-        
         // Get BGColor
-        guard let themeController = themeController,
-            let color = themeController.currentColor else { return }
+        guard let controllers = controllers,
+            let color = controllers.themeController.currentColor else { return }
         
         // Background
-        view.backgroundColor = color.bgColor
+        setTabBarsBGColors(color: color)
         tableView.separatorColor = color.bgCardColor
-        
-        // Set NavigationBar and TabBar Colors
-        let textAttribute = [NSAttributedString.Key.foregroundColor: color.fontColor]
-        navigationController?.navigationBar.titleTextAttributes = textAttribute
-        
-        navigationController?.navigationBar.tintColor = color.barTintColor
-        navigationController?.navigationBar.barTintColor = color.barBGTintColor // Entire bar BG color
-        
-        tabBarController?.tabBar.barTintColor = color.barBGTintColor // Entire bar BG color
-        tabBarController?.tabBar.tintColor = color.barTintColor // Selected tab bar button
-        tabBarController?.tabBar.unselectedItemTintColor = color.barUnselectedTintColor // Unselected bar buttons
     }
 
     /*

@@ -13,8 +13,7 @@ class CameraViewController: UIViewController {
     
     // MARK: - Properties
     
-    var themeController: ThemeController?
-    var reminderController: ReminderController?
+    var controllers: ModelControllers?
     var cameraController: CameraController?
     
     var captureType: CaptureType = .picture
@@ -93,10 +92,10 @@ class CameraViewController: UIViewController {
     
     // Background Colors Setup
     private func setBGColors() {
-        
         // Get BGColor
-        guard let themeController = themeController,
-            let color = themeController.currentColor else { return }
+        guard let controllers = controllers,
+            let color = controllers.themeController.currentColor else { return }
+        setTabBarsBGColors(color: color)
         
         // Set Buttons Images
         captureImageButton.setImage(color.cameraButton, for: .normal)
@@ -114,8 +113,7 @@ class CameraViewController: UIViewController {
         if segue.identifier == "ShowPhotoPreviewSegue" {
             
             guard let photoPreviewVC = segue.destination as? PhotoPreviewViewController else { return }
-            photoPreviewVC.reminderController = reminderController
-            photoPreviewVC.themeController = themeController
+            photoPreviewVC.controllers = controllers
             photoPreviewVC.image = image
             photoPreviewVC.didStartNewReminder = didStartNewReminder
             photoPreviewVC.nrDetailDelegate = nrDetailDelegate

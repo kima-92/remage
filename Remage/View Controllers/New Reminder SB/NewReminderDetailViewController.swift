@@ -12,8 +12,7 @@ class NewReminderDetailViewController: UIViewController {
     
     // MARK: - Properties
     
-    var themeController: ThemeController?
-    var reminderController: ReminderController?
+    var controllers: ModelControllers?
     var cameraController: CameraController?
     
     var image: UIImage?
@@ -295,7 +294,7 @@ class NewReminderDetailViewController: UIViewController {
     // Capture details to save a new Reminder
     private func saveNewReminder() {
         
-        guard let reminderController = reminderController,
+        guard let controllers = controllers,
             let title = titleTextField.text else {
             showCantSaveReminder()
             return
@@ -318,11 +317,11 @@ class NewReminderDetailViewController: UIViewController {
                 self.date = setAlarm()
                 guard let date = date else { return }
                 
-                reminderController.saveNewReminderWith(alarmDate: date, title: title, defaultImage: image?.pngData(), note: noteRecieved)
+                controllers.reminderController.saveNewReminderWith(alarmDate: date, title: title, defaultImage: image?.pngData(), note: noteRecieved)
                 
             // Else save Reminder without an Alarm
             } else {
-                reminderController.saveNewReminder(title: title, defaultImage: image?.pngData(), note: noteRecieved)
+                controllers.reminderController.saveNewReminder(title: title, defaultImage: image?.pngData(), note: noteRecieved)
             }
             
             // Alert user the reminder is saved, and pop back to root VC
@@ -403,13 +402,13 @@ class NewReminderDetailViewController: UIViewController {
     
     // Background Colors Setup
     private func setBGColors() {
-        
         // Get BGColor
-        guard let themeController = themeController,
-            let color = themeController.currentColor else { return }
+        guard let controllers = controllers,
+            let color = controllers.themeController.currentColor else { return }
         
         // Background
-        view.backgroundColor = color.bgColor
+        setTabBarsBGColors(color: color)
+        
         scrollSubView.backgroundColor = color.bgColor
         scrollPushingView.backgroundColor = color.bgColor
         backgroundCardView.backgroundColor = color.bgCardColor
@@ -442,17 +441,6 @@ class NewReminderDetailViewController: UIViewController {
         if imageFromCamera == nil && imageFromLibrary == nil {
             imageView.image = color.emptyPictureImage
         }
-        
-        // Set NavigationBar and TabBar Colors
-        let textAttribute = [NSAttributedString.Key.foregroundColor: color.fontColor]
-        navigationController?.navigationBar.titleTextAttributes = textAttribute
-        
-        navigationController?.navigationBar.tintColor = color.barTintColor // Bar buttons
-        navigationController?.navigationBar.barTintColor = color.barBGTintColor // Entire bar BG color
-        
-        tabBarController?.tabBar.barTintColor = color.barBGTintColor // Entire bar BG color
-        tabBarController?.tabBar.tintColor = color.barTintColor // Selected tab bar button
-        tabBarController?.tabBar.unselectedItemTintColor = color.barUnselectedTintColor // Unselected bar buttons
     }
     
     // MARK: - Navigation
@@ -461,19 +449,19 @@ class NewReminderDetailViewController: UIViewController {
         
         // Segue to NRNote
         if segue.identifier == "AddNewNoteSegue" {
-            guard let noteVC = segue.destination as? NRNoteViewController else { return }
+            guard let noteVC = segue.destination as? NRNoteViewController,
+                let controllers = controllers else { return }
             
             noteVC.note = noteRecieved
             noteVC.getNoteDelegate = self
-            noteVC.themeController = themeController
+            noteVC.themeController = controllers.themeController
         }
             
         // Segue to CameraVC
         else if segue.identifier == "ShowCameraFromNRDetailsVC" {
             guard let cameraVC = segue.destination as? CameraViewController else { return }
             
-            cameraVC.themeController = themeController
-            cameraVC.reminderController = reminderController
+            cameraVC.controllers = controllers
             cameraVC.cameraController = cameraController
             
             cameraVC.didStartNewReminder = didStartNewReminder

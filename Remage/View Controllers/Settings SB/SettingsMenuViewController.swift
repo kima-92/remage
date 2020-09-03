@@ -12,9 +12,7 @@ class SettingsMenuViewController: UIViewController {
     
     // MARK: - Properties
     
-    var themeController: ThemeController?
-    var reminderController: ReminderController?
-    var userController: UserController?
+    var controllers: ModelControllers?
     var user: User?
     
     // MARK: - Outlets
@@ -41,13 +39,11 @@ class SettingsMenuViewController: UIViewController {
     
     // MARK: - Methods
     
-    // To receive the ThemeController and ReminderController from the Main TabBar
+    // To receive the ModelControllers from the Main TabBar
     private func receiveDataFromTabBar() {
         guard let tabBar = tabBarController as? MainTabBarController else { return }
         
-        self.themeController = tabBar.themeController
-        self.reminderController = tabBar.reminderController
-        self.userController = tabBar.userController
+        self.controllers = tabBar.controllers
         self.user = tabBar.user
     }
     
@@ -67,11 +63,12 @@ class SettingsMenuViewController: UIViewController {
     private func setBGColors() {
         
         // Get BGColor
-        guard let themeController = themeController,
-            let color = themeController.currentColor else { return }
+        guard let controllers = controllers,
+            let color = controllers.themeController.currentColor else { return }
         
         // Background
-        view.backgroundColor = color.bgColor
+        setTabBarsBGColors(color: color)
+        
         scrollSubView.backgroundColor = color.bgColor
         scrollPushingView.backgroundColor = color.bgColor
         backgroundCardView.backgroundColor = color.bgCardColor
@@ -79,17 +76,6 @@ class SettingsMenuViewController: UIViewController {
         // Background Color Settings
         backgroundColorChoiceButton.backgroundColor = color.highlightColor
         backgroundLabel.textColor = color.fontColor
-        
-        // Set NavigationBar and TabBar Colors
-        let textAttribute = [NSAttributedString.Key.foregroundColor: color.fontColor]
-        navigationController?.navigationBar.titleTextAttributes = textAttribute
-        
-        navigationController?.navigationBar.tintColor = color.barTintColor
-        navigationController?.navigationBar.barTintColor = color.barBGTintColor // Entire bar BG color
-        
-        tabBarController?.tabBar.barTintColor = color.barBGTintColor // Entire bar BG color
-        tabBarController?.tabBar.tintColor = color.barTintColor // Selected tab bar button
-        tabBarController?.tabBar.unselectedItemTintColor = color.barUnselectedTintColor // Unselected bar buttons
     }
     
     // MARK: - Navigation
@@ -100,8 +86,7 @@ class SettingsMenuViewController: UIViewController {
             
             guard let bgColorSelectionVC = segue.destination as? BGColorSelectionViewController else { return }
             
-            bgColorSelectionVC.themeController = themeController
-            bgColorSelectionVC.userController = userController
+            bgColorSelectionVC.controllers = controllers
             bgColorSelectionVC.user = user
         }
     }
