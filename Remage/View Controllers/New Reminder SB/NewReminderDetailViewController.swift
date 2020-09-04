@@ -78,6 +78,10 @@ class NewReminderDetailViewController: UIViewController {
     }
     
     // MARK: - Actions
+    @IBAction func alarmSegmentedControlToggled(_ sender: UISegmentedControl) {
+        guard let controllers = controllers  else { return }
+        controllers.reminderController.requestPermission()
+    }
     
     @IBAction func addImagesButtonTapped(_ sender: UIButton) {
         showCameraOrLibraryActionSheet()

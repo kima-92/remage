@@ -121,7 +121,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mjf-Qc-6c6" customClass="CameraPreviewView" customModule="Remage" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="56" width="414" height="752"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Liu-EO-Amv">
@@ -136,7 +136,7 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="55b-1n-fF6">
-                                <rect key="frame" x="15" y="66" width="384" height="30"/>
+                                <rect key="frame" x="15" y="10" width="384" height="30"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dzT-zC-ddU">
                                         <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
@@ -340,6 +340,9 @@
                                                                             <segment title="Off"/>
                                                                             <segment title="On"/>
                                                                         </segments>
+                                                                        <connections>
+                                                                            <action selector="alarmSegmentedControlToggled:" destination="ftG-iM-aUh" eventType="valueChanged" id="SIG-p4-lz7"/>
+                                                                        </connections>
                                                                     </segmentedControl>
                                                                 </subviews>
                                                             </stackView>
@@ -591,7 +594,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="vye-Ip-CPw"/>
         <segue reference="JAA-r4-BaZ"/>
         <segue reference="szR-xT-rSi"/>
     </inferredMetricsTieBreakers>
