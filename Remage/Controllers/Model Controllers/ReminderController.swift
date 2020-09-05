@@ -23,8 +23,6 @@ class ReminderController {
     // Save a New Reminder in CD WITH a alarm
     func saveNewReminderWith(alarmDate: Date, title: String? = nil, defaultImage: Data? = nil, note: String? = nil) {
         
-        //requestPermission()
-        
         // Create new Reminder
         let reminder = Reminder(context: CoreDataStack.shared.mainContext)
         

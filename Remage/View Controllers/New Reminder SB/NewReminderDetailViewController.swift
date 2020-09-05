@@ -80,7 +80,14 @@ class NewReminderDetailViewController: UIViewController {
     // MARK: - Actions
     @IBAction func alarmSegmentedControlToggled(_ sender: UISegmentedControl) {
         guard let controllers = controllers  else { return }
-        controllers.reminderController.requestPermission()
+        let permission = controllers.reminderController.permissionGranted
+        
+        // If we don't have permission, don't allow the User to turn on the Alarm SegmentedControl
+        if let permission = permission,
+            !permission {
+            showDontHavePermission()
+            alarmSegmentedControl.selectedSegmentIndex = 0
+        }
     }
     
     @IBAction func addImagesButtonTapped(_ sender: UIButton) {
@@ -149,6 +156,8 @@ class NewReminderDetailViewController: UIViewController {
     // Date Done Button
     @objc private func dateDoneBarButtonPressed() {
         
+        guard let controllers = controllers else { return }
+        
         // DateFormatter
         let formatter = DateFormatter()
         // Date Style
@@ -164,10 +173,20 @@ class NewReminderDetailViewController: UIViewController {
         
         // End editing
         self.view.endEditing(true)
+        
+        // Try to set the Segmented control by checking if we have permission
+        if let permission = controllers.reminderController.permissionGranted,
+            permission {
+            alarmSegmentedControl.selectedSegmentIndex = 1
+        } else {
+            self.showDontHavePermission()
+        }
     }
     
     // Time Done Button
     @objc private func timeDoneBarButtonPressed() {
+        
+        guard let controllers = controllers else { return }
         
         // DateFormatter
         let formatter = DateFormatter()
@@ -184,6 +203,14 @@ class NewReminderDetailViewController: UIViewController {
         
         // End editing
         self.view.endEditing(true)
+        
+        // Try to set the Segmented control by checking if we have permission
+        if let permission = controllers.reminderController.permissionGranted,
+            permission {
+            alarmSegmentedControl.selectedSegmentIndex = 1
+        } else {
+            self.showDontHavePermission()
+        }
     }
     
     // CancelBarButton for TimePicker and DatePicker
@@ -363,6 +390,15 @@ class NewReminderDetailViewController: UIViewController {
     // Can't save Reminder Alert
     private func showCantSaveReminder() {
         let alert = UIAlertController(title: "Oops!", message: "Something when't wrong, couldn't save this reminder. Please try again.", preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        
+        self.present(alert, animated: true)
+    }
+    
+    // We don't have permission for Local Notifications
+    private func showDontHavePermission() {
+        let alert = UIAlertController(title: "Remage does not have Permission", message: "Please go to Settings and allow Remage send Notifications to your device.", preferredStyle: .alert)
         
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         
