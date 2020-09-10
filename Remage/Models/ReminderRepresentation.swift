@@ -27,11 +27,13 @@ struct ReminderRepresentation: Codable {
     
     var dayCreated: Date = Date()
     var alarmDate: Date?
+    var alarmID: String?
     var alarmOn: Bool = false
     
-    init(id: String) {
+    init(id: String, alarmID: String) {
         
         self.id = id
+        self.alarmID = alarmID
     }
     
     // TODO: - Might need an init fro decoder
