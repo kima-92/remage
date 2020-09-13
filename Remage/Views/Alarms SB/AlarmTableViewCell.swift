@@ -25,6 +25,7 @@ class AlarmTableViewCell: UITableViewCell {
     @IBOutlet weak var alarmLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var pictureImageView: UIImageView!
+    @IBOutlet weak var alarmSwitch: UISwitch!
     
     // MARK: - Awake from Nib
     override func awakeFromNib() {
@@ -35,6 +36,11 @@ class AlarmTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    // MARK: - Actions
+    
+    @IBAction func alarmSwitchChanged(_ sender: UISwitch) {
     }
     
     // MARK: - Methods

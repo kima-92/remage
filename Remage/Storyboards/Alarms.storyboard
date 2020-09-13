@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ZvU-VS-BFR">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ZvU-VS-BFR">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -23,42 +23,55 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8R0-IO-kM1">
-                                            <rect key="frame" x="333.5" y="8" width="60.5" height="60.5"/>
+                                            <rect key="frame" x="20" y="8" width="60.5" height="60.5"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="8R0-IO-kM1" secondAttribute="height" multiplier="1:1" id="HlS-N5-FDw"/>
                                                 <constraint firstAttribute="height" constant="60" id="o4Y-ex-06c"/>
                                             </constraints>
                                         </imageView>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="GL5-ON-npx">
-                                            <rect key="frame" x="20" y="16" width="293.5" height="44.5"/>
+                                            <rect key="frame" x="100.5" y="16" width="236.5" height="44.5"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alarm Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="txl-gc-D66">
-                                                    <rect key="frame" x="0.0" y="0.0" width="293.5" height="19"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="236.5" height="19"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title or Note" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="px1-8L-jgf">
-                                                    <rect key="frame" x="0.0" y="26" width="293.5" height="18.5"/>
+                                                    <rect key="frame" x="0.0" y="26" width="236.5" height="18.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                         </stackView>
+                                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QE7-Vl-Fex">
+                                            <rect key="frame" x="347" y="23" width="49" height="31"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="47" id="EnB-Cg-fWe"/>
+                                                <constraint firstAttribute="height" constant="31" id="Sub-an-3E4"/>
+                                            </constraints>
+                                            <connections>
+                                                <action selector="alarmSwitchChanged:" destination="AHT-Of-fvx" eventType="valueChanged" id="JKl-ZG-RGB"/>
+                                            </connections>
+                                        </switch>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="trailing" secondItem="8R0-IO-kM1" secondAttribute="trailing" constant="20" id="LRj-sy-dYk"/>
+                                        <constraint firstItem="QE7-Vl-Fex" firstAttribute="leading" secondItem="GL5-ON-npx" secondAttribute="trailing" constant="10" id="A6P-yp-jIr"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="GL5-ON-npx" secondAttribute="bottom" constant="5" id="M4j-kJ-kWa"/>
+                                        <constraint firstItem="8R0-IO-kM1" firstAttribute="leading" secondItem="m7i-l3-LVK" secondAttribute="leading" constant="20" id="PEP-Of-pUK"/>
                                         <constraint firstItem="8R0-IO-kM1" firstAttribute="top" secondItem="m7i-l3-LVK" secondAttribute="top" constant="8" id="PpO-Yr-dYK"/>
-                                        <constraint firstItem="8R0-IO-kM1" firstAttribute="leading" secondItem="GL5-ON-npx" secondAttribute="trailing" constant="20" id="YsW-fK-MdW"/>
+                                        <constraint firstItem="GL5-ON-npx" firstAttribute="leading" secondItem="8R0-IO-kM1" secondAttribute="trailing" constant="20" id="WRR-Hk-Uht"/>
                                         <constraint firstItem="GL5-ON-npx" firstAttribute="top" secondItem="m7i-l3-LVK" secondAttribute="topMargin" constant="5" id="ec3-pK-Itw"/>
-                                        <constraint firstItem="GL5-ON-npx" firstAttribute="leading" secondItem="m7i-l3-LVK" secondAttribute="leadingMargin" id="fb1-cv-jD8"/>
+                                        <constraint firstItem="QE7-Vl-Fex" firstAttribute="trailing" secondItem="m7i-l3-LVK" secondAttribute="trailingMargin" id="gEl-hM-iU4"/>
+                                        <constraint firstItem="QE7-Vl-Fex" firstAttribute="centerY" secondItem="GL5-ON-npx" secondAttribute="centerY" id="qLk-xA-Fm3"/>
                                         <constraint firstAttribute="bottom" secondItem="8R0-IO-kM1" secondAttribute="bottom" constant="8" id="vKS-3X-Djh"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="alarmLabel" destination="txl-gc-D66" id="BWX-mY-IgJ"/>
+                                    <outlet property="alarmSwitch" destination="QE7-Vl-Fex" id="7EB-zK-k7C"/>
                                     <outlet property="pictureImageView" destination="8R0-IO-kM1" id="wqn-n7-fGE"/>
                                     <outlet property="titleLabel" destination="px1-8L-jgf" id="Cyi-OZ-6eb"/>
                                 </connections>
