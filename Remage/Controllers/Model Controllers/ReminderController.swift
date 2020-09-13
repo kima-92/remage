@@ -80,8 +80,11 @@ class ReminderController {
     
     func turnAlarmOffFor(reminder: Reminder) {
         reminder.alarmOn = false
-        
-        // Save change in CoreData
+        CoreDataStack.shared.save(context: CoreDataStack.shared.mainContext)
+    }
+    
+    func turnAlarmOnFor(reminder: Reminder) {
+        reminder.alarmOn = true
         CoreDataStack.shared.save(context: CoreDataStack.shared.mainContext)
     }
     

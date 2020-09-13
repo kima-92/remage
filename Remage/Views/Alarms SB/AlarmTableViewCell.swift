@@ -13,6 +13,7 @@ class AlarmTableViewCell: UITableViewCell {
     // MARK: - Properties
     
     var themeController: ThemeController?
+    var reminderController: ReminderController?
     
     var reminder: Reminder? {
         didSet  {
@@ -25,6 +26,7 @@ class AlarmTableViewCell: UITableViewCell {
     @IBOutlet weak var alarmLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var pictureImageView: UIImageView!
+    @IBOutlet weak var alarmSwitch: UISwitch!
     
     // MARK: - Awake from Nib
     override func awakeFromNib() {
@@ -37,7 +39,28 @@ class AlarmTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    // MARK: - Actions
+    
+    @IBAction func alarmSwitchChanged(_ sender: UISwitch) {
+        turnAlarmOnOrOff(sender: sender)
+    }
+    
     // MARK: - Methods
+    
+    private func turnAlarmOnOrOff(sender: UISwitch) {
+        
+        guard let reminderController = reminderController,
+            let reminder = reminder else {
+                alarmSwitch.setOn(!sender.isOn, animated: true)
+                // TODO: - Present an alert to the user
+                return
+        }
+        if sender.isOn {
+            reminderController.turnAlarmOnFor(reminder: reminder)
+        } else {
+            reminderController.turnAlarmOffFor(reminder: reminder)
+        }
+    }
     
     private func updateViews() {
         
@@ -70,6 +93,9 @@ class AlarmTableViewCell: UITableViewCell {
             let image = UIImage(data: imageData) {
             pictureImageView.image = image
         }
+        
+        // Switch
+        alarmSwitch.setOn(reminder.alarmOn, animated: false)
     }
     
     // Background Colors Setup

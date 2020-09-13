@@ -61,14 +61,25 @@ class AlarmsTableViewController: UITableViewController, NSFetchedResultsControll
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "AlarmCell", for: indexPath) as? AlarmTableViewCell,
-            let controllers = controllers else { return UITableViewCell() }
+            let controllers = controllers,
+            let reminders = reminders else { return UITableViewCell() }
         
         cell.themeController = controllers.themeController
-        cell.reminder = reminders?[indexPath.row]
+        cell.reminderController = controllers.reminderController
+        cell.reminder = reminders[indexPath.row]
 
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let reminders = reminders else { return }
+        
+        let detailVC = ReminderDetailsViewController()
+        detailVC.controllers = controllers
+        detailVC.reminder = reminders[indexPath.row]
+        
+        navigationController?.pushViewController(detailVC, animated: true)
+    }
 
     /*
     // Override to support conditional editing of the table view.
@@ -87,21 +98,6 @@ class AlarmsTableViewController: UITableViewController, NSFetchedResultsControll
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
     }
     */
     
@@ -130,15 +126,4 @@ class AlarmsTableViewController: UITableViewController, NSFetchedResultsControll
         setTabBarsBGColors(color: color)
         tableView.separatorColor = color.bgCardColor
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
