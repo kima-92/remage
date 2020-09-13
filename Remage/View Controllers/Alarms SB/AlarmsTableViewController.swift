@@ -64,6 +64,7 @@ class AlarmsTableViewController: UITableViewController, NSFetchedResultsControll
             let controllers = controllers else { return UITableViewCell() }
         
         cell.themeController = controllers.themeController
+        cell.reminderController = controllers.reminderController
         cell.reminder = reminders?[indexPath.row]
 
         return cell

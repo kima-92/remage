@@ -13,6 +13,7 @@ class AlarmTableViewCell: UITableViewCell {
     // MARK: - Properties
     
     var themeController: ThemeController?
+    var reminderController: ReminderController?
     
     var reminder: Reminder? {
         didSet  {
@@ -41,9 +42,24 @@ class AlarmTableViewCell: UITableViewCell {
     // MARK: - Actions
     
     @IBAction func alarmSwitchChanged(_ sender: UISwitch) {
+        turnAlarmOnOrOff(sender: sender)
     }
     
     // MARK: - Methods
+    
+    private func turnAlarmOnOrOff(sender: UISwitch) {
+        
+        guard let reminderController = reminderController,
+            let reminder = reminder else {
+                alarmSwitch.setOn(!sender.isOn, animated: true)
+                return
+        }
+        if sender.isOn {
+            reminderController.turnAlarmOnFor(reminder: reminder)
+        } else {
+            reminderController.turnAlarmOffFor(reminder: reminder)
+        }
+    }
     
     private func updateViews() {
         
