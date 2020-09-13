@@ -52,6 +52,7 @@ class AlarmTableViewCell: UITableViewCell {
         guard let reminderController = reminderController,
             let reminder = reminder else {
                 alarmSwitch.setOn(!sender.isOn, animated: true)
+                // TODO: - Present an alert to the user
                 return
         }
         if sender.isOn {

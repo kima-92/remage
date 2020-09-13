@@ -61,15 +61,25 @@ class AlarmsTableViewController: UITableViewController, NSFetchedResultsControll
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "AlarmCell", for: indexPath) as? AlarmTableViewCell,
-            let controllers = controllers else { return UITableViewCell() }
+            let controllers = controllers,
+            let reminders = reminders else { return UITableViewCell() }
         
         cell.themeController = controllers.themeController
         cell.reminderController = controllers.reminderController
-        cell.reminder = reminders?[indexPath.row]
+        cell.reminder = reminders[indexPath.row]
 
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let reminders = reminders else { return }
+        
+        let detailVC = ReminderDetailsViewController()
+        detailVC.controllers = controllers
+        detailVC.reminder = reminders[indexPath.row]
+        
+        navigationController?.pushViewController(detailVC, animated: true)
+    }
 
     /*
     // Override to support conditional editing of the table view.
@@ -132,7 +142,6 @@ class AlarmsTableViewController: UITableViewController, NSFetchedResultsControll
         tableView.separatorColor = color.bgCardColor
     }
 
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -140,6 +149,4 @@ class AlarmsTableViewController: UITableViewController, NSFetchedResultsControll
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
     }
-    */
-
 }
