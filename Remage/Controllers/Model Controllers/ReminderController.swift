@@ -7,25 +7,33 @@
 //
 
 import Foundation
+import UserNotifications
 
 class ReminderController {
     
-    var cdModelController = CoreDataModelController()
+    // MARK: - Properties
     
-    // Save a New Reminder in CD
-    // WITH a alarm
+    var cdModelController = CoreDataModelController()
+    var center = UNUserNotificationCenter.current()
+    var notificationCounter = 0
+    var permissionGranted: Bool?
+    
+    // MARK: - Methods
+    
+    // Save a New Reminder in CD WITH a alarm
     func saveNewReminderWith(alarmDate: Date, title: String? = nil, defaultImage: Data? = nil, note: String? = nil) {
         
         // Create new Reminder
-        //let reminder = Reminder(id: UUID().uuidString, context: CoreDataStack.shared.mainContext)
         let reminder = Reminder(context: CoreDataStack.shared.mainContext)
         
         // Add Properties available
         reminder.title = title
         reminder.note = note
         reminder.defaultImage = defaultImage
+        
         reminder.alarmDate = alarmDate
         reminder.alarmOn = true
+        reminder.alarmID = setNotification(title: title, note: note, date: alarmDate)
         
         // TODO: - Save the other images
         
@@ -33,15 +41,12 @@ class ReminderController {
         CoreDataStack.shared.save(context: CoreDataStack.shared.mainContext)
     }
     
-    // Save a New Reminder in CD
-    // WITHOUT a alarm
+    // Save a New Reminder in CD WITHOUT a alarm
     func saveNewReminder(title: String? = nil, defaultImage: Data? = nil, note: String? = nil) {
         
         // Create new Reminder
-        //let reminder = Reminder(id: UUID().uuidString, context: CoreDataStack.shared.mainContext)
         let reminder = Reminder(context: CoreDataStack.shared.mainContext)
         
-        // Add Properties available
         reminder.title = title
         reminder.note = note
         reminder.defaultImage = defaultImage
@@ -78,5 +83,76 @@ class ReminderController {
         
         // Save change in CoreData
         CoreDataStack.shared.save(context: CoreDataStack.shared.mainContext)
+    }
+    
+    // Request Permission to send Local Notifications
+    func requestPermission() {
+        center.requestAuthorization(options: [.alert, .sound, .badge]) { (granted, error) in
+            self.permissionGranted = granted
+            
+            if let error = error {
+                NSLog("Error requesting Permission for Notifications: \(error)")
+            }
+        }
+    }
+    
+    // Set up a Local Notification for a Reminder
+    private func setNotification(title: String?, note: String?, date: Date) -> String {
+        
+        // Content
+        let content = UNMutableNotificationContent()
+        content.title = title ?? "Reminder Alert!"
+        content.body = note ?? ""
+        content.sound = .default
+        
+        // Counter of how many notifications so far
+        notificationCounter += 1
+        let counter = NSNumber(integerLiteral: notificationCounter)
+        content.badge = counter
+        
+        // Trigger
+        let dateComponents = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute], from: date)
+        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
+        
+        // Notification Request
+        let alarmID = UUID().uuidString
+        let request = UNNotificationRequest(identifier: alarmID, content: content, trigger: trigger)
+        
+        // Adding the Notification to the Center
+        center.add(request) { (error) in
+            if let error = error {
+                NSLog("Error adding the Notification to the Notification Center: \(error)")
+            }
+        }
+        return alarmID
+    }
+    
+    // Set up a Local Notification for a Reminder
+    private func updateNotification(alarmID: String, title: String, note: String, date: Date) {
+        
+        // Content
+        let content = UNMutableNotificationContent()
+        content.title = title
+        content.body = note
+        content.sound = .default
+        
+        // Counter of how many notifications so far
+        notificationCounter += 1
+        let counter = NSNumber(integerLiteral: notificationCounter)
+        content.badge = counter
+        
+        // Trigger
+        let dateComponents = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute], from: date)
+        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
+        
+        // Notification Request with previous alarmID
+        let request = UNNotificationRequest(identifier: alarmID, content: content, trigger: trigger)
+        
+        // Adding the Notification to the Center
+        center.add(request) { (error) in
+            if let error = error {
+                NSLog("Error updating the Notification in the Notification Center: \(error)")
+            }
+        }
     }
 }

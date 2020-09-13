@@ -24,5 +24,6 @@ class ModelControllers {
     func setupControllers() {
         reminderController.cdModelController = cdController
         userController.cdController = reminderController.cdModelController
+        reminderController.requestPermission()
     }
 }
