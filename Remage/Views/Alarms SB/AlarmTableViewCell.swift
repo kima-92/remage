@@ -76,6 +76,9 @@ class AlarmTableViewCell: UITableViewCell {
             let image = UIImage(data: imageData) {
             pictureImageView.image = image
         }
+        
+        // Switch
+        alarmSwitch.setOn(reminder.alarmOn, animated: false)
     }
     
     // Background Colors Setup
