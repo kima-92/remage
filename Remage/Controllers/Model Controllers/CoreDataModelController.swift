@@ -90,4 +90,29 @@ class CoreDataModelController {
         }
         return user
     }
+    
+    // Try to Fetch, to turn Off Delivered Reminders
+    func turnOffDeliveredReminders(alarmIDs: [String]) -> Bool {
+        let moc = CoreDataStack.shared.mainContext
+        
+        // Create a fetch request for fetching reminders
+        let fetchRequest: NSFetchRequest<Reminder> = Reminder.fetchRequest()
+        
+        // Try to fetch
+        do {
+            let reminders = try moc.fetch(fetchRequest)
+            
+            for reminder in reminders {
+                // Checking if this reminder needs to be deleted
+                if let alarm = reminder.alarmID, alarmIDs.contains(alarm) {
+                    reminder.alarmOn = false
+                    CoreDataStack.shared.save(context: CoreDataStack.shared.mainContext)
+                }
+            }
+            return true
+        } catch {
+            NSLog("Couldn't perform fetch for reminders when trying to turn off Delivered Alarms")
+            return false
+        }
+    }
 }
