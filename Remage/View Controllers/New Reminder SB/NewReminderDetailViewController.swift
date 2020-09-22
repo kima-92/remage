@@ -91,10 +91,12 @@ class NewReminderDetailViewController: UIViewController {
     }
     
     @IBAction func addImagesButtonTapped(_ sender: UIButton) {
+        addImagesButton.pulsateOnce()
         showCameraOrLibraryActionSheet()
     }
     
     @IBAction func addNoteButtonTapped(_ sender: UIButton) {
+            addImagesButton.pulsateOnce()
     }
     
     @IBAction func saveButtonTapped(_ sender: UIBarButtonItem) {
@@ -428,8 +430,8 @@ class NewReminderDetailViewController: UIViewController {
     private func updateViews() {
         
         // Round corners
-        //imageView.layer.cornerRadius = 20
-        addImagesButton.layer.cornerRadius = 15
+        addImagesButton.layer.cornerRadius = addImagesButton.bounds.width / 2
+        addNoteButton.layer.cornerRadius = addNoteButton.bounds.width / 2
         backgroundCardView.layer.cornerRadius = 20
         
         // Shadow
@@ -437,6 +439,16 @@ class NewReminderDetailViewController: UIViewController {
         backgroundCardView.layer.shadowOpacity = 1
         backgroundCardView.layer.shadowOffset = .zero
         backgroundCardView.layer.shadowRadius = 10
+        
+        addImagesButton.layer.shadowColor = UIColor.black.cgColor
+        addImagesButton.layer.shadowOpacity = 0.5
+        addImagesButton.layer.shadowOffset = .zero
+        addImagesButton.layer.shadowRadius = 5
+
+        addNoteButton.layer.shadowColor = UIColor.black.cgColor
+        addNoteButton.layer.shadowOpacity = 0.5
+        addNoteButton.layer.shadowOffset = .zero
+        addNoteButton.layer.shadowRadius = 5
         
         // Create Pickers
         createDatePicker()
@@ -482,6 +494,9 @@ class NewReminderDetailViewController: UIViewController {
         // Set Buttons Images
         addImagesButton.setBackgroundImage(color.cameraImage, for: .normal)
         addNoteButton.setBackgroundImage(color.docImage, for: .normal)
+        
+        addImagesButton.backgroundColor = color.bgColor
+        addNoteButton.backgroundColor = color.bgColor
         
         // Image
         if imageFromCamera == nil && imageFromLibrary == nil {
