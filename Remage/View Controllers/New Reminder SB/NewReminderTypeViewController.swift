@@ -36,6 +36,11 @@ class NewReminderTypeViewController: UIViewController {
         setBGColors()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        controllers?.reminderController.turnOffAllDeliveredNotifications()
+    }
+    
     // MARK: - Actions
     @IBAction func cameraButtonPressed(_ sender: UIButton) {
     }

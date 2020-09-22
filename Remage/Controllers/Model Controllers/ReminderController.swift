@@ -158,4 +158,24 @@ class ReminderController {
             }
         }
     }
+    
+    // Turn Off all delivered Notifications
+    // and delete them from the NotificationCenter
+    func turnOffAllDeliveredNotifications() {
+        var requestIDs: [String] = []
+        
+        center.getDeliveredNotifications { (deliveredNotifications) in
+            requestIDs = deliveredNotifications.compactMap({ $0.request.identifier })
+        
+            if requestIDs.count > 0 {
+                
+                let fetchSuccessful = self.cdModelController.turnOffDeliveredReminders(alarmIDs: requestIDs)
+            
+                // Delete if the fetch was successful
+                if fetchSuccessful {
+                    self.center.removeAllDeliveredNotifications()
+                }
+            }
+        }
+    }
 }
