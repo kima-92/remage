@@ -116,13 +116,9 @@ class PhotoPreviewViewController: UIViewController {
     
     // Background Colors Setup
     private func setBGColors() {
-        // Get BGColor
         guard let controllers = controllers,
             let color = controllers.themeController.currentColor else { return }
-        
         setTabBarsBGColors(color: color)
-        navigationController?.navigationBar.tintColor = color.barTintColor                  // Bar Buttons
-        navigationController?.navigationBar.barTintColor = color.barBGTintColor             // Entire bar
     }
     
     // MARK: - Navigation

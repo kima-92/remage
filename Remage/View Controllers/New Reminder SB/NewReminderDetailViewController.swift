@@ -428,9 +428,15 @@ class NewReminderDetailViewController: UIViewController {
     private func updateViews() {
         
         // Round corners
-        imageView.layer.cornerRadius = 20
+        //imageView.layer.cornerRadius = 20
         addImagesButton.layer.cornerRadius = 15
         backgroundCardView.layer.cornerRadius = 20
+        
+        // Shadow
+        backgroundCardView.layer.shadowColor = UIColor.black.cgColor
+        backgroundCardView.layer.shadowOpacity = 1
+        backgroundCardView.layer.shadowOffset = .zero
+        backgroundCardView.layer.shadowRadius = 10
         
         // Create Pickers
         createDatePicker()
