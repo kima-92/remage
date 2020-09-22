@@ -206,7 +206,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="h3r-kA-61w">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="WMu-6f-AqC"/>
@@ -214,7 +214,7 @@
                         <constraints>
                             <constraint firstItem="h3r-kA-61w" firstAttribute="leading" secondItem="WMu-6f-AqC" secondAttribute="leading" id="VA1-nC-viH"/>
                             <constraint firstItem="WMu-6f-AqC" firstAttribute="trailing" secondItem="h3r-kA-61w" secondAttribute="trailing" id="kqD-tg-WRb"/>
-                            <constraint firstItem="WMu-6f-AqC" firstAttribute="bottom" secondItem="h3r-kA-61w" secondAttribute="bottom" id="luM-rU-5K1"/>
+                            <constraint firstAttribute="bottom" secondItem="h3r-kA-61w" secondAttribute="bottom" id="luM-rU-5K1"/>
                             <constraint firstItem="h3r-kA-61w" firstAttribute="top" secondItem="cLg-v4-3dW" secondAttribute="top" id="r1K-f1-dlu"/>
                         </constraints>
                     </view>
