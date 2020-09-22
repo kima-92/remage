@@ -440,15 +440,8 @@ class NewReminderDetailViewController: UIViewController {
         backgroundCardView.layer.shadowOffset = .zero
         backgroundCardView.layer.shadowRadius = 10
         
-        addImagesButton.layer.shadowColor = UIColor.black.cgColor
-        addImagesButton.layer.shadowOpacity = 0.5
-        addImagesButton.layer.shadowOffset = .zero
-        addImagesButton.layer.shadowRadius = 5
-
-        addNoteButton.layer.shadowColor = UIColor.black.cgColor
-        addNoteButton.layer.shadowOpacity = 0.5
-        addNoteButton.layer.shadowOffset = .zero
-        addNoteButton.layer.shadowRadius = 5
+        addImagesButton.addShadow(opacity: 0.5, radious: 5)
+        addNoteButton.addShadow(opacity: 0.5, radious: 5)
         
         // Create Pickers
         createDatePicker()

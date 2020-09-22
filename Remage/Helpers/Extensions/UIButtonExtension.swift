@@ -9,6 +9,8 @@
 import UIKit
 
 extension UIButton {
+
+    // Animations
     
     func pulsateOnce() {
         let pulse = CASpringAnimation(keyPath: "transform.scale")
@@ -43,5 +45,14 @@ extension UIButton {
         flash.autoreverses = true
         flash.repeatCount = 2
         layer.add(flash, forKey: nil)
+    }
+    
+    // Shadow
+    
+    func addShadow(opacity: Float, radious: CGFloat, color: UIColor = .black, shadowOffset: CGSize = .zero) {
+        layer.shadowColor = color.cgColor
+        layer.shadowOpacity = opacity
+        layer.shadowOffset = shadowOffset
+        layer.shadowRadius = radious
     }
 }
