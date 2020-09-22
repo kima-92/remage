@@ -435,11 +435,7 @@ class NewReminderDetailViewController: UIViewController {
         backgroundCardView.layer.cornerRadius = 20
         
         // Shadow
-        backgroundCardView.layer.shadowColor = UIColor.black.cgColor
-        backgroundCardView.layer.shadowOpacity = 1
-        backgroundCardView.layer.shadowOffset = .zero
-        backgroundCardView.layer.shadowRadius = 10
-        
+        backgroundCardView.addShadow(opacity: 1, radius: 10)
         addImagesButton.addShadow(opacity: 0.5, radious: 5)
         addNoteButton.addShadow(opacity: 0.5, radious: 5)
         
