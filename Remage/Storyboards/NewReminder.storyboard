@@ -269,14 +269,14 @@
             <objects>
                 <viewController id="ftG-iM-aUh" customClass="NewReminderDetailViewController" customModule="Remage" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eg6-VP-91t">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="976"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="846"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="emK-Sz-ufc">
-                                <rect key="frame" x="0.0" y="56" width="414" height="886"/>
+                                <rect key="frame" x="0.0" y="56" width="414" height="756"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pLg-Pb-e4u">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="814"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="756"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="emptyImage" translatesAutoresizingMaskIntoConstraints="NO" id="F0E-0Z-mSK">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="450"/>
@@ -415,7 +415,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2E0-XH-DIw">
-                                                <rect key="frame" x="0.0" y="774" width="414" height="20"/>
+                                                <rect key="frame" x="0.0" y="708.5" width="414" height="20"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="20" id="Pbk-FA-362"/>
@@ -424,12 +424,12 @@
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="2E0-XH-DIw" secondAttribute="bottom" constant="27.5" id="0Kh-kW-IJv"/>
                                             <constraint firstAttribute="trailing" secondItem="F0E-0Z-mSK" secondAttribute="trailing" id="8hF-3a-vlg"/>
-                                            <constraint firstAttribute="bottom" secondItem="2E0-XH-DIw" secondAttribute="bottom" constant="20" id="9sR-9X-vFt"/>
                                             <constraint firstItem="F0E-0Z-mSK" firstAttribute="leading" secondItem="pLg-Pb-e4u" secondAttribute="leading" id="G6Y-3X-wxD"/>
                                             <constraint firstItem="7pM-Yd-zE8" firstAttribute="top" secondItem="F0E-0Z-mSK" secondAttribute="bottom" constant="-150" id="GBQ-7U-hYD"/>
                                             <constraint firstItem="2E0-XH-DIw" firstAttribute="leading" secondItem="pLg-Pb-e4u" secondAttribute="leading" id="MGv-fn-pci"/>
-                                            <constraint firstItem="2E0-XH-DIw" firstAttribute="top" secondItem="7pM-Yd-zE8" secondAttribute="bottom" constant="85.5" id="TV8-YT-oE3"/>
+                                            <constraint firstItem="2E0-XH-DIw" firstAttribute="top" secondItem="7pM-Yd-zE8" secondAttribute="bottom" constant="20" id="TV8-YT-oE3"/>
                                             <constraint firstItem="F0E-0Z-mSK" firstAttribute="top" secondItem="pLg-Pb-e4u" secondAttribute="top" id="Ukd-Ne-lFQ"/>
                                             <constraint firstItem="7pM-Yd-zE8" firstAttribute="leading" secondItem="pLg-Pb-e4u" secondAttribute="leading" constant="15" id="YsK-bj-JS2"/>
                                             <constraint firstAttribute="trailing" secondItem="2E0-XH-DIw" secondAttribute="trailing" id="pxY-HA-dit"/>
@@ -463,7 +463,7 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <size key="freeformSize" width="414" height="1030"/>
+                    <size key="freeformSize" width="414" height="900"/>
                     <connections>
                         <outlet property="addImagesButton" destination="Te3-AU-nL5" id="L3K-MO-9Pj"/>
                         <outlet property="addNoteButton" destination="WMz-Ua-rWG" id="jga-hO-k3S"/>
