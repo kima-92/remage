@@ -24,6 +24,8 @@ extension UIViewController {
     // Background Colors Setup for the NavigationBar and the TabBar
     func setTabBarsBGColors(color: BGColor) {
         
+        navigationController?.setNavigationBarHidden(false, animated: false)
+        
         // Set the Background for this VC
         view.backgroundColor = color.bgColor
         
