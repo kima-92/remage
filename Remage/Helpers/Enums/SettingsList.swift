@@ -10,4 +10,5 @@ import Foundation
 
 enum SettingsList: String, CaseIterable {
     case backgroundTheme = "Background Theme"
+    //case account = "Account"
 }

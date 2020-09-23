@@ -20,6 +20,7 @@ class SettingsMenuTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         receiveDataFromTabBar()
+        navigationController?.navigationBar.topItem?.title = "Settings"
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -56,10 +57,23 @@ class SettingsMenuTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let controllers = controllers,
+            let color = controllers.themeController.currentColor else {
+            return UITableViewCell()
+        }
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "SettingsMenuCell", for: indexPath)
         cell.textLabel?.text = SettingsList.allCases[indexPath.row].rawValue
+        cell.backgroundColor = color.bgColor
+        cell.textLabel?.textColor = color.fontColor
 
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if SettingsList.allCases[indexPath.row] == .backgroundTheme {
+            performSegue(withIdentifier: "ShowBGColorSelectionVCSegue", sender: nil)
+        }
     }
     
     // MARK: - Navigation

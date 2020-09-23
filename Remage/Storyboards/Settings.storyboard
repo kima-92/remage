@@ -43,7 +43,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="RKx-GA-NVx"/>
                     <connections>
-                        <segue destination="2RE-OH-6gn" kind="show" identifier="ShowBGColorSelectionVCSegue" id="c3c-s8-aOr"/>
+                        <segue destination="2RE-OH-6gn" kind="show" identifier="ShowBGColorSelectionVCSegue" id="mgW-IM-ESc"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Nu-9f-T0z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
