@@ -39,6 +39,7 @@ class NewReminderDetailViewController: UIViewController {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var backgroundCardView: UIView!
     
+    @IBOutlet weak var alarmDatePicker: UIDatePicker!
     @IBOutlet weak var alarmLabel: UILabel!
     @IBOutlet weak var alarmSegmentedControl: UISegmentedControl!
     
@@ -67,6 +68,11 @@ class NewReminderDetailViewController: UIViewController {
     }
     
     // MARK: - Actions
+    @IBAction func alarmDatePickerChanged(_ sender: UIDatePicker) {
+        if alarmSegmentedControl.selectedSegmentIndex != 1 {
+            alarmSegmentedControl.selectedSegmentIndex = 1
+        }
+    }
     @IBAction func alarmSegmentedControlToggled(_ sender: UISegmentedControl) {
         guard let controllers = controllers  else { return }
         let permission = controllers.reminderController.permissionGranted
@@ -430,8 +436,8 @@ class NewReminderDetailViewController: UIViewController {
         addNoteButton.addShadow(opacity: 0.5, radious: 5)
         
         // Create Pickers
-        createDatePicker()
-        createTimePicker()
+//        createDatePicker()
+//        createTimePicker()
         
         // Set Delegates
         imagePicker.delegate = self

@@ -286,6 +286,9 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="iNO-01-3kc"/>
                                                 </constraints>
+                                                <connections>
+                                                    <action selector="alarmDatePickerChanged:" destination="ftG-iM-aUh" eventType="valueChanged" id="pdb-OV-BTP"/>
+                                                </connections>
                                             </datePicker>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="QgG-Rp-fPH">
                                                 <rect key="frame" x="0.0" y="70" width="344" height="31"/>
@@ -396,6 +399,7 @@
                         <outlet property="addNoteButton" destination="WMz-Ua-rWG" id="jga-hO-k3S"/>
                         <outlet property="addNoteLabel" destination="LWf-xc-ZlE" id="w4G-b5-JLd"/>
                         <outlet property="addPictureLabel" destination="K8E-G6-ew4" id="8DY-HE-8b5"/>
+                        <outlet property="alarmDatePicker" destination="sHz-oA-y14" id="4Qu-IG-WxF"/>
                         <outlet property="alarmLabel" destination="bwr-pj-XoC" id="ol5-FN-3oB"/>
                         <outlet property="alarmSegmentedControl" destination="lHC-Qk-jnp" id="IsV-cN-lfK"/>
                         <outlet property="backgroundCardView" destination="7pM-Yd-zE8" id="Dtf-UA-Mpi"/>
