@@ -1,39 +1,29 @@
 //
-//  SettingsMenuViewController.swift
+//  SettingsMenuTableViewController.swift
 //  Remage
 //
-//  Created by macbook on 7/27/20.
+//  Created by macbook on 9/23/20.
 //  Copyright © 2020 WilmaRodz. All rights reserved.
 //
 
 import UIKit
 
-class SettingsMenuViewController: UIViewController {
+class SettingsMenuTableViewController: UITableViewController {
     
     // MARK: - Properties
     
     var controllers: ModelControllers?
     var user: User?
     
-    // MARK: - Outlets
-    
-    @IBOutlet weak var scrollSubView: UIView!
-    @IBOutlet weak var scrollPushingView: UIView!
-    @IBOutlet weak var backgroundCardView: UIView!
-    
-    @IBOutlet weak var backgroundLabel: UILabel!
-    @IBOutlet weak var backgroundColorChoiceButton: UIButton!
-    
     // MARK: - DidLoad
+
     override func viewDidLoad() {
         super.viewDidLoad()
         receiveDataFromTabBar()
-        updateViews()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
         setBGColors()
     }
     
@@ -47,18 +37,6 @@ class SettingsMenuViewController: UIViewController {
         self.user = tabBar.user
     }
     
-    // Update Views
-    private func updateViews() {
-        
-        // Round Corners
-        backgroundCardView.layer.cornerRadius = 15
-        backgroundColorChoiceButton.layer.cornerRadius = 10
-        
-        // Setup Current Color Button
-        backgroundColorChoiceButton.layer.borderColor = UIColor.black.cgColor
-        backgroundColorChoiceButton.layer.borderWidth = 3
-    }
-    
     // Background Colors Setup
     private func setBGColors() {
         
@@ -68,14 +46,20 @@ class SettingsMenuViewController: UIViewController {
         
         // Background
         setTabBarsBGColors(color: color)
-        
-        scrollSubView.backgroundColor = color.bgColor
-        scrollPushingView.backgroundColor = color.bgColor
-        backgroundCardView.backgroundColor = color.bgCardColor
-        
-        // Background Color Settings
-        backgroundColorChoiceButton.backgroundColor = color.highlightColor
-        backgroundLabel.textColor = color.fontColor
+        view.backgroundColor = color.bgColor
+    }
+
+    // MARK: - Table view data source
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return SettingsList.allCases.count
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "SettingsMenuCell", for: indexPath)
+        cell.textLabel?.text = SettingsList.allCases[indexPath.row].rawValue
+
+        return cell
     }
     
     // MARK: - Navigation
