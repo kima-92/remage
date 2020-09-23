@@ -69,6 +69,7 @@ class NewReminderDetailViewController: UIViewController {
     
     // MARK: - Actions
     @IBAction func alarmDatePickerChanged(_ sender: UIDatePicker) {
+        date = sender.date
         if alarmSegmentedControl.selectedSegmentIndex != 1 {
             alarmSegmentedControl.selectedSegmentIndex = 1
         }
@@ -100,121 +101,121 @@ class NewReminderDetailViewController: UIViewController {
     
     // MARK: - Pickers
     
-    // Date Picker
-    private func createDatePicker() {
-        
-        // Create the top tool bar on keyboard
-        let toolbar = UIToolbar()
-        toolbar.sizeToFit()
-        
-        // Bar Buttons
-        let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(dateDoneBarButtonPressed))
-        let flexSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
-        let cancel = UIBarButtonItem(barButtonSystemItem: .cancel, target: nil, action: #selector(cancelBarButtonPressed))
-        
-        // Add buttons to the toolbar
-        toolbar.setItems([doneButton, flexSpace, cancel], animated: true)
-        
-        // Assign toolbar keyboard as the input for the TextField
-        //datePickerTextField.inputAccessoryView = toolbar
-        
-        // Assign the datePicker to the textField
-        //datePickerTextField.inputView = datePicker
-        
-        // Set date as datePicker's mode
-        datePicker.datePickerMode = .date
-    }
-    
-    // Time Picker
-    private func createTimePicker() {
-        
-        // Create the top tool bar on keyboard
-        let toolbar = UIToolbar()
-        toolbar.sizeToFit()
-        
-        // Bar Buttons
-        let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(timeDoneBarButtonPressed))
-        let flexSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
-        let cancel = UIBarButtonItem(barButtonSystemItem: .cancel, target: nil, action: #selector(cancelBarButtonPressed))
-        
-        // Add buttons to the toolbar
-        toolbar.setItems([doneButton, flexSpace, cancel], animated: true)
-        
-        // Assign toolbar keyboard as the input for the TextField
-        //timePickerTextField.inputAccessoryView = toolbar
-        
-        // Assign the timePicker to the textField
-        //timePickerTextField.inputView = timePicker
-        
-        // Set time as datePicker's mode
-        timePicker.datePickerMode = .time
-    }
-    
-    // Date Done Button
-    @objc private func dateDoneBarButtonPressed() {
-        
-        guard let controllers = controllers else { return }
-        
-        // DateFormatter
-        let formatter = DateFormatter()
-        // Date Style
-        formatter.dateStyle = .medium
-        // Don't need to display time
-        formatter.timeStyle = .none
-        
-        // Get date as string from Picker using the formatter
-        let dateString = formatter.string(from: datePicker.date)
-        
-        // Add formatted date to textField
-//        datePickerTextField.text = dateString
-        
-        // End editing
-        self.view.endEditing(true)
-        
-        // Try to set the Segmented control by checking if we have permission
-        if let permission = controllers.reminderController.permissionGranted,
-            permission {
-            alarmSegmentedControl.selectedSegmentIndex = 1
-        } else {
-            self.showDontHavePermission()
-        }
-    }
-    
-    // Time Done Button
-    @objc private func timeDoneBarButtonPressed() {
-        
-        guard let controllers = controllers else { return }
-        
-        // DateFormatter
-        let formatter = DateFormatter()
-        // Don't need to display date
-        formatter.dateStyle = .none
-        // Time Style
-        formatter.timeStyle = .short
-        
-        // Get time as string from Picker using the formatter
-        let timeString = formatter.string(from: timePicker.date)
-        
-        // Add formatted time to textField
-//        timePickerTextField.text = timeString
-        
-        // End editing
-        self.view.endEditing(true)
-        
-        // Try to set the Segmented control by checking if we have permission
-        if let permission = controllers.reminderController.permissionGranted,
-            permission {
-            alarmSegmentedControl.selectedSegmentIndex = 1
-        } else {
-            self.showDontHavePermission()
-        }
-    }
-    
-    // CancelBarButton for TimePicker and DatePicker
-    @objc private func cancelBarButtonPressed() {
-        // End editing
-        self.view.endEditing(true)
-    }
+//    // Date Picker
+//    private func createDatePicker() {
+//
+//        // Create the top tool bar on keyboard
+//        let toolbar = UIToolbar()
+//        toolbar.sizeToFit()
+//
+//        // Bar Buttons
+//        let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(dateDoneBarButtonPressed))
+//        let flexSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+//        let cancel = UIBarButtonItem(barButtonSystemItem: .cancel, target: nil, action: #selector(cancelBarButtonPressed))
+//
+//        // Add buttons to the toolbar
+//        toolbar.setItems([doneButton, flexSpace, cancel], animated: true)
+//
+//        // Assign toolbar keyboard as the input for the TextField
+//        //datePickerTextField.inputAccessoryView = toolbar
+//
+//        // Assign the datePicker to the textField
+//        //datePickerTextField.inputView = datePicker
+//
+//        // Set date as datePicker's mode
+//        datePicker.datePickerMode = .date
+//    }
+//
+//    // Time Picker
+//    private func createTimePicker() {
+//
+//        // Create the top tool bar on keyboard
+//        let toolbar = UIToolbar()
+//        toolbar.sizeToFit()
+//
+//        // Bar Buttons
+//        let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(timeDoneBarButtonPressed))
+//        let flexSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+//        let cancel = UIBarButtonItem(barButtonSystemItem: .cancel, target: nil, action: #selector(cancelBarButtonPressed))
+//
+//        // Add buttons to the toolbar
+//        toolbar.setItems([doneButton, flexSpace, cancel], animated: true)
+//
+//        // Assign toolbar keyboard as the input for the TextField
+//        //timePickerTextField.inputAccessoryView = toolbar
+//
+//        // Assign the timePicker to the textField
+//        //timePickerTextField.inputView = timePicker
+//
+//        // Set time as datePicker's mode
+//        timePicker.datePickerMode = .time
+//    }
+//
+//    // Date Done Button
+//    @objc private func dateDoneBarButtonPressed() {
+//
+//        guard let controllers = controllers else { return }
+//
+//        // DateFormatter
+//        let formatter = DateFormatter()
+//        // Date Style
+//        formatter.dateStyle = .medium
+//        // Don't need to display time
+//        formatter.timeStyle = .none
+//
+//        // Get date as string from Picker using the formatter
+//        let dateString = formatter.string(from: datePicker.date)
+//
+//        // Add formatted date to textField
+////        datePickerTextField.text = dateString
+//
+//        // End editing
+//        self.view.endEditing(true)
+//
+//        // Try to set the Segmented control by checking if we have permission
+//        if let permission = controllers.reminderController.permissionGranted,
+//            permission {
+//            alarmSegmentedControl.selectedSegmentIndex = 1
+//        } else {
+//            self.showDontHavePermission()
+//        }
+//    }
+//
+//    // Time Done Button
+//    @objc private func timeDoneBarButtonPressed() {
+//
+//        guard let controllers = controllers else { return }
+//
+//        // DateFormatter
+//        let formatter = DateFormatter()
+//        // Don't need to display date
+//        formatter.dateStyle = .none
+//        // Time Style
+//        formatter.timeStyle = .short
+//
+//        // Get time as string from Picker using the formatter
+//        let timeString = formatter.string(from: timePicker.date)
+//
+//        // Add formatted time to textField
+////        timePickerTextField.text = timeString
+//
+//        // End editing
+//        self.view.endEditing(true)
+//
+//        // Try to set the Segmented control by checking if we have permission
+//        if let permission = controllers.reminderController.permissionGranted,
+//            permission {
+//            alarmSegmentedControl.selectedSegmentIndex = 1
+//        } else {
+//            self.showDontHavePermission()
+//        }
+//    }
+//
+//    // CancelBarButton for TimePicker and DatePicker
+//    @objc private func cancelBarButtonPressed() {
+//        // End editing
+//        self.view.endEditing(true)
+//    }
     
     // MARK: - Methods
     
@@ -243,43 +244,43 @@ class NewReminderDetailViewController: UIViewController {
         }
     }
     
-    // Set alarm
-    private func setAlarm() -> Date? {
-        
-        // 1.   Create formatter
-        let formatter = DateFormatter()
-        formatter.dateFormat = "MMMM dd, yyyy h:mm a"
-        
-        // 2.   Grab the date
-        
-        // DateFormatter
-        let dateFormatter = DateFormatter()
-        // Date Style
-        dateFormatter.dateStyle = .medium
-        // Don't want time in this formatter
-        dateFormatter.timeStyle = .none
-        // Get date as string from Picker using the formatter
-        let dateString = dateFormatter.string(from: datePicker.date)
-        
-        // 3.   Grab the Time
-        
-        // TimeFormatter
-        let timeFormatter = DateFormatter()
-        // Don't need date in this formatter
-        timeFormatter.dateStyle = .none
-        // Time Style
-        timeFormatter.timeStyle = .short
-        // Get time as string from Picker using the formatter
-        let timeString = timeFormatter.string(from: timePicker.date)
-        
-        // 4.   Make a Date for this reminder's alarmDate
-        
-        let string = dateString + " " + timeString
-        let date = formatter.date(from: string)
-        
-        guard let finalDate = date else { return nil }
-        return finalDate
-    }
+//    // Set alarm
+//    private func setAlarm() -> Date? {
+//
+//        // 1.   Create formatter
+//        let formatter = DateFormatter()
+//        formatter.dateFormat = "MMMM dd, yyyy h:mm a"
+//
+//        // 2.   Grab the date
+//
+//        // DateFormatter
+//        let dateFormatter = DateFormatter()
+//        // Date Style
+//        dateFormatter.dateStyle = .medium
+//        // Don't want time in this formatter
+//        dateFormatter.timeStyle = .none
+//        // Get date as string from Picker using the formatter
+//        let dateString = dateFormatter.string(from: datePicker.date)
+//
+//        // 3.   Grab the Time
+//
+//        // TimeFormatter
+//        let timeFormatter = DateFormatter()
+//        // Don't need date in this formatter
+//        timeFormatter.dateStyle = .none
+//        // Time Style
+//        timeFormatter.timeStyle = .short
+//        // Get time as string from Picker using the formatter
+//        let timeString = timeFormatter.string(from: timePicker.date)
+//
+//        // 4.   Make a Date for this reminder's alarmDate
+//
+//        let string = dateString + " " + timeString
+//        let date = formatter.date(from: string)
+//
+//        guard let finalDate = date else { return nil }
+//        return finalDate
+//    }
     
     // Pick from Camera or PhotoLibrary Alert
     private func showCameraOrLibraryActionSheet() {
@@ -315,7 +316,7 @@ class NewReminderDetailViewController: UIViewController {
         // Set to Pick from PhotoLibrary
         imagePicker.sourceType = .photoLibrary
         
-        imagePicker.allowsEditing = true
+        imagePicker.allowsEditing = false
         present(imagePicker, animated: true, completion: nil)
     }
     
@@ -323,7 +324,6 @@ class NewReminderDetailViewController: UIViewController {
     private func saveNewReminder() {
         
         guard let controllers = controllers else  {
-//            let title = titleTextField.text else {
             showCantSaveReminder()
             return
         }
@@ -338,12 +338,11 @@ class NewReminderDetailViewController: UIViewController {
         
         // Try to save the reminder
         if image != nil || noteRecieved != nil {
-//            if !title.isEmpty || image != nil || noteRecieved != nil {
             
             // Set Alarm if AlarmSegment is On
             if alarmSegmentedControl.selectedSegmentIndex == 1 {
                 
-                self.date = setAlarm()
+                //self.date = datePicker.calendar.date
                 guard let date = date else { return }
                 
                 controllers.reminderController.saveNewReminderWith(alarmDate: date, title: "", defaultImage: image?.pngData(), note: noteRecieved)
@@ -436,6 +435,7 @@ class NewReminderDetailViewController: UIViewController {
         addNoteButton.addShadow(opacity: 0.5, radious: 5)
         
         // Create Pickers
+        alarmDatePicker.minimumDate = alarmDatePicker.date
 //        createDatePicker()
 //        createTimePicker()
         
