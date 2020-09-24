@@ -21,19 +21,18 @@ class ReminderController {
     // MARK: - Methods
     
     // Save a New Reminder in CD WITH a alarm
-    func saveNewReminderWith(alarmDate: Date, title: String? = nil, defaultImage: Data? = nil, note: String? = nil) {
+    func saveNewReminderWith(alarmDate: Date, defaultImage: Data? = nil, note: String? = nil) {
         
         // Create new Reminder
         let reminder = Reminder(context: CoreDataStack.shared.mainContext)
         
         // Add Properties available
-        reminder.title = title
         reminder.note = note
         reminder.defaultImage = defaultImage
         
         reminder.alarmDate = alarmDate
         reminder.alarmOn = true
-        reminder.alarmID = setNotification(title: title, note: note, date: alarmDate)
+        reminder.alarmID = setNotification(note: note, date: alarmDate)
         
         // TODO: - Save the other images
         
@@ -42,12 +41,11 @@ class ReminderController {
     }
     
     // Save a New Reminder in CD WITHOUT a alarm
-    func saveNewReminder(title: String? = nil, defaultImage: Data? = nil, note: String? = nil) {
+    func saveNewReminder(defaultImage: Data? = nil, note: String? = nil) {
         
         // Create new Reminder
         let reminder = Reminder(context: CoreDataStack.shared.mainContext)
         
-        reminder.title = title
         reminder.note = note
         reminder.defaultImage = defaultImage
         
@@ -100,11 +98,10 @@ class ReminderController {
     }
     
     // Set up a Local Notification for a Reminder
-    private func setNotification(title: String?, note: String?, date: Date) -> String {
+    private func setNotification(note: String?, date: Date) -> String {
         
         // Content
         let content = UNMutableNotificationContent()
-        content.title = title ?? "Reminder Alert!"
         content.body = note ?? ""
         content.sound = .default
         

@@ -194,11 +194,11 @@ class NewReminderDetailViewController: UIViewController {
                 //self.date = datePicker.calendar.date
                 guard let date = date else { return }
                 
-                controllers.reminderController.saveNewReminderWith(alarmDate: date, title: "", defaultImage: image?.pngData(), note: noteRecieved)
+                controllers.reminderController.saveNewReminderWith(alarmDate: date, defaultImage: image?.pngData(), note: noteRecieved)
                 
             // Else save Reminder without an Alarm
             } else {
-                controllers.reminderController.saveNewReminder(title: "", defaultImage: image?.pngData(), note: noteRecieved)
+                controllers.reminderController.saveNewReminder(defaultImage: image?.pngData(), note: noteRecieved)
             }
             
             // Alert user the reminder is saved, and pop back to root VC
@@ -373,13 +373,11 @@ extension NewReminderDetailViewController: UIImagePickerControllerDelegate, UINa
             imageFromLibrary = image
             imageView.image = image
         }
-        // Dismiss
         picker.dismiss(animated: true, completion: nil)
     }
 
     // If user decides to cancel
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        // Dismiss
         picker.dismiss(animated: true, completion: nil)
     }
 }

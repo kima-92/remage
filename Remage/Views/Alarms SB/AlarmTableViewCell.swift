@@ -70,12 +70,8 @@ class AlarmTableViewCell: UITableViewCell {
         // Set BGColor
         setBGColors()
         
-        // Title Label
-        if let alarmTitle = reminder.title {
-            titleLabel.text = alarmTitle
-        } else if let alarmNote = reminder.note {
-            titleLabel.text = alarmNote
-        }
+        // Description Label
+        titleLabel.text = reminder.note != nil ? reminder.note : ""
         
         // Alarm Label
         

@@ -19,7 +19,6 @@ class ReminderDetailsViewController: UIViewController {
     var scrollView = UIScrollView()
     var scrollContentView = UIView()
     
-    var titleLabel = UILabel()
     var noteLabel = UILabel()
     var alarmLabel = UILabel()
     var photoImageView = UIImageView()
@@ -41,7 +40,6 @@ class ReminderDetailsViewController: UIViewController {
         addSubViews()
         
         setScrollView()
-        setTitleLabel()
         setNoteLabel()
         setAlarmLabel()
         setPhotoImageView()
@@ -59,14 +57,12 @@ class ReminderDetailsViewController: UIViewController {
         // Views
         noteLabel.backgroundColor = color.textLabelColor
         noteLabel.textColor = color.fontColor
-        titleLabel.textColor = color.fontColor
     }
     
     private func addSubViews() {
         view.addSubview(scrollView)
         scrollView.addSubview(scrollContentView)
         
-        scrollContentView.addSubview(titleLabel)
         scrollContentView.addSubview(noteLabel)
         scrollContentView.addSubview(alarmLabel)
         scrollContentView.addSubview(photoImageView)
@@ -107,42 +103,42 @@ class ReminderDetailsViewController: UIViewController {
             heightConstraint.isActive = true
     }
     
-    // Title Label
-    private func setTitleLabel() {
-        guard let reminder = reminder else { return }
-        
-        // 1.   Text Attributes
-        
-        var titleString = ""
-        
-        // From Reminder
-        if let title = reminder.title,
-            !title.isEmpty {
-            
-            titleString = title
-            
-        // Else, display Empty Title message
-        } else {
-            titleString = "Update Title"
-        }
-        
-        // Attributes
-        let titleAttributes = [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 18)]
-        let attributedText = NSMutableAttributedString(string: titleString, attributes: titleAttributes)
-        
-        // 2.   Setup
-        
-        titleLabel.attributedText = attributedText
-        titleLabel.textAlignment = .center
-        
-        // 3.   Constraint
-        
-        titleLabel.translatesAutoresizingMaskIntoConstraints = false
-        
-        titleLabel.topAnchor.constraint(equalTo: scrollContentView.safeAreaLayoutGuide.topAnchor, constant: 20).isActive = true
-        titleLabel.leadingAnchor.constraint(equalTo: scrollContentView.leadingAnchor, constant: 20).isActive = true
-        titleLabel.trailingAnchor.constraint(equalTo: scrollContentView.trailingAnchor, constant: -20).isActive = true
-    }
+//    // Title Label
+//    private func setTitleLabel() {
+//        guard let reminder = reminder else { return }
+//
+//        // 1.   Text Attributes
+//
+//        var titleString = ""
+//
+//        // From Reminder
+//        if let title = reminder.title,
+//            !title.isEmpty {
+//
+//            titleString = title
+//
+//        // Else, display Empty Title message
+//        } else {
+//            titleString = "Update Title"
+//        }
+//
+//        // Attributes
+//        let titleAttributes = [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 18)]
+//        let attributedText = NSMutableAttributedString(string: titleString, attributes: titleAttributes)
+//
+//        // 2.   Setup
+//
+//        titleLabel.attributedText = attributedText
+//        titleLabel.textAlignment = .center
+//
+//        // 3.   Constraint
+//
+//        titleLabel.translatesAutoresizingMaskIntoConstraints = false
+//
+//        titleLabel.topAnchor.constraint(equalTo: scrollContentView.safeAreaLayoutGuide.topAnchor, constant: 20).isActive = true
+//        titleLabel.leadingAnchor.constraint(equalTo: scrollContentView.leadingAnchor, constant: 20).isActive = true
+//        titleLabel.trailingAnchor.constraint(equalTo: scrollContentView.trailingAnchor, constant: -20).isActive = true
+//    }
     
     private func setNoteLabel() {
         guard let reminder = reminder else { return }
@@ -181,7 +177,7 @@ class ReminderDetailsViewController: UIViewController {
         noteLabel.translatesAutoresizingMaskIntoConstraints = false
         
         // Top
-        noteLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 20).isActive = true
+        noteLabel.topAnchor.constraint(equalTo: scrollContentView.safeAreaLayoutGuide.bottomAnchor, constant: 20).isActive = true
         // Leading & Trailing
         noteLabel.leadingAnchor.constraint(equalTo: scrollContentView.leadingAnchor, constant: 20).isActive = true
         noteLabel.trailingAnchor.constraint(equalTo: scrollContentView.trailingAnchor, constant: -20).isActive = true
