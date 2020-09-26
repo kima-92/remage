@@ -103,43 +103,6 @@ class ReminderDetailsViewController: UIViewController {
             heightConstraint.isActive = true
     }
     
-//    // Title Label
-//    private func setTitleLabel() {
-//        guard let reminder = reminder else { return }
-//
-//        // 1.   Text Attributes
-//
-//        var titleString = ""
-//
-//        // From Reminder
-//        if let title = reminder.title,
-//            !title.isEmpty {
-//
-//            titleString = title
-//
-//        // Else, display Empty Title message
-//        } else {
-//            titleString = "Update Title"
-//        }
-//
-//        // Attributes
-//        let titleAttributes = [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 18)]
-//        let attributedText = NSMutableAttributedString(string: titleString, attributes: titleAttributes)
-//
-//        // 2.   Setup
-//
-//        titleLabel.attributedText = attributedText
-//        titleLabel.textAlignment = .center
-//
-//        // 3.   Constraint
-//
-//        titleLabel.translatesAutoresizingMaskIntoConstraints = false
-//
-//        titleLabel.topAnchor.constraint(equalTo: scrollContentView.safeAreaLayoutGuide.topAnchor, constant: 20).isActive = true
-//        titleLabel.leadingAnchor.constraint(equalTo: scrollContentView.leadingAnchor, constant: 20).isActive = true
-//        titleLabel.trailingAnchor.constraint(equalTo: scrollContentView.trailingAnchor, constant: -20).isActive = true
-//    }
-    
     private func setNoteLabel() {
         guard let reminder = reminder else { return }
 
