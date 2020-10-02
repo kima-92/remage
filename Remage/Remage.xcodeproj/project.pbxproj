@@ -48,7 +48,6 @@
 		FA90E84724CF2F7F007148EF /* NRNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA90E84624CF2F7F007148EF /* NRNoteViewController.swift */; };
 		FA90E84924CF46F0007148EF /* ReminderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA90E84824CF46F0007148EF /* ReminderController.swift */; };
 		FAAF1CB424D0AE9000D413B4 /* BGColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAF1CB324D0AE9000D413B4 /* BGColor.swift */; };
-		FAD929F324D0B3E10060916B /* TestingColorsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD929F224D0B3E10060916B /* TestingColorsViewController.swift */; };
 		FAD929F524D0B9400060916B /* ThemeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD929F424D0B9400060916B /* ThemeController.swift */; };
 		FAD929F724D0DCF20060916B /* ColorList.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD929F624D0DCF20060916B /* ColorList.swift */; };
 		FADA155E24C94CF40006CA62 /* ViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADA155D24C94CF40006CA62 /* ViewControllerExtension.swift */; };
@@ -101,7 +100,6 @@
 		FA90E84624CF2F7F007148EF /* NRNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NRNoteViewController.swift; sourceTree = "<group>"; };
 		FA90E84824CF46F0007148EF /* ReminderController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderController.swift; sourceTree = "<group>"; };
 		FAAF1CB324D0AE9000D413B4 /* BGColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BGColor.swift; sourceTree = "<group>"; };
-		FAD929F224D0B3E10060916B /* TestingColorsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingColorsViewController.swift; sourceTree = "<group>"; };
 		FAD929F424D0B9400060916B /* ThemeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeController.swift; sourceTree = "<group>"; };
 		FAD929F624D0DCF20060916B /* ColorList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorList.swift; sourceTree = "<group>"; };
 		FADA155D24C94CF40006CA62 /* ViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerExtension.swift; sourceTree = "<group>"; };
@@ -125,7 +123,6 @@
 			isa = PBXGroup;
 			children = (
 				FA06590C24D24A9100527EB7 /* MainTabBarController.swift */,
-				FAD929F224D0B3E10060916B /* TestingColorsViewController.swift */,
 			);
 			path = "Main SB";
 			sourceTree = "<group>";
@@ -425,7 +422,6 @@
 				FA5C57BF251B82D400B90AD7 /* SettingsList.swift in Sources */,
 				FA06590A24D2487400527EB7 /* UserRepresentation.swift in Sources */,
 				FA1C87E324AE3BA700E3A1BA /* CameraPreviewView.swift in Sources */,
-				FAD929F324D0B3E10060916B /* TestingColorsViewController.swift in Sources */,
 				FA3A9CDB251AA23500D6C537 /* UIViewExtension.swift in Sources */,
 				FA1C87E024AE3B0900E3A1BA /* CameraController.swift in Sources */,
 				FAD929F524D0B9400060916B /* ThemeController.swift in Sources */,
