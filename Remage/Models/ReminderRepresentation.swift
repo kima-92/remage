@@ -11,7 +11,6 @@ import Foundation
 struct ReminderRepresentation: Codable {
     
     var id: String = UUID().uuidString
-    var title: String?
     var note: String?
     var priority: String?
     
@@ -36,5 +35,5 @@ struct ReminderRepresentation: Codable {
         self.alarmID = alarmID
     }
     
-    // TODO: - Might need an init fro decoder
+    // TODO: - Might need an init from decoder
 }

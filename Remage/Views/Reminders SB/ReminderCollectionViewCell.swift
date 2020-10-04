@@ -31,12 +31,8 @@ class ReminderCollectionViewCell: UICollectionViewCell {
         
         guard let reminder = reminder else { return }
         
-        // Display the title or the description of the Reminder
-        if reminder.title != "" {
-            titleLabel.text = reminder.title
-        } else {
-            titleLabel.text = reminder.note
-        }
+        // Try to display the Note
+        titleLabel.text = reminder.note != nil ? reminder.note : ""
         
         // Display Reminder's Picture
         if let image = reminder.defaultImage {

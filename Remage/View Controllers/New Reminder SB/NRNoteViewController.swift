@@ -20,7 +20,6 @@ class NRNoteViewController: UIViewController {
     // MARK: - Outlets
     
     @IBOutlet weak var scrollSubView: UIView!
-    @IBOutlet weak var scrollPushingView: UIView!
     
     @IBOutlet weak var addNoteLabel: UILabel!
     @IBOutlet weak var backgroundCardView: UIView!
@@ -52,7 +51,6 @@ class NRNoteViewController: UIViewController {
     
     private func tryLoadNote() {
         guard let note = note else { return }
-        
         noteTextView.text = note
     }
     
@@ -84,11 +82,6 @@ class NRNoteViewController: UIViewController {
     // MARK: - UpdateViews
     
     private func updateViews() {
-        
-        // Round corners
-        backgroundCardView.layer.cornerRadius = 15
-        noteTextView.layer.cornerRadius = 15
-        
         // TextView should start empty
         noteTextView.text = ""
     }
@@ -104,13 +97,11 @@ class NRNoteViewController: UIViewController {
         setTabBarsBGColors(color: color)
         
         scrollSubView.backgroundColor = color.bgColor
-        scrollPushingView.backgroundColor = color.bgColor
-        backgroundCardView.backgroundColor = color.bgCardColor
+        backgroundCardView.backgroundColor = color.textLabelColor
         
         // TextView
-        noteTextView.backgroundColor = color.textLabelColor
+        noteTextView.backgroundColor = .clear
         noteTextView.textColor = color.fontColor
-        //noteTextView.textInputView.tintColor = color.fontColor
         
         // Label
         addNoteLabel.textColor = color.fontColor

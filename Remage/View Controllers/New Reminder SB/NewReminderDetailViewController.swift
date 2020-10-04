@@ -25,9 +25,6 @@ class NewReminderDetailViewController: UIViewController {
     var didShowNewNoteAlert = false
     var didStartNewReminder = true
     
-    let datePicker = UIDatePicker()
-    let timePicker = UIDatePicker()
-    
     var imagePicker = UIImagePickerController()
     
     var reminder: Reminder?
@@ -35,16 +32,11 @@ class NewReminderDetailViewController: UIViewController {
     
     
     // MARK: - Outlets
-    @IBOutlet weak var scrollSubView: UIView!
     
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var backgroundCardView: UIView!
     
-    @IBOutlet weak var titleTextField: UITextField!
-    
-    @IBOutlet weak var setDateLabel: UILabel!
-    @IBOutlet weak var setTimeLabel: UILabel!
-    
+    @IBOutlet weak var alarmDatePicker: UIDatePicker!
     @IBOutlet weak var alarmLabel: UILabel!
     @IBOutlet weak var alarmSegmentedControl: UISegmentedControl!
     
@@ -52,11 +44,6 @@ class NewReminderDetailViewController: UIViewController {
     @IBOutlet weak var addPictureLabel: UILabel!
     @IBOutlet weak var addNoteButton: UIButton!
     @IBOutlet weak var addNoteLabel: UILabel!
-    
-    @IBOutlet weak var datePickerTextField: UITextField!
-    @IBOutlet weak var timePickerTextField: UITextField!
-    
-    @IBOutlet weak var scrollPushingView: UIView!
     
     // MARK: - DidLoad
     override func viewDidLoad() {
@@ -78,145 +65,25 @@ class NewReminderDetailViewController: UIViewController {
     }
     
     // MARK: - Actions
+    @IBAction func alarmDatePickerChanged(_ sender: UIDatePicker) {
+        date = sender.date
+        tryToggleAlarmOn()
+    }
     @IBAction func alarmSegmentedControlToggled(_ sender: UISegmentedControl) {
-        guard let controllers = controllers  else { return }
-        let permission = controllers.reminderController.permissionGranted
-        
-        // If we don't have permission, don't allow the User to turn on the Alarm SegmentedControl
-        if let permission = permission,
-            !permission {
-            showDontHavePermission()
-            alarmSegmentedControl.selectedSegmentIndex = 0
-        }
+        tryToggleAlarmOn()
     }
     
     @IBAction func addImagesButtonTapped(_ sender: UIButton) {
+        addImagesButton.pulsateOnce()
         showCameraOrLibraryActionSheet()
     }
     
     @IBAction func addNoteButtonTapped(_ sender: UIButton) {
+            addImagesButton.pulsateOnce()
     }
     
     @IBAction func saveButtonTapped(_ sender: UIBarButtonItem) {
         saveNewReminder()
-    }
-    
-    // MARK: - Pickers
-    
-    // Date Picker
-    private func createDatePicker() {
-        
-        // Create the top tool bar on keyboard
-        let toolbar = UIToolbar()
-        toolbar.sizeToFit()
-        
-        // Bar Buttons
-        let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(dateDoneBarButtonPressed))
-        let flexSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
-        let cancel = UIBarButtonItem(barButtonSystemItem: .cancel, target: nil, action: #selector(cancelBarButtonPressed))
-        
-        // Add buttons to the toolbar
-        toolbar.setItems([doneButton, flexSpace, cancel], animated: true)
-        
-        // Assign toolbar keyboard as the input for the TextField
-        datePickerTextField.inputAccessoryView = toolbar
-        
-        // Assign the datePicker to the textField
-        datePickerTextField.inputView = datePicker
-        
-        // Set date as datePicker's mode
-        datePicker.datePickerMode = .date
-    }
-    
-    // Time Picker
-    private func createTimePicker() {
-        
-        // Create the top tool bar on keyboard
-        let toolbar = UIToolbar()
-        toolbar.sizeToFit()
-        
-        // Bar Buttons
-        let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(timeDoneBarButtonPressed))
-        let flexSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
-        let cancel = UIBarButtonItem(barButtonSystemItem: .cancel, target: nil, action: #selector(cancelBarButtonPressed))
-        
-        // Add buttons to the toolbar
-        toolbar.setItems([doneButton, flexSpace, cancel], animated: true)
-        
-        // Assign toolbar keyboard as the input for the TextField
-        timePickerTextField.inputAccessoryView = toolbar
-        
-        // Assign the timePicker to the textField
-        timePickerTextField.inputView = timePicker
-        
-        // Set time as datePicker's mode
-        timePicker.datePickerMode = .time
-    }
-    
-    // Date Done Button
-    @objc private func dateDoneBarButtonPressed() {
-        
-        guard let controllers = controllers else { return }
-        
-        // DateFormatter
-        let formatter = DateFormatter()
-        // Date Style
-        formatter.dateStyle = .medium
-        // Don't need to display time
-        formatter.timeStyle = .none
-        
-        // Get date as string from Picker using the formatter
-        let dateString = formatter.string(from: datePicker.date)
-        
-        // Add formatted date to textField
-        datePickerTextField.text = dateString
-        
-        // End editing
-        self.view.endEditing(true)
-        
-        // Try to set the Segmented control by checking if we have permission
-        if let permission = controllers.reminderController.permissionGranted,
-            permission {
-            alarmSegmentedControl.selectedSegmentIndex = 1
-        } else {
-            self.showDontHavePermission()
-        }
-    }
-    
-    // Time Done Button
-    @objc private func timeDoneBarButtonPressed() {
-        
-        guard let controllers = controllers else { return }
-        
-        // DateFormatter
-        let formatter = DateFormatter()
-        // Don't need to display date
-        formatter.dateStyle = .none
-        // Time Style
-        formatter.timeStyle = .short
-        
-        // Get time as string from Picker using the formatter
-        let timeString = formatter.string(from: timePicker.date)
-        
-        // Add formatted time to textField
-        timePickerTextField.text = timeString
-        
-        // End editing
-        self.view.endEditing(true)
-        
-        // Try to set the Segmented control by checking if we have permission
-        if let permission = controllers.reminderController.permissionGranted,
-            permission {
-            alarmSegmentedControl.selectedSegmentIndex = 1
-        } else {
-            self.showDontHavePermission()
-        }
-    }
-    
-    // CancelBarButton for TimePicker and DatePicker
-    @objc private func cancelBarButtonPressed() {
-        // End editing
-        self.view.endEditing(true)
     }
     
     // MARK: - Methods
@@ -246,42 +113,22 @@ class NewReminderDetailViewController: UIViewController {
         }
     }
     
-    // Set alarm
-    private func setAlarm() -> Date? {
-        
-        // 1.   Create formatter
-        let formatter = DateFormatter()
-        formatter.dateFormat = "MMMM dd, yyyy h:mm a"
-        
-        // 2.   Grab the date
-        
-        // DateFormatter
-        let dateFormatter = DateFormatter()
-        // Date Style
-        dateFormatter.dateStyle = .medium
-        // Don't want time in this formatter
-        dateFormatter.timeStyle = .none
-        // Get date as string from Picker using the formatter
-        let dateString = dateFormatter.string(from: datePicker.date)
-        
-        // 3.   Grab the Time
-        
-        // TimeFormatter
-        let timeFormatter = DateFormatter()
-        // Don't need date in this formatter
-        timeFormatter.dateStyle = .none
-        // Time Style
-        timeFormatter.timeStyle = .short
-        // Get time as string from Picker using the formatter
-        let timeString = timeFormatter.string(from: timePicker.date)
-        
-        // 4.   Make a Date for this reminder's alarmDate
-        
-        let string = dateString + " " + timeString
-        let date = formatter.date(from: string)
-        
-        guard let finalDate = date else { return nil }
-        return finalDate
+    // Try to toggle AlarmSegmentedControl
+    private func tryToggleAlarmOn() {
+        guard let controllers = controllers  else { return }
+    
+        // If not ON already
+        if alarmSegmentedControl.selectedSegmentIndex != 1 {
+            
+            // Check if we have permission
+            if let permission = controllers.reminderController.permissionGranted,
+               permission {
+                alarmSegmentedControl.selectedSegmentIndex = 1
+            } else {
+                showDontHavePermission()
+                alarmSegmentedControl.selectedSegmentIndex = 0
+            }
+        }
     }
     
     // Pick from Camera or PhotoLibrary Alert
@@ -318,15 +165,14 @@ class NewReminderDetailViewController: UIViewController {
         // Set to Pick from PhotoLibrary
         imagePicker.sourceType = .photoLibrary
         
-        imagePicker.allowsEditing = true
+        imagePicker.allowsEditing = false
         present(imagePicker, animated: true, completion: nil)
     }
     
     // Capture details to save a new Reminder
     private func saveNewReminder() {
         
-        guard let controllers = controllers,
-            let title = titleTextField.text else {
+        guard let controllers = controllers else  {
             showCantSaveReminder()
             return
         }
@@ -340,19 +186,19 @@ class NewReminderDetailViewController: UIViewController {
         }
         
         // Try to save the reminder
-        if !title.isEmpty || image != nil || noteRecieved != nil {
+        if image != nil || noteRecieved != nil {
             
             // Set Alarm if AlarmSegment is On
             if alarmSegmentedControl.selectedSegmentIndex == 1 {
                 
-                self.date = setAlarm()
+                //self.date = datePicker.calendar.date
                 guard let date = date else { return }
                 
-                controllers.reminderController.saveNewReminderWith(alarmDate: date, title: title, defaultImage: image?.pngData(), note: noteRecieved)
+                controllers.reminderController.saveNewReminderWith(alarmDate: date, defaultImage: image?.pngData(), note: noteRecieved)
                 
             // Else save Reminder without an Alarm
             } else {
-                controllers.reminderController.saveNewReminder(title: title, defaultImage: image?.pngData(), note: noteRecieved)
+                controllers.reminderController.saveNewReminder(defaultImage: image?.pngData(), note: noteRecieved)
             }
             
             // Alert user the reminder is saved, and pop back to root VC
@@ -428,54 +274,51 @@ class NewReminderDetailViewController: UIViewController {
     private func updateViews() {
         
         // Round corners
-        imageView.layer.cornerRadius = 20
-        addImagesButton.layer.cornerRadius = 15
+        addImagesButton.layer.cornerRadius = addImagesButton.bounds.width / 2
+        addNoteButton.layer.cornerRadius = addNoteButton.bounds.width / 2
         backgroundCardView.layer.cornerRadius = 20
         
-        // Create Pickers
-        createDatePicker()
-        createTimePicker()
+        // Shadow
+        backgroundCardView.addShadow(opacity: 1, radius: 10)
+        addImagesButton.addShadow(opacity: 0.5, radious: 5)
+        addNoteButton.addShadow(opacity: 0.5, radious: 5)
         
-        // Set Delegates
-        imagePicker.delegate = self
+        // Create Pickers
+        alarmDatePicker.minimumDate = alarmDatePicker.date
     }
     
     // Background Colors Setup
     private func setBGColors() {
+        
         // Get BGColor
         guard let controllers = controllers,
             let color = controllers.themeController.currentColor else { return }
         
         // Background
         setTabBarsBGColors(color: color)
-        
-        scrollSubView.backgroundColor = color.bgColor
-        scrollPushingView.backgroundColor = color.bgColor
         backgroundCardView.backgroundColor = color.bgCardColor
         
-        // TextField
-        titleTextField.backgroundColor = color.textLabelColor
-        titleTextField.textColor = color.fontColor
-        
         // Labels
-        setDateLabel.textColor = color.fontColor
-        setTimeLabel.textColor = color.fontColor
         alarmLabel.textColor = color.fontColor
-        addPictureLabel.textColor = color.fontColor
         addNoteLabel.textColor = color.fontColor
+        addPictureLabel.textColor = color.fontColor
         
-        // Pickers
-        datePickerTextField.backgroundColor = color.textLabelColor
-        timePickerTextField.backgroundColor = color.textLabelColor
+        // Picker
+        alarmDatePicker.tintColor = color.fontColor
         
         // Segmented Control
         let textAttributes = [NSAttributedString.Key.foregroundColor: color.fontColor]
         alarmSegmentedControl.setTitleTextAttributes(textAttributes, for: .normal)
         alarmSegmentedControl.selectedSegmentTintColor = color.color8
         
+        // TODO: - Make sure both texts are visible in the segmented control by giving each a diffrent color that contrasts it's background color
+        
         // Set Buttons Images
         addImagesButton.setBackgroundImage(color.cameraImage, for: .normal)
         addNoteButton.setBackgroundImage(color.docImage, for: .normal)
+        
+        addImagesButton.backgroundColor = color.bgColor
+        addNoteButton.backgroundColor = color.bgColor
         
         // Image
         if imageFromCamera == nil && imageFromLibrary == nil {
@@ -517,26 +360,24 @@ extension NewReminderDetailViewController: UIImagePickerControllerDelegate, UINa
 
     // Try to get image
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        
+
         // If you can get an edited image
         if let image = info[.editedImage] as? UIImage {
-            
+
             imageFromLibrary = image
             imageView.image = image
-            
+
         // If you get the original Image
         } else if let image = info[.originalImage] as? UIImage {
-            
+
             imageFromLibrary = image
             imageView.image = image
         }
-        // Dismiss
         picker.dismiss(animated: true, completion: nil)
     }
-    
+
     // If user decides to cancel
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        // Dismiss
         picker.dismiss(animated: true, completion: nil)
     }
 }

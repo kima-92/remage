@@ -106,14 +106,18 @@ class PhotoPreviewViewController: UIViewController {
             detailsBarButton.isEnabled = false
             detailsBarButton.tintColor = .clear
         }
+        
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(goBackToRoot))
+    }
+    
+    @objc private func goBackToRoot() {
+        navigationController?.popToRootViewController(animated: true)
     }
     
     // Background Colors Setup
     private func setBGColors() {
-        // Get BGColor
         guard let controllers = controllers,
             let color = controllers.themeController.currentColor else { return }
-        
         setTabBarsBGColors(color: color)
     }
     

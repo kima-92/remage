@@ -20,7 +20,7 @@ class RemindersViewController: UIViewController {
         let fetchRequest: NSFetchRequest<Reminder> = Reminder.fetchRequest()
         
         // Sort Reminders by Title
-        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "title", ascending: true)]
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "note", ascending: true)]
         
         let moc = CoreDataStack.shared.mainContext
         let fetchResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: moc, sectionNameKeyPath: nil, cacheName: nil)

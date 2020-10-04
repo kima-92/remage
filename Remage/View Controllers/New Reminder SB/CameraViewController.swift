@@ -95,7 +95,9 @@ class CameraViewController: UIViewController {
         // Get BGColor
         guard let controllers = controllers,
             let color = controllers.themeController.currentColor else { return }
+        
         setTabBarsBGColors(color: color)
+        navigationController?.setNavigationBarHidden(true, animated: false)
         
         // Set Buttons Images
         captureImageButton.setImage(color.cameraButton, for: .normal)
