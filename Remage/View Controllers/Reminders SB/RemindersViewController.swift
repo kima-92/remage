@@ -57,6 +57,12 @@ class RemindersViewController: UIViewController {
         setBGColors()
     }
     
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        remindersCollectionView.reloadData()
+        
+    }
+    
     // MARK: - Methods
     
     // To receive the ModelControllers from the Main TabBar
